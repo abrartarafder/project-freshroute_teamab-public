@@ -7,3 +7,6 @@
 |Abrar Jawad Tarafder | Section M | 219453497 | abrart03@my.yorku.ca | 437-422-1647 | rari0787
 
 Discord Invite Link: https://discord.gg/8YT3uxnzum 
+
+Trello link: https://trello.com/invite/b/6991f08cf8e88c70aea8e433/ATTI6078905ea5a857425a3fba1642f134854ABFD8AE/eecs3311freshroute
+
