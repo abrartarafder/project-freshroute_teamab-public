@@ -1,6 +1,6 @@
 ## 1. Project Objective
 
-FreshRoute is a web-based grocery ordering platform focused exclusively on fresh and organic food.  
+FreshRoute is a web-based grocery ordering platform focused exclusively on fresh, organic, and ethically raised and sourced food.  
 
 The objective of this project is to design a streamlined system that allows users to browse organic products, manage a shopping cart, and complete an order efficiently. The platform prioritizes simplicity, clarity, and a grocery shopping experience centered on fresh produce and natural food essentials.
 
