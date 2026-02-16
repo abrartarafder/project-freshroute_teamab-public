@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="src/assets/logo_clear.png"
+  <img src="src/assets/readme_banner.png"
        alt="FreshRoute Logo"
-       width="400" />
+       width="100%" />
 </p>
 
 <h1 align="center">FreshRoute</h1>
