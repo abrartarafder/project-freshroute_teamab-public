@@ -1,13 +1,11 @@
 # FreshRoute
 
 <img src="src/assets/logo_clear.png"
-     align="right"
+     align="left"
      alt="FreshRoute Logo"
-     width="230" />
+     width="400" />
 
 FreshRoute is a web-based grocery ordering platform centered on fresh, organic, and ethically sourced food.
-
----
 
 ## Overview
 
@@ -15,7 +13,6 @@ FreshRoute allows users to browse fresh groceries, manage a shopping cart, and c
 
 This repository contains the design and implementation for the EECS 3311 course project.
 
----
 
 ## Project Resources
 
