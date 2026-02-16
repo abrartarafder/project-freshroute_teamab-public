@@ -1,16 +1,28 @@
 # FreshRoute
 
 <img src="src/assets/logo_clear.png"
-     align="left"
+     align="right"
      alt="FreshRoute Logo"
-     width="420" />
+     width="230" />
 
-FreshRoute is a fresh, organic, and ethically sourced grocery ordering platform.
+FreshRoute is a web-based grocery ordering platform centered on fresh, organic, and ethically sourced food.
 
-We focus exclusively on:
-- Organic produce
-- Ethically raised food
-- Farm-to-doorstep delivery
-- Simple, clean ordering experience
+---
 
-[View Trello Board](https://trello.com/invite/b/6991f08cf8e88c70aea8e433/ATTI6078905ea5a857425a3fba1642f134854ABFD8AE/eecs3311freshroute)
+## Overview
+
+FreshRoute allows users to browse fresh groceries, manage a shopping cart, and complete orders through a streamlined and user-focused interface.
+
+This repository contains the design and implementation for the EECS 3311 course project.
+
+---
+
+## Project Resources
+
+- 📋 Trello Board:  
+  https://trello.com/invite/b/6991f08cf8e88c70aea8e433/ATTI6078905ea5a857425a3fba1642f134854ABFD8AE/eecs3311freshroute
+
+- Discord Server Link: https://discord.gg/8YT3uxnzum 
+
+  
+
