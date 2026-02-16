@@ -1,9 +1,9 @@
 # FreshRoute
 
 <img src="src/assets/logo_clear.png"
-     align="right"
+     align="left"
      alt="FreshRoute Logo"
-     width="220" />
+     width="420" />
 
 FreshRoute is a fresh, organic, and ethically sourced grocery ordering platform.
 
