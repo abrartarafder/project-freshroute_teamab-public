@@ -14,7 +14,7 @@ A university student who prefers organic and minimally processed foods but has l
 - Shops weekly or bi-weekly  
 - Prioritizes fresh produce and natural ingredients  
 - Wants a quick and simple checkout process  
-- Is mindful of total cost before purchasing  
+- Is mindful of the total cost before purchasing  
 
 ### Secondary User: Busy Working Professional
 A working professional who values convenience and reliability when purchasing fresh groceries.
@@ -48,10 +48,10 @@ The platform focuses only on fresh and organic products. The interface should av
 Product information, pricing, and cart totals must always be clearly visible so users understand what they are purchasing.
 
 ### 3. Focused Scope
-FreshRoute will only support fresh and organic groceries to maintain a clear identity and prevent feature creep.
+FreshRoute will only support fresh and organic groceries to maintain a clear, focused scope for the website.
 
 ### 4. Efficient Checkout Experience
-Users should be able to complete an order in a minimal number of steps with no confusion.
+Users should be able to complete an order in as few steps as possible, with no confusion.
 
 ---
 
