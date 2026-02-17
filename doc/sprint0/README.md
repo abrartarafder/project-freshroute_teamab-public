@@ -49,10 +49,10 @@ FreshRoute follows a structured team-based development process to ensure clarity
 
 FreshRoute follows a simplified Git Flow model:
 
-- `main` — stable production-ready branch  
-- `develop` — integration branch for ongoing development  
-- `feature/<feature-name>` — individual feature branches  
-- `bugfix/<issue-name>` — bug fix branches  
+- `main` - stable production-ready branch  
+- `develop` - integration branch for ongoing development  
+- `feature/<feature-name>` - individual feature branches  
+- `bugfix/<issue-name>` - bug fix branches  
 - Specific to Sprint0: `sprint0-setup`
 
 All new work is completed in feature branches and merged via pull requests.
@@ -113,5 +113,4 @@ Branch names:
 - Are lowercase  
 - Use hyphens instead of spaces  
 - Clearly describe the purpose of the branch  
-- Correspond to a Trello card or GitHub Issue only when applicable  
-
+- Correspond to a Trello card or GitHub Issue when applicable  
