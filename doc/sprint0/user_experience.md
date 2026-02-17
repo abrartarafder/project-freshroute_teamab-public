@@ -1,4 +1,4 @@
-# User Experience — FreshRoute
+# User Experience - FreshRoute
 
 ## Page 1: Landing Page
 
