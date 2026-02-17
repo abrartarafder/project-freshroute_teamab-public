@@ -28,7 +28,23 @@ This repository contains the design and implementation for the EECS 3311 course 
 
 
 ## Motivation and Project Description
+Short detailed description of the motivation behind the project: 
+
+# What is FreshRoute? 
+
+# What problems does FreshRoute solve, and why it exists. 
 
 ## Installation for your Software/System
 
+# List of required tools/programs to run the project
+
+# Procedure for how to build and run your project.
+
 ## Contribution
+
+# Process for contributing to this project. 
+
+- Do you use git flow?
+- Branch Naming
+- Ticketing and Issuing
+- Pull Requests 
