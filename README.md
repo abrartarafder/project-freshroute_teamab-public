@@ -43,7 +43,7 @@ The project demonstrates user-centered design and structured software architectu
 
 ## Contribution
 
-FreshRoute follows a structured team-based development process to ensure clarity and maintainability.
+FreshRoute follows a structured team-based development process to ensure clarity and maintainability. We welcome all contributions and you can easily get on board!
 
 ### Branching Strategy
 
@@ -64,8 +64,9 @@ We use:
 
 - **Trello** for sprint planning and task management  
 - GitHub for repository hosting and pull requests  
+- We use GitHub Issues to track tasks, bugs, and feature requests.
 
-Each Trello card corresponds to a user story in `PB.md`.
+Each Trello card corresponds to a user story in `PB.md` + other assigned tasks.
 
 ---
 
@@ -75,6 +76,7 @@ Each Trello card corresponds to a user story in `PB.md`.
 - PRs require at least one team member review before merging.
 - PR descriptions must reference the related user story.
 - No direct commits to `main` after sprint0 as it is just documentation.
+- Ensure the code does not break any functionality and works as intended before merging to `main`. 
 
 ---
 
@@ -89,3 +91,25 @@ Commits will follow a clear naming structure:
 - `sprint0: updated`
 
 ---
+
+### Branch Naming
+
+Branches follow a consistent and descriptive naming convention which follows the Git Flow strategy.
+
+- `feature/<feature-name>`  
+  Example: `feature/recipe-scaling`
+
+- `bugfix/<issue-name>`  
+  Example: `bugfix/cart-total-error`
+
+- `docs/<update-name>`  
+  Example: `docs/readme-update`
+
+- `refactor/<module-name>`  
+  Example: `refactor/checkout-logic`
+
+Branch names:
+- Are lowercase  
+- Use hyphens instead of spaces  
+- Clearly describe the purpose of the branch  
+- Correspond to a Trello card or GitHub Issue when applicable  
