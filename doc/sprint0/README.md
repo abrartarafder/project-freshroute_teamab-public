@@ -20,10 +20,10 @@ This repository contains the design and implementation for the EECS 3311 course 
 
 ## Project Resources
 
-- 📋 Trello Board:  
+- Trello Board:  
   https://trello.com/invite/b/6991f08cf8e88c70aea8e433/ATTI6078905ea5a857425a3fba1642f134854ABFD8AE/eecs3311freshroute
 
-- 💬 Discord Server:  
+- Discord Server:  
   https://discord.gg/8YT3uxnzum
 
 
