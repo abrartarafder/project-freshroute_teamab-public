@@ -25,3 +25,10 @@ This repository contains the design and implementation for the EECS 3311 course 
 
 - 💬 Discord Server:  
   https://discord.gg/8YT3uxnzum
+
+
+## Motivation and Project Description
+
+## Installation for your Software/System
+
+## Contribution
