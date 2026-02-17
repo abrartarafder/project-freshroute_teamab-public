@@ -5,144 +5,161 @@ Each item is written as a user story and includes criteria of satisfaction.
 
 ---
 
-## PB-01 — Browse Products
-**User story:** As a customer, I want to browse a list of products so that I can decide what to buy.  
+## PB-01 - Browse Products
+**User story:** As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.  
 **Criteria of satisfaction:**
 - A product list page loads without errors.
 - Each product shows at least name + price.
 - If there are no products, the UI shows a clear “no products available” message.
 
-## PB-02 — Search Products
+## PB-02 - Search Products
 **User story:** As a customer, I want to search for products by keyword so that I can find items quickly.  
 **Criteria of satisfaction:**
 - Typing a keyword filters the product list.
 - Clearing the keyword restores the full list.
 - Search is case-insensitive.
 
-## PB-03 — Filter/Sort Products
+## PB-03 - Filter/Sort Products
 **User story:** As a customer, I want to filter/sort products so that I can shop efficiently.  
 **Criteria of satisfaction:**
 - User can filter by category (at least 2 categories).
 - User can sort by price (low→high, high→low).
 - Filter/sort updates results correctly.
 
-## PB-04 — Product Details
+## PB-04 - Product Details
 **User story:** As a customer, I want to view product details so that I can make a purchase decision.  
 **Criteria of satisfaction:**
 - Clicking a product opens a details view/page.
 - Details include name, price, and description (or placeholder).
 - A back navigation option exists.
 
-## PB-05 — Add Item to Cart
+## PB-05 - Add Item to Cart
 **User story:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.  
 **Criteria of satisfaction:**
 - “Add to Cart” adds the item.
 - Cart shows item quantity.
 - Adding the same item again increases quantity (not duplicate lines).
 
-## PB-06 — View Cart
+## PB-06 - View Cart
 **User story:** As a customer, I want to view my cart so that I can review items before checkout.  
 **Criteria of satisfaction:**
 - Cart page shows all items, quantities, and subtotal.
 - Cart shows total price.
 - Empty cart shows a clear message.
 
-## PB-07 — Update/Remove Cart Items
+## PB-07 - Update/Remove Cart Items
 **User story:** As a customer, I want to update quantities or remove items so that I can fix my order.  
 **Criteria of satisfaction:**
 - User can increase/decrease quantity.
 - User can remove an item entirely.
 - Totals update immediately and correctly.
 
-## PB-08 — Create Account (Signup)
-**User story:** As a new user, I want to create an account so that I can place orders and save my info.  
-**Criteria of satisfaction:**
-- Signup requires minimum fields (name, email, password).
-- Invalid input shows helpful errors.
-- On success, a user record is created.
+## PB-08 - Add Recipe Ingredients to Cart
+**User story:** As a customer, I want to add a recipe to my cart so that all required ingredients are added automatically with the correct quantities.
 
-## PB-09 — Login / Logout
-**User story:** As a returning user, I want to log in/out so that I can access my account securely.  
 **Criteria of satisfaction:**
-- Login succeeds with valid credentials.
-- Login fails with invalid credentials and shows an error.
-- Logout returns the app to a logged-out state.
+- Selecting a recipe shows an ingredient list.
+- User can choose a number of servings.
+- Ingredient quantities scale based on servings.
+- Clicking “Add to Cart” adds all ingredients in one action.
+- If an ingredient already exists in the cart, its quantity is increased (not duplicated).
 
-## PB-10 — Save Delivery Address
-**User story:** As a customer, I want to save my delivery address so that checkout is faster next time.  
+
+## PB-09 - Persistent Cart
+**User story:** As a customer, I want my cart to persist during my session so that I do not lose items while browsing.
+
 **Criteria of satisfaction:**
-- User can add/edit an address.
-- Address persists after refresh (stored in backend/DB).
-- Checkout can auto-fill saved address.
+- Items remain in cart while navigating between pages.
+- Cart does not reset on page refresh.
 
-## PB-11 — Select Delivery Time Slot
+
+## PB-10 - Enter Delivery Address at Checkout
+**User story:** As a customer, I want to enter my delivery address during checkout so that my order can be delivered correctly.
+
+**Criteria of satisfaction:**
+- Checkout form includes required address fields (e.g., street, city, postal code).
+- Form validates required inputs.
+- Address is attached to the order upon successful checkout.
+- Address is not permanently stored after the session.
+
+
+## PB-11 - Select Delivery Time Slot
 **User story:** As a customer, I want to select a delivery time slot so that I can receive my order at a convenient time.  
 **Criteria of satisfaction:**
 - A list of time slots is displayed.
 - User must select one slot before placing an order.
 - Selected slot is saved to the order.
 
-## PB-12 — Place Order (Checkout)
+## PB-12 - Place Order (Checkout)
 **User story:** As a customer, I want to place an order so that my cart becomes a confirmed purchase.  
 **Criteria of satisfaction:**
 - Clicking “Place Order” creates an order record.
 - Order includes items, quantities, total, address, and time slot.
 - Cart is cleared after successful order placement.
 
-## PB-13 — Order Confirmation
+## PB-13 - Order Confirmation
 **User story:** As a customer, I want an order confirmation screen so that I know my order was successful.  
 **Criteria of satisfaction:**
 - Confirmation shows order ID and summary.
 - Confirmation is shown only after successful checkout.
 - User can navigate to order history.
 
-## PB-14 — View Order History
-**User story:** As a customer, I want to see my past orders so that I can track what I bought.  
-**Criteria of satisfaction:**
-- Only logged-in users can view order history.
-- Orders show date, total, and status.
-- Clicking an order shows order details.
+## PB-14 - View Order Details by Order ID
+**User story:** As a customer, I want to view my order using an order ID so that I can review what I purchased.
 
-## PB-15 — Track Order Status
-**User story:** As a customer, I want to track the status of my order so that I know when it will arrive.  
 **Criteria of satisfaction:**
-- Each order shows a status (Placed, Preparing, Out for delivery, Delivered).
-- Status is stored and retrieved from backend.
-- Status appears consistently in confirmation + history.
+- After checkout, the user receives a unique order ID.
+- User can enter the order ID on an order lookup page.
+- Order details (items, total, status) are displayed correctly.
 
-## PB-16 — Cancel Order (Before Delivery)
-**User story:** As a customer, I want to cancel an order before delivery so that I can fix mistakes.  
+## PB-15 - Track Order Status
+**User story:** As a customer, I want to track the status of my order so that I know when it will arrive.
+
 **Criteria of satisfaction:**
-- Cancel is only available for eligible statuses.
+- Each order has a status (Placed, Preparing, Out for Delivery, Delivered).
+- Status is stored in the backend.
+- Order lookup displays the correct status.
+
+## PB-16 - Cancel Order
+**User story:** As a customer, I want to cancel my order before it is delivered so that I can correct mistakes.
+
+**Criteria of satisfaction:**
+- Cancel option is available only for eligible statuses (e.g., Placed).
 - Cancelling updates status to “Cancelled”.
-- Order history shows cancelled orders correctly.
+- Updated status is reflected in order lookup.
 
-## PB-17 — Admin: Add Product
-**User story:** As an admin, I want to add products so that the store catalogue stays updated.  
-**Criteria of satisfaction:**
-- Admin can create product with name, price, and category.
-- Invalid product data is rejected (e.g., missing name, negative price).
-- New product appears in product list.
 
-## PB-18 — Admin: Edit/Delete Product
-**User story:** As an admin, I want to edit or delete products so that catalogue data stays accurate.  
+## PB-17 - Product Badges (Organic / Ethical Labels)
+**User story:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.  
 **Criteria of satisfaction:**
-- Admin can update product fields.
-- Admin can delete a product.
-- Changes reflect in UI after refresh.
+- Product cards display badges such as “Organic”, “Non-GMO”, and “Ethically Raised” when applicable.
+- Product detail view displays the same badges consistently.
+- Badges are visually distinct and easy to understand.
 
-## PB-19 — Inventory / Out-of-Stock
-**User story:** As a customer, I want to see if something is in stock so that I don’t order unavailable items.  
-**Criteria of satisfaction:**
-- Products have an in-stock flag or quantity.
-- Out-of-stock items cannot be added to cart.
-- UI clearly indicates “Out of stock”.
+## PB-18 - Display Product Availability
+**User story:** As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
 
-## PB-20 — Basic Loading + Error Handling
-**User story:** As a user, I want clear loading and error states so that the app feels reliable.  
 **Criteria of satisfaction:**
-- Pages show loading while fetching.
-- API errors show a readable message.
-- App doesn’t crash on common failures (empty response, failed request).
+- Each product displays an “In Stock” or “Out of Stock” label.
+- Out-of-stock items cannot be added to the cart.
+- The UI clearly differentiates unavailable products.
+
+## PB-19 - Browse Recipes
+**User story:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
+
+**Criteria of satisfaction:**
+- A dedicated Recipes page displays a list of available recipes.
+- Each recipe shows at least a name and short description.
+- Clicking a recipe opens a detailed view.
+- Recipe detail includes ingredient list and default serving size.
+- Recipes load without errors and display a clear message if none are
+
+
+## PB-20 - User-Friendly Error Handling
+**User story:** As a customer, I want clear error messages when something goes wrong so that I know what happened and what to do next.  
+**Criteria of satisfaction:**
+- Failed API requests show a readable error message.
+- “No products found” and similar empty states are clearly displayed.
+- The app does not crash on common failures (empty response, failed request).
 
 ---
