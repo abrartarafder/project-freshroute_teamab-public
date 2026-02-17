@@ -80,7 +80,7 @@ Each Trello card corresponds to a user story in `PB.md`.
 
 ### Commit Conventions
 
-Commits follow a clear naming structure:
+Commits will follow a clear naming structure:
 
 - `feat: add product filtering`
 - `fix: correct cart total calculation`
