@@ -27,7 +27,7 @@ This repository contains the design and implementation for the EECS 3311 course 
   https://discord.gg/8YT3uxnzum
 
 
-## Motivation and Project Description (What is FreshRoute?)
+## Motivation and Project Description
 
 FreshRoute was created to address the growing demand for accessible, transparent, and ethically sourced grocery options. While many grocery delivery platforms exist, they often lack clear emphasis on organic standards and responsible sourcing. This can make it difficult for health-conscious individuals to efficiently identify products that align with their values.
 
