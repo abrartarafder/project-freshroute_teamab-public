@@ -63,8 +63,8 @@ All new work is completed in feature branches and merged via pull requests.
 We use:
 
 - **Trello** for sprint planning and task management  
-- GitHub for repository hosting and pull requests  
-- We use GitHub Issues to track tasks, bugs, and feature requests.
+- **GitHub** for repository hosting and pull requests  
+- We use **GitHub Issues** to track tasks, bugs, and feature requests.
 
 Each Trello card corresponds to a user story in `PB.md` + other assigned tasks.
 
