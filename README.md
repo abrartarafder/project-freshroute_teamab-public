@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/readme_banner.png"
+  <img src="src/assets/img_github/readme_banner.png"
        alt="FreshRoute Logo"
        width="100%" />
 </p>
