@@ -1,4 +1,4 @@
-# Product Backlog — FreshRoute (Sprint 0)
+# Product Backlog - FreshRoute (Sprint 0)
 
 This document lists the initial Product Backlog for FreshRoute.  
 Each item is written as a user story and includes criteria of satisfaction.
