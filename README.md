@@ -27,12 +27,13 @@ This repository contains the design and implementation for the EECS 3311 course 
   https://discord.gg/8YT3uxnzum
 
 
-## Motivation and Project Description
-Short detailed description of the motivation behind the project: 
+## Motivation and Project Description (What is FreshRoute?)
 
-## What is FreshRoute? 
+FreshRoute was created to address the growing demand for accessible, transparent, and ethically sourced grocery options. While many grocery delivery platforms exist, they often lack clear emphasis on organic standards and responsible sourcing. This can make it difficult for health-conscious individuals to efficiently identify products that align with their values.
 
-## What problems does FreshRoute solve, and why it exists. 
+FreshRoute solves this problem by focusing exclusively on fresh, organic, and ethically raised food. By narrowing the scope and prioritizing clarity, the platform simplifies decision-making and promotes sustainable consumption habits. Additionally, FreshRoute introduces recipe-based shopping, allowing users to select dishes and automatically add scaled ingredients to their cart, reducing friction in meal planning.
+
+The project demonstrates user-centered design and structured software architecture while delivering a focused and streamlined shopping experience.
 
 ## Installation for your Software/System
 
@@ -42,9 +43,49 @@ Short detailed description of the motivation behind the project:
 
 ## Contribution
 
-## Process for contributing to this project. 
+FreshRoute follows a structured team-based development process to ensure clarity and maintainability.
 
-- Do you use git flow?
-- Branch Naming
-- Ticketing and Issuing
-- Pull Requests 
+### Branching Strategy
+
+FreshRoute follows a simplified Git Flow model:
+
+- `main` — stable production-ready branch  
+- `develop` — integration branch for ongoing development  
+- `feature/<feature-name>` — individual feature branches  
+- `bugfix/<issue-name>` — bug fix branches  
+
+All new work is completed in feature branches and merged via pull requests.
+
+---
+
+### Issue Tracking
+
+We use:
+
+- **Trello** for sprint planning and task management  
+- GitHub for repository hosting and pull requests  
+
+Each Trello card corresponds to a user story in `PB.md`.
+
+---
+
+### Pull Requests
+
+- All changes must go through a Pull Request (PR).
+- PRs require at least one team member review before merging.
+- PR descriptions must reference the related user story.
+- No direct commits to `main` after sprint0 as it is just documentation.
+
+---
+
+### Commit Conventions
+
+Commits follow a clear naming structure:
+
+- `feat: add product filtering`
+- `fix: correct cart total calculation`
+- `docs: update README`
+- `refactor: improve checkout logic`
+- `sprint0: updated`
+
+---
