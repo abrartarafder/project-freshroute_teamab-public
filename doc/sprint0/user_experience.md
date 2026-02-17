@@ -1,6 +1,6 @@
 # User Experience - FreshRoute
 
-## Page 1: Landing Page
+## Page 1: Home Page
 
 <p align="center">
   <img src="/src/assets/img_github/LandingPage.png"
@@ -8,7 +8,7 @@
        width="1000" />
 </p>
 
-The Landing Page serves as the primary entry point into FreshRoute. It establishes the brand identity, communicates the platform’s focus on fresh and organic food, and guides users toward the main shopping flows.
+The Home Page serves as the primary entry point into FreshRoute. It establishes the brand identity, communicates the platform’s focus on fresh and organic food, and guides users toward the main shopping flows.
 
 ---
 
@@ -25,3 +25,7 @@ The **Recipes** navigation link lets users browse dishes rather than individual 
 
 ---
 
+## Page 2: Organic Page
+## Page 3: Ethically Raised Page
+## Page 4: Recipes Page
+## Page 5: Cart Page
