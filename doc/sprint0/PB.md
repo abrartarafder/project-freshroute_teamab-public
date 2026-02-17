@@ -5,56 +5,56 @@ Each item is written as a user story and includes criteria of satisfaction.
 
 ---
 
-## PB-01 — Browse Products
+## PB-01 - Browse Products
 **User story:** As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.  
 **Criteria of satisfaction:**
 - A product list page loads without errors.
 - Each product shows at least name + price.
 - If there are no products, the UI shows a clear “no products available” message.
 
-## PB-02 — Search Products
+## PB-02 - Search Products
 **User story:** As a customer, I want to search for products by keyword so that I can find items quickly.  
 **Criteria of satisfaction:**
 - Typing a keyword filters the product list.
 - Clearing the keyword restores the full list.
 - Search is case-insensitive.
 
-## PB-03 — Filter/Sort Products
+## PB-03 - Filter/Sort Products
 **User story:** As a customer, I want to filter/sort products so that I can shop efficiently.  
 **Criteria of satisfaction:**
 - User can filter by category (at least 2 categories).
 - User can sort by price (low→high, high→low).
 - Filter/sort updates results correctly.
 
-## PB-04 — Product Details
+## PB-04 - Product Details
 **User story:** As a customer, I want to view product details so that I can make a purchase decision.  
 **Criteria of satisfaction:**
 - Clicking a product opens a details view/page.
 - Details include name, price, and description (or placeholder).
 - A back navigation option exists.
 
-## PB-05 — Add Item to Cart
+## PB-05 - Add Item to Cart
 **User story:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.  
 **Criteria of satisfaction:**
 - “Add to Cart” adds the item.
 - Cart shows item quantity.
 - Adding the same item again increases quantity (not duplicate lines).
 
-## PB-06 — View Cart
+## PB-06 - View Cart
 **User story:** As a customer, I want to view my cart so that I can review items before checkout.  
 **Criteria of satisfaction:**
 - Cart page shows all items, quantities, and subtotal.
 - Cart shows total price.
 - Empty cart shows a clear message.
 
-## PB-07 — Update/Remove Cart Items
+## PB-07 - Update/Remove Cart Items
 **User story:** As a customer, I want to update quantities or remove items so that I can fix my order.  
 **Criteria of satisfaction:**
 - User can increase/decrease quantity.
 - User can remove an item entirely.
 - Totals update immediately and correctly.
 
-## PB-08 — Add Recipe Ingredients to Cart
+## PB-08 - Add Recipe Ingredients to Cart
 **User story:** As a customer, I want to add a recipe to my cart so that all required ingredients are added automatically with the correct quantities.
 
 **Criteria of satisfaction:**
@@ -65,7 +65,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - If an ingredient already exists in the cart, its quantity is increased (not duplicated).
 
 
-## PB-09 — Persistent Cart
+## PB-09 - Persistent Cart
 **User story:** As a customer, I want my cart to persist during my session so that I do not lose items while browsing.
 
 **Criteria of satisfaction:**
@@ -73,7 +73,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Cart does not reset on page refresh.
 
 
-## PB-10 — Enter Delivery Address at Checkout
+## PB-10 - Enter Delivery Address at Checkout
 **User story:** As a customer, I want to enter my delivery address during checkout so that my order can be delivered correctly.
 
 **Criteria of satisfaction:**
@@ -83,28 +83,28 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Address is not permanently stored after the session.
 
 
-## PB-11 — Select Delivery Time Slot
+## PB-11 - Select Delivery Time Slot
 **User story:** As a customer, I want to select a delivery time slot so that I can receive my order at a convenient time.  
 **Criteria of satisfaction:**
 - A list of time slots is displayed.
 - User must select one slot before placing an order.
 - Selected slot is saved to the order.
 
-## PB-12 — Place Order (Checkout)
+## PB-12 - Place Order (Checkout)
 **User story:** As a customer, I want to place an order so that my cart becomes a confirmed purchase.  
 **Criteria of satisfaction:**
 - Clicking “Place Order” creates an order record.
 - Order includes items, quantities, total, address, and time slot.
 - Cart is cleared after successful order placement.
 
-## PB-13 — Order Confirmation
+## PB-13 - Order Confirmation
 **User story:** As a customer, I want an order confirmation screen so that I know my order was successful.  
 **Criteria of satisfaction:**
 - Confirmation shows order ID and summary.
 - Confirmation is shown only after successful checkout.
 - User can navigate to order history.
 
-## PB-14 — View Order Details by Order ID
+## PB-14 - View Order Details by Order ID
 **User story:** As a customer, I want to view my order using an order ID so that I can review what I purchased.
 
 **Criteria of satisfaction:**
@@ -112,7 +112,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - User can enter the order ID on an order lookup page.
 - Order details (items, total, status) are displayed correctly.
 
-## PB-15 — Track Order Status
+## PB-15 - Track Order Status
 **User story:** As a customer, I want to track the status of my order so that I know when it will arrive.
 
 **Criteria of satisfaction:**
@@ -120,7 +120,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Status is stored in the backend.
 - Order lookup displays the correct status.
 
-## PB-16 — Cancel Order
+## PB-16 - Cancel Order
 **User story:** As a customer, I want to cancel my order before it is delivered so that I can correct mistakes.
 
 **Criteria of satisfaction:**
@@ -129,7 +129,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Updated status is reflected in order lookup.
 
 
-## PB-17 — Product Badges (Organic / Ethical Labels)
+## PB-17 - Product Badges (Organic / Ethical Labels)
 **User story:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.  
 **Criteria of satisfaction:**
 - Product cards display badges such as “Organic”, “Non-GMO”, and “Ethically Raised” when applicable.
@@ -144,7 +144,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Out-of-stock items cannot be added to the cart.
 - The UI clearly differentiates unavailable products.
 
-## PB-19 — Browse Recipes
+## PB-19 - Browse Recipes
 **User story:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
 
 **Criteria of satisfaction:**
@@ -155,7 +155,7 @@ Each item is written as a user story and includes criteria of satisfaction.
 - Recipes load without errors and display a clear message if none are
 
 
-## PB-20 — User-Friendly Error Handling
+## PB-20 - User-Friendly Error Handling
 **User story:** As a customer, I want clear error messages when something goes wrong so that I know what happened and what to do next.  
 **Criteria of satisfaction:**
 - Failed API requests show a readable error message.
