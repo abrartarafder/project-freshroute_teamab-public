@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="/src/assets/img_github/LandingPage.png"
-       alt="FreshRoute Landing Page"
+       alt="FreshRoute Landing Page."
        width="1000" />
 </p>
 
@@ -15,21 +15,13 @@ The Landing Page serves as the primary entry point into FreshRoute. It establish
 ## Relation to Key Scenarios
 
 ### Weekly Organic Grocery Order
-Navigation options such as **Organic** and **Ethically Raised** allow users to begin structured browsing. The “Shop Fresh Groceries” call-to-action guides users into the product exploration flow.
+Navigation options such as **Organic** and **Ethically Raised** let users start structured browsing. The “Shop Fresh Groceries” call-to-action guides users into the product exploration flow.
 
 ### Quick Fresh Purchase
-The prominent search bar supports fast product lookup for users who want to quickly locate specific items. Clear top-level navigation reduces friction and supports efficient shopping.
+The prominent search bar enables users to quickly locate specific items. Clear top-level navigation reduces friction and supports efficient shopping.
 
 ### Pre-made Recipes
-The **Recipes** navigation link enables users to browse dishes instead of individual products, aligning with the recipe-based shopping scenario.
+The **Recipes** navigation link lets users browse dishes rather than individual products, aligning with a recipe-based shopping scenario.
 
 ---
 
-## Interface Design and Clarity
-
-The landing page reflects the intended user interface design through:
-
-- A strong organic visual identity using green tones and fresh imagery.
-- Clear visual hierarchy (headline → supporting text → call-to-action).
-- Minimal layout aligned with the “Simplicity Over Feature Overload” principle.
-- Clearly identifiable interface elements (navigation bar, search bar, cart icon, call-to-action button).
