@@ -53,6 +53,7 @@ FreshRoute follows a simplified Git Flow model:
 - `develop` — integration branch for ongoing development  
 - `feature/<feature-name>` — individual feature branches  
 - `bugfix/<issue-name>` — bug fix branches  
+- Specific to Sprint0: `sprint0-setup`
 
 All new work is completed in feature branches and merged via pull requests.
 
