@@ -3,7 +3,7 @@
 ## Page 1: Home Page
 
 <p align="center">
-  <img src="/src/assets/img_github/LandingPage.png"
+  <img src="/extra/figma/LandingPage.png"
        alt="FreshRoute Landing Page."
        width="1000" />
 </p>
