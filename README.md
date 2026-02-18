@@ -37,9 +37,66 @@ The project demonstrates user-centered design and structured software architectu
 
 ## Installation for your Software/System
 
+- **Install Git** (to clone the repo and work with branches/PRs).
+- **Install Node.js (LTS recommended, Node 18+ is safe) + npm** (needed to install and run both frontend + backend).
+- **Install MongoDB (Local)**  
+  This project uses a local MongoDB database by default (see `.env`), so make sure **MongoDB Community Server** is installed and the MongoDB service is running.
+
+**Recommended tools (optional but helpful):**
+- VS Code (or any IDE)
+- MongoDB Compass (view/edit the database)
+
+---
+
 ## List of required tools/programs to run the project
 
+- Git
+- Node.js + npm
+- MongoDB (Local Community Server)
+
+> **Note:** Express, Mongoose, CORS, dotenv, nodemon, React, and Vite are installed automatically when you run `npm install` inside the project folders (they are listed in `package.json`).
+
+---
+
 ## Procedure for how to build and run your project.
+
+### 1) Clone the repository
+git clone <repo-url>
+cd <repo-folder>
+
+### 2) Install backend dependencies
+cd backend
+npm install
+
+### 3) Create backend environment variables
+Create a file: `backend/.env`  
+Add the following (matches this repo’s setup):
+
+PORT=4000  
+MONGO_URI=mongodb:your_mongodb_connection_string  
+
+### 4) Start MongoDB locally
+Ensure your local MongoDB server/service is running (required for the `MONGO_URI` above).
+
+### 5) Install frontend dependencies
+- Go to the frontend folder: `cd ../frontend`  
+- Install packages: `npm install`
+
+### 6) Start the backend
+- Go to the backend folder: `cd ../backend`  
+- Start the server: `npm run dev`  
+
+Backend should run at: `http://localhost:4000`
+
+### 7) Start the frontend
+- Go to the frontend folder: `cd ../frontend`  
+- Start the app: `npm run dev`  
+
+Frontend should run using the link at the terminal
+
+### 8) Open the app
+- Visit the link in your browser.
+- The frontend will communicate with the backend running at `http://localhost:4000`.
 
 ## Contribution
 
