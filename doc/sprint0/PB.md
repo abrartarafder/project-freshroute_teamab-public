@@ -3,6 +3,8 @@
 This document lists the initial Product Backlog for FreshRoute.  
 Each item is written as a user story and includes criteria of satisfaction.
 
+Note: Similar or closely related user stories are grouped under a single Trello card for organizational purposes. Trello is used for sprint planning and task tracking, and stories may be reprioritized or separated into individual cards as the project evolves.
+
 ---
 
 ## PB-01 - Browse Products
