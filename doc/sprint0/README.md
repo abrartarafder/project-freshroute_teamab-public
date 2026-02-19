@@ -14,9 +14,9 @@ FreshRoute is a web-based grocery ordering platform centered on fresh, organic, 
 
 ## Overview
 
-FreshRoute allows users to browse fresh groceries, manage a shopping cart, and complete orders through a streamlined and user-focused interface.
+FreshRoute is a web-based grocery ordering platform dedicated to providing fresh, organic, and ethically sourced food products. The platform operates as an online grocery retailer with a centralized warehouse model, sourcing products from trusted suppliers and fulfilling customer orders through scheduled delivery.
 
-This repository contains the design and implementation for the EECS 3311 course project.
+FreshRoute allows users to browse fresh groceries, manage a shopping cart, and complete orders through a streamlined and user-focused interface.
 
 ## Project Resources
 
