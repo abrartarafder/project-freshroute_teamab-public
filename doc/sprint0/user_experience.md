@@ -26,6 +26,21 @@ The **Recipes** navigation link lets users browse dishes rather than individual 
 ---
 
 ## Page 2: Organic Page
+<p align="center">
+  <img src="/extra/figma/Organic.png"
+       alt="FreshRoute Organic Page."
+       width="1000" />
+</p>
 ## Page 3: Ethically Raised Page
+<p align="center">
+  <img src="/extra/figma/Ethically raised.png"
+       alt="FreshRoute Ethically Raised Page."
+       width="1000" />
+</p>
 ## Page 4: Recipes Page
+<p align="center">
+  <img src="/extra/figma/Recipies.png"
+       alt="FreshRoute Recipes Page."
+       width="1000" />
+</p>
 ## Page 5: Cart Page
