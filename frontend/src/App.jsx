@@ -1,5 +1,5 @@
-import Products from "./pages/Products";
+import Landing from "./pages/Landing";
 
 export default function App() {
-  return <Products />;
+  return <Landing />;
 }
