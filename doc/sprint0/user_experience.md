@@ -120,7 +120,63 @@ Clear serving sizes and pricing per serving help users stay within budget while 
 
 ## Page 5: Cart Page
 
+<p align="center">
+  <img src="/extra/figma/Cart.png"
+       alt="FreshRoute Cart Page."
+       width="1000" />
+</p>
 
+The Cart Page consolidates all selected products and recipes into a structured checkout interface. It is divided into two primary sections:
+
+- **Left Side:** Cart items and quantity controls  
+- **Right Side:** Payment details and order summary  
+
+### Cart Structure
+
+The cart clearly separates:
+
+- **Regular Grocery Items**  
+- **Recipe Selection (Full Dish)**  
+- **Recipe Grocery (Auto-Generated Ingredients)**  
+
+This distinction helps users understand which ingredients were manually selected and which were automatically added from a recipe.
+
+Each cart item includes:
+
+- Product image  
+- Product name  
+- Price per unit  
+- Quantity selector (increment/decrement)  
+- Line total  
+- Remove (trash) icon  
+
+Quantities update instantly and totals adjust dynamically to support budgeting and transparency.
+
+### Payment & Summary Panel
+
+The right-side checkout panel includes:
+
+- Accepted payment methods (Visa, Mastercard, Apple Pay, etc.)  
+- Card details form  
+- Subtotal  
+- Shipping cost  
+- Total (tax included)  
+- Prominent “Checkout” button  
+
+The total price is clearly highlighted to reduce friction and improve trust.
+
+### Relation to Key Scenarios
+
+**Weekly Organic Grocery Order**  
+Users can review all selected produce and proteins before confirming purchase. Instant total updates help maintain budget control.
+
+**Quick Fresh Purchase**  
+Minimal steps between cart review and checkout allow users to complete orders within minutes.
+
+**Recipe-Based Meal Planning**  
+Auto-generated ingredients from recipes are grouped logically, ensuring users understand exactly what was added and in what quantities.
+
+---
 
 ## Flows 
 
