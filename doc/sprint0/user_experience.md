@@ -120,31 +120,33 @@ Clear serving sizes and pricing per serving help users stay within budget while 
 
 ## Page 5: Cart Page
 
-<p align="center">
-  <img src="/extra/figma/Cart.png"
-       alt="FreshRoute Cart Page."
-       width="1000" />
-</p>
 
-The Cart Page provides a structured summary of selected items before checkout.
 
-The page includes:
+## Flows 
 
-- Item list with quantities  
-- Ability to increase/decrease quantity  
-- Remove item option  
-- Subtotal and total cost  
-- Clear checkout button  
+## Flow 1: Weekly Organic Grocery Order
 
-The total cost updates immediately when changes are made, ensuring price transparency.
+1. The user lands on the Home Page.
+2. The user clicks on Organic in the navigation bar.
+3. The user browses organic products using filters or sorting.
+4. The user clicks Add to Cart on selected items.
+5. The user navigates to the Cart Page using the cart icon.
+6. The user reviews quantities and total price.
+7. The user proceeds to checkout to complete the order.
 
-### Relation to Key Scenarios
+## Flow 2: Quick Fresh Purchase
 
-**Cart Adjustment Before Checkout**  
-Users can modify quantities or remove items before placing an order.
+1. The user lands on the Home Page.
+2. The user types a product name into the Search Bar.
+3. The product list updates to show relevant results.
+4. The user adds the item to the cart.
+5. The user opens the Cart Page and completes checkout.
 
-**Budget-Conscious Users**  
-The always-visible total supports financial awareness and prevents unexpected costs.
+## Flow 3: Recipe-Based Meal Planning
 
-**Quick Checkout Scenario**  
-A streamlined checkout button allows users to complete purchases efficiently.
+1. The user selects Recipes from the navigation bar.
+2. The user browses available meal options.
+3. The user clicks on a recipe to view details and serving size.
+4. The user selects the desired number of servings.
+5. The user clicks Add to Cart to add all ingredients automatically.
+6. The user navigates to the Cart Page to review total cost and proceed to checkout.
