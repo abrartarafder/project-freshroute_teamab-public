@@ -1,5 +1,6 @@
 # User Experience - FreshRoute (Main Pages)
 
+Figma: https://www.figma.com/design/5c4UQhkcLux5jiRIkAHxb5/EECS3311_FreshRoute?node-id=24-2&t=YJvZso7EpI8yFKRt-1
 ---
 
 ## Page 1: Home Page
