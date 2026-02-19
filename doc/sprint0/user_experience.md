@@ -39,7 +39,7 @@ The **Recipes** navigation link lets users browse dishes rather than individual 
 </p>
 ## Page 4: Recipes Page
 <p align="center">
-  <img src="/extra/figma/Recipies.png"
+  <img src="/extra/figma/Recipes.png"
        alt="FreshRoute Recipes Page."
        width="1000" />
 </p>
