@@ -8,8 +8,7 @@ After defining the scope, we divided responsibilities based on individual streng
 
 - **GitHub** – Version control, feature branches, pull requests, and code reviews.
 - **Trello** – Sprint planning, backlog tracking, and task assignment.
-- **Discord** – Hosting team meetings and live discussions.
-- **WhatsApp** – Ongoing communication and coordination.
+- **Discord** – Hosting team meetings, live discussions, ongoing communication and coordination
 - **Markdown files / Google Docs** – Shared documentation (summary.md, done.md, process.md).
 
 This structure allowed us to balance workload effectively while maintaining clear communication and accountability.
