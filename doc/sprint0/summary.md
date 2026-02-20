@@ -35,7 +35,7 @@ A shopper browses the Produce and Dairy categories, selects organic vegetables, 
 A working professional needs a few fresh items for dinner. They quickly filter by category, add items to the cart, review the total, and complete checkout within minutes.
 
 ### Scenario 3: Cart Adjustment Before Checkout
-A user adds several organic products but removes one after reviewing the total price. They update quantities and proceed with the final order.
+A user adds several organic products but removes one or more after reviewing the total price. They update quantities and proceed with the final order.
 
 ### Scenario 4: Pre-made Recipes
 Instead of browsing through individual products, patrons can browse dishes. Users provide the number of people being fed with a dish, and the appropriately scaled quantity of ingredients will be added to their cart.
