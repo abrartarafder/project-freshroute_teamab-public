@@ -1,17 +1,22 @@
-export default function Landing() {
+// LandingPage.jsx
+import React from "react";
+import AppNavbar from "../components/navbar.jsx"; // adjust path if needed
+
+export default function LandingPage() {
+  const handleSearch = (query) => {
+    console.log("Search:", query);
+  };
+
   return (
-    <div className="landing-container">
-      
-      {/* Hero Section */}
-      <section className="hero">
-        <h1>Fresh. Organic. Ethical.</h1>
-        <p>
-          Shop fresh groceries and responsibly sourced ingredients delivered
-          straight to your door.
-        </p>
+    <>
+      <AppNavbar
+        cartCount={9}
+        userName="John"
+        activeKey="home"
+        onSearch={handleSearch}
+      />
 
-      </section>
 
-    </div>
+    </>
   );
 }
