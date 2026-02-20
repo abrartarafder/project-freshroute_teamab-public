@@ -54,10 +54,10 @@ On average, it took **1–2 rounds of discussion** to reach consensus on a story
 - We met **once per week formally** for sprint planning and progress review.
 - Additional short check-ins occurred as needed.
 - Communication remained active throughout the week via private messaging and discord chats with one another.
-- The formal meeting on discord was to ensure that everyone was completing their tasks on time and those who needed extra help were recieving it as needed from those who had free time to allocate. 
+- The formal meeting on discord was to ensure that everyone was completing their tasks on time, that any obstacles were addressed, and those who needed extra help were receiving it as needed from those who had free time to allocate. 
 
 ## What lessons should you take forward to the next phase? 
 
 The main lessons that we should take forward going into the next phase is that sometimes it becomes harder to gauge the amount of time that a task will take or how many people a task will require in order to be completed thoughtfully. This makes reallocation a lot more difficult and requires reallocation to be done closer to the due date. Ideally, a brief overview of the task and reallocating as needed would be a smarter approach. 
 
-Another lesson that we would take going forward is to discuss the changes thoroughly with another and making sure to always pull each other's changes on Github as there can always be merge conflicts and issues when changes are not pulled and implemented correctly. 
+Another lesson we will take forward to the next stage is to discuss changes thoroughly with one another and to ensure that we always pull each other's changes on GitHub, as merge conflicts and other issues can occur when changes are not pulled and implemented correctly. 
