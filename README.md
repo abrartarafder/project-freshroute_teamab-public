@@ -26,6 +26,9 @@ This repository contains the design and implementation for the EECS 3311 course 
 - Discord Server:  
   https://discord.gg/8YT3uxnzum
 
+- Figma: 
+  https://www.figma.com/design/5c4UQhkcLux5jiRIkAHxb5/EECS3311_FreshRoute?node-id=24-2&t=YJvZso7EpI8yFKRt-1
+
 
 ## Motivation and Project Description
 
