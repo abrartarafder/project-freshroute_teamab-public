@@ -12,4 +12,4 @@ Trello link: https://trello.com/invite/b/6991f08cf8e88c70aea8e433/ATTI6078905ea5
 
 (Mohsin has been added to the trello)
 
-Team Name on Eclass: Team.md
+Team Name on Eclass: Team AB
