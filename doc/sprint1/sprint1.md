@@ -1,45 +1,39 @@
-# Sprint 1 Planning Meeting — FreshRoute
-
+# Sprint 1 Planning Meeting  
 **Date:** February 22, 2026  
-**Sprint Duration:** February 22, 2026 - March 06, 2026 
+**Sprint Duration:** February 22, 2026 - March 06, 2026  
 **Project Name:** FreshRoute  
-**Sprint Goal:** Implement the core storefront experience with working frontend pages and basic backend integration using MongoDB.
+**Sprint Goal:** Develop and implement the core storefront experience, including product browsing, product details, recipes, and a working cart interface with basic backend integration.
 
 ---
 
-## Sprint Goal
+## Sprint Goals
 
-The goal of Sprint 1 is to establish the foundational structure of FreshRoute by implementing the main shopping interface and connecting it to a functional backend API.
+The primary objectives of Sprint 1 are:
 
-By the end of Sprint 1, users should be able to:
-
-- View products either retrieved from MongoDB or Sample Text
-- View product details
-- Browse recipes
-- View a working cart page with subtotal calculations
-
-This sprint focuses on frontend structure, API integration, and core UI components.
+1. Establish a fully navigable frontend structure using React and React Router.
+2. Integrate MongoDB with Express APIs for products and recipes.
+3. Implement a functional cart interface.
+4. Define reusable components and a clean modular architecture for future expansion.
 
 ---
 
 ## Participants
 
-| Role        | Name |
-|-------------|------|
-| FullStack   | Shoumik Ahmed |
-| Backend     | Moneba Hanifi |
-| Backend     | Judy El Ghargomi |
-| Backend     | Ekambir Momi |
-| Fullstack   | Abrar Jawad Tarafder |
+| Role       | Name |
+|------------|------|
+| Fullstack  | Shoumik Ahmed |
+| Backend    | Moneba Hanifi |
+| Backend    | Judy El Ghargomi |
+| Backend    | Ekambir Momi |
+| Fullstack  | Abrar Jawad Tarafder |
 
-
-All team members were present and participated in planning decisions.
+All team members were present and contributed to planning decisions.
 
 ---
 
 ## Team Capacity
 
-**Total Sprint Capacity: 100 hours (2 weeks)**
+**Total Hours Available: 100 hours**
 
 - Abrar Jawad Tarafder: 20 hours  
 - Shoumik Ahmed: 20 hours  
@@ -47,143 +41,119 @@ All team members were present and participated in planning decisions.
 - Judy El Ghargomi: 20 hours  
 - Ekambir Momi: 20 hours  
 
-Capacity was calculated based on availability during the two-week sprint period.
+Capacity was calculated based on individual availability during the two-week sprint window.
 
 ---
 
 # Sprint Scope
 
-## Selected User Stories for Sprint 1
-
-The following stories were selected from PB.md based on priority and feasibility within the sprint duration.
-
 ---
 
-## PB-01 — Browse Products (5 points)
+## Epic 1: Storefront & Product Browsing
 
-**User Story:**  
-As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.
+### User Stories
 
-### Tasks
-- Create Ethically Raised Products on MongoDB - Moneba Hanifi
-- Create Organic Products on MongoDB - Judy El Ghargomi
-- Build Organic page UI - Shoumik Ahmed
-- Build Ethically Raised page UI - Shoumik Ahmed
-- Build Landing page UI - Abrar Jawad Tarafder
-- Create Navbar component - Abrar Jawad Tarafder
-- Create System Design documentation - Moneba Hanifi, Ekambir Momi, Judy El Ghargomi
-
----
-
-## PB-04 — Product Details (3 points)
-
-**User Story:**  
-As a customer, I want to view product details so that I can make a purchase decision.
+- **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.  
+- **PB-04:** As a customer, I want to view product details so that I can make an informed purchase decision.
 
 ### Tasks
 
-- Create Product Details page - Abrar Jawad Tarafder
-- Display name, price, and description - Judy El Ghargomi
-- Create Navbar component - Abrar Jawad Tarafder
+- Create Organic products collection in MongoDB. (Judy)
+- Create Ethically Raised products collection in MongoDB. (Moneba)
+- Seed sample product data. (Backend Team)
+- Build Organic page UI. (Shoumik)
+- Build Ethically Raised page UI. (Abrar & Shoumik)
+- Build Landing page UI. (Abrar)
+- Create reusable Navbar component. (Abrar)
+- Implement Product Details page. (Abrar & Shoumik)
+- Display product name, price, and description dynamically. (Judy)
+- Prepare system design documentation and CRC cards. (Moneba, Judy, Ekambir)
+
+### Spikes Identified
+
+- Research best practices for Express route structure and Mongoose models.
+- Define reusable UI components (Navbar).
 
 ---
 
-## PB-06 — View Cart (5 points)
+## Epic 2: Cart & Recipes
 
-**User Story:**  
-As a customer, I want to view my cart so that I can review items before checkout.
+### User Stories
 
-### Tasks
-- Create Cart page UI - Ekambir Momi
-- Implement frontend cart state (React state/context) - Shoumik Ahmed
-- Display items and quantities - Moneba Hanifi
-
-
----
-
-## PB-19 — Browse Recipes (3 points)
-
-**User Story:**  
-As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
+- **PB-06:** As a customer, I want to view my cart so that I can review items before checkout.  
+- **PB-19:** As a customer, I want to browse available recipes so that I can plan meals easily.
 
 ### Tasks
-- Create Recipes on MongoDB - Ekambir Momi
-- Seed sample recipes - Moneba Hanifi
-- Build Recipes page UI - Shoumik Ahmed
-- Implement basic recipe details view - Judy El Ghargomi
+
+- Create Cart page UI. (Ekambir)
+- Implement frontend cart state (React Context or local state). (Shoumik)
+- Display cart items and quantities. (Moneba)
+- Create Recipes collection in MongoDB. (Ekambir)
+- Seed sample recipes. (Moneba)
+- Build Recipes page UI. (Abrar & Shoumik)
+- Implement basic recipe details view. (Judy)
+
+### Spikes Identified
+
+- Evaluate React Context vs local state for cart management.
+- Standardize frontend API data fetching approach.
+
 ---
 
 ## Total Story Points Planned
 
-- PB-01 (5)
-- PB-04 (3)
-- PB-06 (5)
-- PB-19 (3)
+- PB-01 (5 points)  
+- PB-04 (3 points)  
+- PB-06 (5 points)  
+- PB-19 (3 points)  
 
 **Total: 16 Story Points**
 
-This aligns with the team’s two-week sprint capacity.
-
----
-
-## Spikes Identified
-
-1. **API Integration Research**  
-   Investigate best practices for structuring Express routes and Mongoose models.
-
-2. **State Management Approach**  
-   Evaluate whether to use React Context or local state for managing cart state in Sprint 1.
-
-3. **Component Architecture Planning**  
-   Define reusable components (Navbar) to maintain clean structure.
-
-4. **Planning the tasks amongst team-members**  
-   Identifying which task is best suited for which individual and planning best workload practices. 
+This aligns with the team’s estimated sprint capacity.
 
 ---
 
 ## Architecture Decisions
 
-- MERN stack (MongoDB, Express, React, Node)
-- MVC-style backend architecture
+- MERN stack (MongoDB, Express, React, Node.js)
+- MVC-style backend structure
 - RESTful API endpoints
-- React Router for navigation
-- Modular component-based frontend design
+- React Router for client-side routing
+- Modular component-based frontend
+- Git feature branching workflow
 
 ---
 
-## Definition of Done for Sprint 1
-
-A story is considered complete when:
-
-- Code is pushed to a separate branch
-- Pull request is created
-- Code is reviewed and merged
-- Functionality works without major errors
-- Acceptance criteria are satisfied
-- Story is updated on Trello
-
----
-
-## Sprint 1 Deliverables
+## Acceptance Criteria
 
 By the end of Sprint 1:
 
-- Fully navigable frontend structure
-- Products either retrieved dynamically from MongoDB or the sample product shown
-- Recipes retrieved dynamically from MongoDB or the sample product shwown 
-- Cart page UI with quantities that can be updated
-- Clean UI layout
-- Proper Git branch discipline
-- Trello board fully tracked
-- CRC cards and architecture diagram prepared
-- Demo-ready working application
+- Users can navigate between Landing, Products, Recipes, and Cart pages.
+- Products are displayed from MongoDB or seeded sample data.
+- Product Details page dynamically displays name, price, and description.
+- Recipes are retrieved and displayed from MongoDB.
+- Cart page displays items with adjustable quantities.
+- All completed stories meet Definition of Done.
+
+---
+
+## Definition of Done
+
+A story is complete when:
+
+- Code is implemented in a separate feature branch.
+- Pull request is created and reviewed.
+- Changes are merged into the main branch.
+- Functionality works without major errors.
+- Acceptance criteria are satisfied.
+- Trello board is updated accordingly.
 
 ---
 
 ## Decisions Made During Planning
 
-- Only four core stories selected to maintain realistic sprint scope.
-- Checkout, proper routing, order placement, and delivery logic deferred to Sprint 2.
-- Persistent cart functionality deferred to a future sprint.
-- Focus on stability and clean architecture over feature quantity.
+- Only four core user stories selected to ensure realistic scope.
+- Checkout flow, order placement, and delivery tracking deferred to Sprint 2.
+- Persistent cart storage deferred to a future sprint.
+- Emphasis placed on clean architecture and stability over feature expansion.
+- Demo-ready build required at sprint end.
