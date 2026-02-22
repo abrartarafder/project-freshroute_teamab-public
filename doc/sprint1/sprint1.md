@@ -39,7 +39,7 @@ All team members were present and participated in planning decisions.
 
 ## Team Capacity
 
-**Total Sprint Capacity: 80 hours (2 weeks)**
+**Total Sprint Capacity: 100 hours (2 weeks)**
 
 - Abrar Jawad Tarafder: 20 hours  
 - Shoumik Ahmed: 20 hours  
@@ -65,13 +65,12 @@ The following stories were selected from PB.md based on priority and feasibility
 As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.
 
 ### Tasks
-- Create Ethically Raised Products on MongoDB — Moneba Hanifi
-- Create Recipes on MongoDB - Ekambir Momi
-- Create Organic Products on MongoDB — Judy El Ghargomi
-- Build Organic page UI — Shoumik Ahmed
-- Build Ethically Raised page UI — Shoumik Ahmed
+- Create Ethically Raised Products on MongoDB - Moneba Hanifi
+- Create Organic Products on MongoDB - Judy El Ghargomi
+- Build Organic page UI - Shoumik Ahmed
+- Build Ethically Raised page UI - Shoumik Ahmed
 - Build Landing page UI - Abrar Jawad Tarafder
-- Create Navbar component — Abrar Jawad Tarafder
+- Create Navbar component - Abrar Jawad Tarafder
 - Create System Design documentation - Moneba Hanifi, Ekambir Momi, Judy El Ghargomi
 
 ---
@@ -83,10 +82,9 @@ As a customer, I want to view product details so that I can make a purchase deci
 
 ### Tasks
 
-- Create Product Details page
-- Configure dynamic routing (React Router)
-- Display name, price, and description
-- Add navigation back to product listing
+- Create Product Details page - Abrar Jawad Tarafder
+- Display name, price, and description - Judy El Ghargomi
+- Create Navbar component - Abrar Jawad Tarafder
 
 ---
 
@@ -96,10 +94,10 @@ As a customer, I want to view product details so that I can make a purchase deci
 As a customer, I want to view my cart so that I can review items before checkout.
 
 ### Tasks
-- Create Cart page UI
-- Implement frontend cart state (React state/context)
-- Display items and quantities
-- Allow quantity updates
+- Create Cart page UI - Ekambir Momi
+- Implement frontend cart state (React state/context) - Shoumik Ahmed
+- Display items and quantities - Moneba Hanifi
+
 
 ---
 
@@ -109,13 +107,10 @@ As a customer, I want to view my cart so that I can review items before checkout
 As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
 
 ### Tasks
-- Create Recipe model (Backend)
-- Seed sample recipes
-- Build Recipes page UI
-- Create reusable `RecipeCard` component
-- Fetch recipes from backend
-- Implement basic recipe details view
-
+- Create Recipes on MongoDB - Ekambir Momi
+- Seed sample recipes - Moneba Hanifi
+- Build Recipes page UI - Shoumik Ahmed
+- Implement basic recipe details view - Judy El Ghargomi
 ---
 
 ## Total Story Points Planned
