@@ -1,0 +1,96 @@
+====================================================
+FRESHROUTE — BACKEND DOCUMENTATION
+Sprint 1
+Course: EECS 3311
+Team: FreshRoute (Team AB)
+Date: February 22 – March 06, 2026
+Team Members:
+- Abrar Jawad Tarafder
+- Shoumik Ahmed
+- Moneba Hanifi
+- Judy El Ghargomi
+- Ekambir Momi
+====================================================
+
+1. Overview
+----------------------------------------------------
+The backend of FreshRoute is built using:
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+The backend follows an MVC-style architecture.
+
+----------------------------------------------------
+2. Folder Structure
+----------------------------------------------------
+backend/
+ ├── models/
+ │     ├── Product.js
+ │     ├── Recipe.js
+ │
+ ├── controllers/
+ │     ├── ProductController.js
+ │     ├── RecipeController.js
+ │
+ ├── routes/
+ │     ├── productRoutes.js
+ │     ├── recipeRoutes.js
+ │
+ ├── server.js
+ └── config/
+
+----------------------------------------------------
+3. Architecture (MVC)
+----------------------------------------------------
+Model:
+- Product Model
+- Recipe Model
+
+Controller:
+- Handles incoming requests
+- Calls appropriate model functions
+- Sends JSON response
+
+Routes:
+- Defines API endpoints
+- Connects endpoints to controllers
+
+Database:
+- MongoDB Atlas (or local MongoDB)
+
+----------------------------------------------------
+4. API Endpoints
+----------------------------------------------------
+Products:
+GET /api/products
+GET /api/products/:id
+
+Recipes:
+GET /api/recipes
+GET /api/recipes/:id
+
+----------------------------------------------------
+5. Database Models
+----------------------------------------------------
+Product Model Fields:
+- name
+- price
+- description
+- category (organic / ethically-raised)
+- image
+
+Recipe Model Fields:
+- title
+- ingredients
+- instructions
+- image
+
+----------------------------------------------------
+6. Design Decisions
+----------------------------------------------------
+- RESTful API design
+- Clear separation between routes, controllers, and models
+- Modular file organization
+- JSON-based responses for frontend integration

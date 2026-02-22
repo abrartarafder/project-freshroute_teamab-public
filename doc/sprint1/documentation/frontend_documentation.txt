@@ -1,0 +1,106 @@
+====================================================
+FRESHROUTE — FRONTEND DOCUMENTATION
+Sprint 1
+Course: EECS 3311
+Team: FreshRoute (Team AB)
+Date: February 22 – March 06, 2026
+Team Members:
+- Abrar Jawad Tarafder
+- Shoumik Ahmed
+- Moneba Hanifi
+- Judy El Ghargomi
+- Ekambir Momi
+====================================================
+
+1. Overview
+----------------------------------------------------
+The frontend of FreshRoute is built using React.
+It provides the user interface for browsing products,
+viewing product details, browsing recipes, and viewing the cart.
+
+Technologies Used:
+- React
+- React Router
+- JavaScript (ES6+)
+- CSS
+- Axios (for API requests)
+
+----------------------------------------------------
+2. Folder Structure
+----------------------------------------------------
+src/
+ ├── components/
+ │     ├── Navbar.jsx
+ │     ├── ProductCard.jsx
+ │
+ ├── pages/
+ │     ├── LandingPage.jsx
+ │     ├── OrganicPage.jsx
+ │     ├── EthicallyRaisedPage.jsx
+ │     ├── ProductDetails.jsx
+ │     ├── RecipesPage.jsx
+ │     ├── CartPage.jsx
+ │
+ ├── context/
+ │     ├── CartContext.jsx
+ │
+ ├── App.jsx
+ └── main.jsx
+
+----------------------------------------------------
+3. Routing Structure
+----------------------------------------------------
+/              → Landing Page
+/organic       → Organic Products Page
+/ethical       → Ethically Raised Products Page
+/products/:id  → Product Details Page
+/recipes       → Recipes Page
+/cart          → Cart Page
+
+----------------------------------------------------
+4. Key Components
+----------------------------------------------------
+Navbar:
+- Provides navigation across all pages.
+- Reusable component included on every page.
+
+ProductCard:
+- Displays product name, image, and price.
+- Used in product listing pages.
+
+CartPage:
+- Displays selected items.
+- Allows quantity updates.
+- Shows subtotal calculation.
+
+----------------------------------------------------
+5. State Management
+----------------------------------------------------
+Cart state is managed using:
+- React Context (CartContext)
+
+Responsibilities:
+- Store cart items
+- Add/remove items
+- Update quantity
+- Calculate subtotal
+
+----------------------------------------------------
+6. API Communication
+----------------------------------------------------
+Frontend communicates with backend using:
+- Axios
+- RESTful API endpoints
+
+Example:
+GET /api/products
+GET /api/products/:id
+GET /api/recipes
+
+----------------------------------------------------
+7. Design Decisions
+----------------------------------------------------
+- Component-based modular design
+- Reusable UI elements
+- Separation of concerns between pages and components
+- Clean routing structure

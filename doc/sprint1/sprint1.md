@@ -134,6 +134,8 @@ By the end of Sprint 1:
 - Recipes are retrieved and displayed from MongoDB.
 - Cart page displays items with adjustable quantities.
 - All completed stories meet Definition of Done.
+- Frontend and Backend Documentation Template is complete. 
+- System Design Documentation is complete. 
 
 ---
 
