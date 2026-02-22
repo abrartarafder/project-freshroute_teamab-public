@@ -26,11 +26,11 @@ This sprint focuses on frontend structure, API integration, and core UI componen
 
 | Role        | Name |
 |-------------|------|
-| FullStack   | [Shoumik Ahmed] |
-| Backend     | [Moneba Hanifi] |
-| Backend     | [Judy El Ghargomi] |
-| Backend     | [Ekambir Momi] |
-| Fullstack   | [Abrar Jawad Tarafder] |
+| FullStack   | Shoumik Ahmed |
+| Backend     | Moneba Hanifi |
+| Backend     | Judy El Ghargomi |
+| Backend     | Ekambir Momi |
+| Fullstack   | Abrar Jawad Tarafder |
 
 
 All team members were present and participated in planning decisions.
