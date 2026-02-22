@@ -13,7 +13,7 @@ The goal of Sprint 1 is to establish the foundational structure of FreshRoute by
 
 By the end of Sprint 1, users should be able to:
 
-- View products either retrieved from MongoDB or Sample Text for now
+- View products either retrieved from MongoDB or Sample Text
 - View product details
 - Browse recipes
 - View a working cart page with subtotal calculations
