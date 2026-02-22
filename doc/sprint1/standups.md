@@ -1,4 +1,4 @@
-[2026-02-23] - Sprint 1 Standup #1
+[2026-02-22] - Sprint 1 Standup #1
 1. What did you work on since the last standup?
 
 2. What do you commit to next?
