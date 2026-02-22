@@ -65,11 +65,14 @@ The following stories were selected from PB.md based on priority and feasibility
 As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.
 
 ### Tasks
-- Create Product model (Backend)
-- Seed sample products in MongoDB
-- Build Organic page UI
-- Build Ethically Raised page UI
-- Create `ProductCard` component UI
+- Create Ethically Raised Products on MongoDB — Moneba Hanifi
+- Create Recipes on MongoDB - Ekambir Momi
+- Create Organic Products on MongoDB — Judy El Ghargomi
+- Build Organic page UI — Shoumik Ahmed
+- Build Ethically Raised page UI — Shoumik Ahmed
+- Build Landing page UI - Abrar Jawad Tarafder
+- Create Navbar component — Abrar Jawad Tarafder
+- Create System Design documentation - Moneba Hanifi, Ekambir Momi, Judy El Ghargomi
 
 ---
 
