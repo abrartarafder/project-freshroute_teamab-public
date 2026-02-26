@@ -9,6 +9,7 @@ export default function AppNavbar({
   userName = "John",
   activeKey = "home",
   onSearch = () => {},
+  cartCount = 0,
 }) {
   return (
     <Navbar expand="lg" className="fr-navbar" variant="dark">
@@ -62,12 +63,17 @@ export default function AppNavbar({
             </Nav.Link>
 
             <Nav.Link href="/cart" eventKey="cart" className="fr-cart">
-              <FaShoppingCart size={22} />
+              <div className="fr-cart-wrap">
+                <FaShoppingCart size={22} />
+                {cartCount > 0 && (
+                  <span className="fr-cart-badge">{cartCount}</span>
+                )}
+              </div>
             </Nav.Link>
-
-            <div className="fr-welcome">Welcome {userName}!</div>
           </Nav>
         </Navbar.Collapse>
+
+        <div className="fr-welcome ms-3">Welcome {userName}!</div>
       </Container>
     </Navbar>
   );
