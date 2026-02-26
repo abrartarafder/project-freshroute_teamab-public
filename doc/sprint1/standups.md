@@ -15,7 +15,7 @@ No blockers yet.
 
 ---
 
-[2026-02-26] - Sprint 1 Standup #2
+[2026-02-27] - Sprint 1 Standup #2
 1. What did you work on since the last standup?
 
 2. What do you commit to next?
