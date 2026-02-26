@@ -57,7 +57,7 @@ The project demonstrates user-centered design and structured software architectu
 - Node.js + npm
 - MongoDB (Local Community Server)
 
-> **Note:** Express, Mongoose, CORS, dotenv, nodemon, React, and Vite are installed automatically when you run `npm install` inside the project folders (they are listed in `package.json`).
+> **Note:** Express, Mongoose, CORS, dotenv, nodemon, React, and Vite are installed automatically when you run `npm install` inside the project folders (they are listed in `package.json`). Bootstrap will need to be installed. 
 
 ---
 
@@ -83,7 +83,13 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
 
 ### 5) Install frontend dependencies
 - Go to the frontend folder: `cd ../frontend`  
-- Install packages: `npm install`
+- Install packages:  
+  ```bash
+  npm install
+  npm install bootstrap react-bootstrap
+
+- Ensure Bootstrap CSS is imported in `frontend/src/main.jsx:`
+-  `import "bootstrap/dist/css/bootstrap.min.css";`
 
 ### 6) Start the backend
 - Go to the backend folder: `cd ../backend`  
