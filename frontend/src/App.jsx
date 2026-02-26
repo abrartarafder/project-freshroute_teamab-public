@@ -1,5 +1,19 @@
-import Products from "./pages/Products";
+import Landing from "./pages/Landing";
+import Organic from "./pages/Organic";
+import EthicallyRaised from "./pages/EthicallyRaised";
+import Recipes from "./pages/Recipes";
+import Cart from "./pages/Cart";
+
+const routes = [
+  { path: /^\/organic/, component: Organic },
+  { path: /^\/ethically-raised/, component: EthicallyRaised },
+  { path: /^\/recipes/, component: Recipes },
+  { path: /^\/cart/, component: Cart },
+];
 
 export default function App() {
-  return <Products />;
+  const pathname = window.location.pathname;
+  const match = routes.find((r) => r.path.test(pathname));
+  const Page = match ? match.component : Landing;
+  return <Page />;
 }
