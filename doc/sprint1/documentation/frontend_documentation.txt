@@ -1,8 +1,8 @@
 ====================================================
-FRESHROUTE — FRONTEND DOCUMENTATION (Sprint 1)
+FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 1)
 Course: EECS 3311
 Team: FreshRoute (Team AB)
-Date: February 22 – March 06, 2026
+Date: February 22 - March 06, 2026
 Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
 ====================================================
 
@@ -50,15 +50,15 @@ frontend/
 
 5. KEY COMPONENTS
 ----------------------------------------------------
-- navbar.jsx: responsive nav with search, cart badge; props userName, activeKey, onSearch, cartCount.
-- Landing.jsx: hero, CTA to /organic, benefits list with imagery.
-- Recipes.jsx: styled layout ready for recipe cards (static this sprint).
-- Organic/EthicallyRaised/Cart: skeleton pages reusing navbar/footer.
+- navbar.jsx: responsive nav with search functionality
+- Landing.jsx: hero, links to organic page, benefits list with imagery.
+- Recipes.jsx: styled layout ready for recipe cards and reusing navbar/footer.
+- Organic/EthicallyRaised/Cart: list of products pages and reusing navbar/footer.
 
 6. STYLING
 ----------------------------------------------------
 - Bootstrap grid for layout; custom CSS in page/component files.
-- Color accents: navy base, gold/green highlights; assets in src/assets/landing/.
+- Colour accents: variations of green, black, white, gold/green highlights; assets in src/assets/landing/.
 
 7. STATE & DATA FLOW
 ----------------------------------------------------
@@ -71,9 +71,4 @@ frontend/
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
 - ESLint + React plugins for linting.
 
-9. KNOWN GAPS / NEXT STEPS
-----------------------------------------------------
-- Swap custom pathname switch for React Router with 404 handling.
-- Wire category, recipe, and cart pages to backend data.
-- Add cart state (Context or state library) with persistence.
-- Add loading/error states around fetches.
+
