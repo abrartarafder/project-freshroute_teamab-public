@@ -1,106 +1,79 @@
 ====================================================
-FRESHROUTE — FRONTEND DOCUMENTATION
-Sprint 1
+FRESHROUTE — FRONTEND DOCUMENTATION (Sprint 1)
 Course: EECS 3311
 Team: FreshRoute (Team AB)
 Date: February 22 – March 06, 2026
-Team Members:
-- Abrar Jawad Tarafder
-- Shoumik Ahmed
-- Moneba Hanifi
-- Judy El Ghargomi
-- Ekambir Momi
+Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
 ====================================================
 
-1. Overview
+1. OVERVIEW
 ----------------------------------------------------
-The frontend of FreshRoute is built using React.
-It provides the user interface for browsing products,
-viewing product details, browsing recipes, and viewing the cart.
+- React 19 + Vite frontend for browsing categories, recipes, and cart flows.
+- Styling: Bootstrap 5 + custom CSS; icons via react-icons.
 
-Technologies Used:
-- React
-- React Router
-- JavaScript (ES6+)
-- CSS
-- Axios (for API requests)
+2. HOW TO RUN
+----------------------------------------------------
+- cd frontend && npm install
+- Dev server: npm run dev (http://localhost:5173/)
+- Build: npm run build (outputs to dist/)
+- Preview build: npm run preview
+- Lint: npm run lint
 
+3. FOLDER STRUCTURE
 ----------------------------------------------------
-2. Folder Structure
-----------------------------------------------------
-src/
- ├── components/
- │     ├── Navbar.jsx
- │     ├── ProductCard.jsx
- │
- ├── pages/
- │     ├── LandingPage.jsx
- │     ├── OrganicPage.jsx
- │     ├── EthicallyRaisedPage.jsx
- │     ├── ProductDetails.jsx
- │     ├── RecipesPage.jsx
- │     ├── CartPage.jsx
- │
- ├── context/
- │     ├── CartContext.jsx
- │
- ├── App.jsx
- └── main.jsx
+frontend/
+ ├── src/
+ │    ├── App.jsx (pathname-based router)
+ │    ├── main.jsx (entry point)
+ │    ├── index.css (global styles)
+ │    ├── assets/ (logos, hero images)
+ │    ├── components/
+ │    │    └── navbar.jsx (react-bootstrap nav)
+ │    └── pages/
+ │         ├── Landing.jsx + Landing.css (hero + value props)
+ │         ├── Organic.jsx (category stub)
+ │         ├── EthicallyRaised.jsx (category stub)
+ │         ├── Recipes.jsx + Recipes.css (recipes UI)
+ │         └── Cart.jsx (cart stub)
+ ├── public/
+ ├── index.html
+ └── vite.config.js
 
+4. ROUTING (CLIENT-SIDE)
 ----------------------------------------------------
-3. Routing Structure
-----------------------------------------------------
-/              → Landing Page
-/organic       → Organic Products Page
-/ethical       → Ethically Raised Products Page
-/products/:id  → Product Details Page
-/recipes       → Recipes Page
-/cart          → Cart Page
+- /                   → Landing page
+- /organic            → Organic category
+- /ethically-raised   → Ethically raised category
+- /recipes            → Recipes page
+- /cart               → Cart page
+- Unknown paths fall back to Landing
 
+5. KEY COMPONENTS
 ----------------------------------------------------
-4. Key Components
-----------------------------------------------------
-Navbar:
-- Provides navigation across all pages.
-- Reusable component included on every page.
+- navbar.jsx: responsive nav with search, cart badge; props userName, activeKey, onSearch, cartCount.
+- Landing.jsx: hero, CTA to /organic, benefits list with imagery.
+- Recipes.jsx: styled layout ready for recipe cards (static this sprint).
+- Organic/EthicallyRaised/Cart: skeleton pages reusing navbar/footer.
 
-ProductCard:
-- Displays product name, image, and price.
-- Used in product listing pages.
-
-CartPage:
-- Displays selected items.
-- Allows quantity updates.
-- Shows subtotal calculation.
-
+6. STYLING
 ----------------------------------------------------
-5. State Management
-----------------------------------------------------
-Cart state is managed using:
-- React Context (CartContext)
+- Bootstrap grid for layout; custom CSS in page/component files.
+- Color accents: navy base, gold/green highlights; assets in src/assets/landing/.
 
-Responsibilities:
-- Store cart items
-- Add/remove items
-- Update quantity
-- Calculate subtotal
+7. STATE & DATA FLOW
+----------------------------------------------------
+- No global state manager yet; props pass cart count/username placeholders.
+- Search box calls onSearch (console.log in Landing).
+- API wiring planned for Sprint 2 (products, recipes, cart).
 
+8. EXTERNAL LIBRARIES
 ----------------------------------------------------
-6. API Communication
-----------------------------------------------------
-Frontend communicates with backend using:
-- Axios
-- RESTful API endpoints
+- react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
+- ESLint + React plugins for linting.
 
-Example:
-GET /api/products
-GET /api/products/:id
-GET /api/recipes
-
+9. KNOWN GAPS / NEXT STEPS
 ----------------------------------------------------
-7. Design Decisions
-----------------------------------------------------
-- Component-based modular design
-- Reusable UI elements
-- Separation of concerns between pages and components
-- Clean routing structure
+- Swap custom pathname switch for React Router with 404 handling.
+- Wire category, recipe, and cart pages to backend data.
+- Add cart state (Context or state library) with persistence.
+- Add loading/error states around fetches.
