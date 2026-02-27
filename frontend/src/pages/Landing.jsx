@@ -3,8 +3,8 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AppNavbar from "../components/navbar.jsx";
 import "./Landing.css";
-import basketImg from "../assets/baskets.png";
-import truckImg from "../assets/truck.png";
+import basketImg from "../assets/landing/baskets.png";
+import truckImg from "../assets/landing/truck.png";
 import logo from "../assets/logo_clear.png";
 
 export default function LandingPage() {
