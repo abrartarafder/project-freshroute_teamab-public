@@ -71,4 +71,4 @@ frontend/
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
 - ESLint + React plugins for linting.
 
-
+We will keep adding to the documentation as the project progresses. 
