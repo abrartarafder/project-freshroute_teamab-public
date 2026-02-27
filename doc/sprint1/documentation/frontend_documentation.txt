@@ -5,7 +5,6 @@ Team: FreshRoute (Team AB)
 Date: February 22 - March 06, 2026
 Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
 ====================================================
-
 1. OVERVIEW
 ----------------------------------------------------
 - React 19 + Vite frontend for browsing categories, recipes, and cart flows.
