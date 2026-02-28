@@ -45,23 +45,19 @@ The scope focuses on presenting trustworthy product information and fast discove
         <ul>
             <li>PB-01: Browse Products</li>
         </ul>
-
         <li>Feature 1.2: Product Search & Filtering</li>
         <ul>
             <li>PB-02: Search Products</li>
         </ul>
-
         <li>Feature 1.3: Product Details View</li>
         <ul>
             <li>PB-04: Product Details (Organic/Ethically Raised)</li>
         </ul>
-
         <li>Feature 1.4: Product Badges & Availability</li>
         <ul>
             <li>PB-17: Product Badges (Organic / Ethical Labels)</li>
             <li>PB-18: Display Product Availability</li>
         </ul>
-
         <li>Feature 1.5: Recipe Browsing</li>
         <ul>
             <li>PB-19: Browse Recipes</li>
