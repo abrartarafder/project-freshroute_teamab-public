@@ -1,4 +1,4 @@
-=# Sprint 1 - Trello Backlog  
+# Sprint 1 - Trello Backlog  
 Project: FreshRoute  
 Sprint: 01  
 
