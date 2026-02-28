@@ -19,7 +19,7 @@ As a customer, I want to browse a list of organic or ethically produced products
 ### Acceptance Criteria  
 - A product list page loads without errors.  
 - Each product shows at least name + price.  
-- If there are no products, the UI shows a clear “no products available” message.  
+- If in the exceptional case that there are no products, the UI shows a clear “no products available” message.  
 
 ### Tasks  
 
