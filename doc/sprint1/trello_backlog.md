@@ -1,4 +1,4 @@
-# Sprint 1 - Trello Backlog  
+=# Sprint 1 - Trello Backlog  
 Project: FreshRoute  
 Sprint: 01  
 
@@ -12,6 +12,9 @@ Sprint: 01
 **Ticket #:** 13  
 **Story Points:** 5  
 **Assignees:** Shoumik, Ekam, Judy  
+
+### User Story  
+As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.
 
 ### Acceptance Criteria  
 - A product list page loads without errors.  
@@ -41,6 +44,9 @@ Sprint: 01
 **Story Points:** 5  
 **Assignees:** Abrar, Moneba, Judy  
 
+### User Story  
+As a customer, I want to search for products by keyword so that I can find items quickly.
+
 ### Acceptance Criteria  
 - Typing a keyword filters the product list.  
 - Clearing the keyword restores the full list.  
@@ -65,6 +71,9 @@ Sprint: 01
 **Ticket #:** 16  
 **Story Points:** 5  
 **Assignees:** Shoumik, Ekam, Judy  
+
+### User Story  
+As a customer, I want to view product details so that I can make a purchase decision.
 
 ### Acceptance Criteria  
 - Clicking a product opens a details view/page.  
@@ -94,6 +103,9 @@ Sprint: 01
 **Story Points:** 5  
 **Assignees:** Abrar, Moneba  
 
+### User Story  
+As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
+
 ### Acceptance Criteria  
 - A dedicated Recipes page displays a list of available recipes.  
 - Each recipe shows at least a name and short description.  
@@ -121,6 +133,9 @@ Sprint: 01
 **Ticket #:** 39  
 **Story Points:** 4  
 **Assignees:** Abrar, Shoumik, Ekam, Judy, Moneba  
+
+### User Story  
+As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
 
 ### Acceptance Criteria  
 - Each product displays an “In Stock” or “Out of Stock” label.  
@@ -150,6 +165,9 @@ Branches:
 **Ticket #:** 22  
 **Story Points:** 3  
 **Assignees:** Abrar, Shoumik, Moneba, Judy, Ekam  
+
+### User Story  
+As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.
 
 ### Acceptance Criteria  
 - Product cards display badges such as “Organic”, “Non-GMO”, and “Ethically Raised” when applicable.  
