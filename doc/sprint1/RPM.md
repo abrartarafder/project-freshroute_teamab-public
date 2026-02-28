@@ -137,6 +137,6 @@ A release is considered complete when:
 - Core storefront pages load without errors, and key flows (browse → search/filter → view details → recipe browse) are manually verified.  
 - Availability, badges (Organic/Ethical), pricing, and empty/error states render clearly on every supported view.  
 - Validation and error handling prevent crashes on failed/empty API responses; meaningful messages are shown.  
-- Backend APIs needed for the storefront are integrated and stable; no critical blocking bugs remain.  
-- Code quality matches team conventions (naming, no debug code); work is merged to the main branch after review.  
+- Backend APIs needed for the storefront are integrated and stable, no critical blocking bugs remain.  
+- Work is merged to the main branch after review.  
 - Documentation and trackers are updated (Trello card, acceptance criteria, and sprint artifacts).  
