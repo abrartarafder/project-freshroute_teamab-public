@@ -21,6 +21,7 @@ Sprint: 01
 **Frontend**
 - Shoumik to build the organic + ethically raised page  
   - Branch: `features/organic-ethical`
+  **Priority:** <span style="color:red">High</span>
 
 **Backend**
 - Ekam to review the organic page and add the product structure to the backend  
