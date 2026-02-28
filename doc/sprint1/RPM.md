@@ -70,10 +70,13 @@ The scope focuses on presenting trustworthy product information and fast discove
 <ul>
     <li><strong>Epic 2: Cart & Session Management (Planned for Future Sprint)</strong></li>
     <ul>
+        <li>PB-03: Filter/Sort Products</li>
         <li>PB-05: Add Item to Cart</li>
         <li>PB-06: View Cart</li>
         <li>PB-07: Update/Remove Cart Items</li>
+        <li>PB-08: Add Recipe Ingredients to Cart</li>
         <li>PB-09: Persistent Cart</li>
+        <li>PB-10: Enter Delivery Address on Checkout</li>
     </ul>
 </ul>
 
@@ -82,7 +85,13 @@ The scope focuses on presenting trustworthy product information and fast discove
 <ul>
     <li><strong>Epic 3: Checkout & Order Processing (Planned for Future Sprint)</strong></li>
     <ul>
-        <li>PB-10 – PB-16: Checkout, Order Confirmation, Tracking, Cancellation</li>
+        <li>PB-14: View Order Details by Order Id</li>
+        </li>PB-15: Track Order Status</li>
+        <li>PB-16: Cancel Order</li>
+        <li>PB-11: Select Delivery Time Slot </li>
+        <li>PB-12: Place Order </li>
+        <li>PB-13: Order Confirmation </li>
+        <li>PB-20: User-friendly Error Handling</li>
     </ul>
 </ul>
 
