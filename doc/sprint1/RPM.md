@@ -20,7 +20,7 @@ All meetings were either held over Discord or in person, and every team member w
 
 ## Release Goal  
 
-Deliver the Core Storefront Experience that reflects FreshRoute's promise of fresh, organic, and ethically sourced groceries. Users must be able to quickly find trusted products, understand pricing and badges at a glance, and browse recipes that align with their values and needs. This sprint lays the foundation for the later cart and checkout work by proving we can present inventory clearly and reliably.
+Deliver the Core Storefront Experience that reflects FreshRoute's promise of fresh, organic, and ethically sourced groceries. Users must be able to quickly find trusted products, understand pricing and badges at a glance, and browse recipes that align with their values and needs. This sprint lays the foundation for the later cart page and checkout work by proving we can present inventory clearly and reliably.
 
 ### Guiding Goals (from README + Sprint0 summary)
 - Keep the experience simple and transparent: clear pricing, availability, and badge visibility for every item.
