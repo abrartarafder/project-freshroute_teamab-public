@@ -120,7 +120,7 @@ All team members participated in release planning and scope definition.
 ## Estimated Timeline  
 
 - **Sprint 1 (Feb 22 - Mar 06, 2026)**  
-  Focus on Epic 1 – Core Storefront Experience  
+  Focus on Epic 1 - Core Storefront Experience  
 
 - **Sprint 2 (Mar 06 - Mar 23, 2026)**  
   Focus on Cart functionality and session persistence  
