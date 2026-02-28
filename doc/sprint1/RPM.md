@@ -7,9 +7,9 @@
 
 ## Meetings for this Release  
 
-The [standups.md](standups.md) have more details about each meeting for this specific Sprint 01. 
+The [standups.md](standups.md) file has more details about each meeting in Sprint 01. 
 
-All meetings were either conducted over Discord or they were done in person and every single of the team members were present in each meeting. 
+All meetings were either held over Discord or in person, and every team member was present at each meeting. 
 
 - February 22, 2026  
 - February 27, 2026  
@@ -25,7 +25,7 @@ Deliver the Core Storefront Experience that reflects FreshRoute's promise of fre
 ### Guiding Goals (from README + Sprint0 summary)
 - Keep the experience simple and transparent: clear pricing, availability, and badge visibility for every item.
 - Serve the primary Health-Conscious shopper and the secondary Busy Professional with fast search/filter and concise product detail pages.
-- Emphasize organic/ethical scope only—no unrelated products.
+- Emphasize organic/ethical scope only and no unrelated products.
 - Support recipe-based discovery as a first-class browsing path.
 - Show reliable empty/edge states so users never face dead ends.
 - Maintain clarity on cost before purchase to respect budget-aware users.
@@ -96,8 +96,8 @@ The scope focuses on presenting trustworthy product information and fast discove
 
 For full user story details and acceptance criteria, refer to:
 
-- `doc/sprint0/PB.md`
-- `doc/sprint1/sprint1.md`
+- `doc/sprint0/PB.md.`
+- `doc/sprint1/sprint1.md.`
 - `doc/sprint1/trello_backlog.md`
 - Trello Board (Sprint 1)
 
@@ -134,9 +134,9 @@ All team members participated in release planning and scope definition.
 
 A release is considered complete when:
 
-- Core storefront pages load without errors and key flows (browse → search/filter → view details → recipe browse) are manually verified.  
+- Core storefront pages load without errors, and key flows (browse → search/filter → view details → recipe browse) are manually verified.  
 - Availability, badges (Organic/Ethical), pricing, and empty/error states render clearly on every supported view.  
 - Validation and error handling prevent crashes on failed/empty API responses; meaningful messages are shown.  
-- Backend APIs needed for storefront are integrated and stable; no critical blocking bugs remain.  
+- Backend APIs needed for the storefront are integrated and stable; no critical blocking bugs remain.  
 - Code quality matches team conventions (naming, no debug code); work is merged to the main branch after review.  
 - Documentation and trackers are updated (Trello card, acceptance criteria, and sprint artifacts).  
