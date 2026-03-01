@@ -47,8 +47,10 @@ The project demonstrates user-centered design and structured software architectu
 - **Use the provided package.json files**  
   Install dependencies from the checked-in `package.json` in each app (`frontend/package.json` and `backend/package.json`). Avoid replacing them with default scaffolds so scripts and pinned versions stay consistent (we did this to ensure it ran smoothly on both windows and mac).
 
-[frontend/package.json](frontend/package.json)
-[backend/package.json](backend/package.json)
+- [frontend/package.json](frontend/package.json)
+
+
+- [backend/package.json](backend/package.json)
 
 **Recommended tools (optional but helpful):**
 - VS Code (or any IDE)
