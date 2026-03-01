@@ -44,6 +44,8 @@ The project demonstrates user-centered design and structured software architectu
 - **Install Node.js (LTS recommended, Node 18+ is safe) + npm** (needed to install and run both frontend + backend).
 - **Install MongoDB (Local)**  
   This project uses a local MongoDB database by default (see `.env`), so make sure **MongoDB Community Server** is installed and the MongoDB service is running.
+- **Use the provided package.json files**  
+  Install dependencies from the checked-in `package.json` in each app (`frontend/package.json` and `backend/package.json`). Avoid replacing them with default scaffolds so scripts and pinned versions stay consistent (we did this to ensure it ran smoothly on both windows and mac).
 
 **Recommended tools (optional but helpful):**
 - VS Code (or any IDE)
