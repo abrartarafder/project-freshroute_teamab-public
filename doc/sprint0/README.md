@@ -253,9 +253,6 @@ Branches follow a consistent and descriptive naming convention which follows the
 - `bugfix/<issue-name>`  
   Example: `bugfix/cart-total-error`
 
-- `docs/<update-name>`  
-  Example: `docs/readme-update`
-
 - `refactor/<module-name>`  
   Example: `refactor/checkout-logic`
 
