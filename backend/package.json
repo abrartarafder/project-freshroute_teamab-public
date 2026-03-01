@@ -1,11 +1,12 @@
 {
   "name": "backend",
+  "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
+  "main": "src/server.js",
   "scripts": {
-    "dev": "node --watch src/server.js",
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js src/server.js",
     "start": "node src/server.js"
   },
   "keywords": [],
