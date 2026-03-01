@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Apple",
+    "price": 2.50,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Avocado",
+    "price": 1.99,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Banana",
+    "price": 3.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Bell Pepper",
+    "price": 1.00,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Broccoli",
+    "price": 3.50,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Carrots",
+    "price": 4.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Celery",
+    "price": 3.00,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Cherry",
+    "price": 4.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Cucumber",
+    "price": 1.50,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Green Grapes",
+    "price": 2.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Mango",
+    "price": 4.40,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Orange",
+    "price": 2.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Onion",
+    "price": 3.00,
+    "priceUnit": "bag",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Potato",
+    "price": 4.99,
+    "priceUnit": "bag",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  }
+]
