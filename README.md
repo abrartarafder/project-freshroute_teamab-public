@@ -222,13 +222,24 @@ Each Trello card corresponds to a user story in `PB.md` + other assigned tasks.
 
 ### Commit Conventions
 
-Commits will follow a clear naming structure:
+Commits will follow a clear naming structure as shown below in 2 different ways (both are acceptable):
 
-- `feat: add product filtering`
-- `fix: correct cart total calculation`
-- `docs: update README`
-- `refactor: improve checkout logic`
-- `sprint0: updated`
+(Note: We started ticket numbers from Trello around Feb 26th so any commits before that might not have the ticket numbers.)
+
+- `Ticket #: feat - add product filtering`
+- `Ticket #: fix - correct cart total calculation`
+- `Ticket #: docs - update README`
+- `Ticket #: refactor - improve checkout logic`
+- `Ticket #: sprint0 - updated`
+
+or 
+
+- `Ticket #: add product filtering`
+- `Ticket #: correct cart total calculation`
+- `Ticket #: update README`
+- `Ticket #: improve checkout logic`
+- `Ticket #: updated sprint0`
+
 
 ---
 
