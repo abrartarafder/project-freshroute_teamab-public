@@ -14,9 +14,9 @@ FreshRoute is a web-based grocery ordering platform centered on fresh, organic, 
 
 ## Overview
 
-FreshRoute is a web-based grocery ordering platform dedicated to providing fresh, organic, and ethically sourced food products. The platform operates as an online grocery retailer with a centralized warehouse model, sourcing products from trusted suppliers and fulfilling customer orders through scheduled delivery.
-
 FreshRoute allows users to browse fresh groceries, manage a shopping cart, and complete orders through a streamlined and user-focused interface.
+
+This repository contains the design and implementation for the EECS 3311 course project.
 
 ## Project Resources
 
@@ -44,6 +44,13 @@ The project demonstrates user-centered design and structured software architectu
 - **Install Node.js (LTS recommended, Node 18+ is safe) + npm** (needed to install and run both frontend + backend).
 - **Install MongoDB (Local)**  
   This project uses a local MongoDB database by default (see `.env`), so make sure **MongoDB Community Server** is installed and the MongoDB service is running.
+- **Use the provided package.json files**  
+  Install dependencies from the checked-in `package.json` in each app (`frontend/package.json` and `backend/package.json`). Avoid replacing them with default scaffolds so scripts and pinned versions stay consistent (we did this to ensure it ran smoothly on both windows and mac).
+
+- [frontend/package.json](frontend/package.json)
+
+
+- [backend/package.json](backend/package.json)
 
 **Recommended tools (optional but helpful):**
 - VS Code (or any IDE)
@@ -57,7 +64,7 @@ The project demonstrates user-centered design and structured software architectu
 - Node.js + npm
 - MongoDB (Local Community Server)
 
-> **Note:** Express, Mongoose, CORS, dotenv, nodemon, React, and Vite are installed automatically when you run `npm install` inside the project folders (they are listed in `package.json`).
+> **Note:** Express, Mongoose, CORS, dotenv, nodemon, React, and Vite are installed automatically when you run `npm install` inside the project folders (they are listed in `package.json`). Bootstrap will need to be installed. 
 
 ---
 
@@ -83,7 +90,79 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
 
 ### 5) Install frontend dependencies
 - Go to the frontend folder: `cd ../frontend`  
-- Install packages: `npm install`
+- Install packages:  
+  ```bash
+  npm install
+  npm install bootstrap react-bootstrap
+
+- Ensure Bootstrap CSS is imported in `frontend/src/main.jsx:`
+-  `import "bootstrap/dist/css/bootstrap.min.css";`
+
+### 5.1) Replace the backend package.json (also in the above installation notes)
+
+```json
+{
+  "name": "backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
+```
+
+### 5.2) Replace the frontend package.json (also in the above installation notes)
+
+```json
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "react": "^19.1.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "@vitejs/plugin-react": "^5.0.3",
+    "vite": "^7.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0"
+  }
+}
+```
+
+
 
 ### 6) Start the backend
 - Go to the backend folder: `cd ../backend`  
