@@ -47,8 +47,8 @@ The project demonstrates user-centered design and structured software architectu
 - **Use the provided package.json files**  
   Install dependencies from the checked-in `package.json` in each app (`frontend/package.json` and `backend/package.json`). Avoid replacing them with default scaffolds so scripts and pinned versions stay consistent (we did this to ensure it ran smoothly on both windows and mac).
 
-[frontend/package.json] (frontend package.json link)
-[backend/package.json] (backend package.json link)
+[frontend/package.json](frontend/package.json)
+[backend/package.json](backend/package.json)
 
 **Recommended tools (optional but helpful):**
 - VS Code (or any IDE)
@@ -98,7 +98,8 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
 
 ### 5.1) Replace the backend package.json (also in the above installation notes)
 
-`{
+```json
+{
   "name": "backend",
   "private": true,
   "version": "1.0.0",
@@ -121,21 +122,23 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
   "devDependencies": {
     "nodemon": "^3.1.11"
   }
-}`
+}
+```
 
 ### 5.2) Replace the frontend package.json (also in the above installation notes)
 
-`{
+```json
+{
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "node ./node_modules/vite/bin/vite.js",
-  "build": "node ./node_modules/vite/bin/vite.js build",
-  "preview": "node ./node_modules/vite/bin/vite.js preview",
-  "lint": "eslint ."
-},
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react": "^19.1.1",
@@ -154,7 +157,8 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.4.0"
   }
-}`
+}
+```
 
 
 
