@@ -19,13 +19,13 @@ The primary objectives of Sprint 1 are:
 
 ## Participants
 
-| Role       | Name |
-|------------|------|
-| Fullstack  | Shoumik Ahmed |
-| Backend    | Moneba Hanifi |
-| Backend    | Judy El Ghargomi |
-| Backend    | Ekambir Momi |
-| Fullstack  | Abrar Jawad Tarafder |
+| Name                     | Role 1     | Role 2     | Role 3     |
+|--------------------------|------------|------------|------------|
+| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator |
+| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester |
+| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     |
+| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer |
+| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator |
 
 All team members were present and contributed to planning decisions.
 
@@ -49,7 +49,9 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ---
 
-## Epic 1: Storefront & Product Browsing
+## Epic 1: Storefront & Product Browsing (Core StoreFront Experience)
+
+<!-- need fixing with correct user stories and tasks based on trello -->
 
 ### User Stories
 
@@ -73,30 +75,6 @@ Capacity was calculated based on individual availability during the two-week spr
 
 - Research best practices for Express route structure and Mongoose models.
 - Define reusable UI components (Navbar).
-
----
-
-## Epic 2: Cart & Recipes
-
-### User Stories
-
-- **PB-06:** As a customer, I want to view my cart so that I can review items before checkout.  
-- **PB-19:** As a customer, I want to browse available recipes so that I can plan meals easily.
-
-### Tasks
-
-- Create Cart page UI. (Ekambir)
-- Implement frontend cart state (React Context or local state). (Shoumik)
-- Display cart items and quantities. (Moneba)
-- Create Recipes collection in MongoDB. (Ekambir)
-- Seed sample recipes. (Moneba)
-- Build Recipes page UI. (Abrar & Shoumik)
-- Implement basic recipe details view. (Judy)
-
-### Spikes Identified
-
-- Evaluate React Context vs local state for cart management.
-- Standardize frontend API data fetching approach.
 
 ---
 
