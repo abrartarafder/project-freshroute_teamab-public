@@ -1,5 +1,5 @@
 // Navbar.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container, Form, InputGroup } from "react-bootstrap";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import "./Navbar.css";
@@ -11,6 +11,8 @@ export default function AppNavbar({
   onSearch = () => {},
   cartCount = 0,
 }) {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <Navbar expand="lg" className="fr-navbar" variant="dark">
       <Container fluid className="fr-container">
@@ -23,8 +25,7 @@ export default function AppNavbar({
           <Form
             onSubmit={(e) => {
               e.preventDefault();
-              const q = new FormData(e.currentTarget).get("q")?.toString() ?? "";
-              onSearch(q);
+              onSearch(searchText);
             }}
           >
             <InputGroup className="fr-search">
@@ -33,6 +34,12 @@ export default function AppNavbar({
                 placeholder="Search groceries"
                 aria-label="Search groceries"
                 className="fr-search-input"
+                value={searchText}
+                onChange={(e) => {
+                  const next = e.target.value;
+                  setSearchText(next);
+                  onSearch(next);
+                }}
               />
               <InputGroup.Text className="fr-search-icon">
                 <FaSearch />
