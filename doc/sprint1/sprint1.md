@@ -126,6 +126,7 @@ Expected Outcome:
 - Documented conventions for RESTful API endpoints
 
 
+
 **Spike 2: Reusable Navbar & UI Component Design**
 
 Purpose:
@@ -142,6 +143,7 @@ Expected Outcome:
 - Search input integrated with routing logic
 - Component is reusable across all pages
 - Clear component hierarchy defined
+
 
 
 **Spike 3: MERN Stack Integration & Frontend–Backend Connection**
