@@ -11,9 +11,9 @@
 The primary objectives of Sprint 1 are:
 
 1. Establish a fully navigable frontend structure using React and React Router.
-2. Integrate MongoDB with Express APIs for products and recipes.
-3. Implement a functional cart interface.
-4. Define reusable components and a clean, modular architecture for future expansion.
+2. Have a complete backend database with organic, ethically raised, and recipe products.
+3. Integrate MongoDB with Express APIs for products and recipes.
+5. Define reusable components and a clean, modular architecture for future expansion.
 
 ---
 
@@ -71,7 +71,6 @@ Capacity was calculated based on individual availability during the two-week spr
 - Build an Ethically Raised page UI. (Shoumik)
 - Build Landing page UI. (Abrar)
 - Build Recipe page UI. (Abrar)
-- Build Cart page UI. (Abrar and Shoumik)
 - Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
 - Implement Product Details page. (Abrar & Shoumik)
 - Display product name, price, and description dynamically. (Judy)
