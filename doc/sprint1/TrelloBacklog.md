@@ -11,6 +11,7 @@ Sprint: 01
 
 **Ticket #:** 13  
 **Story Points:** 5  
+
 **Assignees:** Shoumik, Ekam, Judy  
 
 ### User Story  
@@ -42,6 +43,7 @@ As a customer, I want to browse a list of organic or ethically produced products
 
 **Ticket #:** 14  
 **Story Points:** 3  
+
 **Assignees:** Abrar, Moneba, Judy  
 
 ### User Story  
@@ -70,6 +72,7 @@ As a customer, I want to search for products by keyword so that I can find items
 
 **Ticket #:** 16  
 **Story Points:** 3  
+
 **Assignees:** Shoumik, Ekam, Judy  
 
 ### User Story  
@@ -133,6 +136,7 @@ As a customer, I want to browse available recipes so that I can plan meals easil
 
 **Ticket #:** 39  
 **Story Points:** 2  
+
 **Assignees:** Abrar, Shoumik, Ekam, Judy, Moneba  
 
 ### User Story  
@@ -165,6 +169,7 @@ Branches:
 
 **Ticket #:** 22  
 **Story Points:** 1
+
 **Assignees:** Abrar, Shoumik, Moneba, Judy, Ekam  
 
 ### User Story  
