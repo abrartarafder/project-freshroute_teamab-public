@@ -62,19 +62,46 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ### Tasks
 
-- Create an Organic products collection in MongoDB. (Ekam)
-- Create an Ethically Raised products collection in MongoDB. (Judy)
-- Create a Recipe product collection in MongoDB. (Moneba) 
-- Seed sample product data. (Backend Team)
-- Add the product structure to the backend accordingly (e.g., in JSON format that the database expects) (Ekam, Moneba, Judy).
+
+**PB-01: Browse products (5 points)**
 - Build Organic page UI. (Shoumik)
 - Build an Ethically Raised page UI. (Shoumik)
 - Build Landing page UI. (Abrar)
-- Build Recipe page UI. (Abrar)
+- Add the product structure to the backend accordingly (e.g., in JSON format that the database expects) (Ekam).
+  
+**PB-02: Search products (3 points)**
 - Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
+- Check for any backend requirements to implement this feature. (Judy, Moneba)
+  
+**PB-04: View product details (3 points)** 
 - Implement Product Details page. (Abrar & Shoumik)
-- Display product name, price, and description dynamically. (Judy, Moneba)
+- Create an Organic products collection in MongoDB. (Ekam)
+- Create an Ethically Raised products collection in MongoDB. (Judy)
+
+**PB-17: Product Badges (1 point)**
+- Build in frontend functionality on their respective pages to support the feature (Abrar, Shoumik)
+- Implement product badge attributes according to the product structure in their respective backend DBs. (Ekam, Judy, Moneba)
+
+**PB-18: Display Product Availability (2 points)**
+- Build in frontend functionality on their respective pages to support the feature (Abrar, Shoumik)
+- Implement product badge availability functionality according to the product structure in their respective backend DBs. (Ekam, Judy, Moneba)
+  
+**PB-19: Browse recipes (3 points)**
+- Build Recipe page UI. (Abrar)
+- Create a Recipe product collection in MongoDB. (Moneba)
+
+**Total: 17 Story Points**
+This aligns with the team’s estimated sprint capacity.
+The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
+
+**Other Tasks***
+- Seed sample product data. (Backend Team)
+- Create frontend documentation (Abrar, Shoumik)
+- Create backend documentation (Moneba, Judy, Ekam)
 - Prepare system design documentation and CRC cards. (Ekam)
+
+
+---
 
 ### Spikes Identified
 
@@ -135,23 +162,6 @@ Expected Outcome:
 - Verify MongoDB data retrieval through backend API endpoints
 - Document environment variable setup (.env for DB URI, ports, etc.)
 - Confirm local development setup (e.g., frontend on port 3000, backend on 5000)
-
----
-
-## Total Story Points Planned
-
-- PB-01 (5 points)
-- PB-02 (3 points)  
-- PB-04 (3 points)  
-- PB-17 (1 point)
-- PB-18 (2 points)  
-- PB-19 (3 points)  
-
-**Total: 17 Story Points**
-
-This aligns with the team’s estimated sprint capacity.
-
-The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
 
 ---
 
