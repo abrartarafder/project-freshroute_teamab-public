@@ -136,8 +136,6 @@ Expected Outcome:
 - Document environment variable setup (.env for DB URI, ports, etc.)
 - Confirm local development setup (e.g., frontend on port 3000, backend on 5000)
 
-
-The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
 ---
 
 ## Total Story Points Planned
@@ -152,6 +150,8 @@ The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 du
 **Total: 17 Story Points**
 
 This aligns with the team’s estimated sprint capacity.
+
+The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
 
 ---
 
