@@ -105,9 +105,9 @@ The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 du
 
 ---
 
-### Spikes Identified
+## Spikes Identified
 
-**Spike 1: Backend Route & Model Architecture Research**
+### Spike 1: Backend Route & Model Architecture Research
 
 Purpose:
 Research best practices for structuring Express routes and Mongoose models to ensure a scalable and modular backend architecture.
@@ -127,7 +127,7 @@ Expected Outcome:
 
 
 
-**Spike 2: Reusable Navbar & UI Component Design**
+### Spike 2: Reusable Navbar & UI Component Design
 
 Purpose:
 Research and define best practices for building reusable React components, specifically a global Navbar with search functionality and routing support.
@@ -146,7 +146,7 @@ Expected Outcome:
 
 
 
-**Spike 3: MERN Stack Integration & Frontend–Backend Connection**
+### Spike 3: MERN Stack Integration & Frontend–Backend Connection
 
 Purpose:
 Research and define the correct method for connecting the React frontend to the Express/Node backend using the MERN stack. Ensure proper API communication, routing structure, and environment configuration for development.
