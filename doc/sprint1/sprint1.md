@@ -51,8 +51,6 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ## Epic 1: Storefront & Product Browsing (Core StoreFront Experience)
 
-<!-- need fixing with correct user stories and tasks based on trello -->
-
 ### User Stories
 
 - **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.
@@ -64,16 +62,20 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ### Tasks
 
-- Create Organic products collection in MongoDB. (Judy)
-- Create Ethically Raised products collection in MongoDB. (Moneba)
+- Create an Organic products collection in MongoDB. (Ekam)
+- Create an Ethically Raised products collection in MongoDB. (Judy)
+- Create a Recipe product collection in MongoDB. (Moneba) 
 - Seed sample product data. (Backend Team)
+- Add the product structure to the backend accordingly (e.g., in JSON format that the database expects) (Ekam, Moneba, Judy).
 - Build Organic page UI. (Shoumik)
-- Build Ethically Raised page UI. (Abrar & Shoumik)
+- Build an Ethically Raised page UI. (Shoumik)
 - Build Landing page UI. (Abrar)
-- Create reusable Navbar component. (Abrar)
+- Build Recipe page UI. (Abrar)
+- Build Cart page UI. (Abrar and Shoumik)
+- Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
 - Implement Product Details page. (Abrar & Shoumik)
 - Display product name, price, and description dynamically. (Judy)
-- Prepare system design documentation and CRC cards. (Moneba, Judy, Ekambir)
+- Prepare system design documentation and CRC cards. (Ekam)
 
 ### Spikes Identified
 
