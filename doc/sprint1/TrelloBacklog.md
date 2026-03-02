@@ -101,6 +101,7 @@ As a customer, I want to view product details so that I can make a purchase deci
 
 **Ticket #:** 38  
 **Story Points:** 3
+
 **Assignees:** Abrar, Moneba  
 
 ### User Story  
@@ -163,7 +164,7 @@ Branches:
 ![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 22  
-**Story Points:** 3  
+**Story Points:** 1
 **Assignees:** Abrar, Shoumik, Moneba, Judy, Ekam  
 
 ### User Story  
