@@ -55,8 +55,12 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ### User Stories
 
-- **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.  
+- **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.
+- **PB-02:** As a customer, I want to search for products by keyword so that I can find items quickly.  
 - **PB-04:** As a customer, I want to view product details so that I can make an informed purchase decision.
+- **PB-17:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.
+- **PB-18:** As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
+- **PB-19:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
 
 ### Tasks
 
@@ -80,12 +84,14 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ## Total Story Points Planned
 
-- PB-01 (5 points)  
+- PB-01 (5 points)
+- PB-02 (3 points)  
 - PB-04 (3 points)  
-- PB-06 (5 points)  
+- PB-17 (1 point)
+- PB-18 (2 points)  
 - PB-19 (3 points)  
 
-**Total: 16 Story Points**
+**Total: 17 Story Points**
 
 This aligns with the team’s estimated sprint capacity.
 
