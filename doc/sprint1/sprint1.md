@@ -97,7 +97,7 @@ Expected Outcome:
 - Documented conventions for RESTful API endpoints
 
 
-***Spike 2: Reusable Navbar & UI Component Design***
+**Spike 2: Reusable Navbar & UI Component Design**
 
 Purpose:
 Research and define best practices for building reusable React components, specifically a global Navbar with search functionality and routing support.
@@ -115,7 +115,7 @@ Expected Outcome:
 - Clear component hierarchy defined
 
 
-***Spike 3: MERN Stack Integration & Frontend–Backend Connection***
+**Spike 3: MERN Stack Integration & Frontend–Backend Connection**
 
 Purpose:
 Research and define the correct method for connecting the React frontend to the Express/Node backend using the MERN stack. Ensure proper API communication, routing structure, and environment configuration for development.
