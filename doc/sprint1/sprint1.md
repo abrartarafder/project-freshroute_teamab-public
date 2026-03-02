@@ -81,6 +81,29 @@ Capacity was calculated based on individual availability during the two-week spr
 - Research best practices for Express route structure and Mongoose models.
 - Define reusable UI components (Navbar).
 
+**Spike 1 – Backend Route & Model Architecture Research**
+
+Purpose:
+Research best practices for structuring Express routes and Mongoose models to ensure scalable and modular backend architecture.
+
+Supports User Stories:
+PB-01 (Browse products)
+PB-02 (Search products)
+PB-04 (View product details)
+PB-19 (Browse recipes)
+
+Owner: Ekam
+
+Estimated Effort: 3 hours
+
+Expected Outcome:
+
+Defined folder structure for routes, controllers, and models
+
+Standardized Mongoose schema format for product and recipe collections
+
+Documented conventions for RESTful API endpoints
+
 ---
 
 ## Total Story Points Planned
