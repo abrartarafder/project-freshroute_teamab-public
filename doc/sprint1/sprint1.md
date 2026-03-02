@@ -73,18 +73,15 @@ Capacity was calculated based on individual availability during the two-week spr
 - Build Recipe page UI. (Abrar)
 - Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
 - Implement Product Details page. (Abrar & Shoumik)
-- Display product name, price, and description dynamically. (Judy)
+- Display product name, price, and description dynamically. (Judy, Moneba)
 - Prepare system design documentation and CRC cards. (Ekam)
 
 ### Spikes Identified
 
-- Research best practices for Express route structure and Mongoose models.
-- Define reusable UI components (Navbar).
-
-**Spike 1 – Backend Route & Model Architecture Research**
+**Spike 1: Backend Route & Model Architecture Research**
 
 Purpose:
-Research best practices for structuring Express routes and Mongoose models to ensure scalable and modular backend architecture.
+Research best practices for structuring Express routes and Mongoose models to ensure a scalable and modular backend architecture.
 
 Supports User Stories:
 PB-01 (Browse products)
@@ -94,15 +91,50 @@ PB-19 (Browse recipes)
 
 Owner: Ekam
 
-Estimated Effort: 3 hours
+Expected Outcome:
+- Defined folder structure for routes, controllers, and models
+- Standardized Mongoose schema format for product and recipe collections
+- Documented conventions for RESTful API endpoints
+
+
+***Spike 2: Reusable Navbar & UI Component Design***
+
+Purpose:
+Research and define best practices for building reusable React components, specifically a global Navbar with search functionality and routing support.
+
+Supports User Stories:
+PB-01 (Browse products)
+PB-02 (Search products)
+
+Owner: Abrar
 
 Expected Outcome:
+- Navbar component design finalized
+- Search input integrated with routing logic
+- Component is reusable across all pages
+- Clear component hierarchy defined
 
-Defined folder structure for routes, controllers, and models
 
-Standardized Mongoose schema format for product and recipe collections
+***Spike 3: MERN Stack Integration & Frontend–Backend Connection***
 
-Documented conventions for RESTful API endpoints
+Purpose:
+Research and define the correct method for connecting the React frontend to the Express/Node backend using the MERN stack. Ensure proper API communication, routing structure, and environment configuration for development.
+
+Supports User Stories:
+PB-01 (Browse products)
+PB-02 (Search products)
+PB-04 (View product details)
+PB-19 (Browse recipes)
+
+Owner: Shoumik
+
+Expected Outcome:
+- Confirm folder structure for separating frontend and backend
+- Configure CORS correctly between frontend and backend
+- Establish working Axios/fetch API calls from React to Express
+- Verify MongoDB data retrieval through backend API endpoints
+- Document environment variable setup (.env for DB URI, ports, etc.)
+- Confirm local development setup (e.g., frontend on port 3000, backend on 5000)
 
 ---
 
