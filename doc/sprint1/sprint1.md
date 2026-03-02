@@ -91,7 +91,9 @@ Capacity was calculated based on individual availability during the two-week spr
 - Create a Recipe product collection in MongoDB. (Moneba)
 
 **Total: 17 Story Points**
+
 This aligns with the team’s estimated sprint capacity.
+
 The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
 
 **Other Tasks**
