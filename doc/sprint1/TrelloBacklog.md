@@ -100,7 +100,7 @@ As a customer, I want to view product details so that I can make a purchase deci
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 38  
-**Story Points:** 1  
+**Story Points:** 3
 **Assignees:** Abrar, Moneba  
 
 ### User Story  
