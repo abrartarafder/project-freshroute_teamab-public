@@ -13,7 +13,7 @@ The primary objectives of Sprint 1 are:
 1. Establish a fully navigable frontend structure using React and React Router.
 2. Integrate MongoDB with Express APIs for products and recipes.
 3. Implement a functional cart interface.
-4. Define reusable components and a clean modular architecture for future expansion.
+4. Define reusable components and a clean, modular architecture for future expansion.
 
 ---
 
@@ -119,7 +119,7 @@ By the end of Sprint 1:
 - Product Details page dynamically displays name, price, and description.
 - Recipes are retrieved and displayed from MongoDB.
 - Cart page displays items with adjustable quantities.
-- All completed stories meet Definition of Done.
+- All completed stories meet the Definition of Done.
 - Frontend and Backend Documentation Template is complete. 
 - System Design Documentation is complete. 
 
@@ -134,14 +134,15 @@ A story is complete when:
 - Changes are merged into the main branch.
 - Functionality works without major errors.
 - Acceptance criteria are satisfied.
-- Trello board is updated accordingly.
+- The Trello board is updated accordingly.
 
 ---
 
 ## Decisions Made During Planning
 
-- Only four core user stories selected to ensure realistic scope.
 - Checkout flow, order placement, and delivery tracking deferred to Sprint 2.
-- Persistent cart storage deferred to a future sprint.
+- Complete cart storage functionality deferred to a future sprint.
 - Emphasis placed on clean architecture and stability over feature expansion.
 - Demo-ready build required at sprint end.
+- Appropriate backend structure and attributes to be displayed.
+- Deferring product image storage in the backend to sprint 2.
