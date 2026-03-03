@@ -11,6 +11,7 @@ Sprint: 01
 
 **Ticket #:** 13  
 **Story Points:** 5  
+
 **Assignees:** Shoumik, Ekam, Judy  
 
 ### User Story  
@@ -41,7 +42,8 @@ As a customer, I want to browse a list of organic or ethically produced products
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 14  
-**Story Points:** 5  
+**Story Points:** 3  
+
 **Assignees:** Abrar, Moneba, Judy  
 
 ### User Story  
@@ -69,7 +71,8 @@ As a customer, I want to search for products by keyword so that I can find items
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 16  
-**Story Points:** 5  
+**Story Points:** 3  
+
 **Assignees:** Shoumik, Ekam, Judy  
 
 ### User Story  
@@ -100,7 +103,8 @@ As a customer, I want to view product details so that I can make a purchase deci
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 38  
-**Story Points:** 5  
+**Story Points:** 3
+
 **Assignees:** Abrar, Moneba  
 
 ### User Story  
@@ -131,7 +135,8 @@ As a customer, I want to browse available recipes so that I can plan meals easil
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 39  
-**Story Points:** 4  
+**Story Points:** 2  
+
 **Assignees:** Abrar, Shoumik, Ekam, Judy, Moneba  
 
 ### User Story  
@@ -163,7 +168,8 @@ Branches:
 ![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 22  
-**Story Points:** 3  
+**Story Points:** 1
+
 **Assignees:** Abrar, Shoumik, Moneba, Judy, Ekam  
 
 ### User Story  

@@ -110,13 +110,13 @@ For full user story details and acceptance criteria, refer to:
 
 ## Participants  
 
-| Role       | Name      |
-|------------|------------|
-| Fullstack  | Abrar      |
-| Fullstack  | Shoumik    |
-| Backend    | Ekam       |
-| Backend    | Judy       |
-| Backend    | Moneba     |
+| Name                     | Role 1     | Role 2     | Role 3     |
+|--------------------------|------------|------------|------------|
+| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator |
+| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester |
+| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     |
+| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer |
+| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator |
 
 All team members participated in release planning and scope definition.
 

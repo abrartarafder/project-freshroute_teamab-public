@@ -44,6 +44,13 @@ The project demonstrates user-centered design and structured software architectu
 - **Install Node.js (LTS recommended, Node 18+ is safe) + npm** (needed to install and run both frontend + backend).
 - **Install MongoDB (Local)**  
   This project uses a local MongoDB database by default (see `.env`), so make sure **MongoDB Community Server** is installed and the MongoDB service is running.
+- **Use the provided package.json files**  
+  Install dependencies from the checked-in `package.json` in each app (`frontend/package.json` and `backend/package.json`). Avoid replacing them with default scaffolds so scripts and pinned versions stay consistent (we did this to ensure it ran smoothly on both windows and mac).
+
+- [frontend/package.json](frontend/package.json)
+
+
+- [backend/package.json](backend/package.json)
 
 **Recommended tools (optional but helpful):**
 - VS Code (or any IDE)
@@ -90,6 +97,72 @@ Ensure your local MongoDB server/service is running (required for the `MONGO_URI
 
 - Ensure Bootstrap CSS is imported in `frontend/src/main.jsx:`
 -  `import "bootstrap/dist/css/bootstrap.min.css";`
+
+### 5.1) Replace the backend package.json (also in the above installation notes)
+
+```json
+{
+  "name": "backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
+```
+
+### 5.2) Replace the frontend package.json (also in the above installation notes)
+
+```json
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "react": "^19.1.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "@vitejs/plugin-react": "^5.0.3",
+    "vite": "^7.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0"
+  }
+}
+```
+
+
 
 ### 6) Start the backend
 - Go to the backend folder: `cd ../backend`  
@@ -149,13 +222,24 @@ Each Trello card corresponds to a user story in `PB.md` + other assigned tasks.
 
 ### Commit Conventions
 
-Commits will follow a clear naming structure:
+Commits will follow a clear naming structure as shown below in 2 different ways (both are acceptable):
 
-- `feat: add product filtering`
-- `fix: correct cart total calculation`
-- `docs: update README`
-- `refactor: improve checkout logic`
-- `sprint0: updated`
+(Note: We started ticket numbers from Trello around Feb 26th so any commits before that might not have the ticket numbers.)
+
+- `Ticket #: feat - add product filtering`
+- `Ticket #: fix - correct cart total calculation`
+- `Ticket #: docs - update README`
+- `Ticket #: refactor - improve checkout logic`
+- `Ticket #: sprint0 - updated`
+
+or 
+
+- `Ticket #: add product filtering`
+- `Ticket #: correct cart total calculation`
+- `Ticket #: update README`
+- `Ticket #: improve checkout logic`
+- `Ticket #: updated sprint0`
+
 
 ---
 
@@ -168,9 +252,6 @@ Branches follow a consistent and descriptive naming convention which follows the
 
 - `bugfix/<issue-name>`  
   Example: `bugfix/cart-total-error`
-
-- `docs/<update-name>`  
-  Example: `docs/readme-update`
 
 - `refactor/<module-name>`  
   Example: `refactor/checkout-logic`
