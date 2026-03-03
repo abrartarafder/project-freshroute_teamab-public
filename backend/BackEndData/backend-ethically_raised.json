@@ -124,5 +124,23 @@
     "category": "Protein",
     "inventory": { "available": true, "stock": 95 },
     "imageUrl": ""
+  }, 
+   {
+    "name": "Feta Cheese",
+    "price": 6.49,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Dairy",
+    "inventory": { "available": true, "stock": 80 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Plain Yogurt",
+    "price": 4.99,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Dairy",
+    "inventory": { "available": true, "stock": 120 },
+    "imageUrl": ""
   }
 ]
