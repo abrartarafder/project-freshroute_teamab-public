@@ -35,10 +35,13 @@
 }
 
 .member-card {
-  padding: 14px 10px 10px;
+  padding: 16px 14px 0;
   background:
     radial-gradient(circle at 8px 8px, rgba(205, 192, 160, 0.18) 2px, transparent 2px) 0 0 / 24px 24px,
     #f7f3e8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .member-offer {
@@ -68,6 +71,7 @@
 
 .member-card input {
   width: 100%;
+  box-sizing: border-box;
   height: 30px;
   border: 1px solid #ececec;
   background: #f1f1f1;
@@ -84,6 +88,9 @@
 
 .member-btn {
   width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  margin-bottom: 10px;
   height: 38px;
   border: none !important;
   border-radius: 10px !important;
