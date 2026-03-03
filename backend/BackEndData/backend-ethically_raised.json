@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Ground Beef (80/20)",
+    "price": 6.50,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 120 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Beef Ribs",
+    "price": 8.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 85 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Sirloin Steak",
+    "price": 10.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 60 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chuck Steak",
+    "price": 7.50,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 75 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chicken Breast",
+    "price": 4.50,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 150 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chicken Wings",
+    "price": 6.99,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 110 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chicken Thighs",
+    "price": 4.99,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 130 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chicken Drumsticks",
+    "price": 3.50,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 140 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Whole Chicken",
+    "price": 3.99,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 90 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Atlantic Salmon",
+    "price": 10.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 70 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Cod",
+    "price": 9.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 65 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Tuna",
+    "price": 12.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 55 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Lobster",
+    "price": 15.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 40 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Shrimp",
+    "price": 9.00,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Protein",
+    "inventory": { "available": true, "stock": 95 },
+    "imageUrl": ""
+  }, 
+   {
+    "name": "Feta Cheese",
+    "price": 6.49,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Dairy",
+    "inventory": { "available": true, "stock": 80 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Plain Yogurt",
+    "price": 4.99,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Dairy",
+    "inventory": { "available": true, "stock": 120 },
+    "imageUrl": ""
+  }
+]
