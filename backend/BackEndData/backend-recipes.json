@@ -1,0 +1,432 @@
+[{
+  "_id": {
+    "$oid": "69a73e50ed56709b988adfe0"
+  },
+  "name": "Quinoa-Stuffed Bell Peppers",
+  "description": "Organic bell peppers stuffed with a mix of quinoa, black beans, corn, and creamy avocado.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e6"
+      },
+      "productName": "Quinoa",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664288"
+      },
+      "productName": "Bell Pepper",
+      "quantity": 4,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e7"
+      },
+      "productName": "Black Beans",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e8"
+      },
+      "productName": "Corn",
+      "quantity": 0.5,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664286"
+      },
+      "productName": "Avocado",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e9"
+      },
+      "productName": "Limes",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f6"
+      },
+      "productName": "Salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f7"
+      },
+      "productName": "Cumin",
+      "quantity": 1,
+      "unit": "tsp"
+    }
+  ],
+  "prepTimeMinutes": 40,
+  "servings": 2,
+  "imageUrl": ""
+},
+{
+  "_id": {
+    "$oid": "69a73f62ed56709b988adfe2"
+  },
+  "name": "Baked Salmon with Kale & Quinoa Salad",
+  "description": "Wild-caught salmon paired with kale, quinoa, and roasted vegetables. Omega-3 rich and satisfying.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a67ce8cf0f99fd7f403063"
+      },
+      "productName": "Atlantic Salmon",
+      "quantity": 2,
+      "unit": "fillet"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ea"
+      },
+      "productName": "Kale",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e6"
+      },
+      "productName": "Quinoa",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c66428a"
+      },
+      "productName": "Carrots",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3eb"
+      },
+      "productName": "Tomatoes",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f4"
+      },
+      "productName": "Olive Oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ec"
+      },
+      "productName": "Lemons",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f5"
+      },
+      "productName": "Dill",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "prepTimeMinutes": 35,
+  "servings": 2,
+  "imageUrl": ""
+},
+{
+  "_id": {
+    "$oid": "69a73f71ed56709b988adfe4"
+  },
+  "name": "Tofu Stir-Fry with Brown Rice & Veggies",
+  "description": "Stir-fried tofu with bell peppers, carrots, broccoli, and fresh vegetables served over brown rice.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ed"
+      },
+      "productName": "Tofu",
+      "quantity": 14,
+      "unit": "oz"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664288"
+      },
+      "productName": "Bell Pepper",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c66428a"
+      },
+      "productName": "Carrots",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664289"
+      },
+      "productName": "Broccoli",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ee"
+      },
+      "productName": "Brown Rice",
+      "quantity": 2,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f2"
+      },
+      "productName": "Soy Sauce",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ef"
+      },
+      "productName": "Ginger",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f3"
+      },
+      "productName": "Sesame Oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "prepTimeMinutes": 30,
+  "servings": 3,
+  "imageUrl": ""
+},
+{
+  "_id": {
+    "$oid": "69a740c7ed56709b988adfe6"
+  },
+  "name": "Grass-Fed Beef & Vegetable Stir-Fry",
+  "description": "Grass-fed beef with organic veggies served with brown rice.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a67ce8cf0f99fd7f40305a"
+      },
+      "productName": "Ground Beef (80/20)",
+      "quantity": 12,
+      "unit": "oz"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664288"
+      },
+      "productName": "Bell Pepper",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664289"
+      },
+      "productName": "Broccoli",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c66428a"
+      },
+      "productName": "Carrots",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ee"
+      },
+      "productName": "Brown Rice",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f2"
+      },
+      "productName": "Soy Sauce",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f0"
+      },
+      "productName": "Garlic",
+      "quantity": 2,
+      "unit": "clove"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f1"
+      },
+      "productName": "Sesame Seeds",
+      "quantity": 1,
+      "unit": "tbsp"
+    }
+  ],
+  "prepTimeMinutes": 30,
+  "servings": 2,
+  "imageUrl": ""
+},
+{
+  "_id": {
+    "$oid": "69a740d6ed56709b988adfe8"
+  },
+  "name": "Roasted Veggie Buddha Bowl",
+  "description": "Roasted sweet potato, broccoli, and chickpeas over quinoa with tahini drizzle.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3e6"
+      },
+      "productName": "Quinoa",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f8"
+      },
+      "productName": "Sweet Potatoes",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c664289"
+      },
+      "productName": "Broccoli",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f9"
+      },
+      "productName": "Chickpeas",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3fa"
+      },
+      "productName": "Tahini",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ec"
+      },
+      "productName": "Lemons",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f0"
+      },
+      "productName": "Garlic",
+      "quantity": 2,
+      "unit": "clove"
+    }
+  ],
+  "prepTimeMinutes": 40,
+  "servings": 3,
+  "imageUrl": ""
+},
+{
+  "_id": {
+    "$oid": "69a740e9ed56709b988adfea"
+  },
+  "name": "Mediterranean Chickpea Wrap",
+  "description": "Whole-wheat wrap with herbed chickpeas, cucumbers, tomatoes, and dill lemon sauce.",
+  "ingredients": [
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f9"
+      },
+      "productName": "Chickpeas",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3fb"
+      },
+      "productName": "Whole-wheat Wraps",
+      "quantity": 2,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a3fbad33c6c87c4c66428d"
+      },
+      "productName": "Cucumber",
+      "quantity": 1,
+      "unit": "each"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3eb"
+      },
+      "productName": "Tomatoes",
+      "quantity": 1,
+      "unit": "cup"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3f5"
+      },
+      "productName": "Dill",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "productId": {
+        "$oid": "69a6a209cb264d27715dc3ec"
+      },
+      "productName": "Lemons",
+      "quantity": 1,
+      "unit": "each"
+    }
+  ],
+  "prepTimeMinutes": 25,
+  "servings": 2,
+  "imageUrl": ""
+}]
