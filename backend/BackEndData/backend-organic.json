@@ -124,5 +124,203 @@
     "category": "Vegetable",
     "inventory": { "available": true, "stock": 100 },
     "imageUrl": ""
+  },
+  {
+    "name": "Quinoa",
+    "price": 6.99,
+    "priceUnit": "bag",
+    "currency": "CAD",
+    "category": "Grains",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Black Beans",
+    "price": 2.49,
+    "priceUnit": "can",
+    "currency": "CAD",
+    "category": "Legumes",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Corn",
+    "price": 0.75,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Limes",
+    "price": 0.79,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Kale",
+    "price": 3.49,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Tomatoes",
+    "price": 2.99,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Lemons",
+    "price": 0.89,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Fruit",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Tofu",
+    "price": 3.99,
+    "priceUnit": "pack",
+    "currency": "CAD",
+    "category": "Plant-Based",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Brown Rice",
+    "price": 5.49,
+    "priceUnit": "bag",
+    "currency": "CAD",
+    "category": "Grains",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Ginger",
+    "price": 3.99,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Garlic",
+    "price": 0.99,
+    "priceUnit": "each",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Sesame Seeds",
+    "price": 4.99,
+    "priceUnit": "pack",
+    "currency": "CAD",
+    "category": "Pantry",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Soy Sauce",
+    "price": 3.49,
+    "priceUnit": "bottle",
+    "currency": "CAD",
+    "category": "Pantry",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Sesame Oil",
+    "price": 6.49,
+    "priceUnit": "bottle",
+    "currency": "CAD",
+    "category": "Pantry",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Olive Oil",
+    "price": 12.99,
+    "priceUnit": "bottle",
+    "currency": "CAD",
+    "category": "Pantry",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Dill",
+    "price": 2.49,
+    "priceUnit": "bunch",
+    "currency": "CAD",
+    "category": "Herbs",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Salt",
+    "price": 1.99,
+    "priceUnit": "pack",
+    "currency": "CAD",
+    "category": "Spices",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Cumin",
+    "price": 3.29,
+    "priceUnit": "pack",
+    "currency": "CAD",
+    "category": "Spices",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Sweet Potatoes",
+    "price": 2.49,
+    "priceUnit": "lb",
+    "currency": "CAD",
+    "category": "Vegetable",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Chickpeas",
+    "price": 2.29,
+    "priceUnit": "can",
+    "currency": "CAD",
+    "category": "Legumes",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Tahini",
+    "price": 7.49,
+    "priceUnit": "jar",
+    "currency": "CAD",
+    "category": "Pantry",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
+  },
+  {
+    "name": "Whole-wheat Wraps",
+    "price": 4.99,
+    "priceUnit": "pack",
+    "currency": "CAD",
+    "category": "Bakery",
+    "inventory": { "available": true, "stock": 100 },
+    "imageUrl": ""
   }
 ]
