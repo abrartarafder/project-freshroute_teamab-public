@@ -6,7 +6,11 @@ export default function Cart() {
   return (
     <div className="page-shell">
       <div className="page-main">
-        <AppNavbar userName="John" activeKey="cart" />
+        <AppNavbar
+          userName="John"
+          activeKey="cart"
+          searchPlaceholder="Search cart items"
+        />
       </div>
       <footer className="footer">
         <div className="container footer-container">

@@ -197,6 +197,7 @@ export default function Recipes() {
           userName="John"
           activeKey="recipes"
           onSearch={(q) => setQuery(q)}
+          searchPlaceholder="Search Recipes"
         />
 
         <section className="recipes-hero">
