@@ -191,3 +191,7 @@ As a customer, I want to see clear organic and ethical badges on products so tha
 - Moneba → `features/recipes-backend`  
 - Judy → `features/ethically-backend`  
 - Ekam → `features/organic-backend`
+
+Note: We originally had access to the Trello Premium so we had access to all of the user point features and story priorities. Our team did not realize that the user point and story priorities were premium features so we tried our best to recreate it with the title and badges. 
+
+![Trello Premium sample](../../extra/extraImg/trello_premium_sample.png)
