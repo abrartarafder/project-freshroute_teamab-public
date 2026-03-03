@@ -36,6 +36,8 @@ export default function LandingPage() {
           userName="John"
           activeKey="home"
           onSearch={handleSearch}
+          showSearch={false}
+          showLocationPicker={true}
         />
 
         {/* Hero Section */}

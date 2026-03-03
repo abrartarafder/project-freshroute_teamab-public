@@ -11,7 +11,6 @@
 .organic-shell {
   background: var(--organic-bg);
 }
-
 .organic-content {
   padding: 28px 0 54px;
 }
@@ -113,7 +112,7 @@
 .produce-illustration {
   height: 132px;
   padding: 14px 14px 0;
-  background: #f8fbf6;
+  background: #eef5ec;
   border-bottom: 1px solid var(--organic-border);
   display: flex;
   align-items: center;
@@ -128,6 +127,8 @@
   object-position: center;
   display: block;
   border-radius: 10px 10px 4px 4px;
+  background: transparent;
+  mix-blend-mode: multiply;
 }
 
 .produce-card h3,
@@ -217,6 +218,24 @@
   font-weight: 800;
 }
 
+.produce-actions {
+  display: flex;
+  gap: 8px;
+  margin: 0 10px 12px;
+  margin-top: auto;
+}
+
+.produce-actions .recipe-cta {
+  flex: 1;
+  padding: 10px 12px !important;
+  min-height: 40px;
+}
+
+.produce-actions .cart-btn {
+  flex: 1;
+  margin: 0;
+}
+
 .cart-btn {
   margin-top: auto;
   margin-bottom: 10px;
@@ -237,6 +256,11 @@
 
 .cart-btn svg {
   font-size: 0.7rem;
+}
+
+.produce-actions .cart-btn {
+  margin: 0 !important;
+  height: 40px;
 }
 
 .cart-btn:disabled {

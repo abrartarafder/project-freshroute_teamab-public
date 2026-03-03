@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container, Modal, Button } from "react-bootstrap";
 import { useMemo, useState } from "react";
 import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
@@ -182,11 +182,12 @@ export default function Organic() {
         <AppNavbar
           userName="John"
           activeKey="organic"
-          cartCount={9}
+          cartCount={0}
           onSearch={(value) => setQuery(value)}
+          searchPlaceholder="Search Organic Produce"
         />
 
-        <section className="recipes-hero organic-hero">
+        <section className="recipes-hero">
           <Container className="recipes-hero-container">
             <div className="recipes-hero-eyebrow">Organic</div>
             <h1 className="recipes-hero-title">Produce</h1>
@@ -212,142 +213,161 @@ export default function Organic() {
 
         <section className="organic-content">
           <Container className="organic-container">
-            {selectedProduct ? (
-              <section className="organic-detail" aria-label="Product details">
-                <button
-                  type="button"
-                  className="organic-back-btn recipe-cta ghost"
-                  onClick={() => setSelectedProduct(null)}
+            <div className="organic-grid">
+              {activeTab === "featured" && query.trim() === "" && (
+                <aside className="member-card">
+                  <p className="member-offer">10% OFF</p>
+                  <p className="member-copy">
+                    For new member sign up at
+                    <br />
+                    the first time
+                  </p>
+                  <label htmlFor="member-email">Email address*</label>
+                  <input id="member-email" type="email" placeholder="johndoe@gmail.com" />
+                  <label htmlFor="member-password">Password*</label>
+                  <input id="member-password" type="password" placeholder="Maximum 8 characters" />
+                  <button type="button" className="member-btn">
+                    Register Now
+                  </button>
+                </aside>
+              )}
+
+              {filteredProducts.map((item) => (
+                <article
+                  key={item.name}
+                  className={`produce-card ${item.inStock ? "" : "out-of-stock"}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelectedProduct(item)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedProduct(item);
+                    }
+                  }}
                 >
-                  Back to produce
-                </button>
-                <article className="organic-detail-card">
-                  <div className="organic-detail-image">
+                  <div className="produce-illustration">
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <h3>{item.name}</h3>
+                  <div className="organic-badges">
+                    {item.badges.map((badge) => (
+                      <span key={badge} className="organic-badge">
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="produce-rating" aria-label="4 out of 5 stars">
+                    <span className="stars">{stars(4)}</span>
+                    <span className="count">(4)</span>
+                  </div>
+                  <p className="origin">Product of Canada</p>
+                  <p className={`organic-stock ${item.inStock ? "in" : "out"}`}>
+                    {item.inStock ? "In Stock" : "Out of Stock"}
+                  </p>
+                  <p className="price">{item.price}</p>
+                  <div className="produce-actions">
+                    <button
+                      type="button"
+                      className="recipe-cta ghost"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProduct(item);
+                      }}
+                    >
+                      View details
+                    </button>
+                    <button
+                      type="button"
+                      className="cart-btn"
+                      disabled={!item.inStock}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <FaShoppingCart />
+                      {item.inStock ? "Add to cart" : "Unavailable"}
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {products.length === 0 && (
+              <div className="recipes-empty">
+                No products available right now. Please check back soon.
+              </div>
+            )}
+
+            {products.length > 0 && filteredProducts.length === 0 && (
+              <div className="recipes-empty">
+                No products match "{query.trim() || "(blank)"}". Try a different search or tab.
+              </div>
+            )}
+
+            <div className="recipes-pagination organic-pagination" aria-label="Pagination controls">
+              <button type="button" className="page-btn" aria-label="Previous page">
+                ←
+              </button>
+              <button type="button" className="page-btn" aria-label="Next page">
+                →
+              </button>
+            </div>
+          </Container>
+        </section>
+
+        <Modal
+          show={Boolean(selectedProduct)}
+          onHide={() => setSelectedProduct(null)}
+          centered
+          size="lg"
+          className="recipe-modal"
+        >
+          {selectedProduct && (
+            <>
+              <Modal.Header closeButton>
+                <Modal.Title>{selectedProduct.name}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div className="recipe-modal-grid">
+                  <div className="recipe-modal-image">
                     <img src={selectedProduct.image} alt={selectedProduct.name} />
                   </div>
-                  <div className="organic-detail-body">
-                    <h2>{selectedProduct.name}</h2>
-                    <p className="organic-detail-price">{selectedProduct.price}</p>
-                    <p className="organic-detail-desc">
+                  <div className="recipe-modal-body">
+                    <p className="recipe-modal-desc">
                       {selectedProduct.description || "Product details are coming soon."}
                     </p>
-                    <div className="organic-badges">
+                    <div className="recipe-tags">
                       {selectedProduct.badges.map((badge) => (
-                        <span key={badge} className="organic-badge">
+                        <span key={badge} className="recipe-tag">
                           {badge}
                         </span>
                       ))}
                     </div>
+                    <p className="recipe-price" style={{ marginTop: 10 }}>{selectedProduct.price}</p>
                     <p className={`organic-stock ${selectedProduct.inStock ? "in" : "out"}`}>
                       {selectedProduct.inStock ? "In Stock" : "Out of Stock"}
                     </p>
-                    <button
-                      type="button"
-                      className="cart-btn organic-detail-cart"
-                      disabled={!selectedProduct.inStock}
-                    >
-                      <FaShoppingCart />
-                      {selectedProduct.inStock ? "Add to cart" : "Unavailable"}
-                    </button>
-                  </div>
-                </article>
-              </section>
-            ) : (
-              <>
-                <div className="organic-grid">
-                  {activeTab === "featured" && query.trim() === "" && (
-                    <aside className="member-card">
-                      <p className="member-offer">10% OFF</p>
-                      <p className="member-copy">
-                        For new member sign up at
-                        <br />
-                        the first time
-                      </p>
-                      <label htmlFor="member-email">Email address*</label>
-                      <input id="member-email" type="email" placeholder="johndoe@gmail.com" />
-                      <label htmlFor="member-password">Password*</label>
-                      <input
-                        id="member-password"
-                        type="password"
-                        placeholder="Maximum 8 characters"
-                      />
-                      <button type="button" className="member-btn">
-                        Register Now
-                      </button>
-                    </aside>
-                  )}
-
-                  {filteredProducts.map((item) => (
-                    <article
-                      key={item.name}
-                      className={`produce-card ${item.inStock ? "" : "out-of-stock"}`}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => setSelectedProduct(item)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setSelectedProduct(item);
-                        }
-                      }}
-                    >
-                      <div className="produce-illustration">
-                        <img src={item.image} alt={item.name} />
-                      </div>
-                      <h3>{item.name}</h3>
-                      <div className="organic-badges">
-                        {item.badges.map((badge) => (
-                          <span key={badge} className="organic-badge">
-                            {badge}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="produce-rating" aria-label="4 out of 5 stars">
-                        <span className="stars">{stars(4)}</span>
-                        <span className="count">(4)</span>
-                      </div>
-                      <p className="origin">Product of Canada</p>
-                      <p className={`organic-stock ${item.inStock ? "in" : "out"}`}>
-                        {item.inStock ? "In Stock" : "Out of Stock"}
-                      </p>
-                      <p className="price">{item.price}</p>
-                      <button
-                        type="button"
-                        className="cart-btn"
-                        disabled={!item.inStock}
-                        onClick={(e) => e.stopPropagation()}
+                    <div className="recipe-actions">
+                      <Button
+                        variant="outline-success"
+                        className="recipe-cta ghost modal-action"
+                        onClick={() => setSelectedProduct(null)}
                       >
-                        <FaShoppingCart />
-                        {item.inStock ? "Add to cart" : "Unavailable"}
-                      </button>
-                    </article>
-                  ))}
-                </div>
-
-                {products.length === 0 && (
-                  <div className="recipes-empty">
-                    No products available right now. Please check back soon.
+                        Close
+                      </Button>
+                      <Button
+                        variant="success"
+                        className="recipe-cta modal-action"
+                        disabled={!selectedProduct.inStock}
+                      >
+                        Add to cart
+                      </Button>
+                    </div>
                   </div>
-                )}
-
-                {products.length > 0 && filteredProducts.length === 0 && (
-                  <div className="recipes-empty">
-                    No products match "{query.trim() || "(blank)"}". Try a different search or tab.
-                  </div>
-                )}
-
-                <div className="recipes-pagination organic-pagination" aria-label="Pagination controls">
-                  <button type="button" className="page-btn" aria-label="Previous page">
-                    ←
-                  </button>
-                  <button type="button" className="page-btn" aria-label="Next page">
-                    →
-                  </button>
                 </div>
-              </>
-            )}
-          </Container>
-        </section>
+              </Modal.Body>
+            </>
+          )}
+        </Modal>
       </div>
 
       <footer className="footer organic-footer">
