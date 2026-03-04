@@ -1,0 +1,874 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [ 6 0 R 7 0 R 8 0 R 9 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 10 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 12 0 R >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+10 0 obj
+<< /Length 3020 >>
+stream
+BT
+/F2 22 Tf
+1 0 0 1 72 760 Tm
+(FreshRoute System Design) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 732 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 718 Tm
+(Project: FreshRoute \(Web-based grocery ordering\)) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 703 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 689 Tm
+(Date: March 04, 2026) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 674 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 660 Tm
+(Prepared by: Team FreshRoute) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 645 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 631 Tm
+(Location: doc/sprint1/SystemDesign.pdf) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 616 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 602 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 588 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 574 Tm
+(This document captures the sprint-1 architecture and design snapshot, including environment) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 559 Tm
+(assumptions, CRC cards, and error-handling strategy. It is intentionally concise and will) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 544 Tm
+(evolve in later sprints.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 529 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 515 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 501 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 487 Tm
+(Table of Contents) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 465 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 451 Tm
+(- 1. Purpose & Scope) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 436 Tm
+(- 2. Product Overview) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 421 Tm
+(- 3. Technology Stack & Environment) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 406 Tm
+(- 4. High-Level Architecture) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 391 Tm
+(- 5. System Decomposition) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 376 Tm
+(- 6. Data Model) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 361 Tm
+(- 7. API Design) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 346 Tm
+(- 8. Frontend Components) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 331 Tm
+(- 9. CRC Cards) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 316 Tm
+(- 10. Error & Exception Strategy) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 301 Tm
+(- 11. Assumptions & Constraints) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 286 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 272 Tm
+(1. Purpose & Scope) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 250 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 236 Tm
+(Provide a sprint-1 system design snapshot for FreshRoute, covering frontend, backend, and) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 221 Tm
+(data layers. Align team on responsibilities, interfaces, and dependencies ahead of iterative) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 206 Tm
+(changes. Meet rubric requirements: cover page, table of contents, CRC cards, architecture) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 191 Tm
+(diagram, environment description, and error-handling strategy.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 176 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 162 Tm
+(2. Product Overview) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 140 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 126 Tm
+(FreshRoute is a web-based platform for browsing organic and ethically raised groceries,) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 111 Tm
+(shopping curated recipes, managing a cart, and completing orders. The current sprint) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 96 Tm
+(delivers browsing, search/filter, modal product details, and a basic cart shell.) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 4361 >>
+stream
+BT
+/F1 12 Tf
+1 0 0 1 72 760 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 746 Tm
+(3. Technology Stack & Environment) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 724 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 710 Tm
+(- Frontend: React 19 + Vite 7, React-Bootstrap 2, React Icons.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 695 Tm
+(- Backend: Node.js 18+, Express 5, Mongoose 9, CORS, dotenv, Nodemon \(dev\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 680 Tm
+(- Database: MongoDB \(local Community Server\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 665 Tm
+(- Runtime: Tested locally on macOS/Windows with Node 18+.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 650 Tm
+(- Ports: Backend :4000 \(configurable\), frontend Vite dev server \(usually :5173\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 635 Tm
+(- Environment: backend/.env must define MONGO_URI \(and optionally PORT\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 620 Tm
+(- External services: none; assumes local MongoDB reachable from backend host.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 605 Tm
+(- Network: Frontend -> Backend over HTTP REST, CORS enabled for dev.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 590 Tm
+(- Build tools: npm; Vite bundler; ESLint for linting.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 575 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 561 Tm
+(4. High-Level Architecture) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 539 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 525 Tm
+(Pattern: Light MVC on backend \(Express routes → controllers → Mongoose models\). Frontend) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 510 Tm
+(uses page-level components plus shared navbar; routing is manual via pathname matching.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 495 Tm
+(Deployment model \(current sprint\): single backend service + SPA frontend served separately) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 480 Tm
+(during development.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 465 Tm
+() Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 451 Tm
+(┌─────────────────┐      HTTP \(REST\)      ┌────────────────┐      Mongo driver      ┌──────────────┐) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 437 Tm
+(│ Browser UI      │  ------------------>  │ Express App    │  ------------------>  │ MongoDB      │) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 423 Tm
+(│ \(React + Vite\)  │                      │ \(Routes/CTRL\)  │                      │ \(Products\)   │) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 409 Tm
+(└─────────────────┘                      └────────────────┘                      └──────────────┘) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 395 Tm
+(        ▲                                         │) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 381 Tm
+(        │   Local dev assets                      │ uses) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 367 Tm
+(        └─────────────────────────────────────────┘) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 353 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 339 Tm
+(5. System Decomposition) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 317 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 303 Tm
+(- Client/UI Layer: React pages \(Landing, Organic, EthicallyRaised, Recipes, Cart\) and) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 288 Tm
+(  shared AppNavbar; handles search, filtering, modals, navigation.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 273 Tm
+(- API Layer: Express routes under /api/products plus health/root; JSON parsing, CORS,) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 258 Tm
+(  product CRUD \(create/list implemented\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 243 Tm
+(- Domain/Model Layer: Product Mongoose schema with validation \(name, price, category,) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 228 Tm
+(  inStock, timestamps\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 213 Tm
+(- Data Layer: MongoDB collections persisted via Mongoose ODM.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 198 Tm
+(- Configuration: dotenv loads .env; connectDB centralizes Mongo connection; server.js) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 183 Tm
+(  boots app and logs failures.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 168 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 154 Tm
+(6. Data Model) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 132 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 118 Tm
+(Product \(MongoDB via Mongoose\)) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 103 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 89 Tm
+(- Fields: name:String! , price:Number! \(min 0\), category:String \(default "Produce"\),) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 4986 >>
+stream
+BT
+/F1 12 Tf
+1 0 0 1 72 760 Tm
+(  inStock:Boolean \(default true\), timestamps \(createdAt/updatedAt\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 745 Tm
+(- Indexes: default _id; no custom indexes yet.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 730 Tm
+(- Validation: required name and price; non-negative price; trims name.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 715 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 701 Tm
+(7. API Design) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 679 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 665 Tm
+(- GET /health → { ok: true, message } \(service liveness\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 650 Tm
+(- GET / → plain text "FreshRoute API is running".) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 635 Tm
+(- GET /api/products → list products sorted by createdAt desc.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 620 Tm
+(- POST /api/products → create product from request body; 201 on success; 400 on validation) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 605 Tm
+(  error.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 590 Tm
+(- Future: GET by id, PUT/PATCH, DELETE, and category filters to support richer frontend) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 575 Tm
+(  interactions.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 560 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 546 Tm
+(8. Frontend Components) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 524 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 510 Tm
+(- App.jsx: Lightweight router selecting page component by pathname regex.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 495 Tm
+(- AppNavbar: Shared navigation, search or location picker, cart badge, links to main) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 480 Tm
+(  sections.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 465 Tm
+(- Landing: Marketing hero, value props, CTA to Organic page, location picker usage.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 450 Tm
+(- Organic / EthicallyRaised: Tabbed grids for produce/proteins, client-side search/filter,) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 435 Tm
+(  product detail modal, add-to-cart CTA \(UI only\), membership promo on featured tab.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 420 Tm
+(- Recipes: Tabbed recipe catalog with search, modal showing scaled servings and) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 405 Tm
+(  ingredients, CTA to add servings to cart \(UI only\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 390 Tm
+(- Cart: Placeholder shell with navbar; cart logic to be implemented.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 375 Tm
+(- Styling: Shared CSS \(Landing.css, Recipes.css, Organic.css, Navbar.css\) plus Bootstrap) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 360 Tm
+(  utility classes; assets under src/assets.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 345 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 331 Tm
+(9. CRC Cards) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 309 Tm
+() Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 295 Tm
+(Class/Component    Responsibilities                 Collaborators                Notes                     ) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 281 Tm
+(-----------------------------------------------------------------------------------------------------------) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 267 Tm
+(App \(frontend\)     Route to pages by pathname.      Landing, Organic, EthicallyRaised, Recipes, Cart Regex routing; upgrade to React Router later.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 253 Tm
+(AppNavbar          Nav links, search/location input, cart badge, welcome text. All pages                    React-Bootstrap navbar, icons.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 239 Tm
+(Landing            Hero, value props, CTA to shop.  AppNavbar                    Static content + imagery. ) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 225 Tm
+(Organic            Tabbed produce grid, search, modal, CTAs. AppNavbar                    Local data; keyboard friendly cards.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 211 Tm
+(EthicallyRaised    Tabbed protein grid, search, modal. AppNavbar                    Mirrors Organic dataset.  ) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 197 Tm
+(Recipes            Recipe catalog, search, tab filters, modal with servings. AppNavbar                    Stores per-recipe servings in state.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 183 Tm
+(Cart               Cart view shell.                 AppNavbar                    Future backend integration.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 169 Tm
+(server.js          Load env, connect DB, start HTTP server. connectDB, app               Fails fast if MONGO_URI missing.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 155 Tm
+(app.js             Configure middleware, health/root routes, mount product routes. productRoutes                Exports Express app for testing.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 141 Tm
+(productRoutes      Map /api/products to controllers. ProductController            Express Router.           ) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 127 Tm
+(ProductController  Handle product CRUD \(create, list\). Product model                Returns proper HTTP codes.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 113 Tm
+(Product model      Define schema, validation, expose queries. MongoDB                      Add indexes as data grows.) Tj
+ET
+BT
+/F3 11 Tf
+1 0 0 1 72 99 Tm
+(connectDB          Establish Mongo connection; surface errors. Mongoose                     Add retry/backoff for prod.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 2303 >>
+stream
+BT
+/F1 12 Tf
+1 0 0 1 72 760 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 746 Tm
+(10. Error & Exception Strategy) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 724 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 710 Tm
+(- Backend boot: if MONGO_URI missing or connection fails, server exits with code 1 after) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 695 Tm
+(  logging the error.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 680 Tm
+(- API validation: POST /api/products returns 400 with { error } when Mongoose validation) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 665 Tm
+(  fails.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 650 Tm
+(- Unexpected server errors: can be centralized via middleware; current scope logs to) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 635 Tm
+(  console and returns generic JSON.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 620 Tm
+(- Frontend input: search inputs are local-only now; future API fetch errors should surface) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 605 Tm
+(  toast/error banners.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 590 Tm
+(- Network/DB failures: plan to show user-friendly error states and retry on fetch; backend) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 575 Tm
+(  to set timeouts and respond with 503/504 as needed.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 560 Tm
+(- Data integrity: rely on Mongoose schema; consider unique indexes for SKU/name when) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 545 Tm
+(  inventory expands.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 530 Tm
+() Tj
+ET
+BT
+/F2 16 Tf
+1 0 0 1 72 516 Tm
+(11. Assumptions & Constraints) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 494 Tm
+() Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 480 Tm
+(- MongoDB is reachable locally; no auth in dev. Production will need secure connection) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 465 Tm
+(  strings and secrets management.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 450 Tm
+(- Frontend and backend run on same host during development; CORS open for now \(tighten) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 435 Tm
+(  later\).) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 420 Tm
+(- Cart/checkout flows are placeholders; backend currently only supports product CRUD.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 405 Tm
+(  Additional services \(auth, payments\) will be added later.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 390 Tm
+(- Architecture kept simple \(single service + SPA\) to meet course scope; modularization and) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 375 Tm
+(  routing upgrades deferred.) Tj
+ET
+BT
+/F1 12 Tf
+1 0 0 1 72 360 Tm
+() Tj
+ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000135 00000 n 
+0000000205 00000 n 
+0000000280 00000 n 
+0000000348 00000 n 
+0000000495 00000 n 
+0000000642 00000 n 
+0000000789 00000 n 
+0000000936 00000 n 
+0000004008 00000 n 
+0000008421 00000 n 
+0000013459 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+15814
+%%EOF
