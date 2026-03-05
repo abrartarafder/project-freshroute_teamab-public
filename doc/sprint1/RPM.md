@@ -2,7 +2,6 @@
 **Date:** March 06, 2026  
 **Project Name:** FreshRoute  
 **Release Version:** 1.0.0  
-
 ---
 
 ## Meetings for this Release  
