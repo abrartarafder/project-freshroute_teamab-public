@@ -1,4 +1,4 @@
-# Node dependencies (ignore everywhere)
+# Node dependencies (to ignore everywhere)
 node_modules/
 
 # Build outputs
