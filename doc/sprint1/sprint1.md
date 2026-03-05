@@ -3,7 +3,6 @@
 **Sprint Duration:** February 22, 2026 - March 06, 2026  
 **Project Name:** FreshRoute  
 **Sprint Goal:** Develop and implement the core storefront experience, including product browsing, product details, recipes, and a working cart interface with basic backend integration.
-
 ---
 
 ## Sprint Goals
