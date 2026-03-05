@@ -14,6 +14,10 @@ The primary objectives of Sprint 1 are:
 3. Integrate MongoDB with Express APIs for products and recipes.
 5. Define reusable components and a clean, modular architecture for future expansion.
 
+## Product Backlog
+
+The [ProductBacklog.md](doc/sprint0/PB.md) file has more details about all of the Product Backlogs we have established. 
+
 ---
 
 ## Participants
