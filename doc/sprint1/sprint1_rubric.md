@@ -3,7 +3,6 @@
 **Team Name:** FreshRoute (Team AB)
 
 *(Convention: N=sprint number, ex: sprintN.md means sprint2.md for sprint 2, and SR(N-1)md means SR1.md for sprint 2, that is Sprint Retrospective for Sprint 1, to be hold during planning meeting at the beginning of Sprint 2)*
-
 ---
 ## Planning Meetings (RPM.md, sprintN.md) (max 5 marks)
 
