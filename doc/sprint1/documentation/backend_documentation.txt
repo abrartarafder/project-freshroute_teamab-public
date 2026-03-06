@@ -1,1 +1,92 @@
+===================================================
+FRESHROUTE - BACKEND DOCUMENTATION (Sprint 1)
+Course: EECS 3311 
+Team: FreshRoute (Team AB)
+Date: February 22 - March 06, 2026
+Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
+===================================================
+1. OVERVIEW
+---------------------------------------------------
+- Managing product data
+- Connection to the MangoDB database 
+- Storing product and inventory data as JSON files. 
 
+2. REQUIREMENTS / PREREQUISITES
+----------------------------------------------------
+-Node.js: 20.19+ (recommended)
+-npm: 10+
+-OS: Windows / macOS supported
+-Recommended tools: VS code, Git, MongoDB Compass
+
+3. HOW TO CONNECT TO THE DATABASE
+----------------------------------------------------
+- create new connection on MangoDB Compas 
+- paste the following for the URL: mongodb+srv://freshrouteDB:eecs3311W26@freshroute-cluster.ivpzykz.mongodb.net/freshroute?retryWrites=true&w=majority&appName=freshroute-cluster
+
+4. FOLDER STRUCTURE
+----------------------------------------------------
+backend/
+│
+├── package.json
+├── package-lock.json
+├── .env
+│
+├── BackEndData/
+│   ├── backend-recipes.json
+│   ├── backend-organic.json
+│   └── backend-ethically_raised.json
+│
+└── src/
+    │
+    ├── server.js
+    ├── app.js
+    │
+    ├── config/
+    │   └── db.js
+    │
+    ├── models/
+    │   └── Product.js
+    │
+    ├── controllers/
+    │   └── ProductController.js
+    │
+    └── routes/
+        └── productRoutes.js
+
+5. DATABASE STRUCTURE
+----------------------------------------------------
+Server
+│
+├── admin 
+├── freshroute
+    ├── Ethically 
+    ├── Organic 
+    ├── Recipes 
+├── local 
+├── sample_mflix
+
+6. KEY COMPONENTS
+----------------------------------------------------
+- navbar.jsx: responsive nav with search functionality
+- Landing.jsx: hero, links to organic page, benefits list with imagery.
+- Recipes.jsx: styled layout ready for recipe cards and reusing navbar/footer.
+- Organic/EthicallyRaised/Cart: list of products pages and reusing navbar/footer.
+
+7. API Routes
+----------------------------------------------------
+- Get All product: GET /api/products
+- Add a Product: POST /api/products
+
+8. STATE & DATA FLOW
+----------------------------------------------------
+- API wiring planned for Sprint 2 (products, recipes, cart).
+
+9. EXTERNAL LIBRARIES
+----------------------------------------------------
+- react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
+- mangoose
+- express 
+- cors 
+- dotenv
+
+We will keep adding to the documentation as the project progresses. 
