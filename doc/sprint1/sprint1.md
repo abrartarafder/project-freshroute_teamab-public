@@ -16,7 +16,7 @@ The primary objectives of Sprint 1 are:
 
 ## Product Backlog
 
-The [ProductBacklog.md](doc/sprint0/PB.md) file has more details about all of the Product Backlogs we have established. 
+The [sprint0 Product Backlog](../sprint0/PB.md) file has more details about all of the Product Backlogs we have established.
 
 ---
 
