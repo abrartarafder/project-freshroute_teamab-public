@@ -67,10 +67,10 @@ Server
 
 6. KEY COMPONENTS
 ----------------------------------------------------
-- navbar.jsx: responsive nav with search functionality
-- Landing.jsx: hero, links to organic page, benefits list with imagery.
-- Recipes.jsx: styled layout ready for recipe cards and reusing navbar/footer.
-- Organic/EthicallyRaised/Cart: list of products pages and reusing navbar/footer.
+- db.js: this file handles the connection between the backend application and the MongoDB database.
+- ProductController.js: this file contains controller functions that handle product-related API requests. The createProduct    function creates a new product in the database using the data provided in the request body and returns the created product.
+- Product.js: this file defines the Product model using a schema that specifies the structure of product documents in the      database, including fields such as name, price, category, and inventory.
+- productRoutes.js: this file defines the API routes for product-related requests using Express Router.
 
 7. API Routes
 ----------------------------------------------------
