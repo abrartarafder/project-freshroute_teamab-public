@@ -18,7 +18,7 @@
 
 ## Practices to Continue
 - Fast pairing on integration-heavy tasks to reduce rework.
-- Daily standups with clear next-24h commitments.
+- Weekly standups with clear next-24h commitments.
 - Keeping Trello/backlog items mirrored in repo docs to avoid losing history.
 
 ## Practices to Start
@@ -31,5 +31,5 @@
 - Relying on premium-only tool features like Trello without local backups.
 
 ## Best/Worst Experiences in Sprint 1
-- **Best:** Pairing sessions that finished the landing + organic/ethical pages quickly and improved UI polish.
-- **Worst:** Losing Trello premium mid-sprint and the scramble to recreate points/labels while backend integration lagged.
+- **Best Experience in Sprint 1:** Pairing sessions that finished the landing + organic/ethical pages quickly and improved UI polish. Some of the in-person standup meetings were fun as well. 
+- **Worst Experience in Sprint 1:** Losing Trello premium mid-sprint and the scramble to recreate points/labels while backend integration lagged.
