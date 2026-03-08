@@ -2,10 +2,11 @@
 Concise reference for the two diagrams and how the system pieces fit.
 
 ## Diagrams
-- **Component view:** service + data paths.  
-  ![Architecture Diagram](documentation/architecture_diagram.png)
-- **High-level view:** quick mental model.  
-  ![High-Level Architecture](documentation/architecture_diagram_highlevel.png)
+- **System architecture diagram:** end-to-end flow from UI → API → DB.  
+  ![System Architecture Diagram](documentation/architecture_diagram.png)
+  
+- **Model–View diagram:** quick MVC roles for user interactions.  
+  ![Model–View Diagram](documentation/architecture_diagram_highlevel.png)
 
 ## How It Flows
 1) User enters UI (React/Vite) → `App.js` loads `AppNavBar` + `React Router`.
