@@ -8,7 +8,7 @@ Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargo
 1. OVERVIEW
 ---------------------------------------------------
 - Managing product data
-- Connection to the MangoDB database 
+- Connection to the MongoDB database 
 - Storing product and inventory data as JSON files. 
 
 2. REQUIREMENTS / PREREQUISITES
@@ -16,11 +16,11 @@ Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargo
 -Node.js: 20.19+ (recommended)
 -npm: 10+
 -OS: Windows / macOS supported
--Recommended tools: VS code, Git, MongoDB Compass
+-Recommended tools: VS Code, Git, MongoDB Compass
 
 3. HOW TO CONNECT TO THE DATABASE
 ----------------------------------------------------
-- create new connection on MangoDB Compas 
+- Create a new connection on MongoDB Compass 
 - paste the following for the URL: mongodb+srv://freshrouteDB:eecs3311W26@freshroute-cluster.ivpzykz.mongodb.net/freshroute?retryWrites=true&w=majority&appName=freshroute-cluster
 
 4. FOLDER STRUCTURE
@@ -67,14 +67,14 @@ Server
 
 6. KEY COMPONENTS
 ----------------------------------------------------
-- db.js: this file handles the connection between the backend application and the MongoDB database.
-- ProductController.js: this file contains controller functions that handle product-related API requests. The createProduct    function creates a new product in the database using the data provided in the request body and returns the created product.
+- db.js: This file handles the connection between the backend application and the MongoDB database.
+- ProductController.js: This file contains controller functions that handle product-related API requests. The createProduct    function creates a new product in the database using the data provided in the request body and returns the created product.
 - Product.js: this file defines the Product model using a schema that specifies the structure of product documents in the      database, including fields such as name, price, category, and inventory.
 - productRoutes.js: this file defines the API routes for product-related requests using Express Router.
 
 7. API Routes
 ----------------------------------------------------
-- Get All product: GET /api/products
+- Get all products: GET /api/products
 - Add a Product: POST /api/products
 
 8. STATE & DATA FLOW
@@ -84,7 +84,7 @@ Server
 9. EXTERNAL LIBRARIES
 ----------------------------------------------------
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
-- mangoose
+- mongoose
 - express 
 - cors 
 - dotenv
