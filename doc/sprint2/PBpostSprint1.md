@@ -8,18 +8,8 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 ---
 
 ## ~~PB-01 - Browse Products - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy. ~~
-**Criteria of satisfaction:**
-- ~~A product list page loads without errors.~~
-- ~~Each product shows at least name + price.~~
-- ~~If there are no products, the UI shows a clear “no products available” message.~~
 
 ## ~~PB-02 - Search Products - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to search for products by keyword so that I can find items quickly.~~
-**Criteria of satisfaction:**
-- ~~Typing a keyword filters the product list.~~
-- ~~Clearing the keyword restores the full list.~~
-- ~~Search is case-insensitive.~~
 
 ## PB-03 - Filter/Sort Products
 **User story:** As a customer, I want to filter/sort products so that I can shop efficiently.  
@@ -29,11 +19,6 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 - Filter/sort updates results correctly.
 
 ## ~~PB-04 - Product Details - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to view product details so that I can make a purchase decision.~~ 
-**Criteria of satisfaction:**
-- ~~Clicking a product opens a details view/page.~~
-- ~~Details include name, price, and description (or placeholder).~~
-- ~~A back navigation option exists.~~
 
 ## PB-05 - Add Item to Cart
 **User story:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.  
@@ -132,29 +117,11 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 
 
 ## ~~PB-17 - Product Badges (Organic / Ethical Labels)  - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.~~
-**Criteria of satisfaction:**
-- ~~Product cards display badges such as “Organic”, “Non-GMO”, and “Ethically Raised” when applicable.~~
-- ~~Product detail view displays the same badges consistently.~~
-- ~~Badges are visually distinct and easy to understand.~~
 
 ## ~~PB-18 - Display Product Availability  - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.~~
-
-**Criteria of satisfaction:**
-- ~~Each product displays an “In Stock” or “Out of Stock” label.~~
-- ~~Out-of-stock items cannot be added to the cart.~~
-- ~~The UI clearly differentiates unavailable products.~~
 
 ## ~~PB-19 - Browse Recipes  - Completed in Sprint1~~
-**User story:** ~~As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.~~
 
-**Criteria of satisfaction:**
-- ~~A dedicated Recipes page displays a list of available recipes.~~
-- ~~Each recipe shows at least a name and short description.~~
-- ~~Clicking a recipe opens a detailed view.~~
-- ~~Recipe detail includes ingredient list and default serving size.~~
-- ~~Recipes load without errors and display a clear message if none are~~
 
 
 ## PB-20 - User-Friendly Error Handling
