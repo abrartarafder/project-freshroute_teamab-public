@@ -13,7 +13,7 @@
 ## Unfinished Work
 - We completed all of the tasks as expected, so we will continue with the tasks as needed for Sprint 2. 
 
-- ** Sprint 2 User Stories will be PB-03, PB-06, PB-05, PB-08, PB-09, PB-07, PB-10**
+- **Sprint 2 User Stories will be PB-03, PB-06, PB-05, PB-08, PB-09, PB-07, PB-10**
 - PB.md is updated with all of the work finished during Sprint 1 and is under the Sprint 2 folder, the file is called PBpostSprint1.md
 
 ## Practices to Continue
