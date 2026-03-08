@@ -89,11 +89,11 @@ Shoumik and Abrar: The website has been polished for the demo, and Trello is now
 
 3. What do you commit to next?
 
-Team: We will make the demo video right after this standup meeting. After the video is uploaded to Github, we will begin working on Sprint 2. 
+Team: We will make the demo video right after this standup meeting. After the video is uploaded to Github, we will begin working on Sprint 2 and update the SR1.md file. 
 
 5. When do you think you'll be done?
 
-Team: The Demo video will be done and uploaded to GitHub by the end of the Sprint 1 Deadline (Mar 09, 2026). 
+Team: The Demo video will be done and uploaded to GitHub by the end of the Sprint 1 Deadline (Mar 09, 2026). Sprint 2 will begin and finish by the Sprint 2 deadline. 
 
 7. Do you have any blockers?
 
