@@ -15,6 +15,6 @@ Concise reference for the two diagrams and how the system pieces fit.
 5) Backend `app.js` registers product routes/controllers and responds back to the UI.
 
 ## Where Things Live
-- Frontend SPA: `frontend/`
+- Frontend: `frontend/`
 - API + services: `backend/`
 - Diagrams (PNGs): `doc/sprint1/documentation/`
