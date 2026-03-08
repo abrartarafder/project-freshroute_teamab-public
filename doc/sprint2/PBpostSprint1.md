@@ -7,14 +7,14 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 
 ---
 
-## PB-01 - Browse Products - Completed in Sprint1
+## ~~PB-01 - Browse Products - Completed in Sprint1~~
 **User story:** As a customer, I want to browse a list of organic or ethically produced products so that I can decide what to buy.  
 **Criteria of satisfaction:**
 - A product list page loads without errors.
 - Each product shows at least name + price.
 - If there are no products, the UI shows a clear “no products available” message.
 
-## PB-02 - Search Products - Completed in Sprint1
+## ~~PB-02 - Search Products - Completed in Sprint1~~
 **User story:** As a customer, I want to search for products by keyword so that I can find items quickly.  
 **Criteria of satisfaction:**
 - Typing a keyword filters the product list.
@@ -28,7 +28,7 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 - User can sort by price (low→high, high→low).
 - Filter/sort updates results correctly.
 
-## PB-04 - Product Details - Completed in Sprint1
+## ~~PB-04 - Product Details - Completed in Sprint1~~
 **User story:** As a customer, I want to view product details so that I can make a purchase decision.  
 **Criteria of satisfaction:**
 - Clicking a product opens a details view/page.
@@ -131,14 +131,14 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 - Updated status is reflected in order lookup.
 
 
-## PB-17 - Product Badges (Organic / Ethical Labels)  - Completed in Sprint1
+## ~~PB-17 - Product Badges (Organic / Ethical Labels)  - Completed in Sprint1~~
 **User story:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.  
 **Criteria of satisfaction:**
 - Product cards display badges such as “Organic”, “Non-GMO”, and “Ethically Raised” when applicable.
 - Product detail view displays the same badges consistently.
 - Badges are visually distinct and easy to understand.
 
-## PB-18 - Display Product Availability  - Completed in Sprint1
+## ~~PB-18 - Display Product Availability  - Completed in Sprint1~~
 **User story:** As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
 
 **Criteria of satisfaction:**
@@ -146,7 +146,7 @@ Note: Similar or closely related user stories are grouped under a single Trello 
 - Out-of-stock items cannot be added to the cart.
 - The UI clearly differentiates unavailable products.
 
-## PB-19 - Browse Recipes  - Completed in Sprint1
+## ~~PB-19 - Browse Recipes  - Completed in Sprint1~~
 **User story:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
 
 **Criteria of satisfaction:**
