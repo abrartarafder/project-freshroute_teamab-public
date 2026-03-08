@@ -4,7 +4,7 @@ Concise reference for the two diagrams and how the system pieces fit.
 ## Diagrams
 - **Component view:** service + data paths.  
   ![Architecture Diagram](documentation/architecture_diagram.png)
-- **High-level view:** quick mental model.  
+- **High-level view:** quick overview model.  
   ![High-Level Architecture](documentation/architecture_diagram_highlevel.png)
 
 ## How It Flows
