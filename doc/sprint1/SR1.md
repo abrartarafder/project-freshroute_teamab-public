@@ -17,7 +17,7 @@
 - PB.md is updated with all of the work finished during Sprint 1 and is under the Sprint 2 folder, the file is called PBpostSprint1.md
 
 ## Practices to Continue
-- Pair programming for integration tasks: helped us resolve integration problems more quickly, ... 
+- Pair programming for integration tasks: helped us resolve integration problems more quickly, allowed us to share knowledge more easily so that expertise was not limited to a single team member, and reduced any miscommunication by allowing team members to collaborate and clarify code in real time. 
 - Weekly standups with clear next-24h commitments: helped us maintain clear communication and expectations about task progress and discuss any issues we ran into. Regular meetings also helped us adjust responsibilities quickly when someone was overwhelmed. 
 - Keeping Trello/backlog items mirrored in repository docs to avoid losing history even when trello tools changed or became unavailable.
 
