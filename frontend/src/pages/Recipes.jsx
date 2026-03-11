@@ -14,7 +14,9 @@ import imgBeef from "../assets/recipes/beef-stirfry.png";
 import imgBuddha from "../assets/recipes/buddha-bowl.png";
 import imgWrap from "../assets/recipes/med-wrap.png";
 
-const TAB_KEYS = ["featured", "popular", "new"];
+const TAB_KEYS = ["featured", "popular", "new", "all"];
+
+const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
 
 const recipes = [
   {
@@ -164,6 +166,8 @@ export default function Recipes() {
   const [query, setQuery] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [activeTab, setActiveTab] = useState("featured");
+  const [priceFilter, setPriceFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("none");
   const [servingsByTitle, setServingsByTitle] = useState(() =>
     Object.fromEntries(recipes.map((r) => [r.title, r.servings]))
   );
@@ -177,18 +181,53 @@ export default function Recipes() {
 
   const filteredRecipes = useMemo(() => {
     const q = query.trim().toLowerCase();
-    const byTab = recipes.filter((r) =>
-      activeTab ? r.categories?.includes(activeTab) : true
-    );
-    if (!q) return byTab;
 
-    return byTab.filter((r) => {
-      const haystack = [r.title, r.description, r.price, ...(r.tags ?? [])]
-        .join(" ")
-        .toLowerCase();
-      return haystack.includes(q);
-    });
-  }, [activeTab, query]);
+    let list = recipes.filter((r) =>
+      activeTab && activeTab !== "all" ? r.categories?.includes(activeTab) : true
+    );
+
+    if (priceFilter !== "all") {
+      list = list.filter((r) => {
+        const price = priceToNumber(r.price);
+        if (priceFilter === "under5") return price < 5;
+        if (priceFilter === "5to65") return price >= 5 && price <= 6.5;
+        if (priceFilter === "over65") return price > 6.5;
+        return true;
+      });
+    }
+
+    if (q) {
+      list = list.filter((r) => {
+        const haystack = [r.title, r.description, r.price, ...(r.tags ?? [])]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(q);
+      });
+    }
+
+    if (sortBy === "price-asc") {
+      list = [...list].sort((a, b) => priceToNumber(a.price) - priceToNumber(b.price));
+    } else if (sortBy === "price-desc") {
+      list = [...list].sort((a, b) => priceToNumber(b.price) - priceToNumber(a.price));
+    } else if (sortBy === "alpha") {
+      list = [...list].sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    return list;
+  }, [activeTab, priceFilter, query, sortBy]);
+
+  const handleTabSwitch = (tab) => {
+    setActiveTab(tab);
+    setPriceFilter("all");
+    setSortBy("none");
+  };
+
+  const renderTabLabel = (tab) => {
+    if (tab === "featured") return "Featured";
+    if (tab === "popular") return "Popular";
+    if (tab === "new") return "New";
+    return "All";
+  };
 
   return (
     <div className="page-shell recipes-shell">
@@ -216,12 +255,7 @@ export default function Recipes() {
               aria-label="Recipe category tabs"
             >
               {TAB_KEYS.map((tab) => {
-                const label =
-                  tab === "featured"
-                    ? "Featured"
-                    : tab === "popular"
-                    ? "Popular"
-                    : "New";
+                const label = renderTabLabel(tab);
                 const isActive = activeTab === tab;
                 return (
                   <button
@@ -232,7 +266,7 @@ export default function Recipes() {
                     aria-controls={`panel-${tab}`}
                     tabIndex={isActive ? 0 : -1}
                     className={`recipes-tab ${isActive ? "active" : ""}`}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => handleTabSwitch(tab)}
                     onKeyDown={(e) => {
                       if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
                         e.preventDefault();
@@ -240,7 +274,7 @@ export default function Recipes() {
                         const currentIdx = TAB_KEYS.indexOf(activeTab);
                         const nextIdx =
                           (currentIdx + dir + TAB_KEYS.length) % TAB_KEYS.length;
-                        setActiveTab(TAB_KEYS[nextIdx]);
+                        handleTabSwitch(TAB_KEYS[nextIdx]);
                       }
                     }}
                   >
@@ -248,6 +282,44 @@ export default function Recipes() {
                   </button>
                 );
               })}
+              <div
+                className="recipes-inline-controls"
+                role="region"
+                aria-label="Filter and sort recipes"
+              >
+                <div className="recipes-control">
+                  <label htmlFor="price-filter" className="control-label">
+                    Price
+                  </label>
+                  <select
+                    id="price-filter"
+                    className="recipes-select"
+                    value={priceFilter}
+                    onChange={(e) => setPriceFilter(e.target.value)}
+                  >
+                    <option value="all">All</option>
+                    <option value="under5">Under $5.00</option>
+                    <option value="5to65">$5.00 – $6.50</option>
+                    <option value="over65">Over $6.50</option>
+                  </select>
+                </div>
+                <div className="recipes-control">
+                  <label htmlFor="sort-recipes" className="control-label">
+                    Sort
+                  </label>
+                  <select
+                    id="sort-recipes"
+                    className="recipes-select"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                  >
+                    <option value="none">Relevance</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="alpha">Name: A → Z</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
@@ -321,8 +393,9 @@ export default function Recipes() {
 
             {filteredRecipes.length === 0 && (
               <div className="recipes-empty">
-                No recipes match “{query.trim() || "(blank)"}”. Try a different search
-                or clear the filter.
+                {query.trim()
+                  ? `No recipes match “${query.trim()}”. Try a different search or clear filters.`
+                  : "No recipes match the current filters. Try adjusting category, price, or sort."}
               </div>
             )}
 
