@@ -21,7 +21,8 @@ import "./Landing.css";
 import "./Recipes.css";
 import "./Organic.css";
 
-const TAB_KEYS = ["featured", "popular", "new"];
+const TAB_KEYS = ["featured", "popular", "new", "all"];
+const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
 
 const products = [
   {
@@ -161,20 +162,49 @@ function stars(rating = 4) {
 export default function Organic() {
   const [activeTab, setActiveTab] = useState("featured");
   const [query, setQuery] = useState("");
+  const [priceFilter, setPriceFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("none");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const filteredProducts = useMemo(() => {
     const trimmed = query.trim().toLowerCase();
-    const byTab =
-      activeTab === "featured"
-        ? products
-        : products.filter((p) => p.tabs.includes(activeTab));
+    let list =
+      activeTab && activeTab !== "all"
+        ? products.filter((p) => p.tabs.includes(activeTab))
+        : products;
 
-    if (!trimmed) return byTab;
-    return byTab.filter((p) =>
-      [p.name, p.description, p.price, ...(p.badges ?? [])].join(" ").toLowerCase().includes(trimmed)
-    );
-  }, [activeTab, query]);
+    if (priceFilter !== "all") {
+      list = list.filter((p) => {
+        const price = priceToNumber(p.price);
+        if (priceFilter === "under5") return price < 5;
+        if (priceFilter === "5to65") return price >= 5 && price <= 6.5;
+        if (priceFilter === "over65") return price > 6.5;
+        return true;
+      });
+    }
+
+    if (trimmed) {
+      list = list.filter((p) =>
+        [p.name, p.description, p.price, ...(p.badges ?? [])].join(" ").toLowerCase().includes(trimmed)
+      );
+    }
+
+    if (sortBy === "price-asc") {
+      list = [...list].sort((a, b) => priceToNumber(a.price) - priceToNumber(b.price));
+    } else if (sortBy === "price-desc") {
+      list = [...list].sort((a, b) => priceToNumber(b.price) - priceToNumber(a.price));
+    } else if (sortBy === "alpha") {
+      list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return list;
+  }, [activeTab, priceFilter, query, sortBy]);
+
+  const handleTabSwitch = (tab) => {
+    setActiveTab(tab);
+    setPriceFilter("all");
+    setSortBy("none");
+  };
 
   return (
     <div className="page-shell organic-shell">
@@ -193,7 +223,7 @@ export default function Organic() {
             <h1 className="recipes-hero-title">Produce</h1>
             <div className="recipes-tabs" role="tablist" aria-label="Produce filters">
               {TAB_KEYS.map((tab) => {
-                const label = tab.charAt(0).toUpperCase() + tab.slice(1);
+                const label = tab === "all" ? "All" : tab.charAt(0).toUpperCase() + tab.slice(1);
                 const isActive = activeTab === tab;
                 return (
                   <button
@@ -201,12 +231,50 @@ export default function Organic() {
                     className={`recipes-tab ${isActive ? "active" : ""}`}
                     role="tab"
                     aria-selected={isActive}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => handleTabSwitch(tab)}
                   >
                     {label}
                   </button>
                 );
               })}
+              <div
+                className="recipes-inline-controls"
+                role="region"
+                aria-label="Filter and sort products"
+              >
+                <div className="recipes-control">
+                  <label htmlFor="organic-price-filter" className="control-label">
+                    Price
+                  </label>
+                  <select
+                    id="organic-price-filter"
+                    className="recipes-select"
+                    value={priceFilter}
+                    onChange={(e) => setPriceFilter(e.target.value)}
+                  >
+                    <option value="all">All</option>
+                    <option value="under5">Under $5.00</option>
+                    <option value="5to65">$5.00 – $6.50</option>
+                    <option value="over65">Over $6.50</option>
+                  </select>
+                </div>
+                <div className="recipes-control">
+                  <label htmlFor="organic-sort" className="control-label">
+                    Sort
+                  </label>
+                  <select
+                    id="organic-sort"
+                    className="recipes-select"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                  >
+                    <option value="none">Relevance</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="alpha">Name: A → Z</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
@@ -299,7 +367,9 @@ export default function Organic() {
 
             {products.length > 0 && filteredProducts.length === 0 && (
               <div className="recipes-empty">
-                No products match "{query.trim() || "(blank)"}". Try a different search or tab.
+                {query.trim()
+                  ? `No products match “${query.trim()}”. Try a different search or tab.`
+                  : "No products match the current filters. Try adjusting category, price, or sort."}
               </div>
             )}
 

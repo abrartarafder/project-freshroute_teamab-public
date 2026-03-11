@@ -32,7 +32,7 @@ export default function LandingPage() {
     <div className="page-shell">
       <div className="page-main">
         <AppNavbar
-          cartCount={9}
+          cartCount={0}
           userName="John"
           activeKey="home"
           onSearch={handleSearch}
