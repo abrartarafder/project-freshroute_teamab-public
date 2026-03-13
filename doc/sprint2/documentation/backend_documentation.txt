@@ -1,8 +1,8 @@
 ===================================================
-FRESHROUTE - BACKEND DOCUMENTATION (Sprint 1)
+FRESHROUTE - BACKEND DOCUMENTATION (Sprint 2)
 Course: EECS 3311 
 Team: FreshRoute (Team AB)
-Date: February 22 - March 06, 2026
+Date: March 09 - March 23, 2026
 Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
 ===================================================
 1. OVERVIEW
