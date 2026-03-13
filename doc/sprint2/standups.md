@@ -29,17 +29,25 @@ Judy: For Sprint 2, I will continue working on researching integration methods f
 3. When do you think you'll be done?
 
 Abrar: I think that I will be done by the beginning of Sprint 2 Standup #3. 
+
 Shoumik: I think that I will be done by the beginning of Sprint 2 Standup #3. 
+
 Ekam: I think that I will be done by the beginning of Sprint 2 Standup #3.
+
 Moneba: I think that I will be done by the beginning of Sprint 2 Standup #3.
+
 Judy: I think that I will be done by the beginning of Sprint 2 Standup #3.
 
 4. Do you have any blockers?
 
 Abrar: No blockers as of yet. 
+
 Shoumik: No blockers as of yet. 
+
 Ekam: No blockers as of yet. 
+
 Moneba: No blockers as of yet. 
+
 Judy: No blockers as of yet. 
 
 [2026-03-15] - Sprint 2 Standup #2
