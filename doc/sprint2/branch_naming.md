@@ -12,7 +12,8 @@ User Stories
 | PB-03 | Filter products | Abrar | refactor/filter | #15 |
 | PB-08 | Scale recipe ingredients | Abrar | features/recipes-add | #18, #46 |
 
-Backend Integration Subtasks (span multiple user stories hence why they are not under User Stories)
+Backend Integration Subtasks
+These subtasks span multiple user stories, so they are tracked separately from the User Stories table. This also balances workload across team members because the integrations are longer-running pieces of work.
 
 | Subtask | Scope | Owner | Branch | Ticket ID |
 | --- | --- | --- | --- | --- |
