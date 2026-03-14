@@ -1,6 +1,6 @@
 Notes
 - At least 30% of commits landed in Week 01 (March 10–16); the remaining commits were completed in Week 02 (March 17–23).
-- Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [branch_naming.md](./branch_naming.md).
+- Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [distribution_naming.md](./distribution_naming.md).
 
 Summary of Active Branches
 - Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`

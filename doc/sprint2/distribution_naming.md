@@ -1,6 +1,8 @@
+# Branch Naming + Distribution Document 
 
 Notes
 - A minimum of 30% of all commits were completed during Week 01 (March 10–16), with the remaining commits completed in Week 02 (March 17–23), demonstrating consistent progress across the sprint timeline.
+
 - GitHub branches were primarily named after the single associated ticket number. Supporting branches were opened only when collaboration or parallel work was required, with one main branch per ticket unless tasks were tightly related (ex: multiple cart-page tickets or recipe page integration).
 
 ## User Stories
