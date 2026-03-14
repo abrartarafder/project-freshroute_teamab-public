@@ -4,17 +4,17 @@ Sprint: 02
 
 ---
 
-## All Sprint 01 Trello Backlog User Stories has been completed
+## All Sprint 01 Trello Backlog User Stories has been completed, these are the stories for sprint 02. 
 
 Notes
 - At least 30% of commits landed in Week 01 (March 10–16); the remaining commits were completed in Week 02 (March 17–23).
 - Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables in [branch_naming.md](./branch_naming.md).
 
 Summary of Active Branches
-- Cart and address updates (PB-05, PB-06, PB-09, PB-10) — Shoumik — `features/cart`
-- Product filters (PB-03) — Abrar — `refactor/filter`
-- Recipe ingredient scaling (PB-08) — Abrar — `features/recipes-add`
-- Backend integrations (span multiple stories) — Ekam/Judy/Moneba — `features/organic-integration-backend`, `features/recipes-integration-backend`
+- Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
+- Product filters (PB-03) - Abrar - `refactor/filter`
+- Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
+- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
 
 
 ## PB-03 - Filter / Sort Products

@@ -4,7 +4,7 @@ Notes
 
 - GitHub branches were primarily named after the single associated ticket number. Supporting branches were opened only when collaboration or parallel work was required, with one main branch per ticket unless tasks were tightly related (ex: multiple cart-page tickets or recipe page integration).
 
-User Stories
+## User Stories
 
 | Ticket(s) | Scope | Owner | Primary Branch | Related Ticket IDs | Week 01 Commits - Workload Distribution |
 | --- | --- | --- | --- | --- | --- |
@@ -12,7 +12,7 @@ User Stories
 | PB-03 | Filter products | Abrar | refactor/filter | #15 | Yes (2/6) = 33%|
 | PB-08 | Scale recipe ingredients | Abrar | features/recipes-add | #18, #46 | No |
 
-Backend Integration Subtasks
+## Backend Integration Subtasks
 These subtasks span multiple user stories, so they are tracked separately from the User Stories table. This also balances workload across team members because the integrations are longer-running pieces of work.
 
 | Subtask | Scope | Owner | Branch | Ticket ID | Week 01 Commits - Workload Distribution |

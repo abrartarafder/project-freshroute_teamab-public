@@ -3,10 +3,10 @@ Notes
 - Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables in [branch_naming.md](./branch_naming.md).
 
 Summary of Active Branches
-- Cart and address updates (PB-05, PB-06, PB-09, PB-10) — Shoumik — `features/cart`
-- Product filters (PB-03) — Abrar — `refactor/filter`
-- Recipe ingredient scaling (PB-08) — Abrar — `features/recipes-add`
-- Backend integrations (span multiple stories) — Ekam/Judy/Moneba — `features/organic-integration-backend`, `features/recipes-integration-backend`
+- Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
+- Product filters (PB-03) - Abrar - `refactor/filter`
+- Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
+- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
 
 # Sprint 2 Retrospective (SR2)
 
