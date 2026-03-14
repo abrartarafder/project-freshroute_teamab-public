@@ -14,7 +14,7 @@ Notes
 |3| PB-08 | Scale recipe ingredients | Abrar | features/recipes-add | #18, #46 | No | Yes (all commits in Week 02 (4/6)) |
 
 ## Backend Integration Subtasks
-These subtasks span multiple user stories, so they are tracked separately from the User Stories table. This also balances workload across team members because the integrations are longer-running pieces of work.
+These subtasks span multiple user stories, so they are tracked separately from the User Stories table but counted in total with the tasks. This also balances workload across team members because the integrations are longer-running tasks.
 
 Tasks | Subtask | Scope | Owner | Branch | Ticket ID | Week 01 Commits (workload distribution) | Week 02 Commits (workload distribution) |
 |---| --- | --- | --- | --- | --- | --- | --- |
