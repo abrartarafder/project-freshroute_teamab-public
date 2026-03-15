@@ -2,6 +2,7 @@ import { Container, Modal, Button } from "react-bootstrap";
 import { useMemo, useState } from "react";
 import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
+import { addItem, makeCartId, useCart } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
 import appleImg from "../assets/organic/apple.jpg";
 import avocadoImg from "../assets/organic/avacado.jpg";
@@ -165,6 +166,7 @@ export default function Organic() {
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { count } = useCart();
 
   const filteredProducts = useMemo(() => {
     const trimmed = query.trim().toLowerCase();
@@ -206,13 +208,28 @@ export default function Organic() {
     setSortBy("none");
   };
 
+  const handleAddToCart = (item) => {
+    addItem({
+      id: makeCartId("organic", item.name),
+      name: item.name,
+      image: item.image,
+      unitPrice: priceToNumber(item.price),
+      priceLabel: item.price,
+      unitLabel: item.price.includes("/lb") ? "lb" : "item",
+      group: "regular",
+      meta: {
+        source: "Organic",
+      },
+    });
+  };
+
   return (
     <div className="page-shell organic-shell">
       <div className="page-main">
         <AppNavbar
           userName="John"
           activeKey="organic"
-          cartCount={0}
+          cartCount={count}
           onSearch={(value) => setQuery(value)}
           searchPlaceholder="Search Organic Produce"
         />
@@ -349,7 +366,10 @@ export default function Organic() {
                       type="button"
                       className="cart-btn"
                       disabled={!item.inStock}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(item);
+                      }}
                     >
                       <FaShoppingCart />
                       {item.inStock ? "Add to cart" : "Unavailable"}
@@ -428,6 +448,7 @@ export default function Organic() {
                         variant="success"
                         className="recipe-cta modal-action"
                         disabled={!selectedProduct.inStock}
+                        onClick={() => handleAddToCart(selectedProduct)}
                       >
                         Add to cart
                       </Button>

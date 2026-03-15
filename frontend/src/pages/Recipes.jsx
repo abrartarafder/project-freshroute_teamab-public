@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button, Modal, Badge } from "react-bootstrap";
 import { useMemo, useState } from "react";
 import AppNavbar from "../components/navbar.jsx";
+import { addRecipeToCart, useCart } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
 import "./Landing.css";
 import "./Recipes.css";
@@ -168,6 +169,7 @@ export default function Recipes() {
   const [activeTab, setActiveTab] = useState("featured");
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
+  const { count } = useCart();
   const [servingsByTitle, setServingsByTitle] = useState(() =>
     Object.fromEntries(recipes.map((r) => [r.title, r.servings]))
   );
@@ -235,6 +237,7 @@ export default function Recipes() {
         <AppNavbar
           userName="John"
           activeKey="recipes"
+          cartCount={count}
           onSearch={(q) => setQuery(q)}
           searchPlaceholder="Search Recipes"
         />
@@ -380,7 +383,13 @@ export default function Recipes() {
                         <Button
                           variant="success"
                           className="recipe-cta"
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            addRecipeToCart(
+                              recipe,
+                              servingsByTitle[recipe.title] ?? recipe.servings
+                            );
+                          }}
                         >
                           Add to cart
                         </Button>
@@ -504,7 +513,16 @@ export default function Recipes() {
               >
                 Close
               </Button>
-              <Button variant="success" className="modal-action">
+              <Button
+                variant="success"
+                className="modal-action"
+                onClick={() =>
+                  addRecipeToCart(
+                    selectedRecipe,
+                    servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings
+                  )
+                }
+              >
                 Add {servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings} to cart
               </Button>
             </Modal.Footer>
