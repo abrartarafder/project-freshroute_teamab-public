@@ -36,13 +36,13 @@ The [sprint0 Product Backlog](../sprint0/PB.md) file has more details about all 
 
 ## Participants
 
-| Name                     | Role 1     | Role 2     | Role 3     |
-|--------------------------|------------|------------|------------|
-| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator |
-| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester |
-| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     |
-| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer |
-| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator |
+| Name                     | Role 1     | Role 2     | Role 3     | Role 4     |
+|--------------------------|------------|------------|------------|------------|
+| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator | System integration Engineer |
+| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester | System integration Engineer |
+| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     | System integration Engineer |
+| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer | System integration Engineer |
+| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator | UI Refactoring Supervisor |
 
 All team members were present and contributed to planning decisions.
 
