@@ -242,7 +242,7 @@
   height: 38px;
   border: none !important;
   border-radius: 10px !important;
-  background: #0f6700;
+  background: var(--recipes-green);
   color: #ffffff;
   font-size: 0.84rem;
   font-weight: 800;

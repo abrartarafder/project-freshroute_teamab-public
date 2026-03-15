@@ -461,6 +461,7 @@ export default function EthicallyRaised() {
                         disabled={!selectedProduct.inStock}
                         onClick={() => handleAddToCart(selectedProduct, modalQty)}
                       >
+                        <FaShoppingCart aria-hidden="true" />
                         Add {modalQty} to cart
                       </Button>
                     </div>

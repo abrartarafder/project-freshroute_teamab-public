@@ -465,6 +465,7 @@ export default function Recipes() {
                             );
                           }}
                         >
+                          <FaShoppingCart aria-hidden="true" />
                           Add to cart
                         </Button>
                       </div>
@@ -579,7 +580,7 @@ export default function Recipes() {
                 </div>
                 <Button
                   variant="success"
-                  className="modal-action"
+                  className="recipe-cta modal-action"
                   onClick={() =>
                     addRecipeToCart(
                       selectedRecipe,

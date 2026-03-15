@@ -222,6 +222,9 @@
 
 .recipe-cta {
   margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--recipes-green) !important;
   border: none !important;
   font-weight: 800 !important;
