@@ -1,4 +1,4 @@
-import { Container, Modal, Button } from "react-bootstrap";
+import { Container, Modal, Button, Form } from "react-bootstrap";
 import { useMemo, useState } from "react";
 import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
@@ -166,6 +166,7 @@ export default function EthicallyRaised() {
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [modalQty, setModalQty] = useState(1);
   const { count } = useCart();
 
   const filteredProducts = useMemo(() => {
@@ -208,7 +209,7 @@ export default function EthicallyRaised() {
     setSortBy("none");
   };
 
-  const handleAddToCart = (item) => {
+  const handleAddToCart = (item, quantity = 1) => {
     addItem({
       id: makeCartId("ethical", item.name),
       name: item.name,
@@ -220,7 +221,7 @@ export default function EthicallyRaised() {
       meta: {
         source: "Ethically Raised",
       },
-    });
+    }, quantity);
   };
 
   return (
@@ -355,10 +356,11 @@ export default function EthicallyRaised() {
                     <button
                       type="button"
                       className="recipe-cta ghost"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedProduct(item);
-                      }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedProduct(item);
+                    setModalQty(1);
+                  }}
                     >
                       View details
                     </button>
@@ -406,7 +408,10 @@ export default function EthicallyRaised() {
 
         <Modal
           show={Boolean(selectedProduct)}
-          onHide={() => setSelectedProduct(null)}
+          onHide={() => {
+            setSelectedProduct(null);
+            setModalQty(1);
+          }}
           centered
           size="lg"
           className="recipe-modal"
@@ -436,21 +441,27 @@ export default function EthicallyRaised() {
                     <p className={`organic-stock ${selectedProduct.inStock ? "in" : "out"}`}>
                       {selectedProduct.inStock ? "In Stock" : "Out of Stock"}
                     </p>
-                    <div className="recipe-actions">
-                      <Button
-                        variant="outline-success"
-                        className="recipe-cta ghost modal-action"
-                        onClick={() => setSelectedProduct(null)}
+                    <div className="recipe-actions modal-actions">
+                      <Form.Select
+                        aria-label="Quantity"
+                        className="modal-qty-select"
+                        value={modalQty}
+                        onChange={(e) => setModalQty(Number(e.target.value) || 1)}
+                        style={{ maxWidth: 140 }}
                       >
-                        Close
-                      </Button>
+                        {[1, 2, 3, 4, 5, 6].map((n) => (
+                          <option key={n} value={n}>
+                            {n} {n === 1 ? "item" : "items"}
+                          </option>
+                        ))}
+                      </Form.Select>
                       <Button
                         variant="success"
                         className="recipe-cta modal-action"
                         disabled={!selectedProduct.inStock}
-                        onClick={() => handleAddToCart(selectedProduct)}
+                        onClick={() => handleAddToCart(selectedProduct, modalQty)}
                       >
-                        Add to cart
+                        Add {modalQty} to cart
                       </Button>
                     </div>
                   </div>

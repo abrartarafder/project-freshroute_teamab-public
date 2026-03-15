@@ -1,4 +1,5 @@
-import { Container, Row, Col, Button, Modal, Badge } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import { FaShoppingCart } from "react-icons/fa";
 import { useMemo, useState } from "react";
 import AppNavbar from "../components/navbar.jsx";
 import { addRecipeToCart, useCart } from "../utils/cartStore.js";
@@ -29,12 +30,24 @@ const recipes = [
     tags: ["Vegan", "Gluten Free", "Popular"],
     image: imgQuinoa,
     ingredients: [
-      "1 cup cooked quinoa",
-      "4 bell peppers, tops removed",
+      "1 cup quinoa",
+      "4 bell peppers",
       "1 cup black beans",
       "1/2 cup corn",
-      "1 avocado, diced",
-      "Lime juice, salt, cumin",
+      "1 avocado",
+      "1 lime",
+      "1 tsp salt",
+      "1 tsp cumin",
+    ],
+    ingredientDetails: [
+      { productName: "Quinoa", quantity: 1, unit: "cup" },
+      { productName: "Bell Pepper", quantity: 4, unit: "each" },
+      { productName: "Black Beans", quantity: 1, unit: "cup" },
+      { productName: "Corn", quantity: 0.5, unit: "cup" },
+      { productName: "Avocado", quantity: 1, unit: "each" },
+      { productName: "Limes", quantity: 1, unit: "each" },
+      { productName: "Salt", quantity: 1, unit: "tsp" },
+      { productName: "Cumin", quantity: 1, unit: "tsp" },
     ],
     servings: 2,
     categories: ["featured", "popular"],
@@ -49,10 +62,23 @@ const recipes = [
     image: imgSalmon,
     ingredients: [
       "2 salmon fillets",
-      "2 cups chopped kale",
-      "1 cup cooked quinoa",
-      "Roasted carrots & tomatoes",
-      "Olive oil, lemon, dill",
+      "2 cups kale",
+      "1 cup quinoa",
+      "1 cup carrots",
+      "1 cup tomatoes",
+      "1 tbsp olive oil",
+      "1 lemon",
+      "1 tbsp dill",
+    ],
+    ingredientDetails: [
+      { productName: "Atlantic Salmon", quantity: 2, unit: "fillet" },
+      { productName: "Kale", quantity: 2, unit: "cup" },
+      { productName: "Quinoa", quantity: 1, unit: "cup" },
+      { productName: "Carrots", quantity: 1, unit: "cup" },
+      { productName: "Tomatoes", quantity: 1, unit: "cup" },
+      { productName: "Olive Oil", quantity: 1, unit: "tbsp" },
+      { productName: "Lemons", quantity: 1, unit: "each" },
+      { productName: "Dill", quantity: 1, unit: "tbsp" },
     ],
     servings: 2,
     categories: ["featured", "new"],
@@ -83,10 +109,24 @@ const recipes = [
     tags: ["Vegan", "High Protein"],
     image: imgTofu,
     ingredients: [
-      "14 oz firm tofu",
-      "2 cups mixed vegetables",
-      "2 cups cooked brown rice",
-      "Soy sauce, ginger, sesame oil",
+      "14 oz tofu",
+      "1 bell pepper",
+      "1 cup carrots",
+      "1 cup broccoli",
+      "2 cups brown rice",
+      "2 tbsp soy sauce",
+      "1 tbsp ginger",
+      "1 tbsp sesame oil",
+    ],
+    ingredientDetails: [
+      { productName: "Tofu", quantity: 14, unit: "oz" },
+      { productName: "Bell Pepper", quantity: 1, unit: "each" },
+      { productName: "Carrots", quantity: 1, unit: "cup" },
+      { productName: "Broccoli", quantity: 1, unit: "cup" },
+      { productName: "Brown Rice", quantity: 2, unit: "cup" },
+      { productName: "Soy Sauce", quantity: 2, unit: "tbsp" },
+      { productName: "Ginger", quantity: 1, unit: "tbsp" },
+      { productName: "Sesame Oil", quantity: 1, unit: "tbsp" },
     ],
     servings: 3,
     categories: ["featured"],
@@ -117,10 +157,24 @@ const recipes = [
     tags: ["Grass-Fed", "Iron Rich", "New", "Popular"],
     image: imgBeef,
     ingredients: [
-      "12 oz sliced beef",
-      "2 cups mixed vegetables",
-      "1 cup cooked brown rice",
-      "Soy sauce, garlic, sesame seeds",
+      "12 oz ground beef (80/20)",
+      "1 bell pepper",
+      "1 cup broccoli",
+      "1 cup carrots",
+      "1 cup brown rice",
+      "2 tbsp soy sauce",
+      "2 cloves garlic",
+      "1 tbsp sesame seeds",
+    ],
+    ingredientDetails: [
+      { productName: "Ground Beef (80/20)", quantity: 12, unit: "oz" },
+      { productName: "Bell Pepper", quantity: 1, unit: "each" },
+      { productName: "Broccoli", quantity: 1, unit: "cup" },
+      { productName: "Carrots", quantity: 1, unit: "cup" },
+      { productName: "Brown Rice", quantity: 1, unit: "cup" },
+      { productName: "Soy Sauce", quantity: 2, unit: "tbsp" },
+      { productName: "Garlic", quantity: 2, unit: "clove" },
+      { productName: "Sesame Seeds", quantity: 1, unit: "tbsp" },
     ],
     servings: 2,
     categories: ["popular", "new", "featured"],
@@ -134,11 +188,22 @@ const recipes = [
     tags: ["Vegan", "Gluten Free"],
     image: imgBuddha,
     ingredients: [
-      "1 cup cooked quinoa",
-      "1 cup roasted sweet potato",
-      "1 cup roasted broccoli",
-      "1 cup roasted chickpeas",
-      "Tahini, lemon, garlic",
+      "1 cup quinoa",
+      "1 cup sweet potatoes",
+      "1 cup broccoli",
+      "1 cup chickpeas",
+      "2 tbsp tahini",
+      "1 lemon",
+      "2 cloves garlic",
+    ],
+    ingredientDetails: [
+      { productName: "Quinoa", quantity: 1, unit: "cup" },
+      { productName: "Sweet Potatoes", quantity: 1, unit: "cup" },
+      { productName: "Broccoli", quantity: 1, unit: "cup" },
+      { productName: "Chickpeas", quantity: 1, unit: "cup" },
+      { productName: "Tahini", quantity: 2, unit: "tbsp" },
+      { productName: "Lemons", quantity: 1, unit: "each" },
+      { productName: "Garlic", quantity: 2, unit: "clove" },
     ],
     servings: 3,
     categories: ["featured"],
@@ -153,10 +218,19 @@ const recipes = [
     image: imgWrap,
     ingredients: [
       "1 cup chickpeas",
-      "Whole-wheat wraps",
-      "1 cup cucumber & tomato",
-      "1/4 cup feta",
-      "Yogurt, dill, lemon",
+      "2 whole-wheat wraps",
+      "1 cucumber",
+      "1 cup tomatoes",
+      "1 tbsp dill",
+      "1 lemon",
+    ],
+    ingredientDetails: [
+      { productName: "Chickpeas", quantity: 1, unit: "cup" },
+      { productName: "Whole-wheat Wraps", quantity: 2, unit: "each" },
+      { productName: "Cucumber", quantity: 1, unit: "each" },
+      { productName: "Tomatoes", quantity: 1, unit: "cup" },
+      { productName: "Dill", quantity: 1, unit: "tbsp" },
+      { productName: "Lemons", quantity: 1, unit: "each" },
     ],
     servings: 2,
     categories: ["featured"],
@@ -442,58 +516,15 @@ export default function Recipes() {
         {selectedRecipe && (
           <>
             <Modal.Header closeButton>
-              <Modal.Title>
-                {selectedRecipe.title}
-                <Badge bg="success" className="recipe-servings">
-                  {servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings} servings
-                </Badge>
-              </Modal.Title>
+              <Modal.Title>{selectedRecipe.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <div className="recipe-modal-grid">
                 <div className="recipe-modal-image">
                   <img src={selectedRecipe.image} alt={selectedRecipe.title} />
+                  <p className="recipe-modal-desc">{selectedRecipe.description}</p>
                 </div>
                 <div className="recipe-modal-body">
-                  <p className="recipe-modal-desc">{selectedRecipe.description}</p>
-                  <div className="servings-control" aria-label="Adjust servings">
-                    <span className="servings-label">Servings</span>
-                    <div className="servings-stepper">
-                      <button
-                        type="button"
-                        aria-label="Decrease servings"
-                        onClick={() =>
-                          setServings(
-                            selectedRecipe.title,
-                            (servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings) - 1
-                          )
-                        }
-                      >
-                        −
-                      </button>
-                      <input
-                        type="number"
-                        min={1}
-                        value={servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings}
-                        onChange={(e) =>
-                          setServings(selectedRecipe.title, Number(e.target.value) || 1)
-                        }
-                        aria-label="Servings count"
-                      />
-                      <button
-                        type="button"
-                        aria-label="Increase servings"
-                        onClick={() =>
-                          setServings(
-                            selectedRecipe.title,
-                            (servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings) + 1
-                          )
-                        }
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
                   <h5>Ingredients</h5>
                   <ul className="recipe-modal-list">
                     {selectedRecipe.ingredients.map((item) => (
@@ -506,25 +537,60 @@ export default function Recipes() {
                 </div>
               </div>
             </Modal.Body>
-            <Modal.Footer>
-              <Button
-                className="btn-theme-yellow modal-action"
-                onClick={() => setSelectedRecipe(null)}
-              >
-                Close
-              </Button>
-              <Button
-                variant="success"
-                className="modal-action"
-                onClick={() =>
-                  addRecipeToCart(
-                    selectedRecipe,
-                    servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings
-                  )
-                }
-              >
-                Add {servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings} to cart
-              </Button>
+            <Modal.Footer className="recipe-modal-footer">
+              <div className="modal-actions">
+                <div className="servings-control" aria-label="Adjust servings">
+                  <span className="servings-label">Servings</span>
+                  <div className="servings-stepper">
+                    <button
+                      type="button"
+                      aria-label="Decrease servings"
+                      onClick={() =>
+                        setServings(
+                          selectedRecipe.title,
+                          (servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings) - 1
+                        )
+                      }
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      min={1}
+                      value={servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings}
+                      onChange={(e) =>
+                        setServings(selectedRecipe.title, Number(e.target.value) || 1)
+                      }
+                      aria-label="Servings count"
+                    />
+                    <button
+                      type="button"
+                      aria-label="Increase servings"
+                      onClick={() =>
+                        setServings(
+                          selectedRecipe.title,
+                          (servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings) + 1
+                        )
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <Button
+                  variant="success"
+                  className="modal-action"
+                  onClick={() =>
+                    addRecipeToCart(
+                      selectedRecipe,
+                      servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings
+                    )
+                  }
+                >
+                  <FaShoppingCart style={{ marginRight: 6 }} />
+                  Add {servingsByTitle[selectedRecipe.title] ?? selectedRecipe.servings} to cart
+                </Button>
+              </div>
             </Modal.Footer>
           </>
         )}

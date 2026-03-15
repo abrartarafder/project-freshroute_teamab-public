@@ -40,8 +40,10 @@ export default function Cart() {
     };
   }, [items]);
 
-  const shipping = subtotal > 0 ? 4 : 0;
-  const total = subtotal + shipping;
+  const shipping = subtotal < 50 ? 4 : 0;
+  const tax = subtotal * 0.13;
+  const total = subtotal + tax + shipping;
+  
 
   const renderItem = (item) => {
     const step = 1;
@@ -53,6 +55,7 @@ export default function Cart() {
           image: item.image,
           servings: item.meta?.baseServings || 1,
           ingredients: item.meta?.ingredients ?? [],
+          ingredientDetails: item.meta?.ingredientDetails ?? [],
         }
       : null;
     return (
@@ -135,7 +138,8 @@ export default function Cart() {
           userName="John"
           activeKey="cart"
           cartCount={count}
-          searchPlaceholder="Search cart items"
+          showSearch={false}
+          showLocationPicker={true}
         />
 
         <section className="cart-page">
@@ -204,6 +208,10 @@ export default function Cart() {
                       <span>Shipping</span>
                       <span>{formatMoney(shipping)}</span>
                     </div>
+                    <div>
+                      <span>Tax (HST)</span>
+                      <span>{formatMoney(tax)}</span>
+                    </div>
                     <div className="card-total">
                       <span>Total (tax incl.)</span>
                       <span>{formatMoney(total)}</span>
@@ -216,6 +224,12 @@ export default function Cart() {
                     >
                       Checkout
                     </button>
+                    <p className="checkout-note">
+                      You accept full responsibility for the order once delivered. Items not requiring ID or delivery confirmation may be left at your door if requested or if you are not present. FreshRoute may charge retailers a fee for orders placed through its services. A retailer bag fee per bag may be added to your final total (shown on the receipt after delivery).
+                    </p>
+                    <p className="checkout-note tos-note">
+                      By ordering you agree to the <span className="tos-link">Terms of Service</span>.
+                    </p>
                   </div>
                 </div>
               </aside>
@@ -249,7 +263,7 @@ export default function Cart() {
             </p>
 
             <div className="checkout-grid">
-              <section className="checkout-section">
+              <section className="checkout-section payment-section">
                 <h3>Card Details</h3>
                 <div className="card-types">
                   <button type="button" className="card-type-logo">
@@ -326,4 +340,3 @@ export default function Cart() {
     </div>
   );
 }
-
