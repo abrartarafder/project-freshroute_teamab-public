@@ -1,5 +1,5 @@
 ===================================================
-FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 1)
+FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 2)
 Course: EECS 3311 
 Team: FreshRoute (Team AB)
 Date: March 09 - March 23, 2026
@@ -7,7 +7,7 @@ Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargo
 ===================================================
 1. OVERVIEW
 ---------------------------------------------------
-- React 19 + Vite frontend for browsing categories, recipes, and cart flows.
+- React 19 + Vite frontend for Organic/Ethically Raised catalogs, Recipes, and a client-side cart.
 - Styling: Bootstrap 5 + custom CSS; icons via react-icons.
 
 2. REQUIREMENTS / PREREQUISITES
@@ -47,11 +47,11 @@ frontend/
 
 5. ROUTING (CLIENT-SIDE)
 ----------------------------------------------------
-- /                   → Landing page
-- /organic            → Organic category
-- /ethically-raised   → Ethically raised category
-- /recipes            → Recipes page
-- /cart               → Cart page
+- /                   -> Landing page
+- /organic            -> Organic category
+- /ethically-raised   -> Ethically raised category
+- /recipes            -> Recipes page
+- /cart               -> Cart page
 - Unknown paths fall back to Landing
 
 6. KEY COMPONENTS
@@ -68,13 +68,15 @@ frontend/
 
 8. STATE & DATA FLOW
 ----------------------------------------------------
-- No global state manager yet; props pass cart count/username placeholders.
-- Search box calls onSearch (console.log in Landing).
-- API wiring planned for Sprint 2 (products, recipes, cart).
+- cartStore.js keeps cart data in localStorage and useCart shares count/subtotal across pages.
+- Search box filters catalog/recipe lists; Landing hides search by default.
+- Product and recipe data are static arrays for now; API wiring is pending.
 
 9. EXTERNAL LIBRARIES
 ----------------------------------------------------
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
 - ESLint + React plugins for linting.
 
-We will keep adding to the documentation as the project progresses. 
+We will keep adding to the documentation as the project progresses again in Sprint 03. 
+
+Last Updated: March 15th, 2026
