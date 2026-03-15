@@ -6,7 +6,7 @@ Summary of Active Branches
 - Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
 - Product filters (PB-03) - Abrar - `refactor/filter`
 - Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
-- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
+- Backend integrations (spans all stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
 
 # Sprint 2 Planning Meeting  
 **Date:** March 10, 2026  
@@ -19,10 +19,14 @@ Summary of Active Branches
 
 The primary objectives of Sprint 2 are:
 
-1. 
-2. 
-3. 
-5. 
+1. Implement product filtering and sorting to improve product browsing and shopping efficiency. (Associated User Story: PB-03)
+2. Develop a functional shopping cart system that allows users to add items, view their cart, update quantities, and remove products. (Associated User Stories: PB-05, PB-06, PB-07)
+3. Enable recipe-based shopping by allowing users to add recipe ingredients to the cart with scalable quantities based on serving size. (Associated User Story: PB-08)
+4. Implement persistent cart functionality so items remain during navigation and page refresh. (Associated User Story: PB-09)
+5. Add a checkout step that allows users to enter a delivery address during the ordering process. (Associated User Story: PB-10)
+6. Integrate the backend APIs with the frontend components to ensure product data, cart actions, and recipe information flow correctly between the system layers while maintaining a modular structure that supports efficient future updates and feature additions. (Associated User Stories: PB-03, PB-05, PB-06, PB-07, PB-08, PB-09)
+7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. (Associated User Stories: PB-03, PB-08)
+
 
 ## Product Backlog
 
