@@ -92,4 +92,6 @@ Server
 - dotenv
 - nodemon (dev)
 
-We will keep adding to the documentation as the project progresses.
+We will keep adding to the documentation as the project progresses again in Sprint 03. 
+
+Last Updated: March 15th, 2026 (Sprint 02)
