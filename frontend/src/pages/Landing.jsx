@@ -2,12 +2,15 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AppNavbar from "../components/navbar.jsx";
+import { useCart } from "../utils/cartStore.js";
 import "./Landing.css";
 import basketImg from "../assets/landing/baskets.png";
 import truckImg from "../assets/landing/truck.png";
 import logo from "../assets/logo_clear.png";
 
 export default function LandingPage() {
+  const { count } = useCart();
+
   const handleSearch = (query) => {
     console.log("Search:", query);
   };
@@ -32,7 +35,7 @@ export default function LandingPage() {
     <div className="page-shell">
       <div className="page-main">
         <AppNavbar
-          cartCount={0}
+          cartCount={count}
           userName="John"
           activeKey="home"
           onSearch={handleSearch}
