@@ -1,0 +1,80 @@
+===================================================
+FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 1)
+Course: EECS 3311 
+Team: FreshRoute (Team AB)
+Date: March 09 - March 23, 2026
+Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
+===================================================
+1. OVERVIEW
+---------------------------------------------------
+- React 19 + Vite frontend for browsing categories, recipes, and cart flows.
+- Styling: Bootstrap 5 + custom CSS; icons via react-icons.
+
+2. REQUIREMENTS / PREREQUISITES
+----------------------------------------------------
+-Node.js: 20.19+ (recommended)
+-npm: 10+
+-OS: Windows / macOS supported
+-Recommended tools: VS code, Git, MongoDB Compass (optional, for viewing DB)
+
+3. HOW TO RUN
+----------------------------------------------------
+- cd frontend && npm install
+- Dev server: npm run dev (http://localhost:5173/)
+- Build: npm run build (outputs to dist/)
+- Preview build: npm run preview
+- Lint: npm run lint
+
+4. FOLDER STRUCTURE
+----------------------------------------------------
+frontend/
+ ├── src/
+ │    ├── App.jsx (pathname-based router)
+ │    ├── main.jsx (entry point)
+ │    ├── index.css (global styles)
+ │    ├── assets/ (logos, hero images)
+ │    ├── components/
+ │    │    └── navbar.jsx (react-bootstrap nav)
+ │    └── pages/
+ │         ├── Landing.jsx + Landing.css (hero + value props)
+ │         ├── Organic.jsx + Organic.css (category stub)
+ │         ├── EthicallyRaised.jsx (category stub)
+ │         ├── Recipes.jsx + Recipes.css (recipes UI)
+ │         └── Cart.jsx (cart stub)
+ ├── public/
+ ├── index.html
+ └── vite.config.js
+
+5. ROUTING (CLIENT-SIDE)
+----------------------------------------------------
+- /                   → Landing page
+- /organic            → Organic category
+- /ethically-raised   → Ethically raised category
+- /recipes            → Recipes page
+- /cart               → Cart page
+- Unknown paths fall back to Landing
+
+6. KEY COMPONENTS
+----------------------------------------------------
+- navbar.jsx: responsive nav with search functionality
+- Landing.jsx: hero, links to organic page, benefits list with imagery.
+- Recipes.jsx: styled layout ready for recipe cards and reusing navbar/footer.
+- Organic/EthicallyRaised/Cart: list of products pages and reusing navbar/footer.
+
+7. STYLING
+----------------------------------------------------
+- Bootstrap grid for layout; custom CSS in page/component files.
+- Colour accents: variations of green, black, white, gold/green highlights; assets in src/assets/landing/.
+
+8. STATE & DATA FLOW
+----------------------------------------------------
+- No global state manager yet; props pass cart count/username placeholders.
+- Search box calls onSearch (console.log in Landing).
+- API wiring planned for Sprint 2 (products, recipes, cart).
+
+9. EXTERNAL LIBRARIES
+----------------------------------------------------
+- react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
+- ESLint + React plugins for linting.
+
+We will keep adding to the documentation as the project progresses. 

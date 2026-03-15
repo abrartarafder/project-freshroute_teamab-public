@@ -1,0 +1,92 @@
+===================================================
+FRESHROUTE - BACKEND DOCUMENTATION (Sprint 2)
+Course: EECS 3311 
+Team: FreshRoute (Team AB)
+Date: March 09 - March 23, 2026
+Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
+===================================================
+1. OVERVIEW
+---------------------------------------------------
+- Managing product data
+- Connection to the MongoDB database 
+- Storing product and inventory data as JSON files. 
+
+2. REQUIREMENTS / PREREQUISITES
+----------------------------------------------------
+-Node.js: 20.19+ (recommended)
+-npm: 10+
+-OS: Windows / macOS supported
+-Recommended tools: VS Code, Git, MongoDB Compass
+
+3. HOW TO CONNECT TO THE DATABASE
+----------------------------------------------------
+- Create a new connection on MongoDB Compass 
+- paste the following for the URL: mongodb+srv://freshrouteDB:eecs3311W26@freshroute-cluster.ivpzykz.mongodb.net/freshroute?retryWrites=true&w=majority&appName=freshroute-cluster
+
+4. FOLDER STRUCTURE
+----------------------------------------------------
+backend/
+│
+├── package.json
+├── package-lock.json
+├── .env
+│
+├── BackEndData/
+│   ├── backend-recipes.json
+│   ├── backend-organic.json
+│   └── backend-ethically_raised.json
+│
+└── src/
+    │
+    ├── server.js
+    ├── app.js
+    │
+    ├── config/
+    │   └── db.js
+    │
+    ├── models/
+    │   └── Product.js
+    │
+    ├── controllers/
+    │   └── ProductController.js
+    │
+    └── routes/
+        └── productRoutes.js
+
+5. DATABASE STRUCTURE
+----------------------------------------------------
+Server
+│
+├── admin 
+├── freshroute
+    ├── Ethically 
+    ├── Organic 
+    ├── Recipes 
+├── local 
+├── sample_mflix
+
+6. KEY COMPONENTS
+----------------------------------------------------
+- db.js: This file handles the connection between the backend application and the MongoDB database.
+- ProductController.js: This file contains controller functions that handle product-related API requests. The createProduct    function creates a new product in the database using the data provided in the request body and returns the created product.
+- Product.js: this file defines the Product model using a schema that specifies the structure of product documents in the      database, including fields such as name, price, category, and inventory.
+- productRoutes.js: this file defines the API routes for product-related requests using Express Router.
+
+7. API Routes
+----------------------------------------------------
+- Get all products: GET /api/products
+- Add a Product: POST /api/products
+
+8. STATE & DATA FLOW
+----------------------------------------------------
+- API wiring planned for Sprint 2 (products, recipes, cart).
+
+9. EXTERNAL LIBRARIES
+----------------------------------------------------
+- react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
+- mongoose
+- express 
+- cors 
+- dotenv
+
+We will keep adding to the documentation as the project progresses. 
