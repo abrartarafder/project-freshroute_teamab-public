@@ -136,6 +136,7 @@ As a customer, I want to update quantities or remove items so that I can fix my 
   - Branch: `features/recipes-add`
 - Shoumik to create the UI for adding Items to cart for Organic and Ethically Raised pages
   - Branch: `features/cart`
+  
 **Backend**
 - Moneba to integrate the recipes in backend which should pull the ingredients 
   - Branch: `features/recipes-integration-backend`
