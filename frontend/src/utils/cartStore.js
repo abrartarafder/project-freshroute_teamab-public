@@ -90,7 +90,49 @@ export const clearCart = () => {
   writeCart({ items: [] });
 };
 
-const ingredientBaseWeights = [1.125, 0.4, 0.5, 0.5, 0.35, 0.6];
+// recipe units kept 
+
+const parseFractions = (text) => {
+  const matches = text.match(/(\d+\/\d+|\d+(?:\.\d+)?)/g);
+  if (!matches) return 1;
+  const total = matches.reduce((sum, token) => {
+    if (token.includes("/")) {
+      const [a, b] = token.split("/").map(Number);
+      if (b) return sum + a / b;
+      return sum;
+    }
+    return sum + Number(token);
+  }, 0);
+  return total || 1;
+};
+
+const detectUnit = (text) => {
+  const units = [
+    "cup",
+    "cups",
+    "fillet",
+    "fillets",
+    "wrap",
+    "wraps",
+    "can",
+    "cans",
+    "oz",
+    "ounce",
+    "ounces",
+    "tbsp",
+    "tsp",
+    "each",
+    "lb",
+    "pound",
+    "pounds",
+    "stalk",
+    "stalks",
+    "clove",
+    "cloves",
+  ];
+  const found = units.find((u) => text.includes(u));
+  return found || "";
+};
 
 const cleanIngredient = (value) =>
   value
@@ -107,18 +149,23 @@ const buildRecipeGroceries = (recipe, servings) => {
   const scale = quantity / baseServings;
 
   return (recipe.ingredients ?? []).map((ingredient, index) => {
-    const baseWeight = ingredientBaseWeights[index % ingredientBaseWeights.length];
-    const weight = Number((baseWeight * scale).toFixed(3));
-    const unitPrice = Number((2.4 + index * 0.85).toFixed(2));
+    const detail = Array.isArray(recipe.ingredientDetails)
+      ? recipe.ingredientDetails[index]
+      : null;
+    const text = (detail?.label || ingredient || "").toLowerCase();
+    const baseQty = Number(detail?.quantity) || parseFractions(text);
+    const unitLabel = (detail?.unit || detectUnit(text)).trim();
+    const qty = Number((baseQty * scale).toFixed(3));
+    const unitPrice = Number((1.8 + index * 0.35).toFixed(2));
     return {
       id: makeRecipeGroceryId(recipe.title, index),
-      name: cleanIngredient(ingredient) || ingredient,
+      name: detail?.productName || cleanIngredient(ingredient) || ingredient,
       image: recipe.image,
       unitPrice,
-      priceLabel: `$${unitPrice}/lb`,
-      unitLabel: "lb",
+      priceLabel: `$${unitPrice}/${unitLabel || "ea"}`,
+      unitLabel,
       group: "recipe-grocery",
-      quantity: weight,
+      quantity: qty,
       meta: {
         parentRecipe: recipe.title,
         ingredientIndex: index,
@@ -142,6 +189,7 @@ export const addRecipeToCart = (recipe, servings = 1) => {
       meta: {
         baseServings: recipe.servings || 1,
         ingredients: recipe.ingredients ?? [],
+        ingredientDetails: recipe.ingredientDetails ?? [],
       },
     },
     quantity
@@ -159,7 +207,10 @@ export const updateRecipeQuantity = (recipeId, recipeTitle, servings, recipe) =>
     .map((entry) =>
       entry.id === recipeId ? { ...entry, quantity: nextServings } : entry
     )
-    .filter((entry) => entry.group !== "recipe-grocery" || entry.meta?.parentRecipe !== recipeTitle);
+    .filter(
+      (entry) =>
+        entry.group !== "recipe-grocery" || entry.meta?.parentRecipe !== recipeTitle
+    );
 
   if (recipe) {
     const groceries = buildRecipeGroceries(recipe, nextServings);
@@ -173,7 +224,8 @@ export const removeRecipeAndGroceries = (recipeTitle, recipeId) => {
   const cart = readCart();
   cart.items = cart.items.filter((entry) => {
     if (entry.group === "recipe" && entry.id === recipeId) return false;
-    if (entry.group === "recipe-grocery" && entry.meta?.parentRecipe === recipeTitle) return false;
+    if (entry.group === "recipe-grocery" && entry.meta?.parentRecipe === recipeTitle)
+      return false;
     return true;
   });
   writeCart(cart);
