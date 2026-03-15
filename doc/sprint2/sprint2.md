@@ -38,10 +38,10 @@ The [sprint0 Product Backlog](../sprint0/PB.md) file has more details about all 
 
 | Name                     | Role 1     | Role 2     | Role 3     | Role 4     |
 |--------------------------|------------|------------|------------|------------|
-| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator | System integration Engineer |
-| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester | System integration Engineer |
-| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     | System integration Engineer |
-| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer | System integration Engineer |
+| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator | System Integration Engineer |
+| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester | System Integration Engineer |
+| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     | System Integration Engineer |
+| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer | System Integration Engineer |
 | Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator | UI Refactoring Supervisor |
 
 All team members were present and contributed to planning decisions.
@@ -66,29 +66,32 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ---
 
-## Epic 1: Storefront & Product Browsing (Core StoreFront Experience)
+## Epic 3: Cart Page + BackEnd/Frontend Integration
 
 ### User Stories
 
-- **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.
-- **PB-02:** As a customer, I want to search for products by keyword so that I can find items quickly.  
-- **PB-04:** As a customer, I want to view product details so that I can make an informed purchase decision.
-- **PB-17:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.
-- **PB-18:** As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
-- **PB-19:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
+- **PB-03:** As a customer, I want to filter/sort products so that I can shop efficiently.
+- **PB-05:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.
+- **PB-06:** As a customer, I want to view my cart so that I can review items before checkout.
+- **PB-07:** As a customer, I want to update quantities or remove items so that I can fix my order.
+- **PB-08:** As a customer, I want to add a recipe to my cart so that all required ingredients are added automatically with the correct quantities.
+- **PB-09:** As a customer, I want my cart to persist during my session so that I do not lose items while browsing.
+- **PB-10:** As a customer, I want to enter my delivery address during checkout so that my order can be delivered correctly.
+
 
 ### Tasks
 
-
-**PB-01: Browse products (5 points)**
-- Build Organic page UI. (Shoumik)
-- Build an Ethically Raised page UI. (Shoumik)
-- Build Landing page UI. (Abrar)
-- Add the product structure to the backend accordingly (e.g., in JSON format that the database expects) (Ekam).
+**PB-03 - Filter/Sort Products + Backend Integration (3 points)**
+- Build UI for users to filter. (Abrar)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
   
-**PB-02: Search products (3 points)**
-- Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
-- Check for any backend requirements to implement this feature. (Judy, Moneba)
+**PB-05 - Add Item to Cart + Backend Integration (5 points)**
+- Create the UI for adding the Cart Items. (Shoumik)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
   
 **PB-04: View product details (3 points)** 
 - Implement Product Details page. (Abrar & Shoumik)
