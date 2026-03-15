@@ -20,7 +20,7 @@ Summary of Active Branches
 ## PB-03 - Filter / Sort Products
 
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-High-red)
+![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 15  
 **Story Points:** 3  
@@ -113,7 +113,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 ## PB-07 - Update/Remove Cart Items
 
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-High-red)
+![Priority](https://img.shields.io/badge/Priority-Low-green)
 
 **Ticket #:** 46  
 **Story Points:** 5
@@ -146,7 +146,7 @@ As a customer, I want to update quantities or remove items so that I can fix my 
 ## PB-08 - Add Recipe Ingredients to Cart
 
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-High-red)
+![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 18 
 **Story Points:** 4
@@ -210,7 +210,7 @@ As a customer, I want my cart to persist during my session so that I do not lose
 
 
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-Medium-orange)
+![Priority](https://img.shields.io/badge/Priority-Low-green)
 
 **Ticket #:** 47
 **Story Points:** 2
@@ -227,4 +227,3 @@ As a customer, I want to enter my delivery address during checkout so that my or
 **Frontend**
 - Shoumik to implement frontend  
   - `features/cart`  
-
