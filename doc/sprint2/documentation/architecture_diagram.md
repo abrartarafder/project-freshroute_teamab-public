@@ -3,9 +3,9 @@ Concise reference for the two diagrams and how the system pieces fit.
 
 ## Diagrams
 - **System architecture diagram:** user → frontend routing → API → DB.  
-  ![System Architecture Diagram](documentation/architecture_diagram.png)
+  ![System Architecture Diagram](architecture_diagram.png)
 - **Model–View diagram:** MVC relationship among user, view, controller, and model.  
-  ![Model–View Diagram](documentation/architecture_diagram_highlevel.png)
+  ![Model–View Diagram](architecture_diagram_highlevel.png)
 
 ## How It Flows
 1) User enters UI (React/Vite) → `App.js` loads `AppNavBar` + `React Router`.
