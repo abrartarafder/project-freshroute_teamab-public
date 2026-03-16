@@ -81,111 +81,145 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ### Tasks
 
-**PB-03 - Filter/Sort Products + Backend Integration (3 points)**
+**PB-03: Filter/Sort Products + Backend Integration (3 points)**
 - Build UI for users to filter. (Abrar)
 - Subtask #1 is required for this ticket. (Ekam)
 - Subtask #2 is required for this ticket. (Judy)
 - Subtask #3 is required for this ticket. (Moneba)
   
-**PB-05 - Add Item to Cart + Backend Integration (5 points)**
+**PB-05: Add Item to Cart + Backend Integration (5 points)**
 - Create the UI for adding the Cart Items. (Shoumik)
 - Subtask #1 is required for this ticket. (Ekam)
 - Subtask #2 is required for this ticket. (Judy)
 - Subtask #3 is required for this ticket. (Moneba)
   
-**PB-04: View product details (3 points)** 
-- Implement Product Details page. (Abrar & Shoumik)
-- Create an Organic products collection in MongoDB. (Ekam)
-- Create an Ethically Raised products collection in MongoDB. (Judy)
+**PB-06: View Cart (4 points)** 
+- Build the cart pages. (Shoumik)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
 
-**PB-17: Product Badges (1 point)**
-- Build in frontend functionality on their respective pages to support the feature (Abrar, Shoumik)
-- Implement product badge attributes according to the product structure in their respective backend DBs. (Ekam, Judy, Moneba)
+**PB-07: Update/Remove Cart Items (5 points)**
+- Create the UI for adding Items to the cart for recipes. (Abrar)
+- Create the UI for adding Items to the cart for Organic and Ethically Raised pages. (Shoumik)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
 
-**PB-18: Display Product Availability (2 points)**
-- Build in frontend functionality on their respective pages to support the feature (Abrar, Shoumik)
-- Implement product badge availability functionality according to the product structure in their respective backend DBs. (Ekam, Judy, Moneba)
+**PB-08: Add Recipe Ingredients to Cart (4 points)**
+- Build the recipes and integration page (Abrar)
+- Assist with any backend as needed (Moneba)
   
-**PB-19: Browse recipes (3 points)**
-- Build Recipe page UI. (Abrar)
-- Create a Recipe product collection in MongoDB. (Moneba)
+**PPB-09: Persistent Cart (3 points)**
+- Create the UI for the persistent cart (Shoumik)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
 
-**Total: 17 Story Points**
+**PB-10: Enter Delivery Address at Checkout (2 points)**
+- Build UI for delivery page (Shoumik)
+
+**Subtask #1: Integrating the backend for the Organic Products.**
+- Integrate all data in the organic page backend and connect to the frontend (Ekam).
+- Add image data in the backend. (Ekam)
+- Help structure JSON files as needed. (Ekam)
+- Help with integration. (Shoumik)
+
+**Subtask #2: Integrating the backend for the Ethically Raised Products.**
+- Integrate all data in the Ethically Raised backend and connect to the frontend (Judy).
+- Add image data in the backend. (Judy)
+- Help structure JSON files as needed. (Ekam)
+- Help with integration. (Shoumik)
+
+**Subtask #3: Integrating the backend for the Recipes Product.**
+- Integrate all data in the recipes backend and connect to the frontend (Moneba).
+- Add image data in the backend. (Moneba)
+- Help structure JSON files as needed. (Ekam)
+- Help with integration. (Shoumik)
+
+**Total: 26 Story Points**
 
 This aligns with the team’s estimated sprint capacity.
 
-The team committed to completing PB-01, PB-02, PB-04, PB-17, PB-18, and PB-19 during Sprint 1.
+The team committed to completing PB-03, PB-05, PB-06, PB-07, PB-08, PB-09, and PB-10 during Sprint 2.
 
 **Other Tasks**
 - Seed sample product data. (Backend Team)
 - Create frontend documentation (Abrar, Shoumik)
 - Create backend documentation (Moneba, Judy, Ekam)
-- Prepare system design documentation and CRC cards. (Ekam)
-
+- Update System Design documentation. (Abrar, Ekam)
 
 ---
 
 ## Spikes Identified
 
-### Spike 1: Backend Route & Model Architecture Research
-
+### Spike 1: Backend–Frontend API Integration Strategy
 Purpose:
-Research best practices for structuring Express routes and Mongoose models to ensure a scalable and modular backend architecture.
+Research and determine the best way to integrate the Express backend APIs with the React frontend so that product data can dynamically populate the UI.
 
 Supports User Stories:
-PB-01 (Browse products)
-PB-02 (Search products)
-PB-04 (View product details)
-PB-19 (Browse recipes)
+PB-03 (Filter / Sort Products)
+PB-05 (Add Item to Cart)
+PB-06 (View Cart)
+PB-07 (Update/Remove Cart Items)
 
-Owner: Ekam
+Owner: Ekam, Shoumik, Abrar
 
 Expected Outcome:
-- Defined folder structure for routes, controllers, and models
-- Standardized Mongoose schema format for product and recipe collections
-- Documented conventions for RESTful API endpoints
+- A clear API request structure defined between the frontend and the backend.
+- React components successfully fetch product data from the backend.
+- Standardized integration pattern for Organic, Ethically Raised, and Recipe products.
+- Documentation outlining the integration approach for future features.
 
 
-
-### Spike 2: Reusable Navbar & UI Component Design
-
+### Spike 2: MongoDB Image Storage and Retrieval
 Purpose:
-Research and define best practices for building reusable React components, specifically a global Navbar with search functionality and routing support.
+Research how to store and retrieve product images in MongoDB so they can be dynamically displayed on the frontend.
 
 Supports User Stories:
-PB-01 (Browse products)
-PB-02 (Search products)
+PB-03 (Filter / Sort Products)
+PB-08 (Add Recipe Ingredients to Cart)
 
-Owner: Abrar
+Owner: Ekam, Moneba, Judy
 
 Expected Outcome:
-- Navbar component design finalized
-- Search input integrated with routing logic
-- Component is reusable across all pages
-- Clear component hierarchy defined
+- Best method identified for storing image references in MongoDB.
+- Backend API returns image URLs along with product data.
+- Frontend successfully loads images dynamically from backend responses.
+- Image storage approach supports easy updates and future product additions.
 
 
-
-### Spike 3: MERN Stack Integration & Frontend–Backend Connection
-
+### Spike 3: Recipe Data Structure and Ingredient Scaling
 Purpose:
-Research and define the correct method for connecting the React frontend to the Express/Node backend using the MERN stack. Ensure proper API communication, routing structure, and environment configuration for development.
+Research and define the optimal MongoDB schema for storing recipes, ingredients, and serving quantities so ingredient scaling can be implemented efficiently.
 
 Supports User Stories:
-PB-01 (Browse products)
-PB-02 (Search products)
-PB-04 (View product details)
-PB-19 (Browse recipes)
+PB-08 (Add Recipe Ingredients to Cart)
+
+Owner: Ekam, Moneba, Judy
+
+Expected Outcome:
+- Recipe schema defined with ingredient lists and quantities.
+- Serving-based ingredient scaling logic documented.
+- Backend structure supports nested ingredient collections.
+- Data structure allows ingredients to be easily added to the cart.
+
+### Spke 4: Persistent Cart State Management
+Purpose:
+Research the best approach for maintaining cart data across page navigation and refresh events in the React application.
+
+Supports User Stories:
+PB-09 (Persistent Cart)
+PB-05 (Add Item to Cart)
+PB-06 (View Cart)
 
 Owner: Shoumik
 
 Expected Outcome:
-- Confirm folder structure for separating frontend and backend
-- Configure CORS correctly between frontend and backend
-- Establish working Axios/fetch API calls from React to Express
-- Verify MongoDB data retrieval through backend API endpoints
-- Document environment variable setup (.env for DB URI, ports, etc.)
-- Confirm local development setup (e.g., frontend on port 3000, backend on 5000)
+- Cart state persistence method selected (e.g., local storage or session storage).
+- Cart data remains consistent across page navigation and refreshes.
+- Frontend cart state properly synchronizes with backend data.
+- Clear documentation on how cart persistence works in the system.
+
 
 ---
 
