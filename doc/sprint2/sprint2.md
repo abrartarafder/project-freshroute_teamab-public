@@ -1,19 +1,19 @@
-Notes
-- At least 30% of commits landed in Week 01 (March 10–16); the remaining commits were completed in Week 02 (March 17–23).
-- Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [distribution_naming.md](./distribution_naming.md).
-
-Summary of Active Branches
-- Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
-- Product filters (PB-03) - Abrar - `refactor/filter`
-- Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
-- Backend integrations (spans all stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
-
 # Sprint 2 Planning Meeting  
 **Date:** March 10, 2026  
 **Sprint Duration:** March 10, 2026 - March 23, 2026
 **Project Name:** FreshRoute  
 **Sprint Goal:** 
 ---
+
+**Notes**
+- At least 30% of commits landed in Week 01 (March 10–16); the remaining commits were completed in Week 02 (March 17–23).
+- Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [distribution_naming.md](./distribution_naming.md).
+
+**Summary of Active Branches**
+- Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
+- Product filters (PB-03) - Abrar - `refactor/filter`
+- Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
+- Backend integrations (spans all stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
 
 ## Sprint Goals
 
