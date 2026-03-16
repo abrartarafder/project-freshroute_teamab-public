@@ -6,7 +6,7 @@ Summary of Active Branches
 - Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
 - Product filters (PB-03) - Abrar - `refactor/filter`
 - Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
-- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
+- Backend integrations (spans all stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
 
 # Sprint 2 Planning Meeting  
 **Date:** March 10, 2026  
@@ -19,10 +19,14 @@ Summary of Active Branches
 
 The primary objectives of Sprint 2 are:
 
-1. 
-2. 
-3. 
-5. 
+1. Implement product filtering and sorting to improve product browsing and shopping efficiency. (Associated User Story: PB-03)
+2. Develop a functional shopping cart system that allows users to add items, view their cart, update quantities, and remove products. (Associated User Stories: PB-05, PB-06, PB-07)
+3. Enable recipe-based shopping by allowing users to add recipe ingredients to the cart with scalable quantities based on serving size. (Associated User Story: PB-08)
+4. Implement persistent cart functionality so items remain during navigation and page refresh. (Associated User Story: PB-09)
+5. Add a checkout step that allows users to enter a delivery address during the ordering process. (Associated User Story: PB-10)
+6. Integrate the backend APIs with the frontend components to ensure product data, cart actions, and recipe information flow correctly between the system layers while maintaining a modular structure that supports efficient future updates and feature additions. (Associated User Stories: PB-03, PB-05, PB-06, PB-07, PB-08, PB-09)
+7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. (Associated User Stories: PB-03, PB-08)
+
 
 ## Product Backlog
 
@@ -32,13 +36,13 @@ The [sprint0 Product Backlog](../sprint0/PB.md) file has more details about all 
 
 ## Participants
 
-| Name                     | Role 1     | Role 2     | Role 3     |
-|--------------------------|------------|------------|------------|
-| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator |
-| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester |
-| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     |
-| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer |
-| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator |
+| Name                     | Role 1     | Role 2     | Role 3     | Role 4     |
+|--------------------------|------------|------------|------------|------------|
+| Shoumik Ahmed            | Fullstack Developer | QA Tester | Database Administrator | System Integration Engineer |
+| Moneba Hanifi            | Backend Developer | Database Administrator | QA Tester | System Integration Engineer |
+| Judy El Ghargomi         | Backend Developer | Database Administrator | QA Tester     | System Integration Engineer |
+| Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer | System Integration Engineer |
+| Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator | UI Refactoring Supervisor |
 
 All team members were present and contributed to planning decisions.
 
@@ -62,29 +66,32 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ---
 
-## Epic 1: Storefront & Product Browsing (Core StoreFront Experience)
+## Epic 3: Cart Page + BackEnd/Frontend Integration
 
 ### User Stories
 
-- **PB-01:** As a customer, I want to browse organic or ethically raised products so that I can decide what to buy.
-- **PB-02:** As a customer, I want to search for products by keyword so that I can find items quickly.  
-- **PB-04:** As a customer, I want to view product details so that I can make an informed purchase decision.
-- **PB-17:** As a customer, I want to see clear organic and ethical badges on products so that I can make informed purchasing decisions.
-- **PB-18:** As a customer, I want to see whether a product is in stock so that I do not attempt to purchase unavailable items.
-- **PB-19:** As a customer, I want to browse available recipes so that I can plan meals easily without searching for individual ingredients.
+- **PB-03:** As a customer, I want to filter/sort products so that I can shop efficiently.
+- **PB-05:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.
+- **PB-06:** As a customer, I want to view my cart so that I can review items before checkout.
+- **PB-07:** As a customer, I want to update quantities or remove items so that I can fix my order.
+- **PB-08:** As a customer, I want to add a recipe to my cart so that all required ingredients are added automatically with the correct quantities.
+- **PB-09:** As a customer, I want my cart to persist during my session so that I do not lose items while browsing.
+- **PB-10:** As a customer, I want to enter my delivery address during checkout so that my order can be delivered correctly.
+
 
 ### Tasks
 
-
-**PB-01: Browse products (5 points)**
-- Build Organic page UI. (Shoumik)
-- Build an Ethically Raised page UI. (Shoumik)
-- Build Landing page UI. (Abrar)
-- Add the product structure to the backend accordingly (e.g., in JSON format that the database expects) (Ekam).
+**PB-03 - Filter/Sort Products + Backend Integration (3 points)**
+- Build UI for users to filter. (Abrar)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
   
-**PB-02: Search products (3 points)**
-- Create a reusable Navbar component with search functionality on all UI pages. (Abrar)
-- Check for any backend requirements to implement this feature. (Judy, Moneba)
+**PB-05 - Add Item to Cart + Backend Integration (5 points)**
+- Create the UI for adding the Cart Items. (Shoumik)
+- Subtask #1 is required for this ticket. (Ekam)
+- Subtask #2 is required for this ticket. (Judy)
+- Subtask #3 is required for this ticket. (Moneba)
   
 **PB-04: View product details (3 points)** 
 - Implement Product Details page. (Abrar & Shoumik)
