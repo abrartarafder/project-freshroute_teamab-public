@@ -165,7 +165,7 @@ PB-07 (Update/Remove Cart Items)
 Owner: Ekam, Shoumik, Abrar
 
 Expected Outcome:
-- A clear API request structure defined between the frontend and the backend.
+- A clear API request structure is defined between the frontend and the backend.
 - React components successfully fetch product data from the backend.
 - Standardized integration pattern for Organic, Ethically Raised, and Recipe products.
 - Documentation outlining the integration approach for future features.
@@ -236,16 +236,17 @@ Expected Outcome:
 
 ## Acceptance Criteria
 
-By the end of Sprint 1:
+By the end of Sprint 2:
 
-- Users can navigate between Landing, Products, Recipes, and Cart pages.
-- Products are displayed from MongoDB or seeded sample data.
-- Product Details page dynamically displays name, price, and description.
-- Recipes are retrieved and displayed from MongoDB.
-- Cart page displays items with adjustable quantities.
+- Users can filter and sort products by category and price.
+- Users can add items to the cart from product listings and recipes.
+- Users can view, update, and remove items in the cart, with totals updating correctly.
+- Recipe ingredients can be added to the cart with quantities scaled by servings.
+- The cart persists during page navigation and refresh.
+- Users can enter a delivery address during checkout, attached to the order for the session.
+- Frontend dynamically fetches product, recipe, and cart data from the backend, including images.
 - All completed stories meet the Definition of Done.
-- Frontend and Backend Documentation Template is complete. 
-- System Design Documentation is complete. 
+- Documentation is updated to reflect Sprint 2 changes, including integration, cart persistence, and recipe structure.
 
 ---
 
@@ -257,6 +258,7 @@ A story is complete when:
 - Pull request is created and reviewed.
 - Changes are merged into the main branch.
 - Functionality works without major errors.
+- Frontend and backend integration works correctly where applicable.
 - Acceptance criteria are satisfied.
 - The Trello board is updated accordingly.
 
@@ -264,9 +266,10 @@ A story is complete when:
 
 ## Decisions Made During Planning
 
-- Checkout flow, order placement, and delivery tracking deferred to Sprint 2.
-- Complete cart storage functionality deferred to a future sprint.
-- Emphasis placed on clean architecture and stability over feature expansion.
-- Demo-ready build required at sprint end.
-- Appropriate backend structure and attributes to be displayed.
-- Deferring product image storage in the backend to sprint 2.
+- Priority is placed on implementing the cart system and product filtering to support the core shopping workflow.
+- Backend–frontend integration will be implemented for Organic, Ethically Raised, and Recipe products.
+- Recipe ingredient scaling and recipe-to-cart functionality will be implemented this sprint.
+- Product image storage and retrieval will be implemented in the backend and displayed dynamically in the frontend.
+- Checkout functionality will be limited to entering a delivery address, while full order processing will be deferred to a future sprint.
+- A demo-ready build with working cart functionality and product integration will be required at the end of the sprint.
+
