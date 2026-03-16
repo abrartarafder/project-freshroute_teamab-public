@@ -100,17 +100,18 @@ Capacity was calculated based on individual availability during the two-week spr
 - Subtask #3 is required for this ticket. (Moneba)
 
 **PB-07: Update/Remove Cart Items (5 points)**
-- Create the UI for adding Items to the cart for recipes. (Abrar)
-- Create the UI for adding Items to the cart for Organic and Ethically Raised pages. (Shoumik)
+- Implement quantity adjustment controls (Shoumik)
+- Implement remove item functionality (Shoumik)
+- Ensure recipe items can be modified/removed (Abrar)
 - Subtask #1 is required for this ticket. (Ekam)
 - Subtask #2 is required for this ticket. (Judy)
 - Subtask #3 is required for this ticket. (Moneba)
 
 **PB-08: Add Recipe Ingredients to Cart (4 points)**
-- Build the recipes and integration page (Abrar)
+- Build the recipes page and ingredient scaling integration(Abrar)
 - Assist with any backend as needed (Moneba)
   
-**PPB-09: Persistent Cart (3 points)**
+**PB-09: Persistent Cart (3 points)**
 - Create the UI for the persistent cart (Shoumik)
 - Subtask #1 is required for this ticket. (Ekam)
 - Subtask #2 is required for this ticket. (Judy)
@@ -203,7 +204,7 @@ Expected Outcome:
 - Backend structure supports nested ingredient collections.
 - Data structure allows ingredients to be easily added to the cart.
 
-### Spke 4: Persistent Cart State Management
+### Spike 4: Persistent Cart State Management
 Purpose:
 Research the best approach for maintaining cart data across page navigation and refresh events in the React application.
 
