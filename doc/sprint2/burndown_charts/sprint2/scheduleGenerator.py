@@ -2,11 +2,7 @@ from matplotlib import pyplot as plt
 from matplotlib.patches import Ellipse
 import networkx as nx
 import math
-import os
 
-# ---------------------------------
-# network graph
-# ---------------------------------
 G = nx.DiGraph()
 
 edges = [
@@ -18,13 +14,12 @@ edges = [
     ("Review Cart", "Update\nQuantity"),
     ("Review Cart", "Delete\nItems"),
     ("Review Cart", "Checkout"),
+    ("Update\nQuantity", "Review Cart"),
+    ("Delete\nItems", "Review Cart"),
 ]
 
 G.add_edges_from(edges)
 
-# ---------------------------------
-# Manual positions for clean layout
-# ---------------------------------
 pos = {
     "Browse Organic\nProducts": (-3.8, 1.8),
     "Browse Ethically Raised\nProducts": (-3.8, -0.2),
@@ -40,12 +35,11 @@ pos = {
     "Checkout": (5.2, -2.2),
 }
 
-# ---------------------------------
-# Figure setup
-# ---------------------------------
+
 fig, ax = plt.subplots(figsize=(13, 8))
 ax.set_xlim(-5.3, 6.8)
 ax.set_ylim(-3.2, 2.8)
+ax.set_facecolor("#f4f5f2")
 ax.axis("off")
 
 NODE_WIDTH = 2.4
@@ -53,10 +47,6 @@ NODE_HEIGHT = 0.95
 RX = NODE_WIDTH / 2
 RY = NODE_HEIGHT / 2
 
-# ---------------------------------
-# Helper to connect arrows cleanly
-# from ellipse edge to ellipse edge
-# ---------------------------------
 def ellipse_boundary_point(center, other, rx, ry):
     x1, y1 = center
     x2, y2 = other
@@ -69,12 +59,26 @@ def ellipse_boundary_point(center, other, rx, ry):
     scale = 1 / math.sqrt((dx * dx) / (rx * rx) + (dy * dy) / (ry * ry))
     return (x1 + dx * scale, y1 + dy * scale)
 
-# ---------------------------------
-# Draw edges
-# ---------------------------------
 for source, target in G.edges():
     start = ellipse_boundary_point(pos[source], pos[target], RX, RY)
     end = ellipse_boundary_point(pos[target], pos[source], RX, RY)
+
+    dx = end[0] - start[0]
+    dy = end[1] - start[1]
+    dist = math.hypot(dx, dy)
+    gap = 0
+    if dist > 0:
+        ux, uy = dx / dist, dy / dist
+        start = (start[0] + ux * gap, start[1] + uy * gap)
+        end = (end[0] - ux * gap, end[1] - uy * gap)
+
+  
+    if {"Review Cart", "Delete\nItems"} == {source, target} and dist > 0:
+        perp_offset = 0.12
+        perp_x, perp_y = -uy, ux  
+        sign = 1 if source == "Review Cart" else -1
+        start = (start[0] + perp_x * perp_offset * sign, start[1] + perp_y * perp_offset * sign)
+        end = (end[0] + perp_x * perp_offset * sign, end[1] + perp_y * perp_offset * sign)
 
     ax.annotate(
         "",
@@ -82,26 +86,25 @@ for source, target in G.edges():
         xytext=start,
         arrowprops=dict(
             arrowstyle="-|>",
-            lw=1.3,
-            color="black",
+            lw=1.7,
+            color="#f0b51f",  
             shrinkA=0,
-            shrinkB=0
+            shrinkB=0,
+            mutation_scale=14,
+            connectionstyle="arc3,rad=0",
         ),
-        zorder=1
+        zorder=2
     )
 
-# ---------------------------------
-# Draw ellipse nodes
-# ---------------------------------
 for node, (x, y) in pos.items():
     ellipse = Ellipse(
         (x, y),
         width=NODE_WIDTH,
         height=NODE_HEIGHT,
-        facecolor="#dbe8f6",
-        edgecolor="#9bb3cc",
-        linewidth=1.2,
-        zorder=2
+        facecolor="#dff0df",   
+        edgecolor="#2e5a28",  
+        linewidth=1.5,
+        zorder=1
     )
     ax.add_patch(ellipse)
 
@@ -112,14 +115,12 @@ for node, (x, y) in pos.items():
         ha="center",
         va="center",
         fontsize=10,
-        color="#2f3b46",
+        fontweight="bold",
+        color="#2e5a28",
         zorder=3
-
     )
 
-# ---------------------------------
-# Save output
-# ---------------------------------
+
 plt.savefig("network_diagram.png", dpi=300, bbox_inches="tight")
 
 plt.show()
