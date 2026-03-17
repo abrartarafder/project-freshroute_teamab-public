@@ -120,7 +120,6 @@ for node, (x, y) in pos.items():
 # ---------------------------------
 # Save output
 # ---------------------------------
-os.makedirs("charts", exist_ok=True)
-plt.savefig("charts/network_diagram.pdf", bbox_inches="tight")
+plt.savefig("network_diagram.png", dpi=300, bbox_inches="tight")
 
 plt.show()
