@@ -152,7 +152,7 @@ Abrar: As of right now, I do not have any blockers.
 
 ## [2026-03-21] - Sprint 2 Standup #4
 
-1. What did you work on since the last standup?
+**1. What did you work on since the last standup?**
 
 - Abrar: 
 - Shoumik:
@@ -160,7 +160,7 @@ Abrar: As of right now, I do not have any blockers.
 - Moneba: 
 - Judy: 
 
-2. What do you commit to next?
+**2. What do you commit to next?**
 
 - Abrar: 
 - Shoumik:
@@ -168,7 +168,7 @@ Abrar: As of right now, I do not have any blockers.
 - Moneba: 
 - Judy: 
 
-3. When do you think you'll be done?
+**3. When do you think you'll be done?**
 
 - Abrar: 
 - Shoumik:
@@ -176,7 +176,7 @@ Abrar: As of right now, I do not have any blockers.
 - Moneba: 
 - Judy: 
 
-4. Do you have any blockers?
+**4. Do you have any blockers?**
 
 - Abrar: 
 - Shoumik:
