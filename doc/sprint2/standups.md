@@ -1,6 +1,6 @@
  - Team updates are done during the standup meetings and noted by Abrar at the end of each sprint within FreshRoute's #standup channel. Every single person is responsible for speaking about their own updates that are high quality and detailed updates. 
 
-## [2026-03-13] - Sprint 2 Standup #1
+## [2026-03-13] - Sprint #2 Standup #1
 
 **1. What did you work on since the last standup?**
 
@@ -50,7 +50,7 @@
 
 - Judy: No blockers as of yet. I'm just monitoring whether the Ethically Raised filters will require additional backend fields beyond what's already in Trello. 
 
-## [2026-03-15] - Sprint 2 Standup #2
+## [2026-03-15] - Sprint #2 Standup #2
 
 **1. What did you work on since the last standup?**
 
@@ -100,7 +100,7 @@ Abrar: As of right now, I do not have any blockers.
 
 - Judy: As of right now, I do not have any blockers. The only caveat is confirming that the Ethically Raised filters match the exact field names in the database so the queries don't break. 
 
-## [2026-03-17] - Sprint 2 Standup #3
+## [2026-03-17] - Sprint #2 Standup #3
 
 **1. What did you work on since the last standup?**
 
@@ -150,7 +150,7 @@ Abrar: As of right now, I do not have any blockers.
 
 - Judy: As of right now, I do not have any blockers, aside from validating that the Ethically Raised filters won't need extra enums in the schema that could slow down the current integration. 
 
-## [2026-03-21] - Sprint 2 Standup #4
+## [2026-03-21] - Sprint #2 Standup #4
 
 **1. What did you work on since the last standup?**
 
