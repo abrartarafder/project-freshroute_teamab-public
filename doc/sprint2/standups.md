@@ -142,11 +142,11 @@
 
 - Abrar: As of right now, I do not have any blockers. 
 
-- Shoumik: A potential blocker that I will discuss with the backend team will be how to actually figure out the itegration of the backend items from the database so it shows up on the frontend, including ensuring cart totals react to backend price changes without a full page refresh. 
+- Shoumik: A potential blocker that I will discuss with the backend team will be how to actually figure out the integration of the backend items from the database so it shows up on the frontend, including ensuring cart totals react to backend price changes without a full page refresh. 
 
 - Ekam: A potential blocker that I will discuss with the backend team will be how to implement the images in the backend and have them be reflected in the frontend, particularly choosing between base64 blobs and hosted URLs so render speed stays acceptable. 
 
-- Moneba: As of right now, I do not have any blockers, but I'm keeping an eye on how we paginate or load recipe collections so the page doesn't stall when the dataset grows. 
+- Moneba: As of right now, I do not have any blockers, but I'm keeping an eye on how we load recipe collections so the page doesn't stall when the dataset grows. 
 
 - Judy: As of right now, I do not have any blockers, aside from validating that the Ethically Raised filters won't need extra enums in the schema that could slow down the current integration. 
 
