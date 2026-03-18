@@ -90,7 +90,7 @@
 
 **4. Do you have any blockers?**
 
-Abrar: As of right now, I do not have any blockers. 
+- Abrar: As of right now, I do not have any blockers. 
 
 - Shoumik: A potential blocker that I will discuss with the backend team will be how to actually figure out the itegration of the backend items from the database so it shows up on the frontend, especially wiring the cart totals to update live as quantities change. 
 
