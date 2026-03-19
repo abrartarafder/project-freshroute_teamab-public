@@ -34,7 +34,7 @@ const products = [
     tabs: ["featured", "popular"],
     badges: ["Organic", "Non-GMO"],
     inStock: true,
-    description: "Fresh crisp apples sourced from trusted organic farms in Canada.",
+    description: "Fresh crisp that are apples sourced from trusted organic farms in Canada.",
   },
   {
     name: "Avocado",
