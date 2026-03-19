@@ -5,6 +5,8 @@ Notes
 
 - GitHub branches were primarily named after the single associated ticket number. Supporting branches were opened only when collaboration or parallel work was required, with one main branch per ticket unless tasks were tightly related (ex: multiple cart-page tickets or recipe page integration).
 
+- Old Github Branches from Sprint 1 that were already graded have also been deleted. 
+
 ## User Stories
 
 |Tasks | Ticket(s) | Scope | Owner | Primary Branch | Related Ticket IDs | Week 01 Commits (workload distribution by tasks) | Week 02 Commits (workload distribution by tasks) |

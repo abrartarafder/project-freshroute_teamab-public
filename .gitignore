@@ -16,3 +16,9 @@ frontend/.env
 # OS / editor
 .DS_Store
 .vscode/
+
+
+# Python virtual environments
+venv/
+**/venv/
+
