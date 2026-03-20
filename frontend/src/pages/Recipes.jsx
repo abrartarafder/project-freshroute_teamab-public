@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AppNavbar from "../components/navbar.jsx";
 import { addRecipeToCart, useCart } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
@@ -16,11 +16,33 @@ import imgBeef from "../assets/recipes/beef-stirfry.png";
 import imgBuddha from "../assets/recipes/buddha-bowl.png";
 import imgWrap from "../assets/recipes/med-wrap.png";
 
-const TAB_KEYS = ["featured", "popular", "new", "all"];
+const TAB_KEYS = ["all", "featured", "popular", "new"];
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
 const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
 
-const recipes = [
+const formatServingPrice = (price) => {
+  if (typeof price !== "number") return "";
+  const formatted = Number.isInteger(price) ? price.toFixed(0) : price.toFixed(2);
+  return `$${formatted}/Serving`;
+};
+
+const pickGeneratedTabs = (name = "") => {
+  const tabPool = ["featured", "popular", "new"];
+  const hash = name
+    .split("")
+    .reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+  const primaryTab = tabPool[hash % tabPool.length];
+  const secondaryTab = tabPool[(hash + 1) % tabPool.length];
+
+  if (hash % 2 === 0) {
+    return [primaryTab, secondaryTab, "all"];
+  }
+
+  return [primaryTab, "all"];
+};
+
+const seedRecipes = [
   {
     title: "Quinoa-Stuffed Bell Peppers",
     description:
@@ -240,13 +262,129 @@ const recipes = [
 export default function Recipes() {
   const [query, setQuery] = useState("");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [activeTab, setActiveTab] = useState("featured");
+  const [activeTab, setActiveTab] = useState("all");
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
+  const [apiRecipes, setApiRecipes] = useState([]);
   const { count } = useCart();
+  const [page, setPage] = useState(1);
   const [servingsByTitle, setServingsByTitle] = useState(() =>
-    Object.fromEntries(recipes.map((r) => [r.title, r.servings]))
+    Object.fromEntries(seedRecipes.map((r) => [r.title, r.servings]))
   );
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadRecipes() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/recipes`);
+        if (!response.ok) {
+          throw new Error(`Recipes request failed with ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!ignore) {
+          setApiRecipes(Array.isArray(data) ? data : []);
+        }
+      } catch (error) {
+        if (!ignore) {
+          setApiRecipes([]);
+        }
+      }
+    }
+
+    loadRecipes();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const mapDbRecipe = (item) => {
+    const ingredientsArray = Array.isArray(item.ingredients) ? item.ingredients : [];
+    const ingredientDetails = ingredientsArray.map((ingredient) => ({
+      productName: ingredient.productName || ingredient.name || "Ingredient",
+      quantity: ingredient.quantity ?? 1,
+      unit: ingredient.unit || "",
+    }));
+
+    const tags = Array.isArray(item.tags)
+      ? item.tags
+      : item.tags
+        ? [item.tags]
+        : [item.prepTimeMinutes ? `${item.prepTimeMinutes} min prep` : "Chef's pick"];
+
+    const ingredients = ingredientDetails.map((ingredient) => {
+      const qty = ingredient.quantity ?? "";
+      const unit = ingredient.unit ? ` ${ingredient.unit}` : "";
+      return `${qty}${unit} ${ingredient.productName}`.trim();
+    });
+
+    return {
+      title: item.name || "Recipe",
+      description: item.description || "Recipe details are coming soon.",
+      price: typeof item.price === "number" ? formatServingPrice(item.price) : "$0.00/Serving",
+      rating: 4,
+      tags,
+      image: item.imageUrl || logo,
+      ingredients: ingredients.length ? ingredients : ingredientsArray,
+      ingredientDetails,
+      servings: item.servings || 1,
+      categories:
+        Array.isArray(item.categories) && item.categories.length
+          ? item.categories
+          : pickGeneratedTabs(item.name || "recipe"),
+    };
+  };
+
+  const mergedRecipes = useMemo(() => {
+    const dbRecipesByName = new Map(
+      apiRecipes.map((item) => [item.name?.trim().toLowerCase(), item])
+    );
+
+    const mergedFromFrontend = seedRecipes.map((recipe) => {
+      const dbRecipe = dbRecipesByName.get(recipe.title.trim().toLowerCase());
+      if (!dbRecipe) return recipe;
+
+      const mapped = mapDbRecipe(dbRecipe);
+      return {
+        ...recipe,
+        ...mapped,
+        title: mapped.title || recipe.title,
+        price: mapped.price || recipe.price,
+        description: mapped.description || recipe.description,
+        ingredients: mapped.ingredients?.length ? mapped.ingredients : recipe.ingredients,
+        ingredientDetails: mapped.ingredientDetails?.length
+          ? mapped.ingredientDetails
+          : recipe.ingredientDetails,
+        servings: mapped.servings || recipe.servings,
+        categories: mapped.categories?.length ? mapped.categories : recipe.categories,
+        tags: mapped.tags?.length ? mapped.tags : recipe.tags,
+        image: mapped.image || recipe.image,
+        rating: mapped.rating || recipe.rating,
+      };
+    });
+
+    const frontendTitles = new Set(seedRecipes.map((r) => r.title.trim().toLowerCase()));
+
+    const dbOnlyRecipes = apiRecipes
+      .filter((item) => !frontendTitles.has(item.name?.trim().toLowerCase()))
+      .map((item) => mapDbRecipe(item));
+
+    return [...mergedFromFrontend, ...dbOnlyRecipes];
+  }, [apiRecipes]);
+
+  useEffect(() => {
+    setServingsByTitle((prev) => {
+      const next = { ...prev };
+      mergedRecipes.forEach((recipe) => {
+        if (next[recipe.title] == null) {
+          next[recipe.title] = recipe.servings || 1;
+        }
+      });
+      return next;
+    });
+  }, [mergedRecipes]);
 
   const setServings = (title, value) => {
     setServingsByTitle((prev) => ({
@@ -258,7 +396,7 @@ export default function Recipes() {
   const filteredRecipes = useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    let list = recipes.filter((r) =>
+    let list = mergedRecipes.filter((r) =>
       activeTab && activeTab !== "all" ? r.categories?.includes(activeTab) : true
     );
 
@@ -290,12 +428,25 @@ export default function Recipes() {
     }
 
     return list;
-  }, [activeTab, priceFilter, query, sortBy]);
+  }, [activeTab, mergedRecipes, priceFilter, query, sortBy]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [activeTab, query, priceFilter, sortBy]);
+
+  const itemsPerPage = 14;
+  const totalPages = Math.max(1, Math.ceil(filteredRecipes.length / itemsPerPage));
+  const currentPage = Math.min(page, totalPages);
+  const pagedRecipes = filteredRecipes.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
     setPriceFilter("all");
     setSortBy("none");
+    setPage(1);
   };
 
   const renderTabLabel = (tab) => {
@@ -409,7 +560,7 @@ export default function Recipes() {
         >
           <Container className="recipes-grid-container">
             <Row className="g-4">
-              {filteredRecipes.map((recipe) => (
+              {pagedRecipes.map((recipe) => (
                 <Col key={recipe.title} lg={4} md={6} sm={12}>
                   <article
                     className="recipe-card"
@@ -483,17 +634,30 @@ export default function Recipes() {
               </div>
             )}
 
-            {recipes.length === 0 && (
+            {mergedRecipes.length === 0 && (
               <div className="recipes-empty">
                 No recipes are available right now. Please check back soon.
               </div>
             )}
 
             <div className="recipes-pagination">
-              <button className="page-btn" aria-label="Previous page">
+              <button
+                className="page-btn"
+                aria-label="Previous page"
+                disabled={currentPage === 1}
+                onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+              >
                 ←
               </button>
-              <button className="page-btn" aria-label="Next page">
+              <span className="organic-page-status">
+                {currentPage} / {totalPages}
+              </span>
+              <button
+                className="page-btn"
+                aria-label="Next page"
+                disabled={currentPage === totalPages}
+                onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+              >
                 →
               </button>
             </div>

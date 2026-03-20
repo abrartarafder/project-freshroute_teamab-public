@@ -25,6 +25,7 @@ import "./Organic.css";
 const TAB_KEYS = ["all", "featured", "popular", "new"];
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
+const API_BASE_URL = "http://localhost:4000";
 
 const formatDbPrice = (price, unit) => {
   if (typeof price !== "number") return "";
@@ -55,7 +56,7 @@ const products = [
     tabs: ["featured", "popular"],
     badges: ["Organic", "Non-GMO"],
     inStock: true,
-    description: "Fresh crisp apples sourced from trusted organic farms in Canada.",
+    description: "Fresh crisp that are apples sourced from trusted organic farms in Canada.",
   },
   {
     name: "Avocado",
@@ -182,6 +183,27 @@ function stars(rating = 4) {
   );
 }
 
+function formatDbPrice(price, unit) {
+  if (typeof price !== "number") return "";
+  const formattedPrice = Number.isInteger(price) ? price.toFixed(0) : price.toFixed(2);
+  return unit ? `$${formattedPrice}/${unit}` : `$${formattedPrice}`;
+}
+
+function pickGeneratedTabs(name = "") {
+  const tabPool = ["featured", "popular", "new"];
+  const hash = name
+    .split("")
+    .reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+  const primaryTab = tabPool[hash % tabPool.length];
+  const secondaryTab = tabPool[(hash + 1) % tabPool.length];
+
+  if (hash % 2 === 0) {
+    return [primaryTab, secondaryTab, "all"];
+  }
+
+  return [primaryTab, "all"];
+}
+
 export default function Organic() {
   const [activeTab, setActiveTab] = useState("all");
   const [query, setQuery] = useState("");
@@ -196,7 +218,7 @@ export default function Organic() {
   useEffect(() => {
     let ignore = false;
 
-    async function loadOrganic() {
+    async function loadOrganicProducts() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/organic`);
         if (!response.ok) {
@@ -214,7 +236,7 @@ export default function Organic() {
       }
     }
 
-    loadOrganic();
+    loadOrganicProducts();
 
     return () => {
       ignore = true;
@@ -239,7 +261,9 @@ export default function Organic() {
       };
     });
 
-    const frontendNames = new Set(products.map((p) => p.name.trim().toLowerCase()));
+    const frontendNames = new Set(
+      products.map((product) => product.name.trim().toLowerCase())
+    );
 
     const dbOnlyProducts = apiProducts
       .filter((item) => !frontendNames.has(item.name?.trim().toLowerCase()))
@@ -292,24 +316,25 @@ export default function Organic() {
     return list;
   }, [activeTab, mergedProducts, priceFilter, query, sortBy]);
 
-  useEffect(() => {
-    setPage(1);
-  }, [activeTab, query, priceFilter, sortBy]);
-
-  const itemsPerPage = 14;
-  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / itemsPerPage));
-  const currentPage = Math.min(page, totalPages);
-  const pagedProducts = filteredProducts.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
-
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
     setPriceFilter("all");
     setSortBy("none");
     setPage(1);
   };
+
+  useEffect(() => {
+    setPage(1);
+  }, [query, priceFilter, sortBy]);
+
+  const showMemberCard = activeTab === "featured" && query.trim() === "";
+  const itemsPerPage = showMemberCard ? 7 : 8;
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / itemsPerPage));
+  const currentPage = Math.min(page, totalPages);
+  const pagedProducts = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const handleAddToCart = (item, quantity = 1) => {
     addItem({
@@ -402,7 +427,7 @@ export default function Organic() {
         <section className="organic-content">
           <Container className="organic-container">
             <div className="organic-grid">
-              {activeTab === "all" && query.trim() === "" && (
+              {showMemberCard && (
                 <aside className="member-card">
                   <p className="member-offer">10% OFF</p>
                   <p className="member-copy">
@@ -420,11 +445,11 @@ export default function Organic() {
                 </aside>
               )}
 
-            {pagedProducts.map((item) => (
-              <article
-                key={item.name}
-                className={`produce-card ${item.inStock ? "" : "out-of-stock"}`}
-                role="button"
+              {pagedProducts.map((item) => (
+                <article
+                  key={item.name}
+                  className={`produce-card ${item.inStock ? "" : "out-of-stock"}`}
+                  role="button"
                   tabIndex={0}
                   onClick={() => setSelectedProduct(item)}
                   onKeyDown={(e) => {
