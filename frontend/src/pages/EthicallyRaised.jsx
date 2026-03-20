@@ -1,5 +1,5 @@
 import { Container, Modal, Button, Form } from "react-bootstrap";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
 import { addItem, makeCartId, useCart } from "../utils/cartStore.js";
@@ -22,8 +22,30 @@ import "./Landing.css";
 import "./Recipes.css";
 import "./Organic.css";
 
-const TAB_KEYS = ["featured", "popular", "new", "all"];
+const TAB_KEYS = ["all", "featured", "popular", "new"];
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
+
+const formatDbPrice = (price, unit) => {
+  if (typeof price !== "number") return "";
+  const formatted = Number.isInteger(price) ? price.toFixed(0) : price.toFixed(2);
+  return unit ? `$${formatted}/${unit}` : `$${formatted}`;
+};
+
+const pickGeneratedTabs = (name = "") => {
+  const tabPool = ["featured", "popular", "new"];
+  const hash = name
+    .split("")
+    .reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+  const primaryTab = tabPool[hash % tabPool.length];
+  const secondaryTab = tabPool[(hash + 1) % tabPool.length];
+
+  if (hash % 2 === 0) {
+    return [primaryTab, secondaryTab, "all"];
+  }
+
+  return [primaryTab, "all"];
+};
 
 const proteins = [
   {
@@ -161,20 +183,87 @@ function stars(rating = 4) {
 }
 
 export default function EthicallyRaised() {
-  const [activeTab, setActiveTab] = useState("featured");
+  const [activeTab, setActiveTab] = useState("all");
   const [query, setQuery] = useState("");
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalQty, setModalQty] = useState(1);
+  const [apiProducts, setApiProducts] = useState([]);
+  const [page, setPage] = useState(1);
   const { count } = useCart();
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadEthicalProducts() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/ethically-raised`);
+        if (!response.ok) {
+          throw new Error(`Ethically Raised request failed with ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!ignore) {
+          setApiProducts(Array.isArray(data) ? data : []);
+        }
+      } catch (error) {
+        if (!ignore) {
+          setApiProducts([]);
+        }
+      }
+    }
+
+    loadEthicalProducts();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const mergedProducts = useMemo(() => {
+    const dbProductsByName = new Map(
+      apiProducts.map((item) => [item.name?.trim().toLowerCase(), item])
+    );
+
+    const mergedFromFrontend = proteins.map((product) => {
+      const dbProduct = dbProductsByName.get(product.name.trim().toLowerCase());
+      if (!dbProduct) return product;
+
+      return {
+        ...product,
+        price: formatDbPrice(dbProduct.price, dbProduct.priceUnit) || product.price,
+        inStock: dbProduct.inventory?.available ?? product.inStock,
+        stock: dbProduct.inventory?.stock ?? product.stock,
+        category: dbProduct.category ?? product.category,
+      };
+    });
+
+    const frontendNames = new Set(proteins.map((p) => p.name.trim().toLowerCase()));
+
+    const dbOnlyProducts = apiProducts
+      .filter((item) => !frontendNames.has(item.name?.trim().toLowerCase()))
+      .map((item) => ({
+        name: item.name,
+        price: formatDbPrice(item.price, item.priceUnit),
+        image: logo,
+        tabs: pickGeneratedTabs(item.name),
+        badges: ["Ethically Raised"],
+        inStock: item.inventory?.available ?? true,
+        description: `${item.name} is available from the FreshRoute ethically raised catalog.`,
+        category: item.category ?? "Ethically Raised",
+        stock: item.inventory?.stock ?? 0,
+      }));
+
+    return [...mergedFromFrontend, ...dbOnlyProducts];
+  }, [apiProducts]);
 
   const filteredProducts = useMemo(() => {
     const trimmed = query.trim().toLowerCase();
     let list =
       activeTab && activeTab !== "all"
-        ? proteins.filter((p) => p.tabs.includes(activeTab))
-        : proteins;
+        ? mergedProducts.filter((p) => p.tabs.includes(activeTab))
+        : mergedProducts;
 
     if (priceFilter !== "all") {
       list = list.filter((p) => {
@@ -201,13 +290,27 @@ export default function EthicallyRaised() {
     }
 
     return list;
-  }, [activeTab, priceFilter, query, sortBy]);
+  }, [activeTab, mergedProducts, priceFilter, query, sortBy]);
 
   const handleTabSwitch = (tab) => {
     setActiveTab(tab);
     setPriceFilter("all");
     setSortBy("none");
+    setPage(1);
   };
+
+  useEffect(() => {
+    setPage(1);
+  }, [query, priceFilter, sortBy]);
+
+  const showMemberCard = activeTab === "all" && query.trim() === "";
+  const itemsPerPage = 14;
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / itemsPerPage));
+  const currentPage = Math.min(page, totalPages);
+  const pagedProducts = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const handleAddToCart = (item, quantity = 1) => {
     addItem({
@@ -300,7 +403,7 @@ export default function EthicallyRaised() {
         <section className="organic-content">
           <Container className="organic-container">
             <div className="organic-grid">
-              {activeTab === "featured" && query.trim() === "" && (
+              {showMemberCard && (
                 <aside className="member-card">
                   <p className="member-offer">10% OFF</p>
                   <p className="member-copy">
@@ -318,7 +421,7 @@ export default function EthicallyRaised() {
                 </aside>
               )}
 
-              {filteredProducts.map((item) => (
+              {pagedProducts.map((item) => (
                 <article
                   key={item.name}
                   className={`produce-card ${item.inStock ? "" : "out-of-stock"}`}
@@ -356,11 +459,11 @@ export default function EthicallyRaised() {
                     <button
                       type="button"
                       className="recipe-cta ghost"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedProduct(item);
-                    setModalQty(1);
-                  }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProduct(item);
+                        setModalQty(1);
+                      }}
                     >
                       View details
                     </button>
@@ -381,13 +484,13 @@ export default function EthicallyRaised() {
               ))}
             </div>
 
-            {proteins.length === 0 && (
+            {mergedProducts.length === 0 && (
               <div className="recipes-empty">
                 No products available right now. Please check back soon.
               </div>
             )}
 
-            {proteins.length > 0 && filteredProducts.length === 0 && (
+            {mergedProducts.length > 0 && filteredProducts.length === 0 && (
               <div className="recipes-empty">
                 {query.trim()
                   ? `No products match “${query.trim()}”. Try a different search or tab.`
@@ -396,10 +499,25 @@ export default function EthicallyRaised() {
             )}
 
             <div className="recipes-pagination organic-pagination" aria-label="Pagination controls">
-              <button type="button" className="page-btn" aria-label="Previous page">
+              <button
+                type="button"
+                className="page-btn"
+                aria-label="Previous page"
+                disabled={currentPage === 1}
+                onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+              >
                 ←
               </button>
-              <button type="button" className="page-btn" aria-label="Next page">
+              <span className="organic-page-status">
+                {currentPage} / {totalPages}
+              </span>
+              <button
+                type="button"
+                className="page-btn"
+                aria-label="Next page"
+                disabled={currentPage === totalPages}
+                onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+              >
                 →
               </button>
             </div>
