@@ -22,9 +22,31 @@ import "./Landing.css";
 import "./Recipes.css";
 import "./Organic.css";
 
-const TAB_KEYS = ["featured", "popular", "new", "all"];
+const TAB_KEYS = ["all", "featured", "popular", "new"];
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 const priceToNumber = (price) => Number((price.match(/[\d.]+/) ?? [0])[0]);
 const API_BASE_URL = "http://localhost:4000";
+
+const formatDbPrice = (price, unit) => {
+  if (typeof price !== "number") return "";
+  const formatted = Number.isInteger(price) ? price.toFixed(0) : price.toFixed(2);
+  return unit ? `$${formatted}/${unit}` : `$${formatted}`;
+};
+
+const pickGeneratedTabs = (name = "") => {
+  const tabPool = ["featured", "popular", "new"];
+  const hash = name
+    .split("")
+    .reduce((sum, char, index) => sum + char.charCodeAt(0) * (index + 1), 0);
+  const primaryTab = tabPool[hash % tabPool.length];
+  const secondaryTab = tabPool[(hash + 1) % tabPool.length];
+
+  if (hash % 2 === 0) {
+    return [primaryTab, secondaryTab, "all"];
+  }
+
+  return [primaryTab, "all"];
+};
 
 const products = [
   {
@@ -183,7 +205,7 @@ function pickGeneratedTabs(name = "") {
 }
 
 export default function Organic() {
-  const [activeTab, setActiveTab] = useState("featured");
+  const [activeTab, setActiveTab] = useState("all");
   const [query, setQuery] = useState("");
   const [priceFilter, setPriceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("none");
