@@ -25,8 +25,26 @@ const formatQuantity = (value, isFractional) => {
 };
 
 export default function Cart() {
+  const userName = "John";
   const { items, count } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
+  const [address, setAddress] = useState({
+    fullName: "",
+    street: "",
+    city: "",
+    postal: "",
+    phone: "",
+    notes: "",
+  });
+  const [card, setCard] = useState({
+    name: "",
+    number: "",
+    exp: "",
+    cvv: "",
+  });
+  const [addressErrors, setAddressErrors] = useState({});
+  const [cardErrors, setCardErrors] = useState({});
+  const [orderMessage, setOrderMessage] = useState("");
 
   const { regularItems, recipeItems, recipeGroceryItems, subtotal } = useMemo(() => {
     const regular = items.filter((item) => item.group === "regular");
@@ -43,7 +61,59 @@ export default function Cart() {
   const shipping = subtotal < 50 ? 4 : 0;
   const tax = subtotal * 0.13;
   const total = subtotal + tax + shipping;
-  
+
+  const handleAddressChange = (field, value) => {
+    setAddress((prev) => ({ ...prev, [field]: value }));
+    setAddressErrors((prev) => ({ ...prev, [field]: "" }));
+    setOrderMessage("");
+  };
+
+  const handleCardChange = (field, value) => {
+    setCard((prev) => ({ ...prev, [field]: value }));
+    setCardErrors((prev) => ({ ...prev, [field]: "" }));
+    setOrderMessage("");
+  };
+
+  const validateAddress = () => {
+    const requiredFields = ["fullName", "street", "city", "postal"];
+    const nextErrors = {};
+    requiredFields.forEach((field) => {
+      if (!address[field].trim()) {
+        nextErrors[field] = "Required";
+      }
+    });
+    setAddressErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const validateCard = () => {
+    const requiredFields = ["name", "number", "exp", "cvv"];
+    const nextErrors = {};
+    requiredFields.forEach((field) => {
+      if (!card[field].trim()) {
+        nextErrors[field] = "Required";
+      }
+    });
+    setCardErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const buildDeliveryString = () => {
+    const parts = [
+      address.fullName.trim(),
+      address.street.trim(),
+      [address.city.trim(), address.postal.trim()].filter(Boolean).join(" "),
+    ].filter(Boolean);
+    const upper = parts.map((p) => p.toUpperCase());
+    return upper.length > 0 ? `Delivering to ${upper.join(", ")}` : "";
+  };
+
+  const handlePlaceOrder = () => {
+    const cardOk = validateCard();
+    const addressOk = validateAddress();
+    if (!cardOk || !addressOk) return;
+    setOrderMessage(buildDeliveryString());
+  };
 
   const renderItem = (item) => {
     const step = 1;
@@ -135,7 +205,7 @@ export default function Cart() {
     <div className="page-shell cart-shell">
       <div className={`page-main ${showCheckout ? "cart-blur" : ""}`}>
         <AppNavbar
-          userName="John"
+          userName={userName}
           activeKey="cart"
           cartCount={count}
           showSearch={false}
@@ -281,21 +351,69 @@ export default function Cart() {
                 </div>
                 <div className="card-form">
                   <label htmlFor="checkout-card-name">Name on card</label>
-                  <input id="checkout-card-name" type="text" placeholder="Name" />
+                  <input
+                    id="checkout-card-name"
+                    type="text"
+                    placeholder="Name"
+                    value={card.name}
+                    onChange={(e) => handleCardChange("name", e.target.value)}
+                    aria-invalid={Boolean(cardErrors.name)}
+                    aria-describedby="err-card-name"
+                  />
+                  {cardErrors.name && (
+                    <span id="err-card-name" className="field-error">
+                      {cardErrors.name}
+                    </span>
+                  )}
                   <label htmlFor="checkout-card-number">Card Number</label>
                   <input
                     id="checkout-card-number"
                     type="text"
                     placeholder="1111 2222 3333 4444"
+                    value={card.number}
+                    onChange={(e) => handleCardChange("number", e.target.value)}
+                    aria-invalid={Boolean(cardErrors.number)}
+                    aria-describedby="err-card-number"
                   />
+                  {cardErrors.number && (
+                    <span id="err-card-number" className="field-error">
+                      {cardErrors.number}
+                    </span>
+                  )}
                   <div className="card-row">
                     <div>
                       <label htmlFor="checkout-card-exp">Expiration date</label>
-                      <input id="checkout-card-exp" type="text" placeholder="mm/yy" />
+                      <input
+                        id="checkout-card-exp"
+                        type="text"
+                        placeholder="mm/yy"
+                        value={card.exp}
+                        onChange={(e) => handleCardChange("exp", e.target.value)}
+                        aria-invalid={Boolean(cardErrors.exp)}
+                        aria-describedby="err-card-exp"
+                      />
+                      {cardErrors.exp && (
+                        <span id="err-card-exp" className="field-error">
+                          {cardErrors.exp}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="checkout-card-cvv">CVV</label>
-                      <input id="checkout-card-cvv" type="text" placeholder="123" />
+                      <input
+                        id="checkout-card-cvv"
+                        type="text"
+                        placeholder="123"
+                        value={card.cvv}
+                        onChange={(e) => handleCardChange("cvv", e.target.value)}
+                        aria-invalid={Boolean(cardErrors.cvv)}
+                        aria-describedby="err-card-cvv"
+                      />
+                      {cardErrors.cvv && (
+                        <span id="err-card-cvv" className="field-error">
+                          {cardErrors.cvv}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -305,23 +423,87 @@ export default function Cart() {
                 <h3>Delivery Address</h3>
                 <div className="card-form">
                   <label htmlFor="checkout-full-name">Full name</label>
-                  <input id="checkout-full-name" type="text" placeholder="John Doe" />
+                  <input
+                    id="checkout-full-name"
+                    type="text"
+                    placeholder="John Doe"
+                    value={address.fullName}
+                    onChange={(e) => handleAddressChange("fullName", e.target.value)}
+                    aria-invalid={Boolean(addressErrors.fullName)}
+                    aria-describedby="err-full-name"
+                  />
+                  {addressErrors.fullName && (
+                    <span id="err-full-name" className="field-error">
+                      {addressErrors.fullName}
+                    </span>
+                  )}
                   <label htmlFor="checkout-address">Street address</label>
-                  <input id="checkout-address" type="text" placeholder="123 Main Street" />
+                  <input
+                    id="checkout-address"
+                    type="text"
+                    placeholder="123 Main Street"
+                    value={address.street}
+                    onChange={(e) => handleAddressChange("street", e.target.value)}
+                    aria-invalid={Boolean(addressErrors.street)}
+                    aria-describedby="err-street"
+                  />
+                  {addressErrors.street && (
+                    <span id="err-street" className="field-error">
+                      {addressErrors.street}
+                    </span>
+                  )}
                   <label htmlFor="checkout-city">City</label>
-                  <input id="checkout-city" type="text" placeholder="Toronto" />
+                  <input
+                    id="checkout-city"
+                    type="text"
+                    placeholder="Toronto"
+                    value={address.city}
+                    onChange={(e) => handleAddressChange("city", e.target.value)}
+                    aria-invalid={Boolean(addressErrors.city)}
+                    aria-describedby="err-city"
+                  />
+                  {addressErrors.city && (
+                    <span id="err-city" className="field-error">
+                      {addressErrors.city}
+                    </span>
+                  )}
                   <div className="card-row">
                     <div>
                       <label htmlFor="checkout-postal">Postal code</label>
-                      <input id="checkout-postal" type="text" placeholder="M1A 1A1" />
+                      <input
+                        id="checkout-postal"
+                        type="text"
+                        placeholder="M1A 1A1"
+                        value={address.postal}
+                        onChange={(e) => handleAddressChange("postal", e.target.value)}
+                        aria-invalid={Boolean(addressErrors.postal)}
+                        aria-describedby="err-postal"
+                      />
+                      {addressErrors.postal && (
+                        <span id="err-postal" className="field-error">
+                          {addressErrors.postal}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="checkout-phone">Phone</label>
-                      <input id="checkout-phone" type="text" placeholder="(416) 555-0123" />
+                      <input
+                        id="checkout-phone"
+                        type="text"
+                        placeholder="(416) 555-0123"
+                        value={address.phone}
+                        onChange={(e) => handleAddressChange("phone", e.target.value)}
+                      />
                     </div>
                   </div>
                   <label htmlFor="checkout-notes">Delivery notes (optional)</label>
-                  <input id="checkout-notes" type="text" placeholder="Leave at front door" />
+                  <input
+                    id="checkout-notes"
+                    type="text"
+                    placeholder="Leave at front door"
+                    value={address.notes}
+                    onChange={(e) => handleAddressChange("notes", e.target.value)}
+                  />
                 </div>
               </section>
             </div>
@@ -330,10 +512,12 @@ export default function Cart() {
               <button type="button" className="checkout-cancel" onClick={() => setShowCheckout(false)}>
                 Cancel
               </button>
-              <button type="button" className="checkout-confirm">
+              <button type="button" className="checkout-confirm" onClick={handlePlaceOrder}>
                 Place Order
               </button>
             </div>
+
+            {orderMessage && <p>{orderMessage}</p>}
           </div>
         </div>
       )}
