@@ -78,7 +78,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 55
-**Story Points:** N/A
+**Story Points:** N/A (Spans multiple stories) 
 
 **Assignees:** Shoumik, Abrar, Ekam 
 
@@ -93,7 +93,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 56
-**Story Points:** N/A
+**Story Points:** N/A (Spans multiple stories)
 
 **Assignees:** Shoumik, Abrar, Judy
 
@@ -108,7 +108,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 57
-**Story Points:** N/A
+**Story Points:** N/A (Spans multiple stories)
 
 **Assignees:** Ekam, Abrar, Moneba
 
