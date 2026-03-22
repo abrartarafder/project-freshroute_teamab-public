@@ -140,46 +140,46 @@
 
 **4. Do you have any blockers?**
 
-- Abrar: As of right now, I do not have any blockers. 
+- Abrar: No blockers right now; I'm just monitoring the cross-page data fetches to make sure nothing breaks the integration flow I've mapped out with the backend team. 
 
-- Shoumik: A potential blocker that I will discuss with the backend team will be how to actually figure out the integration of the backend items from the database so it shows up on the frontend, including ensuring cart totals react to backend price changes without a full page refresh. 
+- Shoumik: The only potential blocker is finalizing how backend product payloads flow to the frontend so cart totals update live without a full refresh. I will sync with the backend team on payload shape and caching so price changes propagate reliably. 
 
-- Ekam: A potential blocker that I will discuss with the backend team will be how to implement the images in the backend and have them be reflected in the frontend, particularly choosing between base64 blobs and hosted URLs so render speed stays acceptable. 
+- Ekam: Still need to land on whether images travel as base64 blobs or hosted URLs; that choice impacts render speed on the Organic page. I will coordinate with the backend to lock in a performant approach and ensure alt text/paths are consistent. 
 
-- Moneba: As of right now, I do not have any blockers, but I'm keeping an eye on how we load recipe collections so the page doesn't stall when the dataset grows. 
+- Moneba: No current blockers, but I'm watching recipe collection load times and nested ingredient structures. If the dataset grows, I may need pagination or lazy loading so the Recipes page stays responsive. 
 
-- Judy: As of right now, I do not have any blockers, aside from validating that the Ethically Raised filters won't need extra enums in the schema that could slow down the current integration. 
+- Judy: No blockers at the moment. I just need to validate that Ethically Raised filters line up with the exact enums and field names in the schema to avoid query errors or unexpected slowdowns during integration. 
 
 ## [2026-03-22] - Sprint #2 Standup #4
 
 **1. What did you work on since the last standup?**
 
-- Abrar: 
-- Shoumik:
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: Paired with backend to lay down the integration logic, mapped the end-to-end data flow across pages, and verified each page can fetch the right payloads. Also sanity-checked styling when live data binds to the components. 
+- Shoumik: Helped formalize how the backend product data gets wired into the frontend, drafted the request/response shapes, and walked through the cart flow to confirm totals update when prices or quantities change. 
+- Ekam: Finished the Organic page integration by connecting backend routes to the frontend components, ensured product data renders with correct pricing/quantities, and added basic error handling to catch failed fetches.  
+- Moneba: Completed the Recipes page integration, handling fetches for nested recipe data so collections and ingredients display correctly, and verified state updates without layout shifts.  
+- Judy: Completed the Ethically Raised page integration, confirmed products update correctly from the backend, and validated that the category filters still behave as expected with live data.  
 
 **2. What do you commit to next?**
 
-- Abrar: 
-- Shoumik:
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately. 
+- Shoumik: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately.  
+- Ekam: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately. 
+- Moneba: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md during Sprint 3 start meeting and have it pushed by the deadline for Sprint 2. 
+- Judy: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md during Sprint 3 start meeting and have it pushed by the deadline for Sprint 2.
 
 **3. When do you think you'll be done?**
 
-- Abrar: 
-- Shoumik:
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: Recording now and will finish with the Sprint 2 demo video. 
+- Shoumik: Recording now and will finish with the Sprint 2 demo video. 
+- Ekam: Recording now and will finish with the Sprint 2 demo video. 
+- Moneba: Recording now and will finish with the Sprint 2 demo video. 
+- Judy: Recording now and will finish with the Sprint 2 demo video. 
 
 **4. Do you have any blockers?**
 
-- Abrar: 
-- Shoumik:
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: No blockers for recording the demo video. 
+- Shoumik: No blockers for recording the demo video.
+- Ekam: No blockers for recording the demo video.
+- Moneba: No blockers for recording the demo video.
+- Judy: No blockers for recording the demo video.
