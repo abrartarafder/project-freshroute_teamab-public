@@ -14,7 +14,7 @@ Summary of Active Branches
 - Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
 - Product filters (PB-03) - Abrar - `refactor/filter`
 - Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
-- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`, `features/ethicallyraised-integration-backend`
+- Backend integrations (span multiple stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/ethicallyraised-integration-backend`, `features/recipes-integration-backend` 
 
 ## PB-05 - Add Item to Cart
 
