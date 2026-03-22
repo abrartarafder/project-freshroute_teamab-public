@@ -18,7 +18,7 @@ Summary of Active Branches
 
 ## PB-05 - Add Item to Cart
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 17  
@@ -41,13 +41,13 @@ As a customer, I want to add items to a cart so that I can buy multiple products
   - Branch: `features/cart`
 
 **Backend Review**
-- Ekam and Judy continue to create the items for the backend in their respective branches. 
+- Ekam and Judy continue to create the items for the backend in their respective branches (Subtasks 1 and 2). 
 
 ---
 
 ## PB-06 - View Cart
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 37
@@ -74,7 +74,7 @@ As a customer, I want to view my cart so that I can review items before checkout
   - Branch: `features/ethicallyraised-integration-backend`
 ---
 ## Subtask #1 - Integrating the backend for the Organic Products
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 55
@@ -89,7 +89,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 
 ---
 ## Subtask #2 - Integrating the backend for the Ethically Raised Products
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 56
@@ -104,7 +104,7 @@ As a customer, I want to view my cart so that I can review items before checkout
 
 ---
 ## Subtask #3 - Integrating the backend for the Recipes Products
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-High-red)
 
 **Ticket #:** 57
@@ -120,11 +120,42 @@ As a customer, I want to view my cart so that I can review items before checkout
   - Ekam to help with mapping out the json and the backend coding
 
 ---
+## PB-07 - Update/Remove Cart Items
 
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
+![Priority](https://img.shields.io/badge/Priority-Medium-orange)
+
+**Ticket #:** 46  
+**Story Points:** 5
+
+**Assignees:** Abrar, Shoumik, Moneba  
+
+### User Story  
+As a customer, I want to update quantities or remove items so that I can fix my order.  
+
+### Acceptance Criteria  
+- User can increase/decrease quantity.
+- User can remove an item entirely.
+- Totals update immediately and correctly.
+
+
+### Tasks  
+
+**Frontend**
+- Abrar to create the UI for adding Items to cart for recipes
+  - Branch: `features/recipes-add`
+- Shoumik to create the UI for adding Items to cart for Organic and Ethically Raised pages
+  - Branch: `features/cart`
+  
+**Backend**
+- Moneba to integrate the recipes in backend which should pull the ingredients 
+  - Branch: `features/recipes-integration-backend`
+
+---
 
 ## PB-08 - Add Recipe Ingredients to Cart
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 18 
@@ -157,7 +188,7 @@ As a customer, I want to add a recipe to my cart so that all required ingredient
 
 ## PB-09 - Persistent Cart
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 45  
@@ -186,7 +217,7 @@ As a customer, I want my cart to persist during my session so that I do not lose
 ---
 ## PB-03 - Filter / Sort Products
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
 ![Priority](https://img.shields.io/badge/Priority-Medium-orange)
 
 **Ticket #:** 15  
@@ -209,44 +240,11 @@ As a customer, I want to filter/sort products so that I can shop efficiently.
   - Branch: `refactor/filter`
 
 **Backend**
-- Ekam to create the backend for integrating the Organic item data filter
+- Ekam to create the backend for integrating the Organic item data filter (Subtask 1) 
   - Branch: `features/organic-integration-backend`
-- Judy to create the backend for integrating the Ethically Raised item data filter 
+- Judy to create the backend for integrating the Ethically Raised item data filter (Subtask 2) 
   - Branch: `features/ethicallyraised-integration-backend`
-- Moneba to create the backend for integrating the Recipe item data filter
-  - Branch: `features/recipes-integration-backend`
-
----
-
-## PB-07 - Update/Remove Cart Items
-
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-Low-green)
-
-**Ticket #:** 46  
-**Story Points:** 5
-
-**Assignees:** Abrar, Shoumik, Moneba  
-
-### User Story  
-As a customer, I want to update quantities or remove items so that I can fix my order.  
-
-### Acceptance Criteria  
-- User can increase/decrease quantity.
-- User can remove an item entirely.
-- Totals update immediately and correctly.
-
-
-### Tasks  
-
-**Frontend**
-- Abrar to create the UI for adding Items to cart for recipes
-  - Branch: `features/recipes-add`
-- Shoumik to create the UI for adding Items to cart for Organic and Ethically Raised pages
-  - Branch: `features/cart`
-  
-**Backend**
-- Moneba to integrate the recipes in backend which should pull the ingredients 
+- Moneba to create the backend for integrating the Recipe item data filter (Subtask 3) 
   - Branch: `features/recipes-integration-backend`
 
 ---
@@ -254,8 +252,8 @@ As a customer, I want to update quantities or remove items so that I can fix my 
 ## PB-10 - Enter Delivery Address at Checkout
 
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
-![Priority](https://img.shields.io/badge/Priority-Low-green)
+![Status](https://img.shields.io/badge/Status-Completed%20-green)
+![Priority](https://img.shields.io/badge/Priority-Low-yellow)
 
 **Ticket #:** 47
 **Story Points:** 2
@@ -272,4 +270,8 @@ As a customer, I want to enter my delivery address during checkout so that my or
 
 **Frontend**
 - Shoumik to implement frontend  
-  - `features/cart`  
+  - `features/cart`
+
+**To-do**
+- Judy and Moneba to verify and perform testing – will carry over to Sprint 3 as well
+  - In respective branches
