@@ -165,16 +165,16 @@
 - Abrar: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately. 
 - Shoumik: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately.  
 - Ekam: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately. 
-- Moneba: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md during Sprint 3 start meeting and have it pushed by the deadline for Sprint 2. 
-- Judy: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md during Sprint 3 start meeting and have it pushed by the deadline for Sprint 2.
+- Moneba: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md before the Sprint 3 start meeting and have it pushed by the deadline for Sprint 2. 
+- Judy: Record the demo video to finish up Sprint 2 and get started on Sprint 3 immediately, work on the SR2.md before the Sprint 3 start meeting and have it pushed by the deadline for Sprint 2.
 
 **3. When do you think you'll be done?**
 
-- Abrar: Recording now and will finish with the Sprint 2 demo video. 
-- Shoumik: Recording now and will finish with the Sprint 2 demo video. 
-- Ekam: Recording now and will finish with the Sprint 2 demo video. 
-- Moneba: Recording now and will finish with the Sprint 2 demo video. 
-- Judy: Recording now and will finish with the Sprint 2 demo video. 
+- Abrar: Recording will be completed by the end of this standup, and the sprint 2 documentation will be completed by the deadline. 
+- Shoumik: Recording will be completed by the end of this standup, and the sprint 2 documentation will be completed by the deadline. 
+- Ekam: Recording will be completed by the end of this standup, and the sprint 2 documentation will be completed by the deadline. 
+- Moneba: Recording will be completed by the end of this standup, and the sprint 2 documentation will be completed by the deadline. 
+- Judy: Recording will be completed by the end of this standup, and the sprint 2 documentation will be completed by the deadline. 
 
 **4. Do you have any blockers?**
 
