@@ -24,7 +24,8 @@ The primary objectives of Sprint 2 are:
 4. Implement persistent cart functionality so items remain during navigation and page refresh. (Associated User Story: PB-09)
 5. Add a checkout step that allows users to enter a delivery address during the ordering process. (Associated User Story: PB-10)
 6. Integrate the backend APIs with the frontend components to ensure product data, cart actions, and recipe information flow correctly between the system layers while maintaining a modular structure that supports efficient future updates and feature additions. (Associated User Stories: PB-03, PB-05, PB-06, PB-07, PB-08, PB-09)
-7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. (Associated User Stories: PB-03, PB-08)
+7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. (Associated User Stories span multiple stories: Subtask #1, Subtask #2, Subtask #3)
+
 
 
 ## Product Backlog
