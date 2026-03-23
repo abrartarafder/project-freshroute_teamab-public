@@ -24,7 +24,7 @@ The primary objectives of Sprint 2 are:
 4. Implement persistent cart functionality so items remain during navigation and page refresh. (Associated User Story: PB-09)
 5. Add a checkout step that allows users to enter a delivery address during the ordering process. (Associated User Story: PB-10)
 6. Integrate the backend APIs with the frontend components to ensure product data, cart actions, and recipe information flow correctly between the system layers while maintaining a modular structure that supports efficient future updates and feature additions. (Associated User Stories: PB-03, PB-05, PB-06, PB-07, PB-08, PB-09)
-7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. (Associated User Stories span multiple stories: Subtask #1, Subtask #2, Subtask #3)
+7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. Product images will likely be integrated progressively and refined throughout Sprints 2 and 3. (Associated User Stories span multiple stories: Subtask #1, Subtask #2, Subtask #3)
 
 
 
@@ -121,19 +121,19 @@ Capacity was calculated based on individual availability during the two-week spr
 
 **Subtask #1: Integrating the backend for the Organic Products.**
 - Integrate all data in the organic page backend and connect to the frontend (Ekam).
-- Add image data in the backend. (Ekam)
+- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3. (Ekam) 
 - Help structure JSON files as needed. (Ekam)
 - Help with integration. (Shoumik)
 
 **Subtask #2: Integrating the backend for the Ethically Raised Products.**
 - Integrate all data in the Ethically Raised backend and connect to the frontend (Judy).
-- Add image data in the backend. (Judy)
+- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3.  (Judy)
 - Help structure JSON files as needed. (Ekam)
 - Help with integration. (Shoumik)
 
 **Subtask #3: Integrating the backend for the Recipes Product.**
 - Integrate all data in the recipes backend and connect to the frontend (Moneba).
-- Add image data in the backend. (Moneba)
+- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3.(Moneba)
 - Help structure JSON files as needed. (Ekam)
 - Help with integration. (Shoumik)
 
