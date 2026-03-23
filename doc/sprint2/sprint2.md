@@ -245,7 +245,7 @@ By the end of Sprint 2:
 - Recipe ingredients can be added to the cart with quantities scaled by servings.
 - The cart persists during page navigation and refresh.
 - Users can enter a delivery address during checkout, attached to the order for the session.
-- Frontend dynamically fetches product, recipe, and cart data from the backend, including images.
+- Frontend dynamically fetches product, recipe, and cart data from the backend, including the functionality for images that    will allow proper image integration in Sprint 3.
 - All completed stories meet the Definition of Done.
 - Documentation is updated to reflect Sprint 2 changes, including integration, cart persistence, and recipe structure.
 
