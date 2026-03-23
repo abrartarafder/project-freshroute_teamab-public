@@ -2,7 +2,6 @@
 **Date:** March 10, 2026  
 **Sprint Duration:** March 10, 2026 - March 23, 2026
 **Project Name:** FreshRoute  
-**Sprint Goal:** 
 ---
 
 **Notes**
