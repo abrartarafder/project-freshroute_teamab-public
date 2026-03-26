@@ -3,12 +3,14 @@ import Organic from "./pages/Organic";
 import EthicallyRaised from "./pages/EthicallyRaised";
 import Recipes from "./pages/Recipes";
 import Cart from "./pages/Cart";
+import Orders from "./pages/Orders";
 
 const routes = [
   { path: /^\/organic/, component: Organic },
   { path: /^\/ethically-raised/, component: EthicallyRaised },
   { path: /^\/recipes/, component: Recipes },
   { path: /^\/cart/, component: Cart },
+  { path: /^\/orders/, component: Orders },
 ];
 
 export default function App() {
