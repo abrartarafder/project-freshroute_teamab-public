@@ -107,6 +107,9 @@ export default function AppNavbar({
             <Nav.Link href="/recipes" eventKey="recipes" className="fr-link">
               Recipes
             </Nav.Link>
+            <Nav.Link href="/orders" eventKey="orders" className="fr-link">
+              Orders
+            </Nav.Link>
 
             <Nav.Link href="/cart" eventKey="cart" className="fr-cart">
               <div className="fr-cart-wrap">

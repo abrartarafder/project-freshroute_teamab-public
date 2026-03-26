@@ -8,13 +8,18 @@ import {
   getCartSubtotal,
   updateRecipeQuantity,
   removeRecipeAndGroceries,
+  clearCart,
 } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
 import mastercardLogo from "../assets/card/mastercard.png";
 import visaLogo from "../assets/card/visa.png";
 import applePayLogo from "../assets/card/applepay.png";
+import paypalLogo from "../assets/card/paypal.png";
+import shopPayLogo from "../assets/card/shoppay.png";
 import "./Landing.css";
 import "./Cart.css";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
 const formatMoney = (value) => `$${Number(value || 0).toFixed(2)}`;
 
@@ -24,10 +29,24 @@ const formatQuantity = (value, isFractional) => {
   return qty.toFixed(3).replace(/0+$/, "").replace(/\.$/, "");
 };
 
+const makeOrderId = () =>
+  `FR-${Math.floor(10000000 + Math.random() * 90000000)}`;
+
 export default function Cart() {
   const userName = "John";
   const { items, count } = useCart();
   const [showCheckout, setShowCheckout] = useState(false);
+  const deliverySlots = [
+    "8:00 AM - 10:00 AM",
+    "10:00 AM - 12:00 PM",
+    "12:00 PM - 2:00 PM",
+    "2:00 PM - 4:00 PM",
+    "6:00 PM - 8:00 PM",
+  ];
+  const [selectedSlot, setSelectedSlot] = useState("");
+  const [slotError, setSlotError] = useState("");
+  const [deliveryDate, setDeliveryDate] = useState("");
+  const [dateError, setDateError] = useState("");
   const [address, setAddress] = useState({
     fullName: "",
     street: "",
@@ -45,6 +64,8 @@ export default function Cart() {
   const [addressErrors, setAddressErrors] = useState({});
   const [cardErrors, setCardErrors] = useState({});
   const [orderMessage, setOrderMessage] = useState("");
+  const [saveCard, setSaveCard] = useState(false);
+  const [orderId, setOrderId] = useState(() => makeOrderId());
 
   const { regularItems, recipeItems, recipeGroceryItems, subtotal } = useMemo(() => {
     const regular = items.filter((item) => item.group === "regular");
@@ -71,6 +92,18 @@ export default function Cart() {
   const handleCardChange = (field, value) => {
     setCard((prev) => ({ ...prev, [field]: value }));
     setCardErrors((prev) => ({ ...prev, [field]: "" }));
+    setOrderMessage("");
+  };
+
+  const handleSlotSelect = (slot) => {
+    setSelectedSlot(slot);
+    setSlotError("");
+    setOrderMessage("");
+  };
+
+  const handleDateChange = (value) => {
+    setDeliveryDate(value);
+    setDateError("");
     setOrderMessage("");
   };
 
@@ -108,11 +141,58 @@ export default function Cart() {
     return upper.length > 0 ? `Delivering to ${upper.join(", ")}` : "";
   };
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     const cardOk = validateCard();
     const addressOk = validateAddress();
-    if (!cardOk || !addressOk) return;
-    setOrderMessage(buildDeliveryString());
+    const slotOk = Boolean(selectedSlot);
+    const dateOk = Boolean(deliveryDate);
+    if (!slotOk) setSlotError("Please choose a delivery time slot.");
+    if (!dateOk) setDateError("Please select a delivery date.");
+    if (!cardOk || !addressOk || !slotOk || !dateOk) return;
+    const delivery = buildDeliveryString();
+    const confirmation = [
+      `Delivery date: ${deliveryDate}`,
+      "Delivery window: " + selectedSlot,
+      delivery,
+    ]
+      .filter(Boolean)
+      .join(" • ");
+    const statusPool = ["Pending", "Starting", "Delivered"];
+    const deliveryStatus = statusPool[Math.floor(Math.random() * statusPool.length)];
+    const order = {
+      orderId,
+      createdAt: new Date().toISOString(),
+      address,
+      deliverySlot: selectedSlot,
+      deliveryDate,
+      saveCard,
+      deliveryStatus,
+      totals: { subtotal, tax, shipping, total },
+      items,
+    };
+
+    try {
+      await fetch(`${API_BASE_URL}/api/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order),
+      });
+    } catch (error) {
+      console.error("Order sync failed; keeping local only", error);
+    }
+
+    try {
+      window.localStorage.setItem("fr-last-order", JSON.stringify(order));
+      const existing = JSON.parse(window.localStorage.getItem("fr-orders") || "[]");
+      window.localStorage.setItem("fr-orders", JSON.stringify([...existing, order]));
+    } catch (error) {
+      // ignore storage failures
+    }
+
+    clearCart();
+    setOrderMessage(`Order Confirmed! Your Order ID is ${orderId}`);
+    setOrderId(makeOrderId());
+    setShowCheckout(false);
   };
 
   const renderItem = (item) => {
@@ -319,6 +399,7 @@ export default function Cart() {
           <div className="checkout-modal">
             <div className="checkout-header">
               <h2>Checkout</h2>
+              <span className="order-id-pill">Order ID: {orderId}</span>
               <button
                 type="button"
                 className="checkout-close"
@@ -416,6 +497,35 @@ export default function Cart() {
                       )}
                     </div>
                   </div>
+                  <div className="save-card-row">
+                    <label className="save-card-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={saveCard}
+                        onChange={(e) => setSaveCard(e.target.checked)}
+                      />
+                      <div className="save-card-copy">
+                        <span className="save-card-title">Save for next time</span>
+                        <span className="save-card-note">
+                          We tokenize your card with our payment partner; no full card number is kept on this device.
+                        </span>
+                      </div>
+                    </label>
+                  </div>
+                  <div className="alt-pay">
+                    <span className="alt-pay-label">Or pay with</span>
+                    <div className="alt-pay-buttons">
+                      <button type="button" className="alt-pay-btn shop-pay">
+                        <img src={shopPayLogo} alt="Shop Pay" />
+                      </button>
+                      <button type="button" className="alt-pay-btn paypal">
+                        <img src={paypalLogo} alt="PayPal" />
+                      </button>
+                    </div>
+                  </div>
+                  <p className="safety-tip">
+                    Safety tip: Make sure the name and postal code match your bank records to avoid declines.
+                  </p>
                 </div>
               </section>
 
@@ -504,6 +614,49 @@ export default function Cart() {
                     value={address.notes}
                     onChange={(e) => handleAddressChange("notes", e.target.value)}
                   />
+                  <div className="slot-picker">
+                    <div className="slot-picker__header">
+                      <div>
+                        <p className="slot-title">Delivery date</p>
+                        <p className="slot-help">Pick the day for your order.</p>
+                      </div>
+                      <span className="slot-required">Required</span>
+                    </div>
+                    <input
+                      type="date"
+                      className="slot-date"
+                      value={deliveryDate}
+                      min={new Date().toISOString().split("T")[0]}
+                      onChange={(e) => handleDateChange(e.target.value)}
+                    />
+                    {dateError && <span className="field-error">{dateError}</span>}
+                  </div>
+                  <div className="slot-picker">
+                    <div className="slot-picker__header">
+                      <div>
+                        <p className="slot-title">Delivery time slot</p>
+                        <p className="slot-help">Choose a window for your drop-off.</p>
+                      </div>
+                      <span className="slot-required">Required</span>
+                    </div>
+                    <div className="slot-grid" role="group" aria-label="Delivery time slots">
+                      {deliverySlots.map((slot) => {
+                        const isActive = selectedSlot === slot;
+                        return (
+                          <button
+                            key={slot}
+                            type="button"
+                            className={`slot-chip ${isActive ? "is-active" : ""}`}
+                            aria-pressed={isActive}
+                            onClick={() => handleSlotSelect(slot)}
+                          >
+                            {slot}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {slotError && <span className="field-error">{slotError}</span>}
+                  </div>
                 </div>
               </section>
             </div>
@@ -512,12 +665,17 @@ export default function Cart() {
               <button type="button" className="checkout-cancel" onClick={() => setShowCheckout(false)}>
                 Cancel
               </button>
-              <button type="button" className="checkout-confirm" onClick={handlePlaceOrder}>
+              <button
+                type="button"
+                className="checkout-confirm"
+                onClick={handlePlaceOrder}
+                disabled={!selectedSlot || !deliveryDate}
+              >
                 Place Order
               </button>
             </div>
 
-            {orderMessage && <p>{orderMessage}</p>}
+            {orderMessage && <p className="order-confirm">{orderMessage}</p>}
           </div>
         </div>
       )}
