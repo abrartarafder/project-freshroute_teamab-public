@@ -1,0 +1,97 @@
+===================================================
+FRESHROUTE - BACKEND DOCUMENTATION (Sprint 2)
+Course: EECS 3311 
+Team: FreshRoute (Team AB)
+Date: March 09 - March 23, 2026
+Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
+===================================================
+1. OVERVIEW
+---------------------------------------------------
+- Express + Mongoose API for product data.
+- Connects to MongoDB using a connection string in .env (MONGO_URI).
+- Legacy JSON files remain for reference or manual seeding.
+
+2. REQUIREMENTS / PREREQUISITES
+----------------------------------------------------
+-Node.js: 20.19+ (recommended)
+-npm: 10+
+-OS: Windows / macOS supported
+-Recommended tools: VS Code, Git, MongoDB Compass
+
+3. HOW TO CONNECT TO THE DATABASE
+----------------------------------------------------
+- Add MONGO_URI=<your connection string> to backend/.env
+- Install + run: cd backend && npm install && npm run dev (listens on port 4000)
+- Compass example connection string: mongodb+srv://freshrouteDB:eecs3311W26@freshroute-cluster.ivpzykz.mongodb.net/freshroute?retryWrites=true&w=majority&appName=freshroute-cluster
+
+4. FOLDER STRUCTURE
+----------------------------------------------------
+backend/
+│
+├── package.json
+├── package-lock.json
+├── .env
+│
+├── BackEndData/
+│   ├── backend-recipes.json
+│   ├── backend-organic.json
+│   └── backend-ethically_raised.json
+│
+└── src/
+    │
+    ├── server.js
+    ├── app.js
+    │
+    ├── config/
+    │   └── db.js
+    │
+    ├── models/
+    │   └── Product.js
+    │
+    ├── controllers/
+    │   └── ProductController.js
+    │
+    └── routes/
+        └── productRoutes.js
+
+5. DATABASE STRUCTURE
+----------------------------------------------------
+Server
+│
+├── admin 
+├── freshroute
+    ├── Ethically 
+    ├── Organic 
+    ├── Recipes 
+├── local 
+├── sample_mflix
+
+6. KEY COMPONENTS
+----------------------------------------------------
+- db.js: connectDB wraps mongoose.connect and fails fast if MONGO_URI is missing.
+- ProductController.js: createProduct (POST) and getProducts (GET) handlers.
+- Product.js: Mongoose schema for name, price, category, inStock with timestamps.
+- productRoutes.js: Express Router wiring for /api/products (GET, POST).
+
+7. API Routes
+----------------------------------------------------
+- Health check: GET /health
+- Get all products: GET /api/products
+- Add a Product: POST /api/products
+
+8. STATE & DATA FLOW
+----------------------------------------------------
+- Requests flow: Express route -> controller -> Mongoose model -> MongoDB collection.
+- JSON data files are not auto-seeded; use POST /api/products or an external script if needed.
+
+9. EXTERNAL LIBRARIES
+----------------------------------------------------
+- mongoose
+- express 
+- cors 
+- dotenv
+- nodemon (dev)
+
+We will keep adding to the documentation as the project progresses again in Sprint 03. 
+
+Last Updated: March 15th, 2026 (Sprint 02)
