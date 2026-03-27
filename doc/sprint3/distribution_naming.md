@@ -20,7 +20,7 @@ These subtasks span multiple user stories, so they are tracked separately from t
 
 Tasks | Subtask | Scope | Owner | Branch | Ticket ID | Week 01 Commits (workload distribution) | Week 02 Commits (workload distribution) |
 |---| --- | --- | --- | --- | --- | --- | --- |
-|3| Subtask #4 | Continue Recipes backend integration and MongoDB Order Connection | Moneba | features/recipes-tracking-backend | #61 | No |Yes (all commits in Week 02) |
-|4| Subtask #5 | Continue Organic backend image integration and MongoDB Order Connection | Ekam | features/organic-tracking-backend | #62 | No | Yes (all commits in Week 02)  |
-|5| Subtask #6 | Continue Ethically raised backend integration and MongoDB Order Connection | Judy | features/ethicallyraised-tracking-backend | #63 | No | Yes (all commits in Week 02) |
+|3| Subtask #4 | Continue Recipes backend integration with images and MongoDB Order Connection | Moneba | features/recipes-tracking-backend | #61 | No |Yes (all commits in Week 02) |
+|4| Subtask #5 | Continue Organic backend integration with images and MongoDB Order Connection | Ekam | features/organic-tracking-backend | #62 | No | Yes (all commits in Week 02)  |
+|5| Subtask #6 | Continue Ethically raised backend integration with images and MongoDB Order Connection | Judy | features/ethicallyraised-tracking-backend | #63 | No | Yes (all commits in Week 02) |
 
