@@ -1,8 +1,8 @@
 ===================================================
-FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 2)
+FRESHROUTE - FRONTEND DOCUMENTATION (Sprint 3)
 Course: EECS 3311 
 Team: FreshRoute (Team AB)
-Date: March 09 - March 23, 2026
+Date: March 23 - April 06, 2026
 Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargomi, Ekambir Momi
 ===================================================
 1. OVERVIEW
@@ -10,12 +10,19 @@ Team Members: Abrar Jawad Tarafder, Shoumik Ahmed, Moneba Hanifi, Judy El Ghargo
 - React 19 + Vite frontend for Organic/Ethically Raised catalogs, Recipes, and a client-side cart.
 - Styling: Bootstrap 5 + custom CSS; icons via react-icons.
 
+New in Sprint 3
+---------------------------------------------------
+- Added Orders page with year filters and deletion, backed by the Orders API.
+- Cart checkout now collects address, delivery slot/date, card stub, and creates Orders via API + localStorage fallback.
+- Recipe “Add to cart” also adds scaled grocery items grouped under recipe-grocery.
+
 2. REQUIREMENTS / PREREQUISITES
 ----------------------------------------------------
 -Node.js: 20.19+ (recommended)
 -npm: 10+
 -OS: Windows / macOS supported
 -Recommended tools: VS code, Git, MongoDB Compass (optional, for viewing DB)
+-Env: set VITE_API_BASE_URL to point at backend (defaults to http://localhost:4000).
 
 3. HOW TO RUN
 ----------------------------------------------------
@@ -37,10 +44,11 @@ frontend/
  │    │    └── navbar.jsx (react-bootstrap nav)
  │    └── pages/
  │         ├── Landing.jsx + Landing.css (hero + value props)
- │         ├── Organic.jsx + Organic.css (category stub)
- │         ├── EthicallyRaised.jsx (category stub)
- │         ├── Recipes.jsx + Recipes.css (recipes UI)
- │         └── Cart.jsx (cart stub)
+ │         ├── Organic.jsx + Organic.css (catalog, API-backed)
+ │         ├── EthicallyRaised.jsx (catalog, API-backed)
+ │         ├── Recipes.jsx + Recipes.css (recipes UI, add-to-cart)
+ │         ├── Cart.jsx (checkout + order creation)
+ │         └── Orders.jsx + Orders.css (order history & filters)
  ├── public/
  ├── index.html
  └── vite.config.js
@@ -52,14 +60,17 @@ frontend/
 - /ethically-raised   -> Ethically raised category
 - /recipes            -> Recipes page
 - /cart               -> Cart page
+- /orders             -> Order history
 - Unknown paths fall back to Landing
 
 6. KEY COMPONENTS
 ----------------------------------------------------
-- navbar.jsx: responsive nav with search functionality
+- navbar.jsx: responsive nav with search and cart count badge.
 - Landing.jsx: hero, links to organic page, benefits list with imagery.
-- Recipes.jsx: styled layout ready for recipe cards and reusing navbar/footer.
-- Organic/EthicallyRaised/Cart: list of products pages and reusing navbar/footer.
+- Recipes.jsx: recipe cards with “add recipe” and grocery auto-add.
+- Organic/EthicallyRaised: catalog grids sourced from API.
+- Cart.jsx: checkout form (address, date/slot, payment stub) + order submission.
+- Orders.jsx: reads orders from API (fallback to localStorage), filters by year, delete action.
 
 7. STYLING
 ----------------------------------------------------
@@ -68,15 +79,15 @@ frontend/
 
 8. STATE & DATA FLOW
 ----------------------------------------------------
-- cartStore.js keeps cart data in localStorage and useCart shares count/subtotal across pages.
-- Search box filters catalog/recipe lists; Landing hides search by default.
-- Product and recipe data are static arrays for now; API wiring is pending.
+- cartStore.js keeps cart data in localStorage and exposes useCart to share count/subtotal.
+- API base URL from VITE_API_BASE_URL; fetches products, recipes, and orders from backend.
+- Adding a recipe creates both a recipe line item and generated grocery items grouped under recipe-grocery.
+- Cart checkout posts to /api/orders and also saves to localStorage (fr-orders) as offline fallback.
+- Orders page fetches /api/orders, with localStorage fallback, and supports delete via DELETE /api/orders/:id.
 
 9. EXTERNAL LIBRARIES
 ----------------------------------------------------
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
 - ESLint + React plugins for linting.
 
-We will keep adding to the documentation as the project progresses again in Sprint 03. 
-
-Last Updated: March 15th, 2026 (Sprint 02)
+Last Updated: March 27th, 2026 (Sprint 03)
