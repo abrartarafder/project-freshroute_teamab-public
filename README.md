@@ -32,11 +32,11 @@ This repository contains the design and implementation for the EECS 3311 course 
 
 ## Motivation and Project Description
 
-FreshRoute was created to address the growing demand for accessible, transparent, and ethically sourced grocery options. While many grocery delivery platforms exist, they often lack clear emphasis on organic standards and responsible sourcing. This can make it difficult for health-conscious individuals to efficiently identify products that align with their values.
+FreshRoute was created to address the growing demand for accessible, transparent, and ethically raised/sourced grocery options. While many grocery delivery platforms exist, they often lack a clear emphasis on organic standards and responsible sourcing. This can make it difficult for health-conscious individuals to efficiently identify products that align with their values.
 
 FreshRoute solves this problem by focusing exclusively on fresh, organic, and ethically raised food. By narrowing the scope and prioritizing clarity, the platform simplifies decision-making and promotes sustainable consumption habits. Additionally, FreshRoute introduces recipe-based shopping, allowing users to select dishes and automatically add scaled ingredients to their cart, reducing friction in meal planning.
 
-The project demonstrates user-centered design and structured software architecture while delivering a focused and streamlined shopping experience.
+The project demonstrates user-centred design and a structured software architecture while delivering a focused, streamlined shopping experience.
 
 ## Installation for your Software/System
 
