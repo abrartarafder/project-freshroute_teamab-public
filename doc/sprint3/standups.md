@@ -54,47 +54,47 @@
 
 **1. What did you work on since the last standup?**
 
-- Abrar: 
-- Shoumik: 
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: Wrote and organized sprint documentation (order flow notes, MongoDB order reflection steps, and integration checklist) to prep the team for upcoming image work.
+- Shoumik: Built out the Order Confirmation page structure and linked it to the current order data so it renders the confirmation details after checkout.
+- Ekam: Documented the image integration approach for the Organic Products page (backend URL mapping to frontend rendering) and cleaned up related research notes.
+- Moneba: Drafted documentation for Recipes page integration, outlining how recipe images and metadata should be pulled from the backend.
+- Judy: Documented the Ethically Raised page integration plan, covering image sourcing, data fields, and frontend display expectations.
 
 **2. What do you commit to next?**
 
-- Abrar: 
+- Abrar: Finish polishing docs (checklists, handoffs) and support anyone blocking on integration details.
 
-- Shoumik: 
+- Shoumik: Wire the Order Confirmation page fully to backend APIs, then move on to the images to help the backend team.
 
-- Ekam: 
+- Ekam: Start implementing the Organic page image integration using the documented flow and adjust docs as gaps appear.
 
-- Moneba: 
+- Moneba: Begin the Recipes page image integration and keep docs updated with any implementation nuances.
 
-- Judy: 
+- Judy: Kick off Ethically Raised page image integration and capture any updates needed in the docs.
 
 **3. When do you think you'll be done?**
 
-- Abrar: 
+- Abrar: Documentation polish by Sprint 3 Standup #3 (2026-04-02) and integration support continues as needed.
 
-- Shoumik: 
+- Shoumik: Order Confirmation + initial wiring done by Sprint 3 Standup #3 (2026-04-02) and Order Status/Tracking by end of Sprint 3.
 
-- Ekam: 
+- Ekam: Organic image integration by end of Sprint 3.
 
-- Moneba: 
+- Moneba: Recipes image integration by end of Sprint 3.
 
-- Judy: 
+- Judy: Ethically Raised image integration by end of Sprint 3.
 
 **4. Do you have any blockers?**
 
-- Abrar: 
+- Abrar: No blockers as of yet. 
 
-- Shoumik: 
+- Shoumik: No blockers as of yet. 
 
-- Ekam: 
+- Ekam: No blockers as of yet. But the image integration in the MongoDB URL could be challenging or just a little bit tedious. Nonetheless, we should be done by the end of Sprint 3. 
 
-- Moneba: 
+- Moneba: No blockers as of yet. But the image integration in the MongoDB URL could be challenging or just a little bit tedious. Nonetheless, we should be done by the end of Sprint 3. 
 
-- Judy: 
+- Judy: No blockers as of yet. But the image integration in the MongoDB URL could be challenging or just a little bit tedious. Nonetheless, we should be done by the end of Sprint 3. 
 
 ## [2026-04-02] - Sprint #3 Standup #3
 
