@@ -4,7 +4,7 @@ Sprint: 03
 
 ----
 
-## All Sprint 01 Trello Backlog User Stories has been completed, these are the stories for sprint 02. 
+## All Sprint 02 Trello Backlog User Stories have been completed, these are the stories for Sprint 03. 
 
 Notes
 - At least 30% of commits landed in Week 02 (March 17–23); the remaining commits were completed in Week 03 (March 24 – Apr 6).
