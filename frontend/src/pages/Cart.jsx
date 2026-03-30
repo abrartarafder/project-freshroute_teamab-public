@@ -157,7 +157,7 @@ export default function Cart() {
     ]
       .filter(Boolean)
       .join(" • ");
-    const statusPool = ["Pending", "Starting", "Delivered"];
+    const statusPool = ["Placed", "Preparing", "Out for Delivery", "Delivered"];
     const deliveryStatus = statusPool[Math.floor(Math.random() * statusPool.length)];
     const order = {
       orderId,

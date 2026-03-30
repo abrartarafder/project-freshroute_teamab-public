@@ -59,6 +59,19 @@ const getLocalOrderById = (orderId, orders = []) => {
   );
 };
 
+const normalizeStatus = (value) => {
+  const raw = String(value || "").trim().toLowerCase();
+
+  if (raw === "starting") return "Preparing";
+  if (raw === "pending") return "Placed";
+  if (raw === "placed") return "Placed";
+  if (raw === "preparing") return "Preparing";
+  if (raw === "out for delivery") return "Out for Delivery";
+  if (raw === "delivered") return "Delivered";
+
+  return value || "Placed";
+};
+
 export default function Orders() {
   const initialQueryId = new URLSearchParams(window.location.search).get("orderId") || "";
   const [orders, setOrders] = useState([]);
@@ -174,7 +187,7 @@ export default function Orders() {
     });
   }, [orders, filterYear]);
 
-  const selectedStatus = selectedOrder?.deliveryStatus || "Pending";
+  const selectedStatus = normalizeStatus(selectedOrder?.deliveryStatus);
   const selectedAddress = [
     selectedOrder?.address?.fullName,
     selectedOrder?.address?.street,
@@ -412,7 +425,7 @@ export default function Orders() {
                       <th>Placed</th>
                       <th>Items</th>
                       <th>Total</th>
-                      <th>Status</th>
+                      <th>Delivery Status</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -423,7 +436,7 @@ export default function Orders() {
                         (sum, item) => sum + (Number(item.quantity) || 0),
                         0
                       );
-                      const status = order.deliveryStatus || "Pending";
+                      const status = normalizeStatus(order.deliveryStatus);
 
                       return (
                         <tr key={displayId}>

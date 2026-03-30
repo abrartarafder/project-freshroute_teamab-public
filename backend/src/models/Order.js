@@ -1,5 +1,16 @@
 import mongoose from "mongoose";
 
+const normalizeDeliveryStatus = (value) => {
+  const raw = String(value || "").trim().toLowerCase();
+
+  if (raw === "pending" || raw === "placed") return "Placed";
+  if (raw === "starting" || raw === "preparing") return "Preparing";
+  if (raw === "out for delivery") return "Out for Delivery";
+  if (raw === "delivered") return "Delivered";
+
+  return "Placed";
+};
+
 const ItemSchema = new mongoose.Schema(
   {
     id: String,
@@ -26,7 +37,12 @@ const OrderSchema = new mongoose.Schema(
     },
     deliverySlot: String,
     deliveryDate: String,
-    deliveryStatus: String,
+    deliveryStatus: {
+      type: String,
+      enum: ["Placed", "Preparing", "Out for Delivery", "Delivered"],
+      default: "Placed",
+      set: normalizeDeliveryStatus,
+    },
     saveCard: Boolean,
     totals: {
       subtotal: Number,
