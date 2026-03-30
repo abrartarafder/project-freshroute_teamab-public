@@ -25,6 +25,21 @@ export const listOrders = async (req, res) => {
   }
 };
 
+export const getOrderById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const order = await Order.findOne({ orderId: id }).lean();
+
+    if (!order) {
+      return res.status(404).json({ error: "Order not found" });
+    }
+
+    res.json(order);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch order" });
+  }
+};
+
 export const deleteOrder = async (req, res) => {
   try {
     const { id } = req.params;
