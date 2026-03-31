@@ -594,11 +594,11 @@ export default function Orders() {
             aria-describedby="cancel-order-description"
             onClick={(event) => event.stopPropagation()}
           >
-            <p className="orders-modal-kicker">Confirm Cancellation</p>
-            <h2 id="cancel-order-title">Cancel {pendingCancelOrderId}?</h2>
+            <p className="orders-modal-kicker">Before You Cancel</p>
+            <h2 id="cancel-order-title">Cancel this order?</h2>
             <p id="cancel-order-description" className="orders-modal-copy">
-              This order is still in Placed status. If you continue, its delivery status will be updated to
-              Cancelled and it will no longer be prepared for delivery.
+              Are you sure you want to cancel order {pendingCancelOrderId}? Once cancelled, it will not be
+              prepared for delivery.
             </p>
             <div className="orders-modal-actions">
               <button
@@ -615,7 +615,7 @@ export default function Orders() {
                 onClick={() => handleCancelOrder(pendingCancelOrder)}
                 disabled={isCancelLoading}
               >
-                {isCancelLoading ? "Cancelling..." : "Yes, cancel order"}
+                {isCancelLoading ? "Cancelling..." : "Cancel order"}
               </button>
             </div>
           </div>
