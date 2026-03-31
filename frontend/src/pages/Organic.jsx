@@ -4,23 +4,58 @@ import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
 import { addItem, makeCartId, useCart } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
-import appleImg from "../assets/organic/apple.jpg";
-import avocadoImg from "../assets/organic/avacado.jpg";
-import bananaImg from "../assets/organic/bananas.png";
-import bellPepperImg from "../assets/organic/bell peppers.jpg";
-import broccoliImg from "../assets/organic/broccolli.png";
-import carrotsImg from "../assets/organic/carrots.png";
-import celeryImg from "../assets/organic/celery.png";
-import cherryImg from "../assets/organic/cherry.png";
-import cucumberImg from "../assets/organic/cucumber.png";
-import grapesImg from "../assets/organic/grapes.png";
-import mangoImg from "../assets/organic/mango.png";
-import onionImg from "../assets/organic/onions.png";
-import orangeImg from "../assets/organic/orange.jpg";
-import potatoImg from "../assets/organic/potatoes.png";
 import "./Landing.css";
 import "./Recipes.css";
 import "./Organic.css";
+
+const resolveImageUrl = (raw, fallback) => {
+  if (typeof raw === "string" && raw.trim()) {
+    const cleaned = raw.replace(/^public\//, "");
+    return cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+  }
+  return fallback;
+};
+
+const appleImg = "/organic/apple.png";
+const avocadoImg = "/organic/avacado.png";
+const bananaImg = "/organic/bananas.png";
+const bellPepperImg = "/organic/bell peppers.png";
+const broccoliImg = "/organic/broccolli.png";
+const carrotsImg = "/organic/carrots.png";
+const celeryImg = "/organic/celery.png";
+const cherryImg = "/organic/cherry.png";
+const cucumberImg = "/organic/cucumber.png";
+const grapesImg = "/organic/grapes.png";
+const mangoImg = "/organic/mango.png";
+const onionImg = "/organic/onions.png";
+const orangeImg = "/organic/orange.png";
+const potatoImg = "/organic/potatoes.png";
+const imageByName = new Map(
+  [
+    ["apple", appleImg],
+    ["avocado", avocadoImg],
+    ["banana", bananaImg],
+    ["bell pepper", bellPepperImg],
+    ["broccoli", broccoliImg],
+    ["carrots", carrotsImg],
+    ["celery", celeryImg],
+    ["cherry", cherryImg],
+    ["cucumber", cucumberImg],
+    ["green grapes", grapesImg],
+    ["mango", mangoImg],
+    ["orange", orangeImg],
+    ["onion", onionImg],
+    ["potato", potatoImg],
+  ].map(([k, v]) => [k, v])
+);
+
+const getImageForName = (name, fallback) => {
+  if (typeof name === "string") {
+    const found = imageByName.get(name.trim().toLowerCase());
+    if (found) return found;
+  }
+  return fallback;
+};
 
 const TAB_KEYS = ["all", "featured", "popular", "new"];
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
@@ -48,18 +83,19 @@ const pickGeneratedTabs = (name = "") => {
 };
 
 const products = [
+  // Produce with images
   {
     name: "Apple",
-    price: "$2.50/lb",
+    price: formatDbPrice(2.5, "lb"),
     image: appleImg,
     tabs: ["featured", "popular"],
     badges: ["Organic", "Non-GMO"],
     inStock: true,
-    description: "Fresh crisp that are apples sourced from trusted organic farms in Canada.",
+    description: "Fresh crisp apples sourced from trusted organic farms in Canada.",
   },
   {
     name: "Avocado",
-    price: "$1.99",
+    price: formatDbPrice(1.99, "each"),
     image: avocadoImg,
     tabs: ["featured"],
     badges: ["Organic", "Non-GMO"],
@@ -68,7 +104,7 @@ const products = [
   },
   {
     name: "Banana",
-    price: "$3.00/lb",
+    price: formatDbPrice(3, "lb"),
     image: bananaImg,
     tabs: ["featured", "new"],
     badges: ["Organic"],
@@ -77,7 +113,7 @@ const products = [
   },
   {
     name: "Bell Pepper",
-    price: "$1.00",
+    price: formatDbPrice(1, "each"),
     image: bellPepperImg,
     tabs: ["featured"],
     badges: ["Organic", "Non-GMO"],
@@ -86,7 +122,7 @@ const products = [
   },
   {
     name: "Broccoli",
-    price: "$3.50",
+    price: formatDbPrice(3.5, "each"),
     image: broccoliImg,
     tabs: ["popular"],
     badges: ["Organic", "Non-GMO"],
@@ -95,7 +131,7 @@ const products = [
   },
   {
     name: "Carrots",
-    price: "$4.00/lb",
+    price: formatDbPrice(4, "lb"),
     image: carrotsImg,
     tabs: ["popular", "new"],
     badges: ["Organic"],
@@ -104,16 +140,16 @@ const products = [
   },
   {
     name: "Celery",
-    price: "$3.00",
+    price: formatDbPrice(3, "each"),
     image: celeryImg,
     tabs: ["featured", "popular"],
     badges: ["Organic", "Non-GMO"],
-    inStock: false,
+    inStock: true,
     description: "Fresh green celery with crisp texture and clean flavor.",
   },
   {
     name: "Cherry",
-    price: "$4.00/lb",
+    price: formatDbPrice(4, "lb"),
     image: cherryImg,
     tabs: ["new"],
     badges: ["Organic"],
@@ -122,7 +158,7 @@ const products = [
   },
   {
     name: "Cucumber",
-    price: "$1.50",
+    price: formatDbPrice(1.5, "each"),
     image: cucumberImg,
     tabs: ["popular"],
     badges: ["Organic", "Non-GMO"],
@@ -131,7 +167,7 @@ const products = [
   },
   {
     name: "Green Grapes",
-    price: "$2.00/lb",
+    price: formatDbPrice(2, "lb"),
     image: grapesImg,
     tabs: ["featured"],
     badges: ["Organic"],
@@ -140,16 +176,16 @@ const products = [
   },
   {
     name: "Mango",
-    price: "$4.40/lb",
+    price: formatDbPrice(4.4, "lb"),
     image: mangoImg,
     tabs: ["new", "popular"],
     badges: ["Organic", "Non-GMO"],
-    inStock: false,
+    inStock: true,
     description: "Tropical mangoes with rich aroma and naturally sweet flavor.",
   },
   {
     name: "Orange",
-    price: "$2.00/lb",
+    price: formatDbPrice(2, "lb"),
     image: orangeImg,
     tabs: ["featured"],
     badges: ["Organic", "Non-GMO"],
@@ -158,7 +194,7 @@ const products = [
   },
   {
     name: "Onion",
-    price: "$3.00/bag",
+    price: formatDbPrice(3, "bag"),
     image: onionImg,
     tabs: ["new"],
     badges: ["Organic"],
@@ -167,12 +203,211 @@ const products = [
   },
   {
     name: "Potato",
-    price: "$4.99/bag",
+    price: formatDbPrice(4.99, "bag"),
     image: potatoImg,
     tabs: ["featured", "popular"],
     badges: ["Organic", "Non-GMO"],
     inStock: true,
     description: "Versatile farm-fresh potatoes for roasting, mashing, and baking.",
+  },
+  // Pantry + others (use mapped image when available, otherwise logo fallback)
+  {
+    name: "Quinoa",
+    price: formatDbPrice(6.99, "bag"),
+    image: getImageForName("Quinoa", logo),
+    tabs: pickGeneratedTabs("Quinoa"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Nutty organic quinoa—fluffy, protein-rich, and meal-prep friendly.",
+  },
+  {
+    name: "Black Beans",
+    price: formatDbPrice(2.49, "can"),
+    image: getImageForName("Black Beans", logo),
+    tabs: pickGeneratedTabs("Black Beans"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Creamy canned black beans packed in a simple, low-sodium brine.",
+  },
+  {
+    name: "Corn",
+    price: formatDbPrice(0.75, "each"),
+    image: getImageForName("Corn", logo),
+    tabs: pickGeneratedTabs("Corn"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Sweet, crisp ears of corn picked at peak ripeness.",
+  },
+  {
+    name: "Limes",
+    price: formatDbPrice(0.79, "each"),
+    image: getImageForName("Limes", logo),
+    tabs: pickGeneratedTabs("Limes"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Juicy limes with bright acidity for dressings, tacos, and tea.",
+  },
+  {
+    name: "Kale",
+    price: formatDbPrice(3.49, "each"),
+    image: getImageForName("Kale", logo),
+    tabs: pickGeneratedTabs("Kale"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Hearty kale bunches—great for sautés, salads, and smoothies.",
+  },
+  {
+    name: "Tomatoes",
+    price: formatDbPrice(2.99, "lb"),
+    image: getImageForName("Tomatoes", logo),
+    tabs: pickGeneratedTabs("Tomatoes"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Vine-ripened tomatoes with balanced sweetness and acidity.",
+  },
+  {
+    name: "Lemons",
+    price: formatDbPrice(0.89, "each"),
+    image: getImageForName("Lemons", logo),
+    tabs: pickGeneratedTabs("Lemons"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Fragrant lemons perfect for zesting, marinades, and fresh lemonade.",
+  },
+  {
+    name: "Tofu",
+    price: formatDbPrice(3.99, "pack"),
+    image: getImageForName("Tofu", logo),
+    tabs: pickGeneratedTabs("Tofu"),
+    badges: ["Organic", "Non-GMO"],
+    inStock: true,
+    description: "Firm organic tofu that crisps beautifully and soaks up sauces.",
+  },
+  {
+    name: "Brown Rice",
+    price: formatDbPrice(5.49, "bag"),
+    image: getImageForName("Brown Rice", logo),
+    tabs: pickGeneratedTabs("Brown Rice"),
+    badges: ["Organic", "Whole Grain"],
+    inStock: true,
+    description: "Hearty brown rice with a nutty bite—ideal for bowls and stir-fries.",
+  },
+  {
+    name: "Ginger",
+    price: formatDbPrice(3.99, "lb"),
+    image: getImageForName("Ginger", logo),
+    tabs: pickGeneratedTabs("Ginger"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Fresh, zesty ginger root for teas, curries, and marinades.",
+  },
+  {
+    name: "Garlic",
+    price: formatDbPrice(0.99, "each"),
+    image: getImageForName("Garlic", logo),
+    tabs: pickGeneratedTabs("Garlic"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Pungent garlic bulbs with tight cloves and bold flavor.",
+  },
+  {
+    name: "Sesame Seeds",
+    price: formatDbPrice(4.99, "pack"),
+    image: getImageForName("Sesame Seeds", logo),
+    tabs: pickGeneratedTabs("Sesame Seeds"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Toasty sesame seeds ready to finish bowls, noodles, and salads.",
+  },
+  {
+    name: "Soy Sauce",
+    price: formatDbPrice(3.49, "bottle"),
+    image: getImageForName("Soy Sauce", logo),
+    tabs: pickGeneratedTabs("Soy Sauce"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Umami-rich soy sauce brewed for balanced salt and depth.",
+  },
+  {
+    name: "Sesame Oil",
+    price: formatDbPrice(6.49, "bottle"),
+    image: getImageForName("Sesame Oil", logo),
+    tabs: pickGeneratedTabs("Sesame Oil"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Aromatic toasted sesame oil that elevates stir-fries and dressings.",
+  },
+  {
+    name: "Olive Oil",
+    price: formatDbPrice(12.99, "bottle"),
+    image: getImageForName("Olive Oil", logo),
+    tabs: pickGeneratedTabs("Olive Oil"),
+    badges: ["Organic", "Cold-Pressed"],
+    inStock: true,
+    description: "Smooth extra-virgin olive oil with peppery finish for everyday cooking.",
+  },
+  {
+    name: "Dill",
+    price: formatDbPrice(2.49, "bunch"),
+    image: getImageForName("Dill", logo),
+    tabs: pickGeneratedTabs("Dill"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Fragrant dill fronds that brighten salads, yogurt dips, and fish.",
+  },
+  {
+    name: "Salt",
+    price: formatDbPrice(1.99, "pack"),
+    image: getImageForName("Salt", logo),
+    tabs: pickGeneratedTabs("Salt"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Mineral-rich fine salt—kitchen staple for seasoning everything.",
+  },
+  {
+    name: "Cumin",
+    price: formatDbPrice(3.29, "pack"),
+    image: getImageForName("Cumin", logo),
+    tabs: pickGeneratedTabs("Cumin"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Warm, earthy ground cumin for stews, chili, and roasted veggies.",
+  },
+  {
+    name: "Sweet Potatoes",
+    price: formatDbPrice(2.49, "lb"),
+    image: getImageForName("Sweet Potatoes", logo),
+    tabs: pickGeneratedTabs("Sweet Potatoes"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Naturally sweet orange-flesh potatoes—great for fries or roasting.",
+  },
+  {
+    name: "Chickpeas",
+    price: formatDbPrice(2.29, "can"),
+    image: getImageForName("Chickpeas", logo),
+    tabs: pickGeneratedTabs("Chickpeas"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Creamy canned chickpeas ready for hummus, curries, and salads.",
+  },
+  {
+    name: "Tahini",
+    price: formatDbPrice(7.49, "jar"),
+    image: getImageForName("Tahini", logo),
+    tabs: pickGeneratedTabs("Tahini"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Silky sesame tahini ideal for dressings, hummus, and sauces.",
+  },
+  {
+    name: "Whole-wheat Wraps",
+    price: formatDbPrice(4.99, "pack"),
+    image: getImageForName("Whole-wheat Wraps", logo),
+    tabs: pickGeneratedTabs("Whole-wheat Wraps"),
+    badges: ["Organic"],
+    inStock: true,
+    description: "Soft whole-wheat wraps that hold hearty fillings without tearing.",
   },
 ];
 
@@ -232,6 +467,7 @@ export default function Organic() {
 
       return {
         ...product,
+        image: resolveImageUrl(dbProduct.imageUrl, getImageForName(product.name, product.image)),
         price: formatDbPrice(dbProduct.price, dbProduct.priceUnit) || product.price,
         inStock: dbProduct.inventory?.available ?? product.inStock,
         stock: dbProduct.inventory?.stock ?? product.stock,
@@ -248,7 +484,7 @@ export default function Organic() {
       .map((item) => ({
         name: item.name,
         price: formatDbPrice(item.price, item.priceUnit),
-        image: logo,
+        image: resolveImageUrl(item.imageUrl, getImageForName(item.name, logo)),
         tabs: pickGeneratedTabs(item.name),
         badges: ["Organic"],
         inStock: item.inventory?.available ?? true,

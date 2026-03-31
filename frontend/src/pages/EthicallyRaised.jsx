@@ -4,23 +4,61 @@ import { FaStar, FaRegStar, FaShoppingCart } from "react-icons/fa";
 import AppNavbar from "../components/navbar.jsx";
 import { addItem, makeCartId, useCart } from "../utils/cartStore.js";
 import logo from "../assets/logo_clear.png";
-import groundBeefImg from "../assets/ethicallyraised/groundbeef.png";
-import ribsImg from "../assets/ethicallyraised/ribs.png";
-import sirloinSteakImg from "../assets/ethicallyraised/sirloinSteak.png";
-import chuckSteakImg from "../assets/ethicallyraised/chuckSteak.png";
-import chickenBreastImg from "../assets/ethicallyraised/chickenbreast.png";
-import wingImg from "../assets/ethicallyraised/wing.png";
-import chickenThighImg from "../assets/ethicallyraised/chickenthigh.png";
-import drumsticksImg from "../assets/ethicallyraised/chickendrumsticks.png";
-import wholeChickenImg from "../assets/ethicallyraised/wholechicken.png";
-import salmonImg from "../assets/ethicallyraised/salmon.png";
-import codImg from "../assets/ethicallyraised/cod.png";
-import tunaImg from "../assets/ethicallyraised/tuna.png";
-import lobsterImg from "../assets/ethicallyraised/lobster.png";
-import shrimpImg from "../assets/ethicallyraised/shrimp.png";
 import "./Landing.css";
 import "./Recipes.css";
 import "./Organic.css";
+
+const resolveImageUrl = (raw, fallback) => {
+  if (typeof raw === "string" && raw.trim()) {
+    const cleaned = raw.replace(/^public\//, "");
+    return cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+  }
+  return fallback;
+};
+
+const groundBeefImg = "/ethicallyraised/groundbeef.png";
+const ribsImg = "/ethicallyraised/ribs.png";
+const sirloinSteakImg = "/ethicallyraised/sirloinSteak.png";
+const chuckSteakImg = "/ethicallyraised/chuckSteak.png";
+const chickenBreastImg = "/ethicallyraised/chickenbreast.png";
+const wingImg = "/ethicallyraised/wing.png";
+const chickenThighImg = "/ethicallyraised/chickenthigh.png";
+const drumsticksImg = "/ethicallyraised/chickendrumsticks.png";
+const wholeChickenImg = "/ethicallyraised/wholechicken.png";
+const salmonImg = "/ethicallyraised/salmon.png";
+const codImg = "/ethicallyraised/cod.png";
+const tunaImg = "/ethicallyraised/tuna.png";
+const lobsterImg = "/ethicallyraised/lobster.png";
+const shrimpImg = "/ethicallyraised/shrimp.png";
+
+const imageByName = new Map(
+  [
+    ["ground beef (80/20)", groundBeefImg],
+    ["beef ribs", ribsImg],
+    ["sirloin steak", sirloinSteakImg],
+    ["chuck steak", chuckSteakImg],
+    ["chicken breast", chickenBreastImg],
+    ["chicken wings", wingImg],
+    ["chicken thighs", chickenThighImg],
+    ["chicken drumsticks", drumsticksImg],
+    ["whole chicken", wholeChickenImg],
+    ["atlantic salmon", salmonImg],
+    ["cod", codImg],
+    ["tuna", tunaImg],
+    ["lobster", lobsterImg],
+    ["shrimp", shrimpImg],
+    ["feta cheese", logo],
+    ["plain yogurt", logo],
+  ].map(([k, v]) => [k, v])
+);
+
+const getImageForName = (name, fallback) => {
+  if (typeof name === "string") {
+    const found = imageByName.get(name.trim().toLowerCase());
+    if (found) return found;
+  }
+  return fallback;
+};
 
 const TAB_KEYS = ["all", "featured", "popular", "new"];
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
@@ -174,6 +212,24 @@ const proteins = [
     inStock: true,
     description: "Traceable shrimp sourced from ethical, low-impact producers.",
   },
+  {
+    name: "Feta Cheese",
+    price: "$6.49/each",
+    image: getImageForName("Feta Cheese", logo),
+    tabs: ["featured"],
+    badges: ["Dairy", "Hormone-Free"],
+    inStock: true,
+    description: "Creamy, tangy feta crafted for salads, wraps, and snacking.",
+  },
+  {
+    name: "Plain Yogurt",
+    price: "$4.99/each",
+    image: getImageForName("Plain Yogurt", logo),
+    tabs: ["popular"],
+    badges: ["Dairy", "Probiotic"],
+    inStock: true,
+    description: "Thick, tangy yogurt with live cultures that is great for bowls and sauces.",
+  },
 ];
 
 function stars(rating = 4) {
@@ -232,6 +288,7 @@ export default function EthicallyRaised() {
 
       return {
         ...product,
+        image: resolveImageUrl(dbProduct.imageUrl, getImageForName(product.name, product.image)),
         price: formatDbPrice(dbProduct.price, dbProduct.priceUnit) || product.price,
         inStock: dbProduct.inventory?.available ?? product.inStock,
         stock: dbProduct.inventory?.stock ?? product.stock,
@@ -246,7 +303,7 @@ export default function EthicallyRaised() {
       .map((item) => ({
         name: item.name,
         price: formatDbPrice(item.price, item.priceUnit),
-        image: logo,
+        image: resolveImageUrl(item.imageUrl, getImageForName(item.name, logo)),
         tabs: pickGeneratedTabs(item.name),
         badges: ["Ethically Raised"],
         inStock: item.inventory?.available ?? true,
