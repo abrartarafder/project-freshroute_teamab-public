@@ -7,6 +7,7 @@ const normalizeDeliveryStatus = (value) => {
   if (raw === "starting" || raw === "preparing") return "Preparing";
   if (raw === "out for delivery") return "Out for Delivery";
   if (raw === "delivered") return "Delivered";
+  if (raw === "cancelled" || raw === "canceled") return "Cancelled";
 
   return "Placed";
 };
@@ -39,7 +40,7 @@ const OrderSchema = new mongoose.Schema(
     deliveryDate: String,
     deliveryStatus: {
       type: String,
-      enum: ["Placed", "Preparing", "Out for Delivery", "Delivered"],
+      enum: ["Placed", "Preparing", "Out for Delivery", "Delivered", "Cancelled"],
       default: "Placed",
       set: normalizeDeliveryStatus,
     },

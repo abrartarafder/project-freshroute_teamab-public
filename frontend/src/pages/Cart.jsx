@@ -131,16 +131,6 @@ export default function Cart() {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const buildDeliveryString = () => {
-    const parts = [
-      address.fullName.trim(),
-      address.street.trim(),
-      [address.city.trim(), address.postal.trim()].filter(Boolean).join(" "),
-    ].filter(Boolean);
-    const upper = parts.map((p) => p.toUpperCase());
-    return upper.length > 0 ? `Delivering to ${upper.join(", ")}` : "";
-  };
-
   const handlePlaceOrder = async () => {
     const cardOk = validateCard();
     const addressOk = validateAddress();
@@ -149,16 +139,6 @@ export default function Cart() {
     if (!slotOk) setSlotError("Please choose a delivery time slot.");
     if (!dateOk) setDateError("Please select a delivery date.");
     if (!cardOk || !addressOk || !slotOk || !dateOk) return;
-    const delivery = buildDeliveryString();
-    const confirmation = [
-      `Delivery date: ${deliveryDate}`,
-      "Delivery window: " + selectedSlot,
-      delivery,
-    ]
-      .filter(Boolean)
-      .join(" • ");
-    const statusPool = ["Placed", "Preparing", "Out for Delivery", "Delivered"];
-    const deliveryStatus = statusPool[Math.floor(Math.random() * statusPool.length)];
     const order = {
       orderId,
       createdAt: new Date().toISOString(),
@@ -166,7 +146,7 @@ export default function Cart() {
       deliverySlot: selectedSlot,
       deliveryDate,
       saveCard,
-      deliveryStatus,
+      deliveryStatus: "Placed",
       totals: { subtotal, tax, shipping, total },
       items,
     };
@@ -185,7 +165,7 @@ export default function Cart() {
       window.localStorage.setItem("fr-last-order", JSON.stringify(order));
       const existing = JSON.parse(window.localStorage.getItem("fr-orders") || "[]");
       window.localStorage.setItem("fr-orders", JSON.stringify([...existing, order]));
-    } catch (error) {
+    } catch {
       // ignore storage failures
     }
 

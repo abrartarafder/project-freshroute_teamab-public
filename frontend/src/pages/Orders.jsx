@@ -9,7 +9,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000
 const readOrders = () => {
   try {
     return JSON.parse(window.localStorage.getItem("fr-orders") || "[]");
-  } catch (error) {
+  } catch {
     return [];
   }
 };
@@ -68,20 +68,29 @@ const normalizeStatus = (value) => {
   if (raw === "preparing") return "Preparing";
   if (raw === "out for delivery") return "Out for Delivery";
   if (raw === "delivered") return "Delivered";
+  if (raw === "cancelled" || raw === "canceled") return "Cancelled";
 
   return value || "Placed";
+};
+
+const isCancellableStatus = (value) => normalizeStatus(value) === "Placed";
+
+const syncStoredOrders = (nextOrders) => {
+  window.localStorage.setItem("fr-orders", JSON.stringify(nextOrders));
 };
 
 export default function Orders() {
   const initialQueryId = new URLSearchParams(window.location.search).get("orderId") || "";
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
+  const [pendingCancelOrder, setPendingCancelOrder] = useState(null);
   const [filterYear, setFilterYear] = useState("all");
   const [lookupId, setLookupId] = useState(initialQueryId);
   const [lookupError, setLookupError] = useState("");
   const [ordersError, setOrdersError] = useState("");
   const [lookupTouched, setLookupTouched] = useState(Boolean(initialQueryId));
   const [isLookupLoading, setIsLookupLoading] = useState(false);
+  const [isCancelLoading, setIsCancelLoading] = useState(false);
   const { count: cartCount } = useCart();
 
   useEffect(() => {
@@ -95,7 +104,7 @@ export default function Orders() {
         const data = await res.json();
         setOrders(data);
         setOrdersError("");
-      } catch (error) {
+      } catch {
         const fallback = readOrders();
         setOrders(fallback);
         setOrdersError(
@@ -137,7 +146,7 @@ export default function Orders() {
       if (res.status !== 404) {
         throw new Error(`Request failed with status ${res.status}`);
       }
-    } catch (error) {
+    } catch {
       const localOrder = getLocalOrderById(normalized, orders);
       if (localOrder) {
         setSelectedOrder(localOrder);
@@ -170,6 +179,8 @@ export default function Orders() {
     if (initialQueryId) {
       runLookup(initialQueryId);
     }
+    // We only want to hydrate the initial query string once on first render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const totalOrders = orders.length;
@@ -188,6 +199,8 @@ export default function Orders() {
   }, [orders, filterYear]);
 
   const selectedStatus = normalizeStatus(selectedOrder?.deliveryStatus);
+  const canCancelSelectedOrder = isCancellableStatus(selectedOrder?.deliveryStatus);
+  const pendingCancelOrderId = pendingCancelOrder?.orderId || pendingCancelOrder?.id || "";
   const selectedAddress = [
     selectedOrder?.address?.fullName,
     selectedOrder?.address?.street,
@@ -195,6 +208,68 @@ export default function Orders() {
   ]
     .filter(Boolean)
     .join(", ");
+
+  const applyOrderUpdate = (updatedOrder) => {
+    const targetId = updatedOrder.orderId || updatedOrder.id;
+    const hasExistingOrder = orders.some((order) => (order.orderId || order.id) === targetId);
+    const nextOrders = orders.map((order) =>
+      (order.orderId || order.id) === targetId ? { ...order, ...updatedOrder } : order
+    );
+    const finalOrders = hasExistingOrder ? nextOrders : [updatedOrder, ...nextOrders];
+
+    setOrders(finalOrders);
+    setSelectedOrder(updatedOrder);
+    syncStoredOrders(finalOrders);
+
+    try {
+      const lastOrder = JSON.parse(window.localStorage.getItem("fr-last-order") || "null");
+      if (lastOrder && (lastOrder.orderId || lastOrder.id) === targetId) {
+        window.localStorage.setItem("fr-last-order", JSON.stringify(updatedOrder));
+      }
+    } catch {
+      // ignore storage failures
+    }
+  };
+
+  const handleCancelOrder = async (order) => {
+    if (!order || !isCancellableStatus(order.deliveryStatus) || isCancelLoading) {
+      return;
+    }
+
+    setLookupError("");
+    setIsCancelLoading(true);
+    setPendingCancelOrder(null);
+
+    const orderId = order.orderId || order.id;
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/orders/${encodeURIComponent(orderId)}/cancel`, {
+        method: "PATCH",
+      });
+
+      if (!res.ok) {
+        if (res.status === 409) {
+          setLookupError("This order can no longer be cancelled because it is no longer in Placed status.");
+          setIsCancelLoading(false);
+          return;
+        }
+
+        throw new Error(`Request failed with status ${res.status}`);
+      }
+
+      const updatedOrder = await res.json();
+      applyOrderUpdate(updatedOrder);
+      setLookupError(`Order ${orderId} was cancelled successfully.`);
+    } catch {
+      const localUpdate = { ...order, deliveryStatus: "Cancelled" };
+      applyOrderUpdate(localUpdate);
+      setLookupError(
+        `Order ${orderId} was cancelled on this device. We could not confirm the update with the server.`
+      );
+    }
+
+    setIsCancelLoading(false);
+  };
 
   return (
     <div className="orders-shell">
@@ -390,6 +465,18 @@ export default function Orders() {
                     <p>{selectedAddress || "Address unavailable"}</p>
                     {selectedOrder.address?.phone && <p>Phone: {selectedOrder.address.phone}</p>}
                     {selectedOrder.address?.notes && <p>Notes: {selectedOrder.address.notes}</p>}
+                    {canCancelSelectedOrder && (
+                      <div className="order-detail-actions">
+                        <button
+                          type="button"
+                          className="orders-cancel order-detail-cancel"
+                          onClick={() => setPendingCancelOrder(selectedOrder)}
+                          disabled={isCancelLoading}
+                        >
+                          {isCancelLoading ? "Cancelling..." : "Cancel order"}
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -465,7 +552,7 @@ export default function Orders() {
                                   (entry) => (entry.id || entry.orderId) !== (order.id || order.orderId)
                                 );
                                 setOrders(next);
-                                window.localStorage.setItem("fr-orders", JSON.stringify(next));
+                                syncStoredOrders(next);
 
                                 if ((selectedOrder?.id || selectedOrder?.orderId) === (order.id || order.orderId)) {
                                   setSelectedOrder(null);
@@ -475,7 +562,7 @@ export default function Orders() {
                                   await fetch(`${API_BASE_URL}/api/orders/${order.orderId || order.id}`, {
                                     method: "DELETE",
                                   });
-                                } catch (error) {
+                                } catch {
                                   setLookupError(
                                     "The order was removed from this device, but we could not sync the deletion with the server."
                                   );
@@ -496,6 +583,44 @@ export default function Orders() {
           </section>
         </section>
       </main>
+
+      {pendingCancelOrder && (
+        <div className="orders-modal-backdrop" role="presentation" onClick={() => setPendingCancelOrder(null)}>
+          <div
+            className="orders-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cancel-order-title"
+            aria-describedby="cancel-order-description"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <p className="orders-modal-kicker">Confirm Cancellation</p>
+            <h2 id="cancel-order-title">Cancel {pendingCancelOrderId}?</h2>
+            <p id="cancel-order-description" className="orders-modal-copy">
+              This order is still in Placed status. If you continue, its delivery status will be updated to
+              Cancelled and it will no longer be prepared for delivery.
+            </p>
+            <div className="orders-modal-actions">
+              <button
+                type="button"
+                className="orders-modal-secondary"
+                onClick={() => setPendingCancelOrder(null)}
+                disabled={isCancelLoading}
+              >
+                Keep order
+              </button>
+              <button
+                type="button"
+                className="orders-cancel orders-modal-primary"
+                onClick={() => handleCancelOrder(pendingCancelOrder)}
+                disabled={isCancelLoading}
+              >
+                {isCancelLoading ? "Cancelling..." : "Yes, cancel order"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
