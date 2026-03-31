@@ -9,6 +9,7 @@ export default function AppNavbar({
   userName = "John",
   activeKey = "home",
   onSearch = () => {},
+  onSearchSubmit = null,
   cartCount = 0,
   showSearch = true,
   showLocationPicker = false,
@@ -31,6 +32,10 @@ export default function AppNavbar({
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
+                if (onSearchSubmit) {
+                  onSearchSubmit(searchText);
+                  return;
+                }
                 onSearch(searchText);
               }}
             >
