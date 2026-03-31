@@ -1,5 +1,10 @@
 import Order from "../models/Order.js";
 
+const isPlacedStatus = (value) => {
+  const normalized = String(value || "").trim().toLowerCase();
+  return normalized === "placed" || normalized === "pending";
+};
+
 export const createOrder = async (req, res) => {
   try {
     const payload = req.body || {};
@@ -49,7 +54,7 @@ export const cancelOrder = async (req, res) => {
       return res.status(404).json({ error: "Order not found" });
     }
 
-    if (order.deliveryStatus !== "Placed") {
+    if (!isPlacedStatus(order.deliveryStatus)) {
       return res.status(409).json({ error: "Only placed orders can be cancelled" });
     }
 
