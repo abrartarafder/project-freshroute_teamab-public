@@ -424,7 +424,7 @@ export default function Orders() {
                             <p>{item.priceLabel || formatCurrency(item.unitPrice)}</p>
                           </div>
                           <div className="order-item-meta">
-                            <span>Qty {Number(item.quantity) || 0}</span>
+                            <span>Qty {Number(item.quantity) || 0} =</span>
                             <strong>
                               {formatCurrency((Number(item.unitPrice) || 0) * (Number(item.quantity) || 0))}
                             </strong>
