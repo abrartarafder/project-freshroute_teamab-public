@@ -260,4 +260,5 @@ Branch names:
 - Are lowercase  
 - Use hyphens instead of spaces  
 - Clearly describe the purpose of the branch  
-- Correspond to a Trello card or GitHub Issue when applicable  
+- Correspond to a Trello card or GitHub Issue when applicable 
+- Very minor bug fixes are communicated with the team and done directly on main to avoid any conflicts
