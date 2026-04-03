@@ -13,7 +13,7 @@ Notes
 Summary of Active Branches
 - Place Order, Confirm Order, and Error Messages (PB-12, PB-13, PB-11, PB-20) - Abrar - `features/order-confirmation`
 - Track Order Status and View Details (PB-14, PB-15, PB-20) - Shoumik -  `features/order-details-tracker`
-- Image Integration/backend Tracking (PB-15, 13, 20, 11, 16) - Moneba/Ekam/Judy - `features/recipes-tracking-backend`, `features/organic-tracking-backend`, `features/ethicallyraised-tracking-backend`
+- Image Integration/backend Tracking (PB-15, 13, 20, 11, 16) - Moneba/Ekam/Judy - `T61-features/recipes-tracking-backend`, `T62-features/organic-tracking-backend`, `T63-features/ethicallyraised-tracking-backend`
 
 
 ## PB-12 - Place Order (Checkout)
@@ -42,7 +42,7 @@ As a customer, I want to place an order so that my cart becomes a confirmed purc
     
 **Backend**
 - Ekam to provide any backend support as needed.
-  - Branch: `features/organic-tracking-backend`
+  - Branch: `T62-features/organic-tracking-backend`
 ---
 
 ## PB-15 - Track Order Status
@@ -71,7 +71,7 @@ As a customer, I want to track the status of my order so that I know when it wil
 
 **Backend**
 - Judy to assist with the backend as needed 
-  - Branch: `features/ethicallyraised-tracking-backend`
+  - Branch: `T63-features/ethicallyraised-tracking-backend`
 ---
 ## PB-13 - Order Confirmation 
 
@@ -99,7 +99,7 @@ As a customer, I want an order confirmation screen so that I know my order was s
     
 **Backend**
 - Ekam to assist with any backend as needed.
-  - Branch: `features/organic-tracking-backend`
+  - Branch: `T62-features/organic-tracking-backend`
 ---
 ## Subtask #4 - Integrating the backend for the Recipes Product Images
 ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
@@ -111,8 +111,8 @@ As a customer, I want an order confirmation screen so that I know my order was s
 **Assignees:** Moneba
 
 ### Tasks  
-- Moneba to integrate all images in the recipes backend
-  - Branch: `features/recipes-tracking-backend`
+- Moneba to integrate all images in the Recipes Products backend
+  - Branch: `T61-features/recipes-tracking-backend`
 
 
 ---
@@ -126,8 +126,8 @@ As a customer, I want an order confirmation screen so that I know my order was s
 **Assignees:** Ekam 
 
 ### Tasks  
-- Ekam to integrate all images in the recipes backend.
-  - Branch: `features/organic-tracking-backend`
+- Ekam to integrate all images in the Organic Products backend.
+  - Branch: `T62-features/organic-tracking-backend`
 
 ---
 ## Subtask #6 -  Integrating the backend for the Ethically Raised Product Images 
@@ -140,8 +140,8 @@ As a customer, I want an order confirmation screen so that I know my order was s
 **Assignees:** Judy
 
 ### Tasks  
-- Moneba to integrate all images in the recipes backend.
-  - Branch: `features/ethicallyraised-tracking-backend`
+- Judy to integrate all images in the Ethically Raised Products backend.
+  - Branch: `T63-features/ethicallyraised-tracking-backend`
 
 ---
 ## PB-14 - View Order Details by Order ID
@@ -172,7 +172,7 @@ As a customer, I want to view my order using an order ID so that I can review wh
   
 **Backend**
 - Moneba to assist with any backend as needed
-  - Branch: `features/recipes-tracking-backend`
+  - Branch: `T61-features/recipes-tracking-backend`
 
 ---
 
@@ -203,7 +203,7 @@ As a customer, I want to select a delivery time slot so that I can receive my or
 
 **Backend**
 -  Judy to assist with any backend as needed. 
-    - Branch: `features/ethicallyraised-tracking-backend' 
+    - Branch: `T63-features/ethicallyraised-tracking-backend` 
 
 ---
 
@@ -234,7 +234,7 @@ As a customer, I want to cancel my order before it is delivered so that I can co
 
 **Backend**
 - Moneba to assist with any backend support
-    - Branch: `features/recipes-tracking-backend`
+    - Branch: `T61-features/recipes-tracking-backend`
 
 ---
 ## PB-20 - User-Friendly Error Handling

@@ -7,6 +7,8 @@ Notes
 
 - Old Github Branches from Sprint 2 that will be graded, will be set to delete soon after grading.  
 
+These branches also do not have a single ticket number associated with them because they do span multiple branches. 
+
 ## User Stories
 
 |Tasks | Ticket(s) | Scope | Owner | Primary Branch | Related Ticket IDs | Week 01 Commits (workload distribution by tasks) | Week 02 Commits (workload distribution by tasks) |
@@ -16,11 +18,11 @@ Notes
 
 
 ## Backend Integration Subtasks
-These subtasks span multiple user stories, so they are tracked separately from the User Stories table but counted in total with the tasks. This also balances workload across team members because the continuous integrations are longer-running tasks.
+These subtasks span multiple user stories, so they are tracked separately from the User Stories table but counted in total with the tasks. This also balances workload across team members because the continuous integrations are longer-running tasks. These branches also have a single ticket number associated with them because they do not span multiple branches. 
 
 Tasks | Subtask | Scope | Owner | Branch | Ticket ID | Week 01 Commits (workload distribution) | Week 02 Commits (workload distribution) |
 |---| --- | --- | --- | --- | --- | --- | --- |
-|3| Subtask #4 | Continue Recipes backend integration with images and MongoDB Order Connection | Moneba | features/recipes-tracking-backend | #61 | No |Yes (all commits in Week 02) |
-|4| Subtask #5 | Continue Organic backend integration with images and MongoDB Order Connection | Ekam | features/organic-tracking-backend | #62 | No | Yes (all commits in Week 02)  |
-|5| Subtask #6 | Continue Ethically raised backend integration with images and MongoDB Order Connection | Judy | features/ethicallyraised-tracking-backend | #63 | No | Yes (all commits in Week 02) |
+|3| Subtask #4 | Continue Recipes backend integration with images and MongoDB Order Connection | Moneba | T61-features/recipes-tracking-backend | #61 | No |Yes (all commits in Week 02) |
+|4| Subtask #5 | Continue Organic backend integration with images and MongoDB Order Connection | Ekam | T62-features/organic-tracking-backend | #62 | No | Yes (all commits in Week 02)  |
+|5| Subtask #6 | Continue Ethically raised backend integration with images and MongoDB Order Connection | Judy | T63-features/ethicallyraised-tracking-backend | #63 | No | Yes (all commits in Week 02) |
 
