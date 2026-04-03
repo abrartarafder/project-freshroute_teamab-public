@@ -256,6 +256,11 @@ Branches follow a consistent and descriptive naming convention which follows the
 - `refactor/<module-name>`  
   Example: `refactor/checkout-logic`
 
+If there is a single task / subtask the branch name will include its Ticket Number in the form of: 
+
+- - `T#-features/<module-name>`  
+  Example: `T61-features/recipes-tracking-backend`
+
 Branch names:
 - Are lowercase  
 - Use hyphens instead of spaces  
