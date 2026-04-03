@@ -133,7 +133,6 @@ const seedRecipes = [
     servings: 2,
     categories: ["featured", "new"],
   },
-  
   {
     title: "Tofu Stir-Fry with Brown Rice & Veggies",
     description:
