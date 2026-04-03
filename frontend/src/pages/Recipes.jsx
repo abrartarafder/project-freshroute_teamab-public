@@ -133,23 +133,7 @@ const seedRecipes = [
     servings: 2,
     categories: ["featured", "new"],
   },
-  {
-    title: "Lentil & Vegetable Stew",
-    description:
-      "Hearty stew made with organic lentils, root vegetables, and rich vegetable broth.",
-    price: "$3.50/Serving",
-    rating: 4,
-    tags: ["Fiber", "Plant Protein", "Popular"],
-    image: imgLentil,
-    ingredients: [
-      "1 cup dry lentils",
-      "1 onion, 2 carrots, 2 celery stalks",
-      "2 cups vegetable broth",
-      "Tomato paste, garlic, thyme",
-    ],
-    servings: 4,
-    categories: ["popular"],
-  },
+  
   {
     title: "Tofu Stir-Fry with Brown Rice & Veggies",
     description:
@@ -180,23 +164,6 @@ const seedRecipes = [
     ],
     servings: 3,
     categories: ["featured"],
-  },
-  {
-    title: "Vegetable & Black Bean Chili",
-    description:
-      "Slow-simmered chili with black beans, tomatoes, bell peppers, and spices. Cozy and filling.",
-    price: "$3.80/Serving",
-    rating: 4,
-    tags: ["Gluten Free", "Dairy Free", "New"],
-    image: imgChili,
-    ingredients: [
-      "2 cups black beans",
-      "1 bell pepper, 1 onion",
-      "1 can crushed tomatoes",
-      "Chili powder, cumin, paprika",
-    ],
-    servings: 4,
-    categories: ["new"],
   },
   {
     title: "Grass-Fed Beef & Vegetable Stir-Fry",
