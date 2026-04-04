@@ -100,47 +100,47 @@
 
 **1. What did you work on since the last standup?**
 
-- Abrar: 
-- Shoumik: 
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: After Shoumik had pushed his code, I worked on refactoring the User Interface and added a few more small details. I have also began planning out how the images will be rendered which will be completed during the longest portion of our Sprint, the gap between Standup #3 and Standup #4. 
+- Shoumik: I worked on finishing up the Order Confirmation + initial wiring done by Sprint 3 Standup #3 and Order Status and I have already worked on the Order Tracking and finished that early. 
+- Ekam: As part of the backend team, I have worked on gathering all of the data I need in MongoDB to finish up integrating the images for the Organic page so that it renders and shows up properly in the frontend of the website. 
+- Moneba: As part of the backend team, I have worked on gathering all of the data I need in MongoDB to finish up integrating the images for the Recipes page so that it renders and shows up properly in the frontend of the website. 
+- Judy: As part of the backend team, I have worked on gathering all of the data I need in MongoDB to finish up integrating the images for the Ethically Raised page so that it renders and shows up properly in the frontend of the website. 
 
 **2. What do you commit to next?**
 
-- Abrar: 
+- Abrar: As the backend team has mentioned before, I will be supporting them with image integration. 
 
-- Shoumik: 
+- Shoumik: As the backend team has mentioned before, I will be supporting them with image integration. 
 
-- Ekam: 
+- Ekam: As mentioned before, as part of the backend team, I have all of the data I need in MongoDB to finish up integrating the images for the Organic page so that it renders and shows up properly in the frontend of the website. 
 
-- Moneba: 
+- Moneba: As mentioned before, as part of the backend team, I have all of the data I need in MongoDB to finish up integrating the images for the Recipes page so that it renders and shows up properly in the frontend of the website. 
 
-- Judy: 
+- Judy: As mentioned before, as part of the backend team, I have all of the data I need in MongoDB to finish up integrating the images for the Ethically Raised page so that it renders and shows up properly in the frontend of the website. 
 
 **3. When do you think you'll be done?**
 
-- Abrar: 
+- Abrar: We will be done by the end of Standup #4, the last standup for this Sprint. Let's see the progress we can make! 
 
-- Shoumik: 
+- Shoumik: We will be done by the end of Standup #4, the last standup for this Sprint. Let's see the progress we can make! 
 
-- Ekam: 
+- Ekam: We will be done by the end of Standup #4, the last standup for this Sprint. Let's see the progress we can make! 
 
-- Moneba: 
+- Moneba: We will be done by the end of Standup #4, the last standup for this Sprint. Let's see the progress we can make! 
 
-- Judy: 
+- Judy: We will be done by the end of Standup #4, the last standup for this Sprint. Let's see the progress we can make! 
 
 **4. Do you have any blockers?**
 
-- Abrar: 
+- Abrar: No blockers right now, let us wait and see until Standup #4. 
 
-- Shoumik: 
+- Shoumik:  No blockers right now, let us wait and see until Standup #4. 
 
-- Ekam: 
+- Ekam:  No blockers right now, let us wait and see until Standup #4. 
 
-- Moneba: 
+- Moneba:  No blockers right now, let us wait and see until Standup #4. 
 
-- Judy: 
+- Judy:  No blockers right now, let us wait and see until Standup #4. 
 
 ## [2026-04-05] - Sprint #3 Standup #4
 

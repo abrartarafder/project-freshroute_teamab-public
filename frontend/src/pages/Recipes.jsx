@@ -7,14 +7,42 @@ import logo from "../assets/logo_clear.png";
 import "./Landing.css";
 import "./Recipes.css";
 
-import imgQuinoa from "../assets/recipes/quinoa-peppers.png";
-import imgSalmon from "../assets/recipes/salmon-kale.png";
-import imgLentil from "../assets/recipes/lentil-stew.png";
-import imgTofu from "../assets/recipes/tofu-stirfry.png";
-import imgChili from "../assets/recipes/bean-chili.png";
-import imgBeef from "../assets/recipes/beef-stirfry.png";
-import imgBuddha from "../assets/recipes/buddha-bowl.png";
-import imgWrap from "../assets/recipes/med-wrap.png";
+const resolveImageUrl = (raw, fallback) => {
+  if (typeof raw === "string" && raw.trim()) {
+    const cleaned = raw.replace(/^public\//, "");
+    return cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+  }
+  return fallback;
+};
+
+const imgQuinoa = "/recipes/quinoa-peppers.png";
+const imgSalmon = "/recipes/salmon-kale.png";
+const imgLentil = "/recipes/lentil-stew.png";
+const imgTofu = "/recipes/tofu-stirfry.png";
+const imgChili = "/recipes/bean-chili.png";
+const imgBeef = "/recipes/beef-stirfry.png";
+const imgBuddha = "/recipes/buddha-bowl.png";
+const imgWrap = "/recipes/med-wrap.png";
+const imageByName = new Map(
+  [
+    ["quinoa-stuffed bell peppers", imgQuinoa],
+    ["baked salmon with kale & quinoa salad", imgSalmon],
+    ["lentil & vegetable stew", imgLentil],
+    ["tofu stir-fry with brown rice & veggies", imgTofu],
+    ["vegetable & black bean chili", imgChili],
+    ["grass-fed beef & vegetable stir-fry", imgBeef],
+    ["roasted veggie buddha bowl", imgBuddha],
+    ["mediterranean chickpea wrap", imgWrap],
+  ].map(([k, v]) => [k, v])
+);
+
+const getImageForName = (name, fallback) => {
+  if (typeof name === "string") {
+    const found = imageByName.get(name.trim().toLowerCase());
+    if (found) return found;
+  }
+  return fallback;
+};
 
 const TAB_KEYS = ["all", "featured", "popular", "new"];
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
@@ -106,23 +134,6 @@ const seedRecipes = [
     categories: ["featured", "new"],
   },
   {
-    title: "Lentil & Vegetable Stew",
-    description:
-      "Hearty stew made with organic lentils, root vegetables, and rich vegetable broth.",
-    price: "$3.50/Serving",
-    rating: 4,
-    tags: ["Fiber", "Plant Protein", "Popular"],
-    image: imgLentil,
-    ingredients: [
-      "1 cup dry lentils",
-      "1 onion, 2 carrots, 2 celery stalks",
-      "2 cups vegetable broth",
-      "Tomato paste, garlic, thyme",
-    ],
-    servings: 4,
-    categories: ["popular"],
-  },
-  {
     title: "Tofu Stir-Fry with Brown Rice & Veggies",
     description:
       "Stir-fried tofu with bell peppers, carrots, broccoli, and snow peas served over brown rice.",
@@ -152,23 +163,6 @@ const seedRecipes = [
     ],
     servings: 3,
     categories: ["featured"],
-  },
-  {
-    title: "Vegetable & Black Bean Chili",
-    description:
-      "Slow-simmered chili with black beans, tomatoes, bell peppers, and spices. Cozy and filling.",
-    price: "$3.80/Serving",
-    rating: 4,
-    tags: ["Gluten Free", "Dairy Free", "New"],
-    image: imgChili,
-    ingredients: [
-      "2 cups black beans",
-      "1 bell pepper, 1 onion",
-      "1 can crushed tomatoes",
-      "Chili powder, cumin, paprika",
-    ],
-    servings: 4,
-    categories: ["new"],
   },
   {
     title: "Grass-Fed Beef & Vegetable Stir-Fry",
@@ -326,7 +320,7 @@ export default function Recipes() {
       price: typeof item.price === "number" ? formatServingPrice(item.price) : "$0.00/Serving",
       rating: 4,
       tags,
-      image: item.imageUrl || logo,
+      image: resolveImageUrl(item.imageUrl, getImageForName(item.name, logo)),
       ingredients: ingredients.length ? ingredients : ingredientsArray,
       ingredientDetails,
       servings: item.servings || 1,

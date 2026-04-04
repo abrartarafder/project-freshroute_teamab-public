@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { FaMapMarkerAlt, FaReceipt, FaRegClock, FaSearch, FaTrash } from "react-icons/fa";
+import { Container } from "react-bootstrap";
 import AppNavbar from "../components/navbar.jsx";
 import { useCart } from "../utils/cartStore.js";
 import "./Orders.css";
@@ -275,16 +276,13 @@ export default function Orders() {
     <div className="orders-shell">
       <AppNavbar
         activeKey="orders"
-        showSearch={true}
-        showLocationPicker={false}
+        showSearch={false}
+        showLocationPicker={true}
         cartCount={cartCount}
-        searchPlaceholder="Enter order ID"
-        onSearch={(value) => setLookupId(value.toUpperCase())}
-        onSearchSubmit={(value) => runLookup(value)}
       />
       <main className="orders-main">
         <section className="orders-hero">
-          <div className="orders-hero-container">
+          <Container className="orders-hero-container">
             <div className="orders-header">
               <div>
                 <p className="orders-kicker">Orders</p>
@@ -356,10 +354,10 @@ export default function Orders() {
                 );
               })}
             </div>
-          </div>
+          </Container>
         </section>
 
-        <section className="orders-content">
+        <Container className="orders-content">
           {ordersError && <div className="orders-banner orders-banner-warning">{ordersError}</div>}
           {lookupError && <div className="orders-banner orders-banner-info">{lookupError}</div>}
 
@@ -426,7 +424,7 @@ export default function Orders() {
                             <p>{item.priceLabel || formatCurrency(item.unitPrice)}</p>
                           </div>
                           <div className="order-item-meta">
-                            <span>Qty {Number(item.quantity) || 0}</span>
+                            <span>Qty {Number(item.quantity) || 0} =</span>
                             <strong>
                               {formatCurrency((Number(item.unitPrice) || 0) * (Number(item.quantity) || 0))}
                             </strong>
@@ -581,7 +579,7 @@ export default function Orders() {
               </div>
             )}
           </section>
-        </section>
+        </Container>
       </main>
 
       {pendingCancelOrder && (

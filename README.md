@@ -213,9 +213,9 @@ Each Trello card corresponds to a user story in `PB.md` + other assigned tasks.
 ### Pull Requests
 
 - All changes must go through a Pull Request (PR).
-- PRs require at least one team member review before merging.
+- PRs can optionally require at least one team member review before merging.
 - PR descriptions must reference the related user story.
-- No direct commits to `main` after sprint0 as it is just documentation.
+- No direct commits to `main` after sprint0 as it is just documentation. Only Exception is small bug fixes. 
 - Ensure the code does not break any functionality and works as intended before merging to `main`. 
 
 ---
@@ -256,8 +256,14 @@ Branches follow a consistent and descriptive naming convention which follows the
 - `refactor/<module-name>`  
   Example: `refactor/checkout-logic`
 
+If there is a single task / subtask the branch name will include its Ticket Number in the form of: 
+
+- - `T#-features/<module-name>`  
+  Example: `T61-features/recipes-tracking-backend`
+
 Branch names:
 - Are lowercase  
 - Use hyphens instead of spaces  
 - Clearly describe the purpose of the branch  
-- Correspond to a Trello card or GitHub Issue when applicable  
+- Correspond to a Trello card or GitHub Issue when applicable 
+- Very minor bug fixes are communicated with the team and done directly on main to avoid any conflicts

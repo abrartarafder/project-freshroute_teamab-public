@@ -122,13 +122,13 @@ body {
   white-space: nowrap;
 }
   
-  .fr-search {
-    width: 100%;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-  }
-  
+.fr-search {
+  width: 100%;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+}
+
 .fr-search-input {
   flex: 1;
   height: 46px;
@@ -162,12 +162,12 @@ body {
   border-radius: 0 999px 999px 0 !important;
   background: #fff;
   color: #5f7a8a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
   
   /* ===== Nav ===== */
 .fr-nav {
