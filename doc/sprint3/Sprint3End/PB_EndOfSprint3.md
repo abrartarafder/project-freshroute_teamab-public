@@ -1,7 +1,7 @@
-# Product Backlog - FreshRoute (Sprint 3)
+# Product Backlog - FreshRoute (End of Sprint 3)
 
-This document lists the initial Product Backlog for FreshRoute.  
-Each item is written as a user story and includes criteria of satisfaction.
+This document lists the Final Product Backlog for FreshRoute.  
+Each item is written as a user story and crossed out because its completed. 
 
 Note: Similar or closely related user stories could potentially be grouped under a single Trello card for organizational purposes. Trello is used for sprint planning and task tracking, and stories may be reprioritized or separated into individual cards as the project evolves.
 
