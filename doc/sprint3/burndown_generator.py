@@ -5,15 +5,14 @@ total_story_points = 24
 
 # Standup checkpoints for Sprint 3
 dates = ["Mar 27", "Mar 30", "Apr 2", "Apr 5"]
-
 ideal_remaining = [total_story_points - (total_story_points / (len(dates) - 1)) * i for i in range(len(dates))]
 
-# Actual burndown: ~30% done before Standup #1; remainder finished through Week 03
+# Actual burndown: start at full scope, 30% done by first standup and remainder finished through Week 03
 actual_remaining = [
-    17,  # Standup #1 — Mar 27
-    12,  # Standup #2 — Mar 30
-    6,   # Standup #3 — Apr 2
-    0,   # Standup #4 — Apr 5
+    24,  # Start of sprint
+    17,  # Standup #1 (Mar 27)
+    8,   # Standup #2 (Mar 30)
+    0,   # Standup #3/4 (Apr 2–5)
 ]
 
 plt.figure(figsize=(10, 6))
