@@ -1,31 +1,29 @@
-# Sprint 2 Planning Meeting  
-**Date:** March 10, 2026  
-**Sprint Duration:** March 10, 2026 - March 23, 2026
+# Sprint 3 Planning Meeting  
+**Date:** March 24, 2026  
+**Sprint Duration:** March 24, 2026 - April 6, 2026
 **Project Name:** FreshRoute  
 ---
 
 **Notes**
-- At least 30% of commits landed in Week 01 (March 10–16); the remaining commits were completed in Week 02 (March 17–23).
+-A minimum of 30% of all commits were completed during Week 01 (March 23rd – March 30th), with the remaining commits completed in Week 02 (March 30 - April 6th), demonstrating consistent progress across the sprint timeline.
 - Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [distribution_naming.md](./distribution_naming.md).
 
 **Summary of Active Branches**
-- Cart and address updates (PB-05, PB-06, PB-09, PB-10) - Shoumik - `features/cart`
-- Product filters (PB-03) - Abrar - `refactor/filter`
-- Recipe ingredient scaling (PB-08) - Abrar - `features/recipes-add`
-- Backend integrations (spans all stories) - Ekam/Judy/Moneba - `features/organic-integration-backend`, `features/recipes-integration-backend`
+- Place Order, Confirm Order, and Error Handling (PB-12, PB-13, PB-11, PB-20) - Abrar - features/order-confirmation
+- Track Order Status and View Details (PB-14, PB-15, PB-16, PB-20) - Shoumik - features/order-details-tracker
+- Image Integration and Backend Tracking (Subtasks #4, #5, #6) - Moneba/Ekam/Judy - `T61-features/recipes-tracking-backend` , `T62-features/organic-tracking-backend`, `T63-features/ethicallyraised-tracking-backend`
 
 ## Sprint Goals
 
-The primary objectives of Sprint 2 are:
+The primary objectives of Sprint 3 are:
 
-1. Implement product filtering and sorting to improve product browsing and shopping efficiency. (Associated User Story: PB-03)
-2. Develop a functional shopping cart system that allows users to add items, view their cart, update quantities, and remove products. (Associated User Stories: PB-05, PB-06, PB-07)
-3. Enable recipe-based shopping by allowing users to add recipe ingredients to the cart with scalable quantities based on serving size. (Associated User Story: PB-08)
-4. Implement persistent cart functionality so items remain during navigation and page refresh. (Associated User Story: PB-09)
-5. Add a checkout step that allows users to enter a delivery address during the ordering process. (Associated User Story: PB-10)
-6. Integrate the backend APIs with the frontend components to ensure product data, cart actions, and recipe information flow correctly between the system layers while maintaining a modular structure that supports efficient future updates and feature additions. (Associated User Stories: PB-03, PB-05, PB-06, PB-07, PB-08, PB-09)
-7. Store and manage product images within the backend data structure so the frontend can dynamically load images, enabling easier updates and scalable management of product content in the system. Product images will likely be integrated progressively and refined throughout Sprints 2 and 3. (Associated User Stories span multiple stories: Subtask #1, Subtask #2, Subtask #3)
-
+1. Implement full order placement functionality, including time slot selection and order creation. (Associated User Story: PB-12, PB-08)
+2. Develop an order confirmation system that displays order details after checkout. (Associated User Story: PB-13)
+3. Enable users to track their orders with real-time status updates. (Associated User Story: PB-15)
+4. Allow users to view order details using a unique order ID. (Associated User Story: PB-14)
+5. Implement order cancellation functionality based on order status. (Associated User Story: PB-16)
+6. Improve user experience through clear and user-friendly error handling across the application. (Associated User Story: PB-20)
+7. Complete backend image integration for all product categories to ensure consistent dynamic image loading. (Associated Subtasks: #4, #5, #6)
 
 
 ## Product Backlog
@@ -66,161 +64,124 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ---
 
-## Epic 3: Cart Page + BackEnd/Frontend Integration
+## Epic 3: Order Processing, Tracking, and System Completion
 
 ### User Stories
 
-- **PB-03:** As a customer, I want to filter/sort products so that I can shop efficiently.
-- **PB-05:** As a customer, I want to add items to a cart so that I can buy multiple products in one order.
-- **PB-06:** As a customer, I want to view my cart so that I can review items before checkout.
-- **PB-07:** As a customer, I want to update quantities or remove items so that I can fix my order.
-- **PB-08:** As a customer, I want to add a recipe to my cart so that all required ingredients are added automatically with the correct quantities.
-- **PB-09:** As a customer, I want my cart to persist during my session so that I do not lose items while browsing.
-- **PB-10:** As a customer, I want to enter my delivery address during checkout so that my order can be delivered correctly.
-
+- **PB-11:** As a customer, I want to select a delivery time slot so that I can receive my order at a convenient time.
+- **PB-12:** As a customer, I want to place an order so that my cart becomes a confirmed purchase.
+- **PB-13:** As a customer, I want an order confirmation screen so that I know my order was successful.PB-14: As a customer, I want to view my order using an order ID so that I can review what I purchased.
+- **PB-15:** As a customer, I want to track the status of my order so that I know when it will arrive.
+- **PB-16:** As a customer, I want to cancel my order before it is delivered so that I can correct mistakes.
+- **PB-20:** As a customer, I want clear error messages when something goes wrong so that I know what happened and what to do next.
 
 ### Tasks
 
-**PB-03: Filter/Sort Products + Backend Integration (3 points)**
-- Build UI for users to filter. (Abrar)
+**PB-11: Select Delivery Time Slot (2 points)**
+- Create the UI for the persistent cart. (Shoumik)
 - Subtask #1 is required for this ticket. (Ekam)
 - Subtask #2 is required for this ticket. (Judy)
-- Subtask #3 is required for this ticket. (Moneba)
+
+**PB-12: Place Order (5 points)**
+- Build time slot selection UI below the delivery address. (Abrar)
+- Provide backend support for order creation. (Ekam)
   
-**PB-05: Add Item to Cart + Backend Integration (5 points)**
-- Create the UI for adding the Cart Items. (Shoumik)
-- Subtask #1 is required for this ticket. (Ekam)
-- Subtask #2 is required for this ticket. (Judy)
-- Subtask #3 is required for this ticket. (Moneba)
+**PB-13: Order Confirmation (4 points)**
+- Redirect user to confirmation screen after checkout. (Abrar)
+- Provide backend support for order confirmation. (Ekam)
   
-**PB-06: View Cart (4 points)** 
-- Build the cart pages. (Shoumik)
-- Subtask #1 is required for this ticket. (Ekam)
-- Subtask #2 is required for this ticket. (Judy)
-- Subtask #3 is required for this ticket. (Moneba)
+**PB-14: View Order Details by Order ID (4 points)** 
+- Build order lookup page and details view. (Shoumik)
+- Provide backend support for order retrieval. (Moneba)
 
-**PB-07: Update/Remove Cart Items (5 points)**
-- Implement quantity adjustment controls (Shoumik)
-- Implement remove item functionality (Shoumik)
-- Ensure recipe items can be modified/removed (Abrar)
-- Subtask #1 is required for this ticket. (Ekam)
-- Subtask #2 is required for this ticket. (Judy)
-- Subtask #3 is required for this ticket. (Moneba)
+**PB-15: Track Order Status (5 points)**
+- Build order tracking UI with status display. (Shoumik)
+- Provide backend support for status updates. (Judy)
 
-**PB-08: Add Recipe Ingredients to Cart (4 points)**
-- Build the recipes page and ingredient scaling integration(Abrar)
-- Assist with any backend as needed (Moneba)
-  
-**PB-09: Persistent Cart (3 points)**
-- Create the UI for the persistent cart (Shoumik)
-- Subtask #1 is required for this ticket. (Ekam)
-- Subtask #2 is required for this ticket. (Judy)
+**PB-16: Cancel Order (2 points)**
+- Implement cancel order functionality in the frontend. (Shoumik)
+- Provide backend support for status update. (Moneba)
 
-**PB-10: Enter Delivery Address at Checkout (2 points)**
-- Build UI for delivery page (Shoumik)
+**PB-16: Cancel Order (2 points)**
+- Build delivery time slot selection. UI (Abrar)
+- Provide backend support as needed. (Judy)
 
-**Subtask #1: Integrating the backend for the Organic Products.**
-- Integrate all data in the organic page backend and connect to the frontend (Ekam).
-- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3. (Ekam) 
-- Help structure JSON files as needed. (Ekam)
-- Help with integration. (Shoumik)
+**PB-20: User-Friendly Error Handling (2 points)**
+- Implement error handling for failed API requests. (Abrar, Shoumik)
+- Display meaningful error messages and empty states. (Abrar, Shoumik)
 
-**Subtask #2: Integrating the backend for the Ethically Raised Products.**
-- Integrate all data in the Ethically Raised backend and connect to the frontend (Judy).
-- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3.  (Judy)
-- Help structure JSON files as needed. (Ekam)
-- Help with integration. (Shoumik)
+**Subtask #4: Recipes Product Image Integration.**
+- Integrate all recipe product images in the backend. (Moneba)
 
-**Subtask #3: Integrating the backend for the Recipes Product.**
-- Integrate all data in the recipes backend and connect to the frontend (Moneba).
-- Add image data in the backend, including as many images as possible and working toward retrieving them. This may also be     developed further during Sprint 3.(Moneba)
-- Help structure JSON files as needed. (Ekam)
-- Help with integration. (Shoumik)
+**Subtask #5: Organic Product Image Integration.**
+- Integrate all organic product images in the backend. (Ekam)
 
-**Total: 26 Story Points**
+**Subtask #6: Ethically Raised Product Image Integration**
+- Integrate all ethically raised product images in the backend. (Judy)
+
+**Total: 24 Story Points**
 
 This aligns with the team’s estimated sprint capacity.
 
-The team committed to completing PB-03, PB-05, PB-06, PB-07, PB-08, PB-09, and PB-10 during Sprint 2.
+The team committed to completing PB-12, PB-13, PB-14, PB-15, PB-16, PB-08, and PB-20 during Sprint 3.
 
 **Other Tasks**
-- Seed sample product data. (Backend Team)
-- Create frontend documentation (Abrar, Shoumik)
-- Create backend documentation (Moneba, Judy, Ekam)
-- Update System Design documentation. (Abrar, Ekam)
+- Finalize product image coverage across all categories (Backend Team)
+- Update frontend documentation (Abrar, Shoumik)
+- Update backend documentation (Moneba, Judy, Ekam)
+- Update System Design documentation (Abrar, Ekam)
 
 ---
 
 ## Spikes Identified
 
-### Spike 1: Backend–Frontend API Integration Strategy
+### Spike 1: Order Data Structure and Storage
 Purpose:
-Research and determine the best way to integrate the Express backend APIs with the React frontend so that product data can dynamically populate the UI.
+Research and define how order data (items, totals, address, time slots, and status) should be structured and stored in MongoDB.
 
 Supports User Stories:
-PB-03 (Filter / Sort Products)
-PB-05 (Add Item to Cart)
-PB-06 (View Cart)
-PB-07 (Update/Remove Cart Items)
-
-Owner: Ekam, Shoumik, Abrar
-
-Expected Outcome:
-- A clear API request structure is defined between the frontend and the backend.
-- React components successfully fetch product data from the backend.
-- Standardized integration pattern for Organic, Ethically Raised, and Recipe products.
-- Documentation outlining the integration approach for future features.
-
-
-### Spike 2: MongoDB Image Storage and Retrieval
-Purpose:
-Research how to store and retrieve product images in MongoDB so they can be dynamically displayed on the frontend.
-
-Supports User Stories:
-PB-03 (Filter / Sort Products)
-PB-08 (Add Recipe Ingredients to Cart)
+PB-12 (Place Order)
+PB-13 (Order Confirmation)
+PB-14 (View Order Details by Order ID)
+PB-15 (Track Order Status)
 
 Owner: Ekam, Moneba, Judy
 
 Expected Outcome:
-- Best method identified for storing image references in MongoDB.
-- Backend API returns image URLs along with product data.
-- Frontend successfully loads images dynamically from backend responses.
-- Image storage approach supports easy updates and future product additions.
+- Order schema defined with all required fields
+- Unique order ID generation strategy established
+- Backend APIs support the full order lifecycle
 
 
-### Spike 3: Recipe Data Structure and Ingredient Scaling
+### Spike 2: Order Status Tracking System
 Purpose:
-Research and define the optimal MongoDB schema for storing recipes, ingredients, and serving quantities so ingredient scaling can be implemented efficiently.
+Determine the best approach for tracking and updating order statuses dynamically.
 
 Supports User Stories:
-PB-08 (Add Recipe Ingredients to Cart)
+PB-15 (Track Order Status)
+PB-16 (Cancel Order)
 
-Owner: Ekam, Moneba, Judy
+Owner: Ekam, Abrar
 
 Expected Outcome:
-- Recipe schema defined with ingredient lists and quantities.
-- Serving-based ingredient scaling logic documented.
-- Backend structure supports nested ingredient collections.
-- Data structure allows ingredients to be easily added to the cart.
+- Status lifecycle defined (Placed → Preparing → Out for Delivery → Delivered)
+- Backend supports status updates
+- Frontend reflects real-time status changes
 
-### Spike 4: Persistent Cart State Management
+
+### Spike 3: Error Handling and Resilience
 Purpose:
-Research the best approach for maintaining cart data across page navigation and refresh events in the React application.
+Research best practices for handling API failures and edge cases in a user-friendly way.
 
 Supports User Stories:
-PB-09 (Persistent Cart)
-PB-05 (Add Item to Cart)
-PB-06 (View Cart)
+PB-20
 
-Owner: Shoumik
+Owner: Abrar, Shoumik
 
 Expected Outcome:
-- Cart state persistence method selected (e.g., local storage or session storage).
-- Cart data remains consistent across page navigation and refreshes.
-- Frontend cart state properly synchronizes with backend data.
-- Clear documentation on how cart persistence works in the system.
-
+- Standard error handling pattern established
+- UI gracefully handles failures and empty states
+- Improved overall application stability
 
 ---
 
@@ -237,17 +198,19 @@ Expected Outcome:
 
 ## Acceptance Criteria
 
-By the end of Sprint 2:
+By the end of Sprint 3, users can perform all actions from Sprint 2 and:
 
-- Users can filter and sort products by category and price.
-- Users can add items to the cart from product listings and recipes.
-- Users can view, update, and remove items in the cart, with totals updating correctly.
-- Recipe ingredients can be added to the cart with quantities scaled by servings.
-- The cart persists during page navigation and refresh.
-- Users can enter a delivery address during checkout, attached to the order for the session.
-- Frontend dynamically fetches product, recipe, and cart data from the backend, including the functionality for images that    will allow proper image integration in Sprint 3.
-- All completed stories meet the Definition of Done.
-- Documentation is updated to reflect Sprint 2 changes, including integration, cart persistence, and recipe structure.
+- Users can place orders with a selected delivery time slot
+- Orders are stored with all relevant details (items, totals, address, status)
+- Users receive a confirmation screen after successful checkout
+- Users can retrieve order details using a unique order ID
+- Users can track order status accurately
+- Users can cancel eligible orders
+- All product images are fully integrated and dynamically displayed
+- The system handles errors gracefully without crashing
+- Frontend and backend remain fully integrated
+- All completed stories meet the Definition of Done
+- Documentation reflects Sprint 3 updates
 
 ---
 
@@ -267,10 +230,8 @@ A story is complete when:
 
 ## Decisions Made During Planning
 
-- Priority is placed on implementing the cart system and product filtering to support the core shopping workflow.
-- Backend–frontend integration will be implemented for Organic, Ethically Raised, and Recipe products.
-- Recipe ingredient scaling and recipe-to-cart functionality will be implemented this sprint.
-- Product image storage and retrieval will be implemented in the backend and displayed dynamically in the frontend.
-- Checkout functionality will be limited to entering a delivery address, while full order processing will be deferred to a future sprint.
-- A demo-ready build with working cart functionality and product integration will be required at the end of the sprint.
-
+- Priority is placed on completing the full order workflow from checkout to tracking
+- Order tracking and cancellation are essential for user experience and system completeness
+- Backend image integration will be finalized across all product categories
+- Error handling will be standardized across the application
+- A fully functional, demo-ready system with end-to-end ordering capability is required by the end of the sprint
