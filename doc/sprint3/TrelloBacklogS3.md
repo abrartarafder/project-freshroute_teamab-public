@@ -7,7 +7,8 @@ Sprint: 03
 ## All Sprint 02 Trello Backlog User Stories have been completed, these are the stories for Sprint 03. 
 
 Notes
-- At least 30% of commits landed in Week 02 (March 17–23); the remaining commits were completed in Week 03 (March 24 – Apr 6).
+- A minimum of 30% of all commits are to be completed during Week 01 (March 23rd – March 30th), with the remaining commits completed in Week 02 (March 30 - April 6th), demonstrating consistent progress across the sprint timeline.
+
 - Branches were named after their primary ticket, with supporting branches opened only when parallel work was needed: see the detailed tables for branch naming and workload distribution in [distribution_naming.md](./distribution_naming.md).
 
 Summary of Active Branches
