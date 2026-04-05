@@ -90,16 +90,16 @@ Server
 7. API Routes
 ----------------------------------------------------
 - Health check: GET /health
-- Organic catalog: GET /api/organic
-- Ethically raised catalog: GET /api/ethically-raised
-- Recipes catalog: GET /api/recipes
+- Organic catalogue: GET /api/organic
+- Ethically raised catalogue: GET /api/ethically-raised
+- Recipes catalogue: GET /api/recipes
 - Orders: GET /api/orders, POST /api/orders, DELETE /api/orders/:id
 - Legacy JSON (optional): /api/catalog/organic, /api/catalog/ethically-raised, /api/catalog/recipes
 
 8. STATE & DATA FLOW
 ----------------------------------------------------
 - Requests flow: Express route -> controller -> Mongoose model -> MongoDB collection.
-- Orders POST validates presence of orderId and enforces uniqueness; failures return 400/409.
+- Orders POST validates the presence of orderId and enforces uniqueness; failures return 400/409.
 - JSON data files are not auto-seeded; use POST /api/orders or import scripts for seeding.
 - Logging: server logs MONGO_URI presence and prints startup URL.
 
@@ -111,5 +111,4 @@ Server
 - dotenv
 - nodemon (dev)
 
-
-Last Updated: March 27th, 2026 (Sprint 03)
+Last Updated: April 4th, 2026 (Sprint 03)
