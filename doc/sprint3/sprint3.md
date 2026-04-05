@@ -80,9 +80,7 @@ Capacity was calculated based on individual availability during the two-week spr
 
 **PB-11: Select Delivery Time Slot (2 points)**
 - Create the UI for the persistent cart. (Shoumik)
-- Subtask #4 is required for this ticket. (Moneba)
-- Subtask #5 is required for this ticket. (Ekam)
-- Subtask #6 is required for this ticket. (Judy)
+- Provide backend support for order creation. (Ekam)
 
 **PB-12: Place Order (5 points)**
 - Build time slot selection UI below the delivery address. (Abrar)
@@ -121,7 +119,7 @@ Capacity was calculated based on individual availability during the two-week spr
 
 This aligns with the team’s estimated sprint capacity.
 
-The team committed to completing PB-12, PB-13, PB-14, PB-15, PB-16, PB-08, and PB-20 during Sprint 3.
+The team committed to completing PB-11, PB-12, PB-13, PB-14, PB-15, PB-16, and PB-20 during Sprint 3.
 
 **Other Tasks**
 - Finalize product image coverage across all categories (Backend Team)
