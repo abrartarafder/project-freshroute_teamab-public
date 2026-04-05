@@ -1,6 +1,6 @@
 # Sprint 3 Planning Meeting  
 **Date:** March 24, 2026  
-**Sprint Duration:** March 24, 2026 - April 6, 2026
+**Sprint Duration:** March 23, 2026 - April 6, 2026
 **Project Name:** FreshRoute  
 ---
 
