@@ -17,7 +17,7 @@
 
 The primary objectives of Sprint 3 are:
 
-1. Implement full order placement functionality, including time slot selection and order creation. (Associated User Story: PB-12, PB-08)
+1. Implement full order placement functionality, including time slot selection and order creation. (Associated User Story: PB-12, PB-11)
 2. Develop an order confirmation system that displays order details after checkout. (Associated User Story: PB-13)
 3. Enable users to track their orders with real-time status updates. (Associated User Story: PB-15)
 4. Allow users to view order details using a unique order ID. (Associated User Story: PB-14)
@@ -70,7 +70,8 @@ Capacity was calculated based on individual availability during the two-week spr
 
 - **PB-11:** As a customer, I want to select a delivery time slot so that I can receive my order at a convenient time.
 - **PB-12:** As a customer, I want to place an order so that my cart becomes a confirmed purchase.
-- **PB-13:** As a customer, I want an order confirmation screen so that I know my order was successful.PB-14: As a customer, I want to view my order using an order ID so that I can review what I purchased.
+- **PB-13:** As a customer, I want an order confirmation screen so that I know my order was successful.
+- **PB-14:** As a customer, I want to view my order using an order ID so that I can review what I purchased.
 - **PB-15:** As a customer, I want to track the status of my order so that I know when it will arrive.
 - **PB-16:** As a customer, I want to cancel my order before it is delivered so that I can correct mistakes.
 - **PB-20:** As a customer, I want clear error messages when something goes wrong so that I know what happened and what to do next.
@@ -79,8 +80,9 @@ Capacity was calculated based on individual availability during the two-week spr
 
 **PB-11: Select Delivery Time Slot (2 points)**
 - Create the UI for the persistent cart. (Shoumik)
-- Subtask #1 is required for this ticket. (Ekam)
-- Subtask #2 is required for this ticket. (Judy)
+- Subtask #4 is required for this ticket. (Moneba)
+- Subtask #5 is required for this ticket. (Ekam)
+- Subtask #6 is required for this ticket. (Judy)
 
 **PB-12: Place Order (5 points)**
 - Build time slot selection UI below the delivery address. (Abrar)
@@ -101,10 +103,6 @@ Capacity was calculated based on individual availability during the two-week spr
 **PB-16: Cancel Order (2 points)**
 - Implement cancel order functionality in the frontend. (Shoumik)
 - Provide backend support for status update. (Moneba)
-
-**PB-16: Cancel Order (2 points)**
-- Build delivery time slot selection. UI (Abrar)
-- Provide backend support as needed. (Judy)
 
 **PB-20: User-Friendly Error Handling (2 points)**
 - Implement error handling for failed API requests. (Abrar, Shoumik)
@@ -155,7 +153,7 @@ Expected Outcome:
 
 ### Spike 2: Order Status Tracking System
 Purpose:
-Determine the best approach for tracking and updating order statuses dynamically.
+Determine the best approach to dynamically track and update order statuses.
 
 Supports User Stories:
 PB-15 (Track Order Status)
