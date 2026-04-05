@@ -64,7 +64,7 @@ Capacity was calculated based on individual availability during the two-week spr
 
 ---
 
-## Epic 3: Order Processing, Tracking, and System Completion
+## Epic 7: Order Status, Delivery Handling and Image Integration
 
 ### User Stories
 
