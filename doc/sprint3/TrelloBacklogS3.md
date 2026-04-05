@@ -67,7 +67,7 @@ As a customer, I want to track the status of my order so that I know when it wil
 ### Tasks  
 
 **Frontend**
-- Shoumik to build the order details page new screen that tracks order.  
+- Shoumik to build the order details new page with search functionality and add it into the navbar.
   - Branch:  `features/order-details-tracker`
 
 **Backend**
