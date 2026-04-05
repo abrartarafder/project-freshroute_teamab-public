@@ -146,44 +146,34 @@
 
 **1. What did you work on since the last standup?**
 
-- Abrar: 
-- Shoumik: 
-- Ekam: 
-- Moneba: 
-- Judy: 
+- Abrar: I finished supporting the backend team with the image integration and any other small UI and layout fixes as needed. The website is now fully complete. 
+- Shoumik: I finished supporting the backend team with the image integration and any other small UI and layout fixes as needed. The website is now fully complete. 
+- Ekam: As part of the backend team, I have used all of the data I need in MongoDB to completely finish up integrating the images for the Organic page so that it renders and shows up properly in the frontend of the website. The website is now fully complete. 
+- Moneba: As part of the backend team, I have used all of the data I need in MongoDB to completely finish up integrating the images for the Recipes page so that it renders and shows up properly in the frontend of the website. The website is now fully complete. 
+- Judy:  As part of the backend team, I have used all of the data I need in MongoDB to completely finish up integrating the images for the Ethically Raised page so that it renders and shows up properly in the frontend of the website. The website is now fully complete. 
 
 **2. What do you commit to next?**
 
-- Abrar: 
-
-- Shoumik: 
-
-- Ekam: 
-
-- Moneba: 
-
-- Judy: 
+- Abrar: Record the demo video to finish up Sprint 3 completely. 
+- Shoumik: Record the demo video to finish up Sprint 3 completely. 
+- Ekam: Record the demo video to finish up Sprint 3 completely. 
+- Moneba: Record the demo video to finish up Sprint 3 completely, work on the SR3.md and have it pushed by the deadline for Sprint 3. Also cross-check requirements against rubric. 
+- Judy: Record the demo video to finish up Sprint 3 completely, work on the SR3.md and have it pushed by the deadline for Sprint 3. 
 
 **3. When do you think you'll be done?**
 
-- Abrar: 
 
-- Shoumik: 
-
-- Ekam: 
-
-- Moneba: 
-
-- Judy: 
+- Abrar: Recording will be completed by the end of this standup, and the sprint 3 documentation will be completed by the deadline. 
+- Shoumik: Recording will be completed by the end of this standup, and the sprint 3 documentation will be completed by the deadline. 
+- Ekam: Recording will be completed by the end of this standup, and the sprint 3 documentation will be completed by the deadline. 
+- Moneba: Recording will be completed by the end of this standup, and the sprint 3 documentation will be completed by the deadline. 
+- Judy: Recording will be completed by the end of this standup, and the sprint 3 documentation will be completed by the deadline. 
 
 **4. Do you have any blockers?**
 
-- Abrar: 
+- Abrar: No blockers for recording the demo video. 
+- Shoumik: No blockers for recording the demo video.
+- Ekam: No blockers for recording the demo video.
+- Moneba: No blockers for recording the demo video.
+- Judy: No blockers for recording the demo video.
 
-- Shoumik: 
-
-- Ekam: 
-
-- Moneba: 
-
-- Judy: 
