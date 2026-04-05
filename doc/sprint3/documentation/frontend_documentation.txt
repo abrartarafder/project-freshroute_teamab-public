@@ -80,7 +80,7 @@ frontend/
 8. STATE & DATA FLOW
 ----------------------------------------------------
 - cartStore.js keeps cart data in localStorage and exposes useCart to share count/subtotal.
-- API base URL from VITE_API_BASE_URL; fetches products, recipes, and orders from backend.
+- API base URL from VITE_API_BASE_URL, fetches products, recipes, and orders from backend.
 - Adding a recipe creates both a recipe line item and generated grocery items grouped under recipe-grocery.
 - Cart checkout posts to /api/orders and also saves to localStorage (fr-orders) as offline fallback.
 - Orders page fetches /api/orders, with localStorage fallback, and supports delete via DELETE /api/orders/:id.
@@ -90,4 +90,4 @@ frontend/
 - react, react-dom, vite, bootstrap, react-bootstrap, react-icons.
 - ESLint + React plugins for linting.
 
-Last Updated: March 27th, 2026 (Sprint 03)
+Last Updated: April 4th, 2026 (Sprint 03)
