@@ -24,7 +24,7 @@ Summary of Active Branches
 
 ## We had No Unfinished Work!!
 - **Sprint 3 User Stories were 11,12,13,14,15,16,20 which were all completed, and the project is complete. **
-- PB.md is updated with all of the work finished during Sprint 2 and is under the Sprint 3 folder - the file is called PB_Updated_S3.md. The completed Product Backlog after Sprint 3 is called PBEndOfSprint3.md and is under the Sprint3End folder. 
+- PB.md is updated with all of the work finished during Sprint 2 and is under the sprint3 folder - the file is called PB_Updated_S3.md. The completed Product Backlog after Sprint 3 is called PB_EndOfSprint3.md and is under the Sprint3End folder. 
 - Note: We successfully integrated MongoDB for product data and implemented API endpoints that return product information to the frontend.
     - We had originally planned to store the images directly in MongoDB. However, during implementation, we discovered that this would cost money or require us to use another server. As a result, we made a design decision to temporarily hardcode the images in the front end using local imports for Sprint 2. These images were then merged with backend data during rendering, and in sprint 3, we finished storing the images with image URLs that dynamically pull from the public repository that hosts them. 
     - We prioritized delivering a working system within the sprint 3 timeline. This approach allowed us to meet functional requirements quickly and ensure that the UI displays correctly and is functional.
