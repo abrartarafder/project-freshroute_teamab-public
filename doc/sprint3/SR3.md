@@ -47,7 +47,7 @@ Summary of Active Branches
 
 - Researching technical constraints of the tools we’re using earlier during spikes to set realistic goals for the sprint. 
 
-- Implementing more error handling cases and beginning testing earlier in the sprint to insure correctness of our code. 
+- Implementing more error handling cases and beginning testing earlier in the sprint to ensure correctness of our code. 
 
 - Adhering to design principles like separation of concerns between frontend and backend to reduce tight coupling, etc. 
 
