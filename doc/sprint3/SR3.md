@@ -22,7 +22,7 @@ Summary of Active Branches
 | Ekambir Momi             | Backend/DevOps Developer | UI/UX Designer | Data Model Designer | System Integration Engineer |
 | Abrar Jawad Tarafder     | Fullstack Developer | UI/UX Designer | Sprint Coordinator | UI Refactoring Supervisor |
 
-## Unfinished Work
+## We had No Unfinished Work!!
 - **Sprint 3 User Stories were 11,12,13,14,15,16,20 which were all completed, and the project is complete. **
 - PB.md is updated with all of the work finished during Sprint 2 and is under the Sprint 3 folder - the file is called PBUpdated_S3postSprint2.md. The completed Product Backlog after Sprint 3 is called PBEndOfSprint3.md and is under the Sprint3End folder. 
 - Note: We successfully integrated MongoDB for product data and implemented API endpoints that return product information to the frontend.
